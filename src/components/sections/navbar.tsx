@@ -10,7 +10,7 @@ import { cn } from "@/lib/utils";
 
 const links = [
   { label: "Product", hash: "#product" },
-  { label: "Early Access", hash: "#early-access" },
+  { label: "Register", hash: "#early-access" },
   { label: "FAQ", hash: "#faq" },
 ];
 
@@ -121,7 +121,7 @@ export default function Navbar() {
 
         <div className="hidden md:block">
           <ShimmerButton className="text-xs" onClick={scrollToEarlyAccess}>
-            Get Early Access
+            Register Interest
           </ShimmerButton>
         </div>
 
@@ -159,7 +159,7 @@ export default function Navbar() {
               className="w-full text-xs [&_[data-shimmer-content]]:justify-center"
               onClick={scrollToEarlyAccess}
             >
-              Get Early Access
+              Register Interest
             </ShimmerButton>
           </li>
         </ul>

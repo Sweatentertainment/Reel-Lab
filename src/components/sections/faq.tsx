@@ -30,11 +30,11 @@ const items = [
   },
   {
     q: "What does it cost?",
-    a: "We tailor every engagement to the scope of work — genre, number of accounts, content volume, and goals. Sign up for early access and we'll walk you through options on a call.",
+    a: "We tailor every engagement to the scope of work — genre, number of accounts, content volume, and goals. Register your interest and we'll be in touch before launch to walk you through options.",
   },
   {
-    q: "What happens after I sign up for early access?",
-    a: "We'll review your details. If it's a fit, we'll reach out with a custom proposal before launch and scope exactly what reel:lab can build for you — genre, character, content strategy, everything.",
+    q: "What happens after I register my interest?",
+    a: "We'll review your details and be in touch before launch to discuss what reel:lab can build for you — genre, character, content strategy, everything.",
   },
   {
     q: "Is the content obviously AI-generated?",
@@ -46,7 +46,7 @@ const items = [
   },
   {
     q: "When does reel:lab launch?",
-    a: "May 2026. We're taking a limited number of launch partners now.",
+    a: "May 2026. We're registering interest from a limited number of launch partners.",
   },
 ];
 

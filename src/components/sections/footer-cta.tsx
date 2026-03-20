@@ -18,7 +18,7 @@ export default function FooterCTA() {
               className="size-2 shrink-0 animate-pulse rounded-full bg-emerald-500"
               aria-hidden
             />
-            <span className="text-sm text-gray-600">Accepting launch partners</span>
+            <span className="text-sm text-gray-600">Pre-launch</span>
           </div>
 
           <h2 className="mt-8 text-4xl font-bold tracking-tight text-gray-900 md:text-5xl">
@@ -26,8 +26,8 @@ export default function FooterCTA() {
           </h2>
 
           <p className="mx-auto mt-4 max-w-md text-lg text-gray-500">
-            Leave your email. If it&apos;s a fit, we&apos;ll reach out with a custom proposal before
-            launch.
+            Leave your email and we&apos;ll be in touch before launch to discuss what reel:lab can
+            build for you.
           </p>
 
           <div className="mt-6 flex justify-center">

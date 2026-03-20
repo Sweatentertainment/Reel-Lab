@@ -10,7 +10,7 @@ import { cn } from "@/lib/utils";
 
 const HEADLINE = "The infrastructure behind music's next brands.";
 const SUBHEAD =
-  "You bring the music. We build everything else. AI-powered characters, automated content, and real engagement — at scale.";
+  "We build and run artist brands, curator accounts, and influencer pages — generating content, growing audiences, and driving real engagement across TikTok, YouTube, Shorts, and Facebook.";
 
 export default function Hero() {
   const reduced = useReducedMotion();
@@ -18,7 +18,6 @@ export default function Hero() {
   const sectionRef = useRef<HTMLElement>(null);
   const headlineRootRef = useRef<HTMLDivElement>(null);
   const subRef = useRef<HTMLParagraphElement>(null);
-  const emailHintRef = useRef<HTMLParagraphElement>(null);
   const ctaRef = useRef<HTMLDivElement>(null);
   const fineRef = useRef<HTMLParagraphElement>(null);
 
@@ -34,7 +33,6 @@ export default function Hero() {
     const section = sectionRef.current;
     const headlineRoot = headlineRootRef.current;
     const sub = subRef.current;
-    const emailHint = emailHintRef.current;
     const cta = ctaRef.current;
     const fine = fineRef.current;
     if (!section || !headlineRoot) return;
@@ -60,11 +58,8 @@ export default function Hero() {
       if (sub) {
         tl.to(sub, { opacity: 1, y: 0, duration: 0.55 }, "+=0.25");
       }
-      if (emailHint) {
-        tl.to(emailHint, { opacity: 1, y: 0, duration: 0.45 }, "+=0.15");
-      }
       if (cta) {
-        tl.to(cta, { opacity: 1, y: 0, duration: 0.45 }, "+=0.15");
+        tl.to(cta, { opacity: 1, y: 0, duration: 0.45 }, "+=0.2");
       }
       if (fine) {
         tl.to(fine, { opacity: 1, y: 0, duration: 0.4 }, "+=0.2");
@@ -124,21 +119,10 @@ export default function Hero() {
             {SUBHEAD}
           </p>
 
-          <p
-            ref={emailHintRef}
-            className={cn(
-              "mt-6 max-w-lg text-sm leading-relaxed text-gray-500 md:text-base",
-              reduced && "opacity-100",
-            )}
-          >
-            Leave your email. If it&apos;s a fit, we&apos;ll reach out with a custom proposal before
-            launch.
-          </p>
-
           <div
             id="early-access"
             ref={ctaRef}
-            className={cn("mt-6 scroll-mt-28", reduced && "opacity-100")}
+            className={cn("mt-8 scroll-mt-28", reduced && "opacity-100")}
           >
             <EarlyAccessForm variant="light" />
           </div>

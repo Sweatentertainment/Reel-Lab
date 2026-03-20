@@ -24,22 +24,18 @@ export default function BookCallSection() {
         className="relative z-10 mx-auto max-w-3xl px-4 text-center md:px-6"
       >
         <p className="text-sm font-medium uppercase tracking-[0.12em] text-gray-500">
-          Ready to build?
+          Interested?
         </p>
         <h2 className="mt-4 text-3xl font-bold tracking-tight text-gray-900 md:text-4xl">
-          Let&apos;s scope your brand.
+          Register your interest.
         </h2>
         <p className="mx-auto mt-6 max-w-xl text-lg leading-relaxed text-gray-600">
-          Tell us your genre, timeline, and goals. We&apos;ll map out exactly what reel:lab can
-          build for you — no commitment, no pitch deck, just a straight conversation.
+          Leave your email and we&apos;ll be in touch before launch to discuss what reel:lab can
+          build for you.
         </p>
 
-        <div className="mt-10 flex flex-col items-center gap-3">
+        <div className="mt-10 flex justify-center">
           <EarlyAccessForm variant="light" className="mx-auto max-w-md justify-center" />
-          <p className="text-sm text-gray-400">
-            Leave your email. If it&apos;s a fit, we&apos;ll reach out with a custom proposal before
-            launch.
-          </p>
         </div>
       </motion.div>
     </section>

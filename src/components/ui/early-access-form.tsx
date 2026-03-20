@@ -116,13 +116,9 @@ export function EarlyAccessForm({ variant, className, disabled }: EarlyAccessFor
 
       setStatus("success");
       if (data.message === "already_subscribed") {
-        setFeedback(
-          "You're already on the list. If it's a fit, we'll reach out with a custom proposal before launch.",
-        );
+        setFeedback("You're already registered. We'll be in touch before launch.");
       } else {
-        setFeedback(
-          "You're on the list. If it's a fit, we'll reach out with a custom proposal before launch.",
-        );
+        setFeedback("Thanks — we'll be in touch before launch.");
       }
       form.reset();
     } catch {
@@ -195,7 +191,7 @@ export function EarlyAccessForm({ variant, className, disabled }: EarlyAccessFor
           )}
         />
         <ShimmerSubmitButton disabled={locked}>
-          {busy ? "Sending…" : "Get Early Access"}
+          {busy ? "Sending…" : "Register Interest"}
         </ShimmerSubmitButton>
       </form>
       {status === "error" && feedback ? (
