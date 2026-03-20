@@ -41,7 +41,7 @@ export default function Hero() {
       const headlineInners =
         headlineRoot.querySelectorAll<HTMLElement>(".hero-headline-inner");
       gsap.set(headlineInners, { yPercent: 110, opacity: 0 });
-      gsap.set([sub, emailHint, cta, fine].filter(Boolean), { opacity: 0, y: 14 });
+      gsap.set([sub, cta, fine].filter(Boolean), { opacity: 0, y: 14 });
 
       const tl = gsap.timeline({ defaults: { ease: "power3.out" } });
 
