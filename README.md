@@ -1,36 +1,52 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# reel:lab
 
-## Getting Started
+Marketing landing for **reel:lab** — Next.js (App Router), TypeScript, Tailwind CSS v4, GSAP + ScrollTrigger, Lenis, Framer Motion.
 
-First, run the development server:
+## Setup
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Brand assets (`/content` → optimised output)
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+1. Put **PNG** character stills and **MP4** loops in **`/content`** at the project root (see `src/lib/assets.ts` for expected base names).
+2. Install **ffmpeg** if needed: `brew install ffmpeg`
+3. Run:
 
-## Learn More
+```bash
+npm run optimize:assets
+```
 
-To learn more about Next.js, take a look at the following resources:
+This runs **`scripts/optimize-assets.sh`**, which:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- Writes **`public/images/characters/*.jpg`** (max 800px wide, JPEG, targets ≤200KB).
+- Writes **`public/videos/characters/*.mp4`** (H.264, CRF 28, max 480px wide, `faststart`, targets ≤3MB).
+- Recompresses existing **`public/images/*.{jpg,png}`** (hero, lifestyle, destination, etc.) the same way.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Character manifest and paths: **`src/lib/assets.ts`**. Optional salt-flat still: add `salt_flat.png` to `/content`, run the script → `public/images/characters/salt_flat.jpg` (already referenced in `saltFlatCharacter`).
 
-## Deploy on Vercel
+**Site images** (non-characters):
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+| File | Section |
+|------|---------|
+| `01_hero_dj.jpg` | Hero |
+| `02_lifestyle_swim.jpg` | What Is |
+| `03_destination_como.jpg` | Mood Network mosaic |
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Add **`public/og-image.png`** (1200×630) for social sharing. Set `NEXT_PUBLIC_SITE_URL` for production metadata (defaults to `https://reellab.com` in code).
+
+### Video performance (runtime)
+
+- Global cap: **4** in-view video tiles, **3** playing at once (`VideoBudgetProvider` + `ManagedCharacterMedia`).
+- Videos use `preload="none"` until near-viewport, then `metadata`; play/pause via `IntersectionObserver`.
+
+## Scripts
+
+- `npm run dev` — dev server (Turbopack)
+- `npm run build` — production build
+- `npm run lint` — ESLint
+- `npm run optimize:assets` — compress `/content` + site images (requires **ffmpeg**)
