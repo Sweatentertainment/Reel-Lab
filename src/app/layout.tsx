@@ -24,9 +24,17 @@ const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://reellab.com";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
-  title: "reel:lab — AI Music Brand Infrastructure",
-  description:
-    "You bring the music. We build everything else. reel:lab is the AI infrastructure behind the world's next music brands. Launching May 2026.",
+  title: "Reel:lab — AI Music Brand Infrastructure",
+  description: "You bring the music. We build everything else.",
+  icons: {
+    icon: [
+      { url: "/favicon.ico", sizes: "32x32" },
+      { url: "/favicon.svg", type: "image/svg+xml" },
+      { url: "/icon-192.png", sizes: "192x192", type: "image/png" },
+      { url: "/icon-512.png", sizes: "512x512", type: "image/png" },
+    ],
+    apple: "/apple-touch-icon.png",
+  },
   openGraph: {
     title: "reel:lab — You bring the music. We build everything else.",
     description:

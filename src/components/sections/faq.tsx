@@ -10,19 +10,19 @@ import { cn } from "@/lib/utils";
 const items = [
   {
     q: "What is reel:lab?",
-    a: "reel:lab is AI-powered brand infrastructure for music. We build and run artist brands, curator brands, UGC accounts, and influencer accounts — generating content, growing audiences, and driving real engagement across TikTok, YouTube, Shorts, and Facebook. You bring the music. We build everything else.",
+    a: "reel:lab is AI-powered brand infrastructure for music. We build and run artist brands, curator brands, UGC accounts, and influencer accounts — generating content, growing audiences, and driving real engagement across TikTok, YouTube, YouTube Shorts, Facebook, and Instagram Reels. You bring the music. We build everything else.",
   },
   {
     q: "Who is this for?",
-    a: "Labels, managers, distributors, and independent artists who want to scale their presence without hiring a full social media team. Whether you have one artist or fifty, the system is built to run multiple brands simultaneously.",
+    a: "Producers who make the music but don't want to be the face. Labels who want to build curator channels that actually grow. Managers who see branded content accounts as the next revenue stream. Artists who'd rather put their time into music and not socials — this makes that possible. If you've ever thought about building an engaging music brand but didn't have the infrastructure to run it, that's exactly what this is for.",
   },
   {
     q: "How does the AI content work?",
-    a: "Every piece of content starts from the music — not a template. The system analyses tracks for emotional signals, maps mood to visual language, and generates on-screen text, captions, and video edits that feel native to each platform. Multiple variants are tested and the best performers are scaled.",
+    a: "Every piece of content starts from the music — not a template. The system analyses tracks for emotional signals, maps mood to visual language, and generates on-screen text, captions, and video edits that feel native to each platform. Multiple variants are generated and tested — the best performers are scaled organically, with optional paid amplification across platforms if you want to accelerate.",
   },
   {
     q: "What platforms do you post to?",
-    a: "TikTok, YouTube, YouTube Shorts, and Facebook as standard. Instagram Reels is available as an add-on.",
+    a: "TikTok, YouTube, YouTube Shorts, Facebook and Instagram Reels are all possible.",
   },
   {
     q: "Can I customise the character?",
@@ -38,11 +38,19 @@ const items = [
   },
   {
     q: "Is the content obviously AI-generated?",
-    a: "No. The system is specifically built to avoid generic AI content. Emotional content generation starts from lyric analysis and mood mapping, not templates. Account warm-up ensures platforms treat accounts as genuine presences. The goal is content that resonates, not content that posts.",
+    a: "The characters are AI-generated — and we're transparent about that. But the content itself is built to feel crafted, not churned out. Every piece starts from the music — lyric analysis, emotional mapping, mood-driven visuals — not generic templates. The difference between AI slop and what we do is the same difference between a stock photo and a Pixar frame. Both are made with software. One has a soul.",
   },
   {
     q: "How is this different from hiring a social media manager?",
     a: "A social media manager handles one account manually. reel:lab runs multiple accounts simultaneously, generates content from emotional and lyrical analysis, automates warm-up and engagement, conducts daily trending research in your genre, and tracks performance across all accounts in real time. The system scales. A person doesn't.",
+  },
+  {
+    q: "Do you create deepfakes or realistic human models?",
+    a: "No — and we never will. We don't think it's right to trick people. Every reel:lab character is a clearly fictional, designed identity — closer to a Gorillaz member than a fake influencer. No real faces, no voice clones, no deception. If it looks like a person, it's not us.",
+  },
+  {
+    q: "How do you see what you're building?",
+    a: "We see this as a new form of entertainment — not a shortcut. AI characters are the next stage of CGI, animation, and creative storytelling. Think of it more like creating a TV character than gaming an algorithm. The brands we build have personality, narrative, and a genuine audience relationship. This is about freeing artists and labels to create, not replacing anyone.",
   },
   {
     q: "When does reel:lab launch?",

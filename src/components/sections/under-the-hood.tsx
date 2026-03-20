@@ -38,7 +38,7 @@ const stages = [
     n: "04",
     title: "Distribution",
     body: "Simultaneous multi-platform posting with platform-specific optimisation. Official audio integration where available.",
-    stat: "4 platforms, continuous",
+    stat: "5 platforms, continuous",
     visual: "share" as const,
   },
   {

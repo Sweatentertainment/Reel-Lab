@@ -10,7 +10,7 @@ import { cn } from "@/lib/utils";
 
 const HEADLINE = "The infrastructure behind music's next brands.";
 const SUBHEAD =
-  "We build and run artist brands, curator accounts, and influencer pages — generating content, growing audiences, and driving real engagement across TikTok, YouTube, Shorts, and Facebook.";
+  "We build and run artist brands, curator accounts, and influencer pages — generating content, growing audiences, and driving real engagement across TikTok, YouTube, YouTube Shorts, Facebook, and Instagram Reels.";
 
 export default function Hero() {
   const reduced = useReducedMotion();
