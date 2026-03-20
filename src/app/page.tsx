@@ -18,8 +18,8 @@ export default function Home() {
       <ProductDemo />
       <CharacterGallery />
       <UnderTheHood />
-      <BookCallSection />
       <MoodNetwork />
+      <BookCallSection />
       <FAQ />
       <FooterCTA />
     </main>

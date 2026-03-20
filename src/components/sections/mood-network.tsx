@@ -2,7 +2,6 @@
 
 import { useMemo } from "react";
 import { motion, useReducedMotion as useFramerReduced } from "framer-motion";
-import { EarlyAccessForm } from "@/components/ui/early-access-form";
 import { getMoodNetworkMosaicCharacters, type CharacterEntry } from "@/lib/assets";
 import { ManagedCharacterMedia } from "@/components/managed-character-media";
 import { cn } from "@/lib/utils";
@@ -60,13 +59,6 @@ export default function MoodNetwork() {
             amplify momentum across platforms. Available standalone or layered on top of any
             reel:lab brand.
           </p>
-          <p className="mt-6 text-sm leading-relaxed text-text-secondary md:text-base">
-            Leave your email. If it&apos;s a fit, we&apos;ll reach out with a custom proposal before
-            launch.
-          </p>
-          <div className="mt-4">
-            <EarlyAccessForm variant="light" />
-          </div>
         </div>
 
         <div className="grid grid-cols-3 gap-3 md:gap-4">
