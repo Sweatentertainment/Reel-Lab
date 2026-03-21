@@ -53,6 +53,10 @@ const items = [
     a: "We see this as a new form of entertainment — not a shortcut. AI characters are the next stage of CGI, animation, and creative storytelling. Think of it more like creating a TV character than gaming an algorithm. The brands we build have personality, narrative, and a genuine audience relationship. This is about freeing artists and labels to create, not replacing anyone.",
   },
   {
+    q: "What about the environmental impact of AI?",
+    a: "We take it seriously. Reel:lab contributes 1% of all revenue to carbon removal through Stripe Climate — funding direct air capture, biochar, and enhanced weathering projects. At our current scale that's estimated to remove 10 to 40x our actual AI operational footprint. As we grow and compute usage scales, we'll revisit and increase that commitment. It's auditable, automatic, and built into the business from day one — not bolted on later.",
+  },
+  {
     q: "When does reel:lab launch?",
     a: "May 2026. We're registering interest from a limited number of launch partners.",
   },

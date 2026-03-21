@@ -2,6 +2,7 @@
 
 import { motion, useReducedMotion as useFramerReduced } from "framer-motion";
 import { EarlyAccessForm } from "@/components/ui/early-access-form";
+import { NumberTicker } from "@/components/ui/number-ticker";
 
 export default function BookCallSection() {
   const reduce = useFramerReduced();
@@ -37,6 +38,13 @@ export default function BookCallSection() {
         <div className="mt-10 flex justify-center">
           <EarlyAccessForm variant="light" className="mx-auto max-w-md justify-center" />
         </div>
+
+        <p className="mt-3 flex items-center justify-center gap-2 text-sm font-medium text-gray-500">
+          <span className="h-1.5 w-1.5 rounded-full bg-amber-500" aria-hidden />
+          Only{" "}
+          <NumberTicker value={19} className="font-semibold tabular-nums text-gray-900" /> launch
+          slots remaining.
+        </p>
       </motion.div>
     </section>
   );
