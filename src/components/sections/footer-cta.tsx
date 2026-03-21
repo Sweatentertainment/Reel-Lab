@@ -22,7 +22,7 @@ export default function FooterCTA() {
           </div>
 
           <h2 className="mt-8 text-4xl font-bold tracking-tight text-gray-900 md:text-5xl">
-            Launching May 2026.
+            Launching June 2026.
           </h2>
 
           <p className="mx-auto mt-4 max-w-md text-lg text-gray-500">

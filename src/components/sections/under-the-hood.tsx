@@ -10,8 +10,6 @@ import { cn } from "@/lib/utils";
 import { AssetImage } from "@/components/ui/asset-image";
 import { pipelineFanCharacterImage } from "@/lib/assets";
 
-const DEAD_RATIO = 0.12;
-
 const stages = [
   {
     n: "01",
@@ -189,15 +187,15 @@ export default function UnderTheHood() {
   const isMd = useMediaQuery("(min-width: 768px)");
   const sectionRef = useRef<HTMLElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
-  const trackRef = useRef<HTMLDivElement>(null);
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
   const lineRef = useRef<SVGPathElement>(null);
 
   useEffect(() => {
     if (typeof window === "undefined" || reduced || !isMd) return;
     const section = sectionRef.current;
     const container = containerRef.current;
-    const track = trackRef.current;
-    if (!section || !container || !track) return;
+    const scrollContainer = scrollContainerRef.current;
+    if (!section || !container || !scrollContainer) return;
 
     let tl: gsap.core.Timeline | null = null;
 
@@ -206,22 +204,25 @@ export default function UnderTheHood() {
         tl?.scrollTrigger?.kill();
         tl?.kill();
 
-        const moveDist = Math.max(0, track.scrollWidth - container.clientWidth);
+        const overflow = containerRef.current;
+        const track = scrollContainerRef.current;
         const line = lineRef.current;
-        const endScroll = moveDist / (1 - DEAD_RATIO) + window.innerHeight * 0.5;
+        if (!overflow || !track) return;
+
+        const scrollWidth = Math.max(0, track.scrollWidth - overflow.clientWidth);
 
         tl = gsap.timeline({
           scrollTrigger: {
             trigger: section,
             start: "top top",
-            end: () => `+=${endScroll}`,
+            end: () => `+=${scrollWidth + window.innerHeight}`,
             pin: true,
             scrub: 1,
             anticipatePin: 1,
             invalidateOnRefresh: true,
             onUpdate: (self) => {
               const p = self.progress;
-              const moveP = p <= DEAD_RATIO ? 0 : (p - DEAD_RATIO) / (1 - DEAD_RATIO);
+              const moveP = p <= 0.15 ? 0 : p >= 0.85 ? 1 : (p - 0.15) / 0.7;
               if (line) {
                 const len = line.getTotalLength();
                 line.style.strokeDasharray = `${len}`;
@@ -231,11 +232,9 @@ export default function UnderTheHood() {
           },
         });
 
-        tl.fromTo(track, { x: 0 }, { x: 0, duration: DEAD_RATIO, ease: "none" }).to(track, {
-          x: -moveDist,
-          duration: 1 - DEAD_RATIO,
-          ease: "none",
-        });
+        tl.to(track, { x: 0, duration: 0.15 })
+          .to(track, { x: -scrollWidth, duration: 0.7, ease: "none" })
+          .to(track, { x: -scrollWidth, duration: 0.15 });
       };
 
       build();
@@ -293,7 +292,10 @@ export default function UnderTheHood() {
             />
           </svg>
           <div ref={containerRef} className="overflow-hidden pl-8 md:pl-16 lg:pl-24">
-            <div ref={trackRef} className="flex w-max gap-6 pt-6 pr-8 md:pr-16 lg:pr-24">
+            <div
+              ref={scrollContainerRef}
+              className="flex w-max gap-6 pt-6 pr-8 md:pr-16 lg:pr-24"
+            >
               {stages.map((s) => (
                 <StageCard key={s.n} stage={s} />
               ))}

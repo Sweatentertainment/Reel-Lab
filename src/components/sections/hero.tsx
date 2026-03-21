@@ -131,7 +131,7 @@ export default function Hero() {
             ref={fineRef}
             className={cn("mt-4 text-sm text-gray-400", reduced && "opacity-100")}
           >
-            Launching May 2026.
+            Launching June 2026.
           </p>
         </div>
 

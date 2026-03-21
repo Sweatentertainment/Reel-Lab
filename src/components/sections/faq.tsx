@@ -58,7 +58,7 @@ const items = [
   },
   {
     q: "When does reel:lab launch?",
-    a: "May 2026. We're registering interest from a limited number of launch partners.",
+    a: "June 2026. We're registering interest from a limited number of launch partners.",
   },
 ];
 
