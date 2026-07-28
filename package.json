@@ -9,7 +9,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "optimize:assets": "bash scripts/optimize-assets.sh && node scripts/build-assets-manifest.mjs"
+    "optimize:assets": "bash scripts/optimize-assets.sh && node scripts/build-assets-manifest.mjs",
+    "test:motion-pace": "node --test tools/motion-pace/*.test.mjs"
   },
   "dependencies": {
     "@gsap/react": "^2.1.2",
