@@ -8,12 +8,12 @@
 -- Context (measured 2026-07-28 on 388 active lessons / 1,924 generations):
 --   * 191 global + 193 account lessons, all status='active', all distinct text.
 --     ~100k characters of free prose concatenated into every prompt build.
---   * 42 lessons say "be faster" in 42 different ways. None supersede each
+--   * ~40 lessons say "be faster" in ~40 different ways. None supersede each
 --     other, so the instruction is diluted, not reinforced.
---   * 68 active lessons contain slow vocabulary in their own remedy text
---     ("always include a slow deliberate camera move", "creeping dolly",
---     "gentle crane rise"). Those tokens land in the prompt and the video model
---     reads them literally.
+--   * 67 active lessons contain slow vocabulary in their own remedy text. Most
+--     are correct guidance that merely names what it warns against; only 2
+--     actually prescribe slow camera movement. See step 4 — the distinction
+--     matters, and conflating them destroys good lessons.
 --   * After the 140-lesson batch written on 2026-07-27 — mostly "too slow
 --     paced" and "boring" feedback — slow-worded camera clauses went from
 --     13.9% to 48.6% of prompts. The loop was running with the wrong sign.
@@ -67,32 +67,51 @@ CREATE INDEX IF NOT EXISTS learned_lessons_active_idx
   WHERE status = 'active';
 
 -- ---------------------------------------------------------------------------
--- 4. Retire the self-poisoning lessons.
---    Their intent (add camera movement, add energy) is preserved by the typed
---    controls in step 5 and by pace-lint at emit time. Reversible: set
---    status='active', retired_at=NULL to restore.
+-- 4. Retire ONLY the lessons that prescribe slow camera movement.
+--
+--    A first pass at this retired every lesson containing slow vocabulary (67
+--    rows) and every lesson derived from pace-or-boring feedback (172 rows).
+--    Both were wrong. Reading the actual rows:
+--
+--      * Of the 9 lessons that mention a camera alongside slow vocabulary, only
+--        2 PRESCRIBE slowness. The other 7 are correct anti-slow guidance that
+--        merely names the thing it is warning against ("never default to a
+--        static tripod shot of a sedan gently rolling forward"). Retiring those
+--        would delete the very lessons that were right.
+--      * Of the 172 matched by pace-or-boring feedback, 144 are about
+--        composition and framing ("every frame must contain visible tension"),
+--        not pace at all.
+--
+--    So: retire the 2 that actively instruct the model to move slowly. Token
+--    leakage from the remaining correct-but-slow-worded lessons is handled at
+--    the emit boundary by pace-lint, which is the right layer for it — that
+--    keeps the guidance and drops only the vocabulary.
+--
+--    Reversible: set status='active', retired_at=NULL to restore.
 -- ---------------------------------------------------------------------------
 UPDATE learned_lessons
 SET status         = 'retired',
     retired_at     = now(),
-    retired_reason = 'slow vocabulary in remedy text reached the video model verbatim'
+    retired_reason = 'prescribed slow camera movement; superseded by typed camera_energy control'
 WHERE status = 'active'
-  AND lesson ~* '\y(slow|slowly|gentle|gently|subtle|subtly|drift|drifting|creep|creeping|gradual|gradually|languid|leisurely|unhurried|imperceptible)\y';
+  AND id IN (
+    -- "always include a slow deliberate camera move (creeping dolly, gentle
+    --  crane rise, or drifting lateral track)"
+    'b7402044-2414-4fb9-b9d9-8498c93e4738',
+    -- "always include a deliberate camera move — e.g. a slow orbit, crane lift,
+    --  or dolly push"
+    '371fa330-4a8f-49ba-9f3b-866ee13f30e8'
+  );
 
 -- ---------------------------------------------------------------------------
--- 5. Replace 42 prose variations of "be faster" with two typed controls.
+-- 5. Add typed controls that outrank the prose.
 --    Typed controls are enforceable by code and cannot leak vocabulary into the
 --    prompt. The prompt writer reads `controls`; the prose `lesson` is only for
---    humans reading the table.
+--    humans reading the table. These sort first in the ranked view (step 6), so
+--    they lead rather than compete with the ~40 prose lessons about pace —
+--    which stay active, since each carries account-specific nuance worth
+--    keeping now that injection is capped.
 -- ---------------------------------------------------------------------------
-UPDATE learned_lessons
-SET status         = 'retired',
-    retired_at     = now(),
-    retired_reason = 'superseded by typed pace controls'
-WHERE status = 'active'
-  AND target = 'visuals'
-  AND (feedback ~* '\y(slow|slower|pace|paced|boring)\y' OR lesson ~* '\y(pace|paced|tempo|front-load|front load|compress)\y');
-
 INSERT INTO learned_lessons (scope, target, lesson, feedback, status, controls)
 VALUES
   ('global', 'visuals',

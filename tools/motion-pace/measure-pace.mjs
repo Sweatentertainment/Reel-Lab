@@ -29,18 +29,41 @@ import { spawn } from 'node:child_process';
 import { basename } from 'node:path';
 
 /**
- * Defaults are a starting point, NOT a calibrated truth. Run --calibrate over a
- * folder of clips you consider correctly paced and a folder you rejected as
- * slow, then set these to sit between the two distributions.
+ * Defaults are a starting point, NOT a calibrated truth. Scene busyness moves
+ * the absolute numbers a lot — a crowded club shot reads higher than a portrait
+ * at the same pace. Run --calibrate over a folder of clips you consider
+ * correctly paced and a folder you rejected as slow, then set these to sit
+ * between the two distributions.
+ *
+ * Reference points on this scale, from the synthetic fixtures (same content,
+ * different playback speed): normal pace 2.16, 2x slow 1.10, 4x slow 0.55.
  */
 export const DEFAULT_THRESHOLDS = {
-  minMotionEnergy: 3.0, // mean inter-frame difference across the clip
-  minHookEnergy: 3.5, // same, over the first second — short-form lives or dies here
-  maxDeadFrameRatio: 0.35, // share of frames with almost no change at all
-  deadFrameLevel: 1.0, // what counts as "almost no change"
+  minMotionEnergy: 1.5, // mean inter-frame difference across the clip
+  minHookEnergy: 1.5, // same, over the first second — short-form lives or dies here
+  maxDeadFrameRatio: 0.5, // share of frames with almost no change at all
+  deadFrameLevel: 0.3, // what counts as "almost no change"
 };
 
-const FILTER = 'scale=192:-2,format=gray,tblend=all_mode=difference,signalstats,metadata=print:file=-';
+/**
+ * Filter chain. The denoise and downscale are not incidental — film grain is
+ * temporally uncorrelated, so naive frame differencing counts it as motion.
+ * Measured on a static grainy clip vs a moving one:
+ *
+ *   scale=192,gray                    static-grainy 3.25  moving 0.90   (inverted)
+ *   scale=96,gray,hqdn3d,gblur        static-grainy 0.07  moving 0.93   (13.8x apart)
+ *
+ * With reel:lab's heavy 16mm grain house style the naive chain rated a
+ * 4x-slowed grainy clip above a full-speed clean one. hqdn3d strips the
+ * temporal noise; the downscale removes what is left of the high-frequency
+ * grain. The cost is sensitivity to very small moving objects, which matters
+ * far less than being wrong about grain.
+ */
+const FILTER =
+  'scale=96:-2,format=gray,hqdn3d=4:4:12:12,gblur=sigma=0.8,tblend=all_mode=difference,signalstats,metadata=print:file=-';
+
+/** Aim this far above the floor when suggesting a retime factor. */
+const RETIME_HEADROOM = 1.2;
 
 function runFfmpeg(input) {
   return new Promise((resolve, reject) => {
@@ -115,9 +138,16 @@ export function summarise(samples, thresholds = DEFAULT_THRESHOLDS) {
     deadFrameRatio: Number(deadFrameRatio.toFixed(3)),
     verdict: reasons.length ? 'slow' : 'ok',
     reasons,
-    /** Speed factor that would bring this clip up to the motion-energy floor. */
+    /**
+     * Speed factor that would bring this clip up to the motion-energy floor.
+     *
+     * Energy scales close to linearly with playback speed, but slightly
+     * sub-linearly in practice (measured: 1.15 retimed 1.3x landed at 1.48, not
+     * 1.50). Without headroom the "fixed" clip fails the same check that asked
+     * for the fix, so aim above the floor rather than exactly at it.
+     */
     suggestedRetime: Number(
-      Math.min(2.5, Math.max(1, thresholds.minMotionEnergy / Math.max(motionEnergy, 0.01))).toFixed(2),
+      Math.min(2.5, Math.max(1, (thresholds.minMotionEnergy * RETIME_HEADROOM) / Math.max(motionEnergy, 0.01))).toFixed(2),
     ),
   };
 }

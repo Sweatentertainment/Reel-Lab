@@ -135,16 +135,34 @@ separate score for the first second (short-form lives or dies on the hook).
 
 ```bash
 node tools/motion-pace/measure-pace.mjs render.mp4
-# ✖ render.mp4  energy 1.84  hook 0.42  dead 61%  16.0s
-#     slow: motionEnergy 1.84 < 3.0; hookEnergy 0.42 < 3.5  → retime 1.63x
+# ✖ render.mp4  energy 1.15  hook 1.03  dead 50%  11.9s
+#     slow: motionEnergy 1.15 < 1.5; hookEnergy 1.03 < 1.5  → retime 1.57x
 ```
 
 Store `motionEnergy` and `hookEnergy` on `video_generations`. That single column
 is what makes feedback count: slow clips get rejected before a human sees them,
 and a lesson can finally be evaluated by whether it moved the number.
 
-**Calibrate the thresholds before trusting them.** The defaults are a starting
-point, not a measured truth:
+**The grain problem.** Film grain is temporally uncorrelated, so naive frame
+differencing counts it as motion — and reel:lab's house look is heavy 16mm
+grain. Measured on identical content at different playback speeds:
+
+| clip | grain-robust chain | naive chain |
+|---|---|---|
+| normal pace | 2.16 | 2.77 |
+| 2x slowed | 1.10 | 1.39 |
+| 4x slowed | 0.55 | 0.70 |
+| normal pace **+ grain** | 2.21 | 5.26 |
+| 4x slowed **+ grain** | 0.62 | **3.26** |
+
+The naive chain rates a 4x-slowed grainy clip (3.26) above a full-speed clean
+one (2.77) — it would pass exactly the clips you are trying to catch. The
+shipped chain denoises with `hqdn3d` and downscales hard before differencing,
+which makes the score grain-invariant (2.16 vs 2.21) and linear in pace. The
+cost is sensitivity to very small moving objects, which matters far less.
+
+**Still calibrate the thresholds.** Absolute values depend on how busy the scene
+is — a crowded club shot reads higher than a portrait at the same pace:
 
 ```bash
 node tools/motion-pace/measure-pace.mjs --calibrate approved/*.mp4
@@ -153,21 +171,33 @@ node tools/motion-pace/measure-pace.mjs --calibrate rejected-as-slow/*.mp4
 
 Set the threshold between the two medians.
 
-### 5. Make lessons typed and bounded — `lesson-hygiene.sql`
+### 5. Make lessons typed and bounded — `lesson-hygiene.sql` *(applied)*
 
-- retires the 68 lessons whose remedy text carries slow vocabulary
-- collapses 42 prose variants of "be faster" into two typed controls
-  (`pace_target`, `max_beats`, `first_action_by_s`, `forbid_tokens`) that code
-  can enforce and that cannot leak vocabulary into a prompt
-- adds `hits` so repeated feedback reinforces one lesson instead of creating a
-  new one, and `effect_score` so a lesson that never moves the pace metric can
-  be retired automatically
-- adds `active_lessons_ranked` so the builder injects the top N rather than all
-  388
+Retiring lessons in bulk turned out to be the wrong instinct, and the first
+draft of this file did it. Reading the rows changed the plan:
 
-**Review this before running — it edits production data.** Steps 0–2 are
-read-only audits; run those first. Nothing is deleted, only retired, so every
-change reverses with an `UPDATE`.
+- of the 9 lessons naming a camera alongside slow vocabulary, only **2**
+  prescribe slowness — the other 7 are *correct* anti-slow guidance that merely
+  names what it warns against ("never default to a static tripod shot of a sedan
+  gently rolling forward")
+- of the 172 lessons matched by pace-or-boring feedback, **144 are about
+  composition**, not pace
+
+So the applied migration is surgical: it retires the 2 prescriptive-slow
+lessons, adds non-slow replacements preserving their per-account intent, and
+adds two global typed controls (`pace_target`, `max_beats`, `camera_energy`,
+`forbid_tokens`) that rank above all prose. Everything else stays active —
+token leakage from correct-but-slow-worded lessons is handled at the emit
+boundary by pace-lint, which keeps the guidance and drops only the vocabulary.
+
+It also adds `hits` so repeated feedback reinforces one lesson instead of
+creating a new one, `effect_score` so a lesson that never moves the pace metric
+can be retired automatically, and `active_lessons_ranked` so the builder injects
+the top N rather than all 390.
+
+Result: 390 active, 2 retired, 4 carrying typed controls, with the two global
+controls ranking #1 and #2. Nothing was deleted — every change reverses with an
+`UPDATE`.
 
 ### 6. Keep the retime escape hatch — `retime.mjs`
 
@@ -181,25 +211,47 @@ node tools/motion-pace/retime.mjs slow.mp4 fixed.mp4 --auto --smooth   # interpo
 ```
 
 With this in the pipeline, nothing slow has to ship regardless of how the prompt
-side is performing. Note that speeding up shortens the clip — 16s at 1.6x
-becomes 10s, usually an improvement for short-form, but check it against the
-edit's timing.
+side is performing. Verified end to end: a 2x-slowed grainy clip went from
+`motionEnergy 1.15` to `1.77` in one `--auto` pass and cleared the threshold.
+
+Two limits worth knowing:
+
+- Speeding up shortens the clip — 16s at 1.6x becomes 10s, usually an
+  improvement for short-form, but check it against the edit's timing.
+- The factor is clamped at 2.5x, so a clip more than ~2.5x too slow cannot be
+  rescued. A 4x-slowed fixture only reached 1.42 against a 1.5 floor and was
+  correctly still reported as slow — that is the signal to regenerate rather
+  than ship.
 
 ---
 
-## Expected effect
+## Status
 
-Steps 1–3 attack the ~80% of prompts that currently carry slow vocabulary and
-the duration anchor that stretches them. Step 6 catches whatever still comes
-back slow, deterministically. Steps 4–5 are what stop the problem returning: once
-pace is a number, a lesson that does not move it gets retired instead of
-accumulating.
+| Step | State |
+|---|---|
+| 1. `pace-lint` at the emit boundary | **built and tested — not yet wired in** (needs the pipeline app) |
+| 2. Stop naming the duration | covered by the lint; also remove from the template |
+| 3. Shorten the clips | **not done** — a pipeline decision |
+| 4. Measure every render | **built and verified**; thresholds need calibrating on real clips |
+| 5. Lesson hygiene | **applied to production** |
+| 6. Retime escape hatch | **built and verified end to end** |
 
-The honest caveat: the share of renders that are slow *because of the prompt* is
-inferred from prompt-text statistics, not from measured renders — nothing has
-ever measured them. Step 4 exists to replace that inference with data. Run the
-calibration over a batch of existing clips first; it will also give you the real
-baseline slow rate, which is currently unknown.
+Steps 1–3 attack the ~80% of prompts carrying slow vocabulary and the duration
+anchor that stretches them. Step 6 catches whatever still comes back slow.
+Steps 4–5 are what stop the problem returning: once pace is a number, a lesson
+that does not move it gets retired instead of accumulating.
+
+**The largest remaining gap is step 1.** The lint only helps once it sits at the
+fal call site, which lives in the pipeline app, not this repo. Until then the
+lessons that carry slow vocabulary in a negated context — deliberately left
+active, because they are correct — still leak those tokens into prompts.
+
+**Honest caveat on the baseline.** The share of renders that are slow *because
+of the prompt* is inferred from prompt-text statistics; nothing has ever measured
+the renders themselves, and the storage host is not reachable from CI. The
+verification above used synthetic fixtures with known ground truth. Run
+`--calibrate` over a batch of real clips first — that will give both the correct
+thresholds and the real baseline slow rate, which is still unknown.
 
 ---
 

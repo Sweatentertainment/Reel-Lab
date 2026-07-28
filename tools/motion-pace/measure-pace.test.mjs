@@ -71,12 +71,20 @@ test('suggested retime is clamped to a sane range', () => {
 });
 
 test('thresholds are overridable', () => {
-  const samples = parseMetadata(ffmpegOutput([255, ...Array(30).fill(2.0)]));
+  const samples = parseMetadata(ffmpegOutput([255, ...Array(30).fill(1.0)]));
   assert.equal(summarise(samples).verdict, 'slow');
   assert.equal(
-    summarise(samples, { ...DEFAULT_THRESHOLDS, minMotionEnergy: 1.0, minHookEnergy: 1.0 }).verdict,
+    summarise(samples, { ...DEFAULT_THRESHOLDS, minMotionEnergy: 0.5, minHookEnergy: 0.5 }).verdict,
     'ok',
   );
+});
+
+test('grain-robust scale: the documented pace reference points classify correctly', () => {
+  // Measured from fixtures of identical content at different playback speeds.
+  const atPace = (energy) => summarise(parseMetadata(ffmpegOutput([255, ...Array(90).fill(energy)]))).verdict;
+  assert.equal(atPace(2.163), 'ok', 'normal pace should pass');
+  assert.equal(atPace(1.095), 'slow', '2x slowed should fail');
+  assert.equal(atPace(0.554), 'slow', '4x slowed should fail');
 });
 
 test('empty input yields a slow verdict rather than a crash', () => {
