@@ -15,7 +15,7 @@ not re-invented:
 |---|---|
 | Manrope 700/800, `letter-spacing: -0.05em`, 11rem-class display type | `global.css`, `header.css` |
 | Black `#000`, heads `#c9c7c7`, blue `#0f65dd` / `#0c54b8` | `global.css` |
-| **Bent artist cards** — `perspective: 600px` + `rotateY(±30deg)` | `main.css` `.ntk-card`, `.ntk-gsap-perspective-*` |
+| **Bent artist cards** — `rotateY(±38deg)` at a long `1700px` perspective, so they turn further but lie flatter | `main.css` `.ntk-card`, `.ntk-gsap-perspective-*` |
 | **The line down the middle** — the actual SVG path, drawn on slide entry | `index.html`, `scripts/pathLine.js` |
 | **Colour blurs** — blue fields under `blur(120px)`, text resolving out of `blur(10px)` | `header.css` `.ntk-text--scroller`, `nav.css` |
 | Mono uppercase labels for artist names | `main.css` `.ntk-card__title` (Cousine) |
@@ -50,7 +50,14 @@ Applied from PJ's notes on the V3 thread:
 - Artist photography is run through `scripts/lens.mjs`, which bakes in the
   barrel bulge and RGB fringing the site gets from its WebGL shader. A shader
   can't survive a PDF export, so the maths is applied once, offline.
-- Dark slides are flat off-black plus grain — no gradient washes.
+- Dark slides are flat pure black with a fine, low film grain — no gradient
+  washes and no visible noise.
+- Slide 2 is laid out to Miguel's own measurements, taken off his slide and
+  scaled to the 1920 canvas: small scattered images, no captions, headline
+  running nearly edge to edge.
+- The spine is carried heavier than the site's (`2.4px`, higher contrast) so it
+  survives a projector, and takes an `dx` offset on split slides so it lands in
+  the gutter rather than through a column of text.
 - Offer updated: **$4,500 for three months, or $2,000 a month**, and moved
   ahead of the closing section title.
 - New closing slide on scaling and the multi-platform offer. The two tiers are

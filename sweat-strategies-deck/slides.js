@@ -18,20 +18,19 @@ export const SPINE_PATH =
 
 /* ---------------------------------------------------------- fragments */
 
-const spine = (mod = '') =>
-  `<div class="pathline ${mod}"><svg viewBox="0 0 120 1620" preserveAspectRatio="xMidYMid meet"><path d="${SPINE_PATH}"/></svg></div>`;
+/* dx nudges the spine off dead-centre so it lands in a slide's real gutter
+   rather than through a column of text */
+const spine = (mod = '', dx = 0) =>
+  `<div class="pathline ${mod}"${dx ? ` style="transform:translateX(${dx}px)"` : ''}><svg viewBox="0 0 120 1620" preserveAspectRatio="xMidYMid meet"><path d="${SPINE_PATH}"/></svg></div>`;
 
 const blobs = (list) =>
   list.map((b) => `<div class="blob blob--${b.k}" style="${b.pos}"></div>`).join('');
 
-/* a straight artist card — Miguel's grid treatment, no perspective */
-const flat = ({ src, name, w, h }) => `
-  <figure class="flat">
-    <figcaption class="flat__cap">${name}</figcaption>
-    <div style="width:${w}px;height:${h}px;overflow:hidden">
-      <img src="${img(src)}" alt="${name}">
-    </div>
-  </figure>`;
+/* a straight artist image, placed to Miguel's scatter — no perspective, no
+   caption, positions measured off his slide 2 and scaled to the 1920 canvas */
+const tile = ({ src, name, x, y, w, h }) => `
+  <img class="tile" src="${img(src)}" alt="${name}"
+       style="left:${x}px;top:${y}px;width:${w}px;height:${h}px">`;
 
 /* a bent artist card — site treatment: perspective 600px + rotateY(±30deg) */
 const bend = ({ src, name, w, h, right = false, soft = false, style = '' }) => `
@@ -66,22 +65,21 @@ export const SLIDES = [
     chrome: 'dark',
     grain: 'soft',
     html: `
-      <div class="pad" style="padding:92px var(--pad) 84px">
-        <div style="display:flex;justify-content:space-between;align-items:flex-start;height:300px">
-          ${flat({ src: 'artist__blondish__lens.jpg', name: 'Blond:Ish', w: 214, h: 252 })}
-          ${flat({ src: 'artist__dolores-forever__lens.jpg', name: 'Dolores Forever', w: 286, h: 224 })}
-          ${flat({ src: 'artist__rules__lens.jpg', name: 'Rules', w: 200, h: 244 })}
-          ${flat({ src: 'artist__the-knocks-compress__lens.jpg', name: 'The Knocks', w: 300, h: 228 })}
-        </div>
-        <div style="display:flex;align-items:center;height:266px">
-          <h1 class="display reveal" style="font-size:200px;color:#0b0b0d">FIND THE SONG.</h1>
-        </div>
-        <div style="display:flex;justify-content:space-between;align-items:flex-end;height:300px">
-          ${flat({ src: 'artist__thundercat__lens.jpg', name: 'Thundercat', w: 222, h: 258 })}
-          ${flat({ src: 'artist__disclosure__lens.jpg', name: 'Disclosure', w: 240, h: 250 })}
-          ${flat({ src: 'artist__kid-apollo-compress__lens.jpg', name: 'Kid Apollo', w: 208, h: 246 })}
-          ${flat({ src: 'artist__bonobo-compress__lens.jpg', name: 'Bonobo', w: 310, h: 236 })}
-        </div>
+      ${tile({ src: 'artist__blondish__lens.jpg', name: 'Blond:Ish', x: 183, y: 129, w: 145, h: 150 })}
+      ${tile({ src: 'artist__dolores-forever__lens.jpg', name: 'Dolores Forever', x: 490, y: 109, w: 268, h: 269 })}
+      ${tile({ src: 'artist__rules__lens.jpg', name: 'Rules', x: 874, y: 189, w: 173, h: 173 })}
+      ${tile({ src: 'Morly__lens.jpg', name: 'Morly', x: 1207, y: 145, w: 150, h: 147 })}
+      ${tile({ src: 'artist__the-knocks-compress__lens.jpg', name: 'The Knocks', x: 1508, y: 164, w: 237, h: 218 })}
+
+      ${tile({ src: 'artist__thundercat__lens.jpg', name: 'Thundercat', x: 183, y: 751, w: 239, h: 232 })}
+      ${tile({ src: 'the-listros__lens.jpg', name: 'The Listros', x: 567, y: 730, w: 147, h: 150 })}
+      ${tile({ src: 'artist__st-lundi__lens.jpg', name: 'St Lundi', x: 883, y: 774, w: 164, h: 173 })}
+      ${tile({ src: 'artist__disclosure__lens.jpg', name: 'Disclosure', x: 1169, y: 698, w: 265, h: 265 })}
+      ${tile({ src: 'artist__kid-apollo-compress__lens.jpg', name: 'Kid Apollo', x: 1626, y: 730, w: 119, h: 150 })}
+
+      <div style="position:absolute;left:49px;right:49px;top:382px;height:316px;z-index:20;display:flex;align-items:center">
+        <h1 class="display reveal"
+            style="font-size:222px;line-height:1;letter-spacing:-0.022em;white-space:nowrap;color:#0b0b0d">FIND THE SONG.</h1>
       </div>`,
   },
 
@@ -314,7 +312,7 @@ export const SLIDES = [
     section: 'The offer',
     grain: 'soft',
     html: `
-      ${spine()}
+      ${spine('', -280)}
       <div class="pad" style="display:grid;grid-template-columns:0.66fr 1.34fr;align-items:center;gap:86px">
         <div class="reveal" style="display:flex;align-items:center;justify-content:center">
           ${bend({ src: 'artist__kid-apollo-compress__lens.jpg', name: 'Kid Apollo', w: 420, h: 590 })}
@@ -362,7 +360,7 @@ export const SLIDES = [
     section: 'What happens next',
     grain: 'soft',
     html: `
-      ${spine()}
+      ${spine('', -148)}
       <div class="pad" style="display:grid;grid-template-columns:0.82fr 1.18fr;align-items:center;gap:90px">
         <div>
           <h2 class="display display--s reveal" style="line-height:1.02;margin-bottom:38px">

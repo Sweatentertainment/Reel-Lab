@@ -19,7 +19,7 @@ import { join } from 'node:path';
 const root = new URL('..', import.meta.url).pathname;
 const dir = join(root, 'assets/img');
 
-const K = -0.075;      // barrel: <0 bulges the middle outward
+const K = -0.115;     // barrel: <0 bulges the middle outward
 const FRINGE = 0.0115; // radial channel separation, red out / blue in
 
 const sources = readdirSync(dir).filter(
