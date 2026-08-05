@@ -62,7 +62,9 @@ Applied from PJ's notes on the V3 thread:
   Split into two: Harry T carries the 90-day numbers, and Cristoph gets his own
   slide with the Spacer chart and 0→20K daily streams in three weeks.
 - Offer updated: **$4,500 for three months, or $2,000 a month**, and moved
-  ahead of the closing section title.
+  ahead of the closing section title. The Grow it tier is re-priced to
+  **$2,500 a month, or $6,000 for three months**, which clears the collision
+  where it used to read at the same rate as the headline monthly price.
 - New closing slide on scaling and the multi-platform offer. The two tiers are
   Miguel's wording, moved off the old offer slide; the framing copy is new and
   needs a read before this goes to a client.
@@ -72,12 +74,6 @@ Applied from PJ's notes on the V3 thread:
 The Harry T slide is set as a stat block because the "4AM" Spotify for Artists
 screenshot isn't in the repo yet. Drop it in `assets/img/` and it can take the
 same chart treatment as the other two case studies.
-
-### One thing to check
-
-"**Grow it** — $2,000 a month" (slide 18) is the same number as the headline
-monthly rate on slide 16. They're on separate slides now, so it reads far less
-oddly, but the two still collide. Worth re-pricing one or dropping the tier.
 
 ## Regenerating the PDF
 

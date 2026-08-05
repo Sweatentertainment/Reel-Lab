@@ -396,7 +396,8 @@ export const SLIDES = [
             <div class="reveal" style="--d:.3s">
               <div class="tier">Grow it</div>
               <p class="body" style="font-size:23px;max-width:none">
-                $2,000 a month. YouTube and TikTok, plus we build your fan capture flow.
+                $2,500 a month, or $6,000 for three months. YouTube and TikTok,
+                plus we build your fan capture flow.
               </p>
             </div>
           </div>
