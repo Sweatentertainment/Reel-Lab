@@ -88,7 +88,6 @@ export const SLIDES = [
     section: 'The Problem',
     grain: true,
     html: `
-      ${spine()}
       <div class="pad l-centre">
         <h2 class="display display--m reveal"><span class="bracket">Most artists never find out</span></h2>
         <div class="dashbox reveal" style="--d:.35s;width:118px;height:118px;margin-top:96px;font-size:44px;font-weight:300;color:#fff">?</div>
@@ -105,7 +104,6 @@ export const SLIDES = [
         { k: 'c', pos: 'right:6%;top:-200px;opacity:.85' },
         { k: 'b', pos: 'left:32%;bottom:-420px;opacity:.6' },
       ])}
-      ${spine('pathline--blue')}
       <div class="pad l-end">
         <div style="display:grid;grid-template-columns:1.05fr 0.72fr;align-items:end;gap:150px">
           <h2 class="display reveal" style="font-size:64px;font-weight:700;letter-spacing:-0.035em;line-height:1.1">
@@ -130,7 +128,6 @@ export const SLIDES = [
         { k: 'a', pos: 'right:-220px;top:8%;opacity:.6' },
         { k: 'b', pos: 'left:-260px;bottom:-300px;opacity:.7' },
       ])}
-      ${spine('pathline--blue')}
       <div class="pad l-end">
         <h2 class="display reveal" style="font-size:142px;color:#fff;white-space:nowrap">In 90 days you'll know.</h2>
       </div>`,
@@ -168,7 +165,6 @@ export const SLIDES = [
         { k: 'c', pos: 'left:8%;top:-240px;opacity:.8' },
         { k: 'a', pos: 'right:-180px;bottom:-300px;opacity:.55' },
       ])}
-      ${spine('pathline--blue')}
       <div class="pad l-centre">
         <h2 class="display display--l reveal" style="color:#fff"><span class="bracket bracket--light">How we find it?</span></h2>
       </div>`,
@@ -240,20 +236,20 @@ export const SLIDES = [
     section: 'Reporting',
     grain: 'soft',
     html: `
-      <div class="pad" style="display:grid;grid-template-columns:0.68fr 1.32fr;align-items:center;gap:72px">
+      <div class="pad" style="display:grid;grid-template-columns:0.8fr 1.2fr;align-items:center;gap:110px">
         <div>
-          <h2 class="display display--s reveal" style="letter-spacing:-0.04em;line-height:1.24;margin-bottom:18px">
+          <h2 class="display reveal" style="font-size:56px;letter-spacing:-0.04em;line-height:1.28;margin-bottom:16px">
             <span class="hl">You'll see everything.</span>
           </h2>
-          <h2 class="display display--s reveal" style="--d:.12s;letter-spacing:-0.04em;line-height:1.1;color:var(--head);margin-bottom:44px">
+          <h2 class="display reveal" style="--d:.12s;font-size:56px;letter-spacing:-0.04em;line-height:1.12;color:var(--head);margin-bottom:40px">
             We mean everything.
           </h2>
-          <p class="body reveal" style="--d:.24s">
+          <p class="body reveal" style="--d:.24s;font-size:23px">
             Live dashboard, updated daily. Written status report every week.
             Full review every month where we go through what the data's saying and what we're doing about it.
           </p>
         </div>
-        <div class="shot reveal" style="--d:.32s">
+        <div class="shot reveal" style="--d:.32s;max-width:840px;justify-self:center">
           <img src="${img('dashboard.jpg')}" alt="Sweat.fm live dashboard">
         </div>
       </div>`,
@@ -264,19 +260,19 @@ export const SLIDES = [
     section: 'Case study: The Listros',
     grain: 'soft',
     html: `
-      <div class="pad l-split" style="align-items:center;gap:80px">
+      <div class="pad l-split" style="align-items:center;gap:120px">
         <div>
-          <div class="label reveal" style="margin-bottom:38px">Unlocking catalogue value</div>
-          <h2 class="display display--m reveal" style="--d:.1s;margin-bottom:44px">0 to 300K<br>monthly listeners.</h2>
-          <p class="body reveal" style="--d:.22s;max-width:540px">
+          <div class="label reveal" style="font-size:18px;margin-bottom:34px">Unlocking catalogue value</div>
+          <h2 class="display reveal" style="--d:.1s;font-size:70px;margin-bottom:38px">0 to 300K<br>monthly listeners.</h2>
+          <p class="body reveal" style="--d:.22s;font-size:23px;max-width:480px">
             Most artists ignore their catalogue. We found a track with algorithmic potential and scaled it
             systematically. Huge growth on modest spend.
           </p>
           <div class="reveal" style="--d:.34s;margin-top:64px">
-            ${bend({ src: 'the-listros__lens.jpg', name: 'The Listros', w: 420, h: 290, soft: true })}
+            ${bend({ src: 'the-listros__lens.jpg', name: 'The Listros', w: 320, h: 222, soft: true })}
           </div>
         </div>
-        <div class="shot reveal" style="--d:.3s">
+        <div class="shot reveal" style="--d:.3s;max-width:690px;justify-self:center">
           <img src="${img('chartmetric.jpg')}" alt="Chartmetric: The Listros Spotify monthly listeners, 300.77K">
         </div>
       </div>`,
@@ -287,16 +283,16 @@ export const SLIDES = [
     section: 'Case study: Cristoph',
     grain: 'soft',
     html: `
-      <div class="pad l-split" style="align-items:center;gap:80px">
+      <div class="pad l-split" style="align-items:center;gap:120px">
         <div>
-          <h2 class="display display--m reveal" style="margin-bottom:40px">0 to 8M streams<br>in 90 days.</h2>
-          <div class="kicker reveal" style="--d:.14s;margin-bottom:32px">£6K spend · 24p cost per listener</div>
-          <p class="body reveal" style="--d:.24s;max-width:540px">
+          <h2 class="display reveal" style="font-size:70px;margin-bottom:34px">0 to 8M streams<br>in 90 days.</h2>
+          <div class="kicker reveal" style="--d:.14s;font-size:25px;margin-bottom:30px">£6K spend · 24p cost per listener</div>
+          <p class="body reveal" style="--d:.24s;font-size:23px;max-width:480px">
             Breaking a new release. 25+ content variations tested before we scaled a penny.
             The testing framework was the reason it worked.
           </p>
         </div>
-        <div class="shot reveal" style="--d:.3s">
+        <div class="shot reveal" style="--d:.3s;max-width:690px;justify-self:center">
           <img src="${img('spotify.jpg')}" alt="Spotify for Artists: Spacer, 243,611 streams">
         </div>
       </div>`,
@@ -344,7 +340,6 @@ export const SLIDES = [
     section: 'What happens next',
     grain: true,
     html: `
-      ${spine()}
       <div class="pad l-centre">
         <h2 class="display display--l reveal"><span class="bracket">When we find your song</span></h2>
       </div>`,
@@ -356,7 +351,6 @@ export const SLIDES = [
     section: 'What happens next',
     grain: 'soft',
     html: `
-      ${spine('', -148)}
       <div class="pad" style="display:grid;grid-template-columns:0.82fr 1.18fr;align-items:center;gap:90px">
         <div>
           <h2 class="display display--s reveal" style="line-height:1.02;margin-bottom:38px">

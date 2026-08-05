@@ -55,9 +55,8 @@ Applied from PJ's notes on the V3 thread:
 - Slide 2 is laid out to Miguel's own measurements, taken off his slide and
   scaled to the 1920 canvas: small scattered images, no captions, headline
   running nearly edge to edge.
-- The spine is kept faint, takes a `dx` offset on split slides so it lands in
-  the gutter rather than through a column of text, and is dropped altogether
-  from the verdict, both case studies and the offer.
+- The spine is kept faint and now runs only on the four process slides (8–11),
+  where it carries the sequence. Everywhere else it's off.
 - Offer updated: **$4,500 for three months, or $2,000 a month**, and moved
   ahead of the closing section title.
 - New closing slide on scaling and the multi-platform offer. The two tiers are
