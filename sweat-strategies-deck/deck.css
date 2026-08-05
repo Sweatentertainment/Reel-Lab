@@ -47,15 +47,19 @@ html, body {
 #stage {
   position: fixed;
   inset: 0;
-  display: grid;
-  place-items: center;
+  overflow: hidden;
   background: var(--black);
 }
 
+/* centred by transform, not by grid: an item larger than its container gets
+   start-aligned under safe alignment, which throws the scaled slide off-centre */
 #scaler {
+  position: absolute;
+  top: 50%;
+  left: 50%;
   width: var(--w);
   height: var(--h);
-  position: relative;
+  transform: translate(-50%, -50%);
   transform-origin: center center;
 }
 
@@ -379,6 +383,7 @@ html, body {
   #rail, #hint { display: none !important; }
 
   #scaler {
+    position: static;
     width: var(--w);
     height: auto;
     transform: none !important;
@@ -402,7 +407,7 @@ html, body {
 
 body.is-printing { overflow: visible; }
 body.is-printing #stage { position: static; display: block; }
-body.is-printing #scaler { transform: none !important; height: auto; }
+body.is-printing #scaler { position: static; transform: none !important; width: var(--w); height: auto; }
 body.is-printing .slide { position: relative; inset: auto; opacity: 1; visibility: visible; }
 body.is-printing .slide .reveal { filter: none; color: inherit; opacity: 1; transform: none; animation: none !important; }
 body.is-printing .slide .pathline path { stroke-dashoffset: 0 !important; animation: none !important; }

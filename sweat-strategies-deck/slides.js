@@ -9,6 +9,8 @@
    ------------------------------------------------------------------ */
 
 const IMG = 'assets/img';
+/* every image goes through here so the standalone build can swap in data URIs */
+export const img = (name) => `${IMG}/${name}`;
 
 /* the site's scroll-drawn spine — sweat-website/index.html */
 export const SPINE_PATH =
@@ -28,7 +30,7 @@ const bend = ({ src, name, w, h, right = false, soft = false, style = '' }) => `
     <div class="bend__inner">
       ${name ? `<div class="bend__cap">${name}</div>` : ''}
       <div style="width:${w}px;height:${h}px;overflow:hidden">
-        <img src="${IMG}/${src}" alt="${name || ''}">
+        <img src="${img(src)}" alt="${name || ''}">
       </div>
     </div>
   </div>`;
@@ -43,7 +45,7 @@ export const SLIDES = [
     chrome: 'none',
     html: `
       <div style="position:absolute;inset:0;z-index:0">
-        <img src="${IMG}/cover.jpg" alt="" style="width:100%;height:100%;object-fit:cover">
+        <img src="${img('cover.jpg')}" alt="" style="width:100%;height:100%;object-fit:cover">
       </div>`,
   },
 
@@ -250,11 +252,11 @@ export const SLIDES = [
             Full review every month where we go through what the data's saying and what we're doing about it.
           </p>
           <div class="shot reveal" style="--d:.34s;margin-top:52px;max-width:900px">
-            <img src="${IMG}/dashboard.jpg" alt="Sweat.fm live dashboard">
+            <img src="${img('dashboard.jpg')}" alt="Sweat.fm live dashboard">
           </div>
         </div>
         <div class="shot shot--plain reveal" style="--d:.44s;background:#000">
-          <img src="${IMG}/report.jpg" alt="Weekly written performance report">
+          <img src="${img('report.jpg')}" alt="Weekly written performance report">
         </div>
       </div>`,
   },
@@ -278,7 +280,7 @@ export const SLIDES = [
           </div>
         </div>
         <div class="shot reveal" style="--d:.3s">
-          <img src="${IMG}/chartmetric.jpg" alt="Chartmetric: The Listros Spotify monthly listeners, 300.77K">
+          <img src="${img('chartmetric.jpg')}" alt="Chartmetric: The Listros Spotify monthly listeners, 300.77K">
         </div>
       </div>`,
   },
@@ -299,7 +301,7 @@ export const SLIDES = [
           </p>
         </div>
         <div class="shot reveal" style="--d:.3s">
-          <img src="${IMG}/spotify.jpg" alt="Spotify for Artists: Spacer, 243,611 streams">
+          <img src="${img('spotify.jpg')}" alt="Spotify for Artists: Spacer, 243,611 streams">
         </div>
       </div>`,
   },
@@ -322,7 +324,7 @@ export const SLIDES = [
     grain: 'soft',
     html: `
       <div style="position:absolute;left:0;top:0;width:38%;height:100%;z-index:10;overflow:hidden">
-        <img src="${IMG}/artist__kid-apollo-compress.webp" alt="Kid Apollo" style="width:100%;height:100%;object-fit:cover">
+        <img src="${img('artist__kid-apollo-compress.webp')}" alt="Kid Apollo" style="width:100%;height:100%;object-fit:cover">
         <div style="position:absolute;inset:0;background:linear-gradient(270deg,#000 0%,rgba(0,0,0,0) 30%)"></div>
       </div>
       ${blobs([{ k: 'a', pos: 'right:-260px;top:-200px;opacity:.18' }])}

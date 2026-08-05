@@ -109,7 +109,7 @@ addEventListener('wheel', (() => {
 function fit() {
   if (document.body.classList.contains('is-printing')) return;
   const s = Math.min(innerWidth / 1920, innerHeight / 1080);
-  scaler.style.transform = `scale(${s})`;
+  scaler.style.transform = `translate(-50%, -50%) scale(${s})`;
 }
 
 addEventListener('resize', fit);
