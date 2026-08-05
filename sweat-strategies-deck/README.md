@@ -55,9 +55,9 @@ Applied from PJ's notes on the V3 thread:
 - Slide 2 is laid out to Miguel's own measurements, taken off his slide and
   scaled to the 1920 canvas: small scattered images, no captions, headline
   running nearly edge to edge.
-- The spine is carried heavier than the site's (`2.4px`, higher contrast) so it
-  survives a projector, and takes an `dx` offset on split slides so it lands in
-  the gutter rather than through a column of text.
+- The spine is kept faint, takes a `dx` offset on split slides so it lands in
+  the gutter rather than through a column of text, and is dropped altogether
+  from the verdict, both case studies and the offer.
 - Offer updated: **$4,500 for three months, or $2,000 a month**, and moved
   ahead of the closing section title.
 - New closing slide on scaling and the multi-platform offer. The two tiers are

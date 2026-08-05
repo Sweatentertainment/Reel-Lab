@@ -219,7 +219,6 @@ export const SLIDES = [
     section: 'The Verdict',
     grain: true,
     html: `
-      ${spine()}
       <div class="pad l-centre">
         <h2 class="display display--m reveal" style="margin-bottom:56px">
           <span class="hl">We'll tell you if it's not working.</span>
@@ -265,7 +264,6 @@ export const SLIDES = [
     section: 'Case study: The Listros',
     grain: 'soft',
     html: `
-      ${spine()}
       <div class="pad l-split" style="align-items:center;gap:80px">
         <div>
           <div class="label reveal" style="margin-bottom:38px">Unlocking catalogue value</div>
@@ -289,7 +287,6 @@ export const SLIDES = [
     section: 'Case study: Cristoph',
     grain: 'soft',
     html: `
-      ${spine()}
       <div class="pad l-split" style="align-items:center;gap:80px">
         <div>
           <h2 class="display display--m reveal" style="margin-bottom:40px">0 to 8M streams<br>in 90 days.</h2>
@@ -312,7 +309,6 @@ export const SLIDES = [
     section: 'The offer',
     grain: 'soft',
     html: `
-      ${spine('', -280)}
       <div class="pad" style="display:grid;grid-template-columns:0.66fr 1.34fr;align-items:center;gap:86px">
         <div class="reveal" style="display:flex;align-items:center;justify-content:center">
           ${bend({ src: 'artist__kid-apollo-compress__lens.jpg', name: 'Kid Apollo', w: 420, h: 590 })}

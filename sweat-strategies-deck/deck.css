@@ -133,7 +133,7 @@ html, body {
   display: flex;
   justify-content: center;
   pointer-events: none;
-  opacity: 0.9;
+  opacity: 0.5;
 }
 
 .pathline svg { height: 100%; width: auto; overflow: visible; }
@@ -141,7 +141,7 @@ html, body {
 .pathline path {
   fill: none;
   stroke: var(--line);
-  stroke-width: 2.4;
+  stroke-width: 1.9;
 }
 
 .is-active .pathline path { animation: draw 2.6s cubic-bezier(0.22, 1, 0.36, 1) forwards; }
