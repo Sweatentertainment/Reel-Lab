@@ -13,6 +13,7 @@ SLIDES.forEach((s, i) => {
   el.className = 'slide';
   if (s.grain) el.classList.add('grain');
   if (s.grain === 'soft') el.classList.add('grain--soft');
+  if (s.ground === 'light') el.classList.add('slide--light');
   el.dataset.index = String(i);
 
   const chrome = s.chrome === 'none' ? '' : `

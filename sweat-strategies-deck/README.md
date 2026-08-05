@@ -4,7 +4,7 @@ Miguel's V3 deck, rebuilt in the **sweatstrategies.com** design language.
 
 - **Present it:** open `index.html` (any static server, or just open the file).
   `←` `→` / space / click to move, `F` for fullscreen, dots at the bottom to jump.
-- **Send it:** `Sweat-Strategies-Proposal-2026.pdf` — 17 pages, 16:9.
+- **Send it:** `Sweat-Strategies-Proposal-2026.pdf` — 18 pages, 16:9.
 
 ## Where the design comes from
 
@@ -45,14 +45,23 @@ Applied from PJ's notes on the V3 thread:
   out of old slide 6, now used on "Most artists never find out" and
   "When we find your song".
 - Stock/vibe photography replaced throughout with artists from the site.
-  The cover is Miguel's original, untouched.
-- Offer updated: **$4,500 for three months, or $2,000 a month.**
+  The cover is Miguel's original, untouched. Slide 2 keeps Miguel's own
+  treatment — light ground, straight images, no gradient.
+- Artist photography is run through `scripts/lens.mjs`, which bakes in the
+  barrel bulge and RGB fringing the site gets from its WebGL shader. A shader
+  can't survive a PDF export, so the maths is applied once, offline.
+- Dark slides are flat off-black plus grain — no gradient washes.
+- Offer updated: **$4,500 for three months, or $2,000 a month**, and moved
+  ahead of the closing section title.
+- New closing slide on scaling and the multi-platform offer. The two tiers are
+  Miguel's wording, moved off the old offer slide; the framing copy is new and
+  needs a read before this goes to a client.
 
 ### One thing to check
 
-The offer slide still carries Miguel's "**Grow it** — $2,000 a month" tier at the
-top, which now reads at the same price as the headline monthly rate. Worth
-re-pricing one of the two or dropping the tier.
+"**Grow it** — $2,000 a month" (slide 18) is the same number as the headline
+monthly rate on slide 16. They're on separate slides now, so it reads far less
+oddly, but the two still collide. Worth re-pricing one or dropping the tier.
 
 ## Regenerating the PDF
 

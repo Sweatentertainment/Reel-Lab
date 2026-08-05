@@ -24,6 +24,15 @@ const spine = (mod = '') =>
 const blobs = (list) =>
   list.map((b) => `<div class="blob blob--${b.k}" style="${b.pos}"></div>`).join('');
 
+/* a straight artist card — Miguel's grid treatment, no perspective */
+const flat = ({ src, name, w, h }) => `
+  <figure class="flat">
+    <figcaption class="flat__cap">${name}</figcaption>
+    <div style="width:${w}px;height:${h}px;overflow:hidden">
+      <img src="${img(src)}" alt="${name}">
+    </div>
+  </figure>`;
+
 /* a bent artist card — site treatment: perspective 600px + rotateY(±30deg) */
 const bend = ({ src, name, w, h, right = false, soft = false, style = '' }) => `
   <div class="bend ${right ? 'bend--right' : ''} ${soft ? 'bend--soft' : ''}" style="${style}">
@@ -49,28 +58,29 @@ export const SLIDES = [
       </div>`,
   },
 
-  /* 02 — the hook, rebuilt with the site's artists */
+  /* 02 — the hook. Miguel's treatment: light ground, black type, straight
+     images in a scattered grid. No bend and no gradient here. */
   {
     section: 'Proposal',
+    ground: 'light',
+    chrome: 'dark',
     grain: 'soft',
     html: `
-      ${spine()}
-      ${blobs([{ k: 'b', pos: 'left:-260px;top:-320px;opacity:.32' }, { k: 'a', pos: 'right:-300px;bottom:-380px;opacity:.22' }])}
-      <div class="pad" style="padding:96px var(--pad) 88px">
-        <div style="display:flex;justify-content:space-between;align-items:flex-start;height:322px">
-          ${bend({ src: 'artist__blondish.webp', name: 'Blond:Ish', w: 232, h: 274 })}
-          ${bend({ src: 'artist__dolores-forever.webp', name: 'Dolores Forever', w: 300, h: 240, right: true, soft: true })}
-          ${bend({ src: 'artist__rules.webp', name: 'Rules', w: 222, h: 266, soft: true })}
-          ${bend({ src: 'artist__the-knocks-compress.webp', name: 'The Knocks', w: 320, h: 244, right: true })}
+      <div class="pad" style="padding:92px var(--pad) 84px">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;height:300px">
+          ${flat({ src: 'artist__blondish__lens.jpg', name: 'Blond:Ish', w: 214, h: 252 })}
+          ${flat({ src: 'artist__dolores-forever__lens.jpg', name: 'Dolores Forever', w: 286, h: 224 })}
+          ${flat({ src: 'artist__rules__lens.jpg', name: 'Rules', w: 200, h: 244 })}
+          ${flat({ src: 'artist__the-knocks-compress__lens.jpg', name: 'The Knocks', w: 300, h: 228 })}
         </div>
-        <div style="display:flex;align-items:center;height:236px">
-          <h1 class="display reveal" style="font-size:196px;color:#fff">FIND THE SONG.</h1>
+        <div style="display:flex;align-items:center;height:266px">
+          <h1 class="display reveal" style="font-size:200px;color:#0b0b0d">FIND THE SONG.</h1>
         </div>
-        <div style="display:flex;justify-content:space-between;align-items:flex-end;height:318px">
-          ${bend({ src: 'artist__thundercat.webp', name: 'Thundercat', w: 240, h: 272, right: true })}
-          ${bend({ src: 'artist__disclosure.webp', name: 'Disclosure', w: 258, h: 268, soft: true })}
-          ${bend({ src: 'artist__kid-apollo-compress.webp', name: 'Kid Apollo', w: 226, h: 264, right: true, soft: true })}
-          ${bend({ src: 'artist__bonobo-compress.webp', name: 'Bonobo', w: 330, h: 254 })}
+        <div style="display:flex;justify-content:space-between;align-items:flex-end;height:300px">
+          ${flat({ src: 'artist__thundercat__lens.jpg', name: 'Thundercat', w: 222, h: 258 })}
+          ${flat({ src: 'artist__disclosure__lens.jpg', name: 'Disclosure', w: 240, h: 250 })}
+          ${flat({ src: 'artist__kid-apollo-compress__lens.jpg', name: 'Kid Apollo', w: 208, h: 246 })}
+          ${flat({ src: 'artist__bonobo-compress__lens.jpg', name: 'Bonobo', w: 310, h: 236 })}
         </div>
       </div>`,
   },
@@ -145,11 +155,8 @@ export const SLIDES = [
           </p>
           <p class="body reveal" style="--d:.28s">If you haven't got one yet, we'll tell you that too, and why.</p>
         </div>
-        <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:52px">
-          ${bend({ src: 'artist__st-lundi.webp', name: 'St Lundi', w: 480, h: 520, right: true })}
-          <div class="dashbox reveal" style="--d:.4s;padding:14px 26px;font-family:var(--mono);font-size:26px;letter-spacing:.02em">
-            <span class="hl" style="font-weight:700">[YOUR NAME HERE]</span>&nbsp;<span style="font-weight:400">Catalogue</span>
-          </div>
+        <div style="display:flex;align-items:center;justify-content:center">
+          ${bend({ src: 'artist__st-lundi__lens.jpg', name: 'St Lundi', w: 500, h: 610, right: true })}
         </div>
       </div>`,
   },
@@ -174,29 +181,28 @@ export const SLIDES = [
     {
       n: '01', title: 'Find the sound',
       body: 'We test every part of the song to see which seconds actually stop someone scrolling.',
-      src: 'artist__bonobo-compress.webp', name: 'Bonobo',
+      src: 'artist__bonobo-compress__lens.jpg', name: 'Bonobo',
     },
     {
       n: '02', title: 'Build the content',
       body: "Up to 25 visuals per song, made by our editors, trained on what's already winning.",
-      src: 'artist__blondish.webp', name: 'Blond:Ish',
+      src: 'artist__blondish__lens.jpg', name: 'Blond:Ish',
     },
     {
       n: '03', title: 'Make the call',
       body: "We tell you whether it's worth scaling, and how hard to push.",
-      src: 'artist__disclosure.webp', name: 'Disclosure',
+      src: 'artist__disclosure__lens.jpg', name: 'Disclosure',
     },
     {
       n: '04', title: 'Watch it land',
       body: "We track Spotify for Artists daily, country by country, and move the money to where it's converting.",
-      src: 'artist__thundercat.webp', name: 'Thundercat',
+      src: 'artist__thundercat__lens.jpg', name: 'Thundercat',
     },
   ].map((s, k) => ({
     section: 'The Process',
     grain: 'soft',
     html: `
       ${spine()}
-      ${blobs([{ k: 'b', pos: `${k % 2 ? 'left' : 'right'}:-320px;top:${k % 2 ? '-260px' : 'auto'};bottom:${k % 2 ? 'auto' : '-300px'};opacity:.16` }])}
       <div class="pad l-split" style="align-items:center;gap:70px">
         <div class="l-mid">
           <h3 class="reveal" style="font-family:var(--sans);font-weight:700;font-size:62px;letter-spacing:-0.04em;color:var(--blue);margin-bottom:64px">
@@ -216,7 +222,6 @@ export const SLIDES = [
     grain: true,
     html: `
       ${spine()}
-      ${blobs([{ k: 'b', pos: 'left:50%;top:50%;transform:translate(-50%,-50%);opacity:.14' }])}
       <div class="pad l-centre">
         <h2 class="display display--m reveal" style="margin-bottom:56px">
           <span class="hl">We'll tell you if it's not working.</span>
@@ -238,25 +243,21 @@ export const SLIDES = [
     section: 'Reporting',
     grain: 'soft',
     html: `
-      ${blobs([{ k: 'a', pos: 'left:-340px;bottom:-360px;opacity:.2' }])}
-      <div class="pad l-split l-split--wide-left" style="align-items:center;gap:70px;padding-top:140px;padding-bottom:120px">
+      <div class="pad" style="display:grid;grid-template-columns:0.68fr 1.32fr;align-items:center;gap:72px">
         <div>
-          <h2 class="display display--s reveal" style="letter-spacing:-0.04em;margin-bottom:26px">
+          <h2 class="display display--s reveal" style="letter-spacing:-0.04em;line-height:1.24;margin-bottom:18px">
             <span class="hl">You'll see everything.</span>
           </h2>
-          <h2 class="display display--s reveal" style="--d:.12s;letter-spacing:-0.04em;color:var(--head);margin-bottom:46px">
+          <h2 class="display display--s reveal" style="--d:.12s;letter-spacing:-0.04em;line-height:1.1;color:var(--head);margin-bottom:44px">
             We mean everything.
           </h2>
-          <p class="body reveal" style="--d:.24s;max-width:620px">
+          <p class="body reveal" style="--d:.24s">
             Live dashboard, updated daily. Written status report every week.
             Full review every month where we go through what the data's saying and what we're doing about it.
           </p>
-          <div class="shot reveal" style="--d:.34s;margin-top:52px;max-width:900px">
-            <img src="${img('dashboard.jpg')}" alt="Sweat.fm live dashboard">
-          </div>
         </div>
-        <div class="shot shot--plain reveal" style="--d:.44s;background:#000">
-          <img src="${img('report.jpg')}" alt="Weekly written performance report">
+        <div class="shot reveal" style="--d:.32s">
+          <img src="${img('dashboard.jpg')}" alt="Sweat.fm live dashboard">
         </div>
       </div>`,
   },
@@ -276,7 +277,7 @@ export const SLIDES = [
             systematically. Huge growth on modest spend.
           </p>
           <div class="reveal" style="--d:.34s;margin-top:64px">
-            ${bend({ src: 'the-listros.webp', name: 'The Listros', w: 420, h: 290, soft: true })}
+            ${bend({ src: 'the-listros__lens.jpg', name: 'The Listros', w: 420, h: 290, soft: true })}
           </div>
         </div>
         <div class="shot reveal" style="--d:.3s">
@@ -306,64 +307,102 @@ export const SLIDES = [
       </div>`,
   },
 
-  /* 16 — was 23. PJ: make this look like slide 06 — black, grainy, brackets. */
+  /* 16 — the offer. Was V3's slide 24; PJ moved it ahead of the closing
+     section title, and it now carries the price alone — the scaling tiers
+     moved to slide 18 where they belong. Price per PJ: $4.5k / 3mo, $2k PCM. */
+  {
+    section: 'The offer',
+    grain: 'soft',
+    html: `
+      ${spine()}
+      <div class="pad" style="display:grid;grid-template-columns:0.66fr 1.34fr;align-items:center;gap:86px">
+        <div class="reveal" style="display:flex;align-items:center;justify-content:center">
+          ${bend({ src: 'artist__kid-apollo-compress__lens.jpg', name: 'Kid Apollo', w: 420, h: 590 })}
+        </div>
+
+        <div style="display:flex;flex-direction:column;justify-content:center;gap:62px">
+          <div>
+            <h2 class="display reveal" style="font-size:68px;line-height:1.22;white-space:nowrap"><span class="hl">$4,500 for (3) three months.</span></h2>
+            <p class="reveal" style="--d:.1s;font-size:40px;font-weight:600;margin-top:32px">Or $2,000 a month.</p>
+            <p class="reveal" style="--d:.16s;font-size:23px;opacity:.62;margin-top:14px">Ad spend on top, minimum $1,000 a month.</p>
+          </div>
+
+          <div class="rule reveal" style="--d:.24s"></div>
+
+          <div>
+            <ol class="steps reveal" style="--d:.3s">
+              <li><span>01</span>Book a call — where you are now, where you want to get to.</li>
+              <li><span>02</span>We pick the songs together.</li>
+              <li><span>03</span>First tests live within a week.</li>
+              <li><span>04</span>Ninety days later, you'll know.</li>
+            </ol>
+            <p class="reveal" style="--d:.4s;font-size:28px;font-weight:700;margin-top:44px">
+              Ready? <a href="mailto:pj@sweatstrategies.com" style="color:var(--blue)">pj@sweatstrategies.com</a>
+            </p>
+          </div>
+        </div>
+      </div>`,
+  },
+
+  /* 17 — was V3's 23. Black, grainy, bracketed — the treatment PJ picked out
+     of old slide 6. Now the lead-in to what scaling looks like. */
   {
     section: 'What happens next',
     grain: true,
     html: `
       ${spine()}
-      ${blobs([{ k: 'b', pos: 'left:50%;top:56%;transform:translate(-50%,-50%);opacity:.16' }])}
       <div class="pad l-centre">
         <h2 class="display display--l reveal"><span class="bracket">When we find your song</span></h2>
       </div>`,
   },
 
-  /* 17 — was 24. Offer updated per PJ: $4.5k / 3 months, or $2k PCM. */
+  /* 18 — new. The scaling and multi-platform offer. The two tiers are Miguel's
+     wording, lifted off the old offer slide; the framing copy is new. */
   {
     section: 'What happens next',
     grain: 'soft',
     html: `
-      <div style="position:absolute;left:0;top:0;width:38%;height:100%;z-index:10;overflow:hidden">
-        <img src="${img('artist__kid-apollo-compress.webp')}" alt="Kid Apollo" style="width:100%;height:100%;object-fit:cover">
-        <div style="position:absolute;inset:0;background:linear-gradient(270deg,#000 0%,rgba(0,0,0,0) 30%)"></div>
-      </div>
-      ${blobs([{ k: 'a', pos: 'right:-260px;top:-200px;opacity:.18' }])}
-      <div class="pad" style="left:38%;padding-left:74px;padding-top:126px;padding-bottom:120px">
-        <div class="l-mid" style="justify-content:space-between">
-          <div>
-            <div style="display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:start">
-              <p class="body reveal" style="font-size:24px;max-width:none">
-                <span style="color:var(--blue);font-weight:700">Scale it</span>
+      ${spine()}
+      <div class="pad" style="display:grid;grid-template-columns:0.82fr 1.18fr;align-items:center;gap:90px">
+        <div>
+          <h2 class="display display--s reveal" style="line-height:1.02;margin-bottom:38px">
+            We put it<br>everywhere<br>it converts.
+          </h2>
+          <p class="body reveal" style="--d:.16s;max-width:520px">
+            A song that works on one platform rarely stops there. Once the tests
+            tell us what's landing, we take the winning creative and put budget
+            behind it across every channel that can turn a listener into a fan.
+          </p>
+        </div>
+
+        <div style="display:flex;flex-direction:column;gap:44px">
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:56px">
+            <div class="reveal" style="--d:.24s">
+              <div class="tier">Scale it</div>
+              <p class="body" style="font-size:23px;max-width:none">
                 20% on ad spend above $5,000 a month. We push as hard as the data says we should.
               </p>
-              <p class="body reveal" style="--d:.1s;font-size:24px;max-width:none">
-                <span style="color:var(--blue);font-weight:700">Grow it</span>
+            </div>
+            <div class="reveal" style="--d:.3s">
+              <div class="tier">Grow it</div>
+              <p class="body" style="font-size:23px;max-width:none">
                 $2,000 a month. YouTube and TikTok, plus we build your fan capture flow.
               </p>
             </div>
-            <p class="body reveal" style="--d:.2s;font-size:24px;max-width:none;font-weight:600;margin-top:30px">
-              Ads rent your listeners. A fan capture flow means you own the audience instead.
-            </p>
           </div>
 
-          <div style="text-align:center;margin:16px 0">
-            <h2 class="display display--s reveal" style="--d:.3s;font-size:66px;display:inline-block">
-              <span class="hl">$4,500 for (3) three months.</span>
-            </h2>
-            <p class="body reveal" style="--d:.4s;max-width:none;font-size:30px;font-weight:600;margin-top:26px">Or $2,000 a month.</p>
-            <p class="body reveal" style="--d:.46s;max-width:none;font-size:23px;opacity:.85;margin-top:14px">Ad spend on top, minimum $1,000 a month.</p>
-          </div>
+          <p class="reveal" style="--d:.36s;font-size:25px;font-weight:600;line-height:1.5">
+            Ads rent your listeners. A fan capture flow means you own the audience instead.
+          </p>
 
-          <div>
-            <p class="body reveal" style="--d:.54s;font-size:22px;max-width:none;line-height:1.75">
-              <span style="color:var(--blue);font-weight:700">1</span> Book a call. We'll go through where you are now and where you want to get to.
-              <span style="color:var(--blue);font-weight:700">2</span> We pick the songs together.
-              <span style="color:var(--blue);font-weight:700">3</span> First tests live within a week.
-              <span style="color:var(--blue);font-weight:700">4</span> Ninety days later, you'll know.
-            </p>
-            <p class="body reveal" style="--d:.62s;max-width:none;font-size:26px;font-weight:700;margin-top:26px">
-              Ready? <a href="mailto:pj@sweatstrategies.com" style="color:var(--blue)">pj@sweatstrategies.com</a>
-            </p>
+          <div class="rule reveal" style="--d:.42s"></div>
+
+          <div class="reveal" style="--d:.46s">
+            <div class="label" style="margin-bottom:24px">Channels we run</div>
+            <ul class="channels">
+              <li>Meta</li><li>TikTok</li><li>YouTube</li><li>Spotify</li>
+              <li>Apple</li><li>Live</li><li>Merch</li>
+            </ul>
           </div>
         </div>
       </div>`,
