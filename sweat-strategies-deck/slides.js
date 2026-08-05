@@ -279,23 +279,28 @@ export const SLIDES = [
   },
 
   /* 15 — was V3's 22. The 0→8M / £6K / 24p figures belong to Harry T, not
-     Cristoph — V3 had them against the wrong track. Set as a stat block until
-     the Harry T "4AM" Spotify for Artists screenshot lands. */
+     Cristoph — V3 had them against the wrong track. Same treatment as the
+     Listros slide: the number, then the chart that proves it. */
   {
     section: 'Case study: Harry T',
     grain: 'soft',
     html: `
-      <div class="pad l-mid">
-        <div class="label reveal" style="font-size:18px;margin-bottom:34px">Breaking a new release</div>
-        <h2 class="display reveal" style="--d:.08s;font-size:104px;max-width:1300px">0 to 8M streams in 90 days.</h2>
-        <dl class="stats reveal" style="--d:.2s;margin-top:76px">
-          <div><dt>Ad spend</dt><dd>£6K</dd></div>
-          <div><dt>Cost per listener</dt><dd>24p</dd></div>
-          <div><dt>Content variations tested</dt><dd>25+</dd></div>
-        </dl>
-        <p class="body reveal" style="--d:.32s;font-size:23px;max-width:760px;margin-top:72px">
-          Every variation tested before we scaled a penny. The testing framework was the reason it worked.
-        </p>
+      <div class="pad l-split" style="align-items:center;gap:120px">
+        <div>
+          <div class="label reveal" style="font-size:18px;margin-bottom:32px">Breaking a new release</div>
+          <h2 class="display reveal" style="--d:.1s;font-size:70px;margin-bottom:28px">0 to 8M streams<br>in 90 days.</h2>
+          <div class="kicker reveal" style="--d:.16s;font-size:25px;margin-bottom:28px">£6K spend · 24p cost per listener</div>
+          <p class="body reveal" style="--d:.24s;font-size:23px;max-width:480px">
+            25+ content variations tested before we scaled a penny. The testing
+            framework was the reason it worked.
+          </p>
+          <div class="reveal" style="--d:.34s;margin-top:52px">
+            ${bend({ src: 'artist__harry-t__lens.jpg', name: 'Harry T', w: 250, h: 250, soft: true })}
+          </div>
+        </div>
+        <div class="shot reveal" style="--d:.3s;max-width:690px;justify-self:center">
+          <img src="${img('harry-spotify.jpg')}" alt="Spotify for Artists: Harry T, 4AM — 9,132,436 streams and 1,540,114 listeners, 13.2M all-time">
+        </div>
       </div>`,
   },
 
