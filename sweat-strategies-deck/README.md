@@ -4,7 +4,7 @@ Miguel's V3 deck, rebuilt in the **sweatstrategies.com** design language.
 
 - **Present it:** open `index.html` (any static server, or just open the file).
   `←` `→` / space / click to move, `F` for fullscreen, dots at the bottom to jump.
-- **Send it:** `Sweat-Strategies-Proposal-2026.pdf` — 18 pages, 16:9.
+- **Send it:** `Sweat-Strategies-Proposal-2026.pdf` — 19 pages, 16:9.
 
 ## Where the design comes from
 
@@ -57,11 +57,21 @@ Applied from PJ's notes on the V3 thread:
   running nearly edge to edge.
 - The spine is kept faint and now runs only on the four process slides (8–11),
   where it carries the sequence. Everywhere else it's off.
+- V3 credited the 0→8M / £6K / 24p figures to Cristoph, but they're Harry T's —
+  the Spotify screenshot on that slide is Cristoph's own release, "Spacer".
+  Split into two: Harry T carries the 90-day numbers, and Cristoph gets his own
+  slide with the Spacer chart and 0→20K daily streams in three weeks.
 - Offer updated: **$4,500 for three months, or $2,000 a month**, and moved
   ahead of the closing section title.
 - New closing slide on scaling and the multi-platform offer. The two tiers are
   Miguel's wording, moved off the old offer slide; the framing copy is new and
   needs a read before this goes to a client.
+
+### Waiting on
+
+The Harry T slide is set as a stat block because the "4AM" Spotify for Artists
+screenshot isn't in the repo yet. Drop it in `assets/img/` and it can take the
+same chart treatment as the other two case studies.
 
 ### One thing to check
 

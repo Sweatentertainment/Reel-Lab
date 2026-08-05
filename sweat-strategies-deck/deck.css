@@ -319,6 +319,32 @@ html, body {
   margin-bottom: 16px;
 }
 
+/* headline figures, where a chart isn't the point */
+.stats {
+  display: flex;
+  gap: 108px;
+  flex-wrap: wrap;
+}
+
+.stats dt {
+  font-family: var(--mono);
+  text-transform: uppercase;
+  font-size: 16px;
+  letter-spacing: 0.16em;
+  color: var(--head);
+  opacity: 0.72;
+  margin-bottom: 16px;
+}
+
+.stats dd {
+  font-family: var(--sans);
+  font-weight: 800;
+  font-size: 68px;
+  letter-spacing: -0.045em;
+  color: var(--blue);
+  font-variant-numeric: tabular-nums;
+}
+
 /* a set, not a sequence — so no numbering */
 .channels {
   list-style: none;
