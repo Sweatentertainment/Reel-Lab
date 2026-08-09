@@ -6,6 +6,26 @@ Miguel's V3 deck, rebuilt in the **sweatstrategies.com** design language.
   `←` `→` / space / click to move, `F` for fullscreen, dots at the bottom to jump.
 - **Send it:** `Sweat-Strategies-Proposal-2026.pdf` — 19 pages, 16:9.
 
+## Three decks, one engine
+
+| Deck | Page | Content | PDF |
+|---|---|---|---|
+| Proposal | `index.html` | `slides.js` | `Sweat-Strategies-Proposal-2026.pdf` (19pp) |
+| Case studies — independent artists | `case-studies-indie.html` | `slides-indie.js` | `Sweat-Case-Studies-Independent-Artists.pdf` (7pp) |
+| Case studies — labels & partners | `case-studies-labels.html` | `slides-labels.js` | `Sweat-Case-Studies-Labels.pdf` (7pp) |
+
+`deck.js` exports `mount(SLIDES)`; each page imports its own slide set and calls
+it. Shared fragments and slide archetypes (`caseChart`, `caseStats`,
+`bracketTitle`, `closer`, `bend`, `spine`) live in `parts.js`, so a change to the
+bend or the spine lands in all three decks at once.
+
+The two case-study decks split by campaign scale: independent artists carry the
+smaller, artist-funded campaigns; labels carry the bigger results and the roster.
+Every figure in both comes from Sweat's own Independent Artists proposal or from
+the Spotify / Chartmetric / Sweat.fm screenshots in `assets/img` — nothing is
+estimated. Slides with no chart to show use the stat-block archetype rather than
+borrowing an unrelated image.
+
 ## Where the design comes from
 
 Everything visual is lifted from the live site (`Sweatentertainment/sweat-website`),
@@ -25,11 +45,14 @@ Artist photography is the site's own (`public/assets/images/artist__*.webp`).
 ## Files
 
 ```
-index.html   shell
-deck.css     the design system — tokens, slide archetypes, print rules
-slides.js    the content, one object per slide  ← edit copy here
-deck.js      render, navigation, motion, PDF mode
-assets/      Manrope + artist photography + the case-study screenshots
+index.html         proposal shell
+case-studies-*.html  case-study shells
+deck.css           the design system — tokens, slide archetypes, print rules
+parts.js           shared fragments and slide archetypes
+slides*.js         the content, one object per slide  ← edit copy here
+deck.js            mount(SLIDES): render, navigation, motion, PDF mode
+scripts/           export-pdf.mjs, build-standalone.mjs, lens.mjs
+assets/            Manrope + artist photography + the case-study screenshots
 ```
 
 Copy and layout are separated on purpose: reworking wording means editing
@@ -73,8 +96,9 @@ Applied from PJ's notes on the V3 thread:
 ## Regenerating the PDF
 
 ```bash
-npx http-server -p 8899 -s .          # serve the deck
-node scripts/export-pdf.mjs           # needs playwright
+npx http-server -p 8899 -s .                        # serve the decks
+node scripts/export-pdf.mjs index.html out.pdf      # needs playwright
+node scripts/export-pdf.mjs case-studies-indie.html out.pdf
 ```
 
 It loads `index.html?print=1` — which stacks every slide at full size and freezes

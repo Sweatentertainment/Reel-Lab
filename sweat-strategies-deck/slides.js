@@ -8,40 +8,7 @@
    Edit copy here — layout and styling live in deck.css.
    ------------------------------------------------------------------ */
 
-const IMG = 'assets/img';
-/* every image goes through here so the standalone build can swap in data URIs */
-export const img = (name) => `${IMG}/${name}`;
-
-/* the site's scroll-drawn spine — sweat-website/index.html */
-export const SPINE_PATH =
-  'M61.1635 0.5C61.1635 0.5 61.1635 398.555 61.1635 408.742C61.1635 418.929 62.8489 451.754 56.107 460.81C49.3651 469.864 26.6098 474.392 26.6098 497.03C26.6098 519.668 85.6033 520.8 86.4464 542.306C87.2888 563.812 22.3965 562.679 22.3965 596.637C22.3965 630.593 108.358 621.538 108.358 648.703C108.358 675.869 3.85551 669.078 3.85551 700.771C3.85551 732.464 119.314 710.958 119.314 751.706C119.314 792.454 1.32764 769.816 1.32764 807.168C1.32764 844.521 115.1 823.015 115.1 858.104C115.1 893.192 11.4405 884.137 11.4405 916.961C11.4405 949.786 99.088 932.808 99.088 967.897C99.088 1002.99 35.038 992.798 35.038 1024.49C35.038 1056.18 72.9618 1046 72.9618 1070.9C72.9618 1095.8 35.038 1109.38 35.038 1133.15C35.038 1156.92 99.088 1165.98 99.088 1182.95C99.088 1199.93 11.4405 1206.73 11.4405 1237.29C11.4405 1267.84 119.314 1257.66 119.314 1289.36C119.314 1321.05 2.17001 1305.2 2.17001 1343.68C2.17001 1382.17 119.314 1362.93 119.314 1395.75C119.314 1428.58 2.17001 1412.73 2.17001 1451.22C2.17001 1489.7 110.886 1463.67 110.886 1504.42C110.886 1545.16 19.8679 1524.78 19.8679 1556.48C19.8679 1588.17 85.6033 1585.91 85.6033 1609.67C85.6033 1633.45 33.5296 1643.97 33.5296 1670C33.5296 1696.04 61.1635 1692.6 61.1635 1717.5C61.1635 1742.4 61.1635 2023.95 61.1635 2023.95';
-
-/* ---------------------------------------------------------- fragments */
-
-/* dx nudges the spine off dead-centre so it lands in a slide's real gutter
-   rather than through a column of text */
-const spine = (mod = '', dx = 0) =>
-  `<div class="pathline ${mod}"${dx ? ` style="transform:translateX(${dx}px)"` : ''}><svg viewBox="0 0 120 1620" preserveAspectRatio="xMidYMid meet"><path d="${SPINE_PATH}"/></svg></div>`;
-
-const blobs = (list) =>
-  list.map((b) => `<div class="blob blob--${b.k}" style="${b.pos}"></div>`).join('');
-
-/* a straight artist image, placed to Miguel's scatter — no perspective, no
-   caption, positions measured off his slide 2 and scaled to the 1920 canvas */
-const tile = ({ src, name, x, y, w, h }) => `
-  <img class="tile" src="${img(src)}" alt="${name}"
-       style="left:${x}px;top:${y}px;width:${w}px;height:${h}px">`;
-
-/* a bent artist card — site treatment: perspective 600px + rotateY(±30deg) */
-const bend = ({ src, name, w, h, right = false, soft = false, style = '' }) => `
-  <div class="bend ${right ? 'bend--right' : ''} ${soft ? 'bend--soft' : ''}" style="${style}">
-    <div class="bend__inner">
-      ${name ? `<div class="bend__cap">${name}</div>` : ''}
-      <div style="width:${w}px;height:${h}px;overflow:hidden">
-        <img src="${img(src)}" alt="${name || ''}">
-      </div>
-    </div>
-  </div>`;
+import { img, spine, blobs, tile, bend } from './parts.js';
 
 /* ------------------------------------------------------------ slides */
 
