@@ -48,7 +48,7 @@ export const SLIDES = [
         </div>
         <div style="display:flex;align-items:center;justify-content:center;gap:48px">
           ${bend({ src: 'artist__disclosure__lens.jpg', name: 'Disclosure', w: 260, h: 286, soft: true })}
-          ${bend({ src: 'artist__bonobo-compress__lens.jpg', name: 'Bonobo', w: 240, h: 292, right: true })}
+          ${bend({ src: 'artist__thundercat__lens.jpg', name: 'Thundercat', w: 240, h: 292, right: true })}
         </div>
       </div>`,
   },
@@ -157,12 +157,12 @@ export const SLIDES = [
     {
       n: '02', title: 'Test the content at scale',
       body: 'Dozens of variations per record, made by our editors, running against cold audiences in every market that matters.',
-      src: 'artist__thundercat__lens.jpg', name: 'Thundercat',
+      src: 'artist__kid-apollo-compress__lens.jpg', name: 'Kid Apollo',
     },
     {
       n: '03', title: 'Validate the cost',
       body: 'Every test returns a real cost per new listener. That number decides what gets the budget and what gets dropped.',
-      src: 'artist__disclosure__lens.jpg', name: 'Disclosure',
+      src: 'artist__dolores-forever__lens.jpg', name: 'Dolores Forever',
     },
     {
       n: '04', title: 'Scale what converts',
@@ -252,29 +252,37 @@ export const SLIDES = [
     html: `
       <div class="pad l-mid">
         <div class="label reveal" style="margin-bottom:30px">Partner · retainer</div>
-        <h2 class="display reveal" style="--d:.06s;font-size:60px;line-height:1.14;margin-bottom:64px">
-          <span class="hl">Ad spend included.</span> Every tier.
+        <h2 class="display reveal" style="--d:.06s;font-size:60px;line-height:1.14;margin-bottom:20px">
+          <span class="hl">The tests come with</span><br>the ad spend to run them.
         </h2>
+        <p class="body reveal" style="--d:.12s;font-size:23px;max-width:900px;margin-bottom:58px">
+          One monthly fee covers both. Nothing extra to approve before a record
+          starts testing.
+        </p>
 
-        <div class="reveal" style="--d:.16s;display:grid;grid-template-columns:repeat(3,auto);justify-content:start;gap:150px">
+        <div class="reveal" style="--d:.2s;display:grid;grid-template-columns:repeat(3,auto);justify-content:start;gap:150px">
           <div>
-            <div class="display" style="font-size:96px;line-height:1;color:var(--blue)">£2K</div>
-            <div class="tier" style="margin-top:24px">4 tests a month</div>
+            <div class="display" style="font-size:92px;line-height:1;color:var(--blue)">£2K</div>
+            <div class="tier" style="margin-top:22px">4 tests a month</div>
           </div>
           <div>
-            <div class="display" style="font-size:96px;line-height:1;color:var(--blue)">£4K</div>
-            <div class="tier" style="margin-top:24px">9 tests a month</div>
+            <div class="display" style="font-size:92px;line-height:1;color:var(--blue)">£4K</div>
+            <div class="tier" style="margin-top:22px">9 tests a month</div>
           </div>
           <div>
-            <div class="display" style="font-size:96px;line-height:1;color:var(--blue)">£8K</div>
-            <div class="tier" style="margin-top:24px">20 tests a month</div>
+            <div class="display" style="font-size:92px;line-height:1;color:var(--blue)">£8K</div>
+            <div class="tier" style="margin-top:22px">20 tests a month</div>
           </div>
         </div>
 
-        <div class="rule reveal" style="--d:.34s;margin:68px 0 40px"></div>
+        <div class="rule reveal" style="--d:.36s;margin:58px 0 36px"></div>
 
-        <p class="reveal" style="--d:.4s;font-size:34px;font-weight:700;letter-spacing:-0.03em;line-height:1.4;max-width:1200px">
+        <p class="reveal" style="--d:.42s;font-size:32px;font-weight:700;letter-spacing:-0.03em;line-height:1.4;max-width:1300px">
           Scale at just <span style="color:var(--blue)">10% commission</span> on retainer deals.
+        </p>
+        <p class="body reveal" style="--d:.48s;font-size:21px;max-width:900px;margin-top:22px;opacity:0.75">
+          Scaling budget is separate — you set it, and only once a record has
+          earned it.
         </p>
       </div>`,
   },
@@ -295,7 +303,7 @@ export const SLIDES = [
             <h2 class="display reveal" style="--d:.06s;font-size:68px;line-height:1.2">
               <span class="hl">£550 a test.</span>
             </h2>
-            <p class="reveal" style="--d:.12s;font-size:38px;font-weight:600;margin-top:28px">Ad spend included.</p>
+            <p class="reveal" style="--d:.12s;font-size:36px;font-weight:600;margin-top:28px">Testing ad spend included.</p>
             <p class="reveal" style="--d:.18s;font-size:23px;opacity:.62;margin-top:14px">
               One record, one campaign, no commitment.
             </p>
