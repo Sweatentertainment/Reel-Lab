@@ -6,11 +6,12 @@ Miguel's V3 deck, rebuilt in the **sweatstrategies.com** design language.
   `←` `→` / space / click to move, `F` for fullscreen, dots at the bottom to jump.
 - **Send it:** `Sweat-Strategies-Proposal-2026.pdf` — 16 pages, 16:9.
 
-## Four decks, one engine
+## Five decks, one engine
 
 | Deck | Page | Content | PDF |
 |---|---|---|---|
-| Proposal | `index.html` | `slides.js` | `Sweat-Strategies-Proposal-2026.pdf` (16pp) |
+| Proposal — artists | `index.html` | `slides.js` | `Sweat-Strategies-Proposal-2026.pdf` (16pp) |
+| Proposal — labels | `labels-proposal.html` | `slides-labels-offer.js` | `Sweat-Labels-Proposal-2026.pdf` (16pp) |
 | Case studies — independent artists | `case-studies-indie.html` | `slides-indie.js` | `…-Independent-Artists.pdf` (16pp) |
 | Case studies — labels & partners | `case-studies-labels.html` | `slides-labels.js` | `…-Labels.pdf` (12pp) |
 | Case studies — labels, anonymised | `case-studies-labels-anon.html` | `slides-labels-anon.js` | `…-Labels-Anonymised.pdf` (14pp) |
@@ -19,8 +20,29 @@ Miguel's V3 deck, rebuilt in the **sweatstrategies.com** design language.
 it. Shared fragments and slide archetypes (`caseChart`, `caseStats`, `bend`,
 `spine`) live in `parts.js`.
 
-**The proposal carries no case studies.** They came out so the proposal and a
+**Neither proposal carries case studies.** They came out so a proposal and a
 case-study deck can be sent as two documents.
+
+**The two proposals argue different things.** The artist deck sells a question —
+*have you got a song?* — and promises an answer in 90 days. A label already
+believes it has the record; it wants a hit, and it buys speed, volume and a cost
+per new listener it can plan against. So the label deck keeps the same bones
+(problem, promise, process, verdict, reporting, offer) and changes the argument:
+the promise is **live in 24 hours** rather than *in 90 days you'll know*, the
+verdict slide leads on killing records early rather than on honesty about spend,
+and the offer is PJ's two routes — partner retainer or pay as you go.
+
+| | Artists | Labels |
+|---|---|---|
+| Promise | In 90 days you'll know | Live in 24 hours |
+| Unit | Up to 12 songs over three months | 4, 9 or 20 tests a month |
+| Price | $4,500 / 3 months, or $2,000 pcm | £2K / £4K / £8K pcm, ad spend included |
+| One-off | — | £550 a test, ad spend included |
+| Scaling | 20% on ad spend above $5,000 pcm | 10% on retainer, 20% pay as you go, £1K minimum |
+
+Everything commercial in the label deck is PJ's, verbatim from his brief. Note
+the currency split: he gave the one-off as £550 and the scale minimum as £1K, so
+the retainer tiers are set in £ to match — while the artist deck is in $.
 
 **The case-study decks are evidence documents, not pitches.** No method, no
 roster, no reporting product, no offer and no call to action — one case study
@@ -158,7 +180,8 @@ Artist photography is the site's own (`public/assets/images/artist__*.webp`).
 ## Files
 
 ```
-index.html         proposal shell
+index.html         artist proposal shell
+labels-proposal.html label proposal shell
 case-studies-*.html  case-study shells
 deck.css           the design system — tokens, slide archetypes, print rules
 parts.js           shared fragments and slide archetypes
