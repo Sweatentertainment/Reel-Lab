@@ -18,7 +18,7 @@
    which chart belongs to whom.
    ------------------------------------------------------------------ */
 
-import { bend } from './parts.js';
+import { bend, roster } from './parts.js';
 import { anon as c } from './cases.js';
 
 /* Says so on every slide, not just the cover — this deck gets forwarded, and
@@ -51,34 +51,13 @@ export const SLIDES = [
       </div>`,
   },
 
-  /* 02 — the roster, as a group */
-  {
-    section: 'Artists & partners',
-    grain: 'soft',
-    html: `
-      <div class="pad l-mid">
-        <div class="label reveal" style="margin-bottom:32px">Artists</div>
-        <p class="reveal" style="--d:.1s;font-family:var(--sans);font-weight:700;font-size:40px;line-height:1.36;letter-spacing:-0.035em;max-width:1620px">
-          Swedish House Mafia · Disclosure · Bonobo · Maribou State · Thundercat ·
-          Barry Can't Swim · Blond:Ish · Mark Tuan · Leon Thomas · Omar+ ·
-          St Lundi · ADMT · Harry T · Cristoph · The Listros · KOGIS · Ruthanne ·
-          Kid Apollo · Dolores Forever · The Knocks · Rules · Morly · Scout ·
-          Ormella
-        </p>
-        <div class="rule reveal" style="--d:.26s;margin:60px 0 40px"></div>
-        <div class="label reveal" style="--d:.32s;margin-bottom:26px">Labels &amp; partners</div>
-        <ul class="channels reveal" style="--d:.38s">
-          <li>Atlantic Records</li><li>BMG</li><li>Ninja Tune</li><li>Live Nation</li>
-          <li>CAA</li><li>SJM</li><li>Disorder</li><li>Propeller</li><li>Redlight</li>
-          <li>Too Lost</li><li>3000 Years</li><li>Funfair</li>
-        </ul>
-        <p class="body reveal" style="--d:.46s;font-size:21px;max-width:1060px;margin-top:56px;opacity:0.75">
-          The campaigns that follow are drawn from this roster. For transparency:
-          the data has been anonymised — names, titles and artwork removed, every
-          number left exactly as it is. Happy to talk any of them through in person.
-        </p>
-      </div>`,
-  },
+  /* 02 — the roster, as a group. Shared with both proposals via parts.js,
+     so a name added there shows up in all three decks. */
+  roster({
+    note: 'The campaigns that follow are drawn from this roster. For transparency: '
+      + 'the data has been anonymised — names, titles and artwork removed, every '
+      + 'number left exactly as it is. Happy to talk any of them through in person.',
+  }),
 
   /* The EP leads, per PJ — it's the strongest opener. Everything after it
      runs largest first, as in the named deck. */

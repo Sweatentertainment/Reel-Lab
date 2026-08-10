@@ -4,13 +4,13 @@ Miguel's V3 deck, rebuilt in the **sweatstrategies.com** design language.
 
 - **Present it:** open `index.html` (any static server, or just open the file).
   `←` `→` / space / click to move, `F` for fullscreen, dots at the bottom to jump.
-- **Send it:** `Sweat-Strategies-Proposal-2026.pdf` — 16 pages, 16:9.
+- **Send it:** `Sweat-Strategies-Proposal-2026.pdf` — 17 pages, 16:9.
 
 ## Five decks, one engine
 
 | Deck | Page | Content | PDF |
 |---|---|---|---|
-| Proposal — artists | `index.html` | `slides.js` | `Sweat-Strategies-Proposal-2026.pdf` (16pp) |
+| Proposal — artists | `index.html` | `slides.js` | `Sweat-Strategies-Proposal-2026.pdf` (17pp) |
 | Proposal — labels | `labels-proposal.html` | `slides-labels-offer.js` | `Sweat-Labels-Proposal-2026.pdf` (19pp) |
 | Case studies — independent artists | `case-studies-indie.html` | `slides-indie.js` | `…-Independent-Artists.pdf` (16pp) |
 | Case studies — labels & partners | `case-studies-labels.html` | `slides-labels.js` | `…-Labels.pdf` (12pp) |
@@ -49,6 +49,16 @@ roster, no reporting product, no offer and no call to action — one case study
 per slide, each with its number, the window it covers, and the screenshot that
 proves it. The one exception is the Artists & partners slide in the anonymised
 deck, which exists precisely because the results carry no names.
+
+**The roster slide is shared.** `ARTISTS`, `PARTNERS` and `roster()` live in
+`parts.js`, and all three decks that carry the slide call it — both proposals
+and the anonymised case studies. Adding a name means editing one array. The
+proposals pass no `note`; the anonymised deck passes the paragraph explaining
+what has been removed, which would be a false claim in a proposal.
+
+In the label proposal this replaced a two-tier "Campaigns for / Also on the
+books" split. The split carried more information, but it meant the proposal
+and the case-study deck disagreed about who was on the books.
 
 The cases live in **`cases.js`**, one definition each, rendered two ways:
 

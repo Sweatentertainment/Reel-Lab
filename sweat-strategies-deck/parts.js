@@ -63,6 +63,49 @@ export const browser = ({ src, alt, url = 'sweat.fm' }) => `
     <div class="brw__view"><img src="${img(src)}" alt="${alt}"></div>
   </div>`;
 
+/* ------------------------------------------------------------- the roster */
+
+/* Defined once and used by all three decks that carry it, so a name added
+   here appears everywhere rather than in whichever file got remembered. */
+
+export const ARTISTS = [
+  'Swedish House Mafia', 'Disclosure', 'Bonobo', 'Maribou State', 'Thundercat',
+  'Elderbrook', "Barry Can't Swim", 'Kerri Chandler', 'Blond:Ish', 'Carlita',
+  'Mark Tuan', 'Leon Thomas', 'Omar+', 'St Lundi', 'ADMT', 'Harry T',
+  'Cristoph', 'Sam Alfred', 'Gaskin', 'The Listros', 'KOGIS', 'Ruthanne',
+  'Ethan Walsh', 'Kid Apollo', 'Boy Loco', 'Dolores Forever', 'The Knocks',
+  'Rules', 'Morly', 'Scout', 'Ormella',
+];
+
+export const PARTNERS = [
+  'Atlantic Records', 'BMG', 'Ninja Tune', 'Live Nation', 'CAA', 'SJM',
+  'Disorder', 'Propeller', 'Redlight', 'Too Lost', '3000 Years', 'Funfair',
+  'Circuit Group', 'Chosen Music',
+];
+
+/* `note` is the paragraph under the lists. The anonymised case-study deck
+   uses it to say the data has been anonymised; the proposals pass nothing,
+   because there they'd be claiming something that isn't true of them. */
+export const roster = ({ note = '' } = {}) => ({
+  section: 'Artists & partners',
+  grain: 'soft',
+  html: `
+    <div class="pad l-mid">
+      <div class="label reveal" style="margin-bottom:32px">Artists</div>
+      <p class="reveal" style="--d:.1s;font-family:var(--sans);font-weight:700;font-size:40px;line-height:1.36;letter-spacing:-0.035em;max-width:1620px">
+        ${/* nowrap per name, or the line breaks land inside them — "Barry /
+             Can't Swim" reads as two acts */ ''}
+        ${ARTISTS.map((a) => `<span style="white-space:nowrap">${a}</span>`).join(' · ')}
+      </p>
+      <div class="rule reveal" style="--d:.26s;margin:60px 0 40px"></div>
+      <div class="label reveal" style="--d:.32s;margin-bottom:26px">Labels &amp; partners</div>
+      <ul class="channels reveal" style="--d:.38s">
+        ${PARTNERS.map((p) => `<li>${p}</li>`).join('')}
+      </ul>
+      ${note ? `<p class="body reveal" style="--d:.46s;font-size:21px;max-width:1060px;margin-top:56px;opacity:0.75">${note}</p>` : ''}
+    </div>`,
+});
+
 /* ------------------------------------------------------- slide archetypes */
 
 /* a case study carried by a chart: the number on the left, the evidence right */

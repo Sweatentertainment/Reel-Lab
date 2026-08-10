@@ -8,7 +8,7 @@
    Edit copy here — layout and styling live in deck.css.
    ------------------------------------------------------------------ */
 
-import { img, spine, blobs, tile, bend, laptop } from './parts.js';
+import { img, spine, blobs, tile, bend, roster, laptop } from './parts.js';
 
 /* ------------------------------------------------------------ slides */
 
@@ -49,6 +49,11 @@ export const SLIDES = [
             style="font-size:222px;line-height:1;letter-spacing:-0.022em;white-space:nowrap;color:#0b0b0d">FIND THE SONG.</h1>
       </div>`,
   },
+
+  /* 03 — the roster, the same slide the case-study decks carry (parts.js).
+     Credibility before the problem: the scatter shows the faces, this names
+     them and the labels behind them. */
+  roster(),
 
   /* 03 — was 06. black grainy, bracketed. */
   {

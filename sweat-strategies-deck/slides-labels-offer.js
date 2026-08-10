@@ -17,7 +17,7 @@
    — worth a look before this goes out.
    ------------------------------------------------------------------ */
 
-import { img, spine, blobs, bend, laptop } from './parts.js';
+import { img, spine, blobs, bend, roster, laptop } from './parts.js';
 
 export const SLIDES = [
   /* 01 — cover. Miguel's original, the same one that opens the artist deck:
@@ -53,36 +53,12 @@ export const SLIDES = [
       </div>`,
   },
 
-  /* 03 — who we work with. Sits here rather than late in the deck: a label
-     reading a cold proposal wants to know who we are before it'll entertain
-     our theory of its problem. "Currently running" is from PJ's own
-     proposal doc, 4 Aug 2026. */
-  {
-    section: 'Who we work with',
-    grain: 'soft',
-    html: `
-      <div class="pad l-mid">
-        <div class="label reveal" style="margin-bottom:28px">Campaigns for</div>
-        <p class="reveal" style="--d:.08s;font-family:var(--sans);font-weight:800;font-size:50px;line-height:1.28;letter-spacing:-0.04em;max-width:1620px">
-          Swedish House Mafia · Thundercat · Barry Can't Swim ·
-          Omar+ · St Lundi · ADMT
-        </p>
-        <div class="rule reveal" style="--d:.2s;margin:52px 0 36px"></div>
-        <div class="label reveal" style="--d:.26s;margin-bottom:24px">Also on the books</div>
-        <p class="reveal" style="--d:.32s;font-family:var(--sans);font-weight:700;font-size:31px;line-height:1.4;letter-spacing:-0.03em;max-width:1620px">
-          Disclosure · Bonobo · Maribou State · Blond:Ish · Mark Tuan ·
-          Leon Thomas · Harry T · Cristoph · The Listros · KOGIS · Ruthanne ·
-          Kid Apollo · Dolores Forever · The Knocks · Rules · Morly · Scout · Ormella
-        </p>
-        <div class="rule reveal" style="--d:.38s;margin:48px 0 32px"></div>
-        <div class="label reveal" style="--d:.44s;margin-bottom:24px">Labels &amp; partners</div>
-        <ul class="channels reveal" style="--d:.5s">
-          <li>Atlantic Records</li><li>BMG</li><li>Ninja Tune</li><li>Live Nation</li>
-          <li>CAA</li><li>SJM</li><li>Disorder</li><li>Propeller</li><li>Redlight</li>
-          <li>Too Lost</li><li>3000 Years</li><li>Funfair</li>
-        </ul>
-      </div>`,
-  },
+  /* 03 — the roster. Sits here rather than late in the deck: a label reading
+     a cold proposal wants to know who we are before it'll entertain our theory
+     of its problem. Same slide as the anonymised case studies, from parts.js —
+     it replaced a two-tier "Campaigns for / Also on the books" split, which
+     meant the two documents disagreed about who was on the books. */
+  roster(),
 
   /* 04 — the problem. PJ's underlying point is that in-house teams launch
      what they're given, but stated that way it accuses the person reading
