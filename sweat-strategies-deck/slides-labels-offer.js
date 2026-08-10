@@ -62,7 +62,7 @@ export const SLIDES = [
     grain: 'soft',
     html: `
       <div class="pad l-mid">
-        <div class="label reveal" style="margin-bottom:28px">Currently running</div>
+        <div class="label reveal" style="margin-bottom:28px">Campaigns for</div>
         <p class="reveal" style="--d:.08s;font-family:var(--sans);font-weight:800;font-size:50px;line-height:1.28;letter-spacing:-0.04em;max-width:1620px">
           Swedish House Mafia · Thundercat · Barry Can't Swim ·
           Omar+ · St Lundi · ADMT
@@ -84,15 +84,17 @@ export const SLIDES = [
       </div>`,
   },
 
-  /* 04 — the problem, in label terms. The artist version is "most artists
-     never find out". A label's problem isn't ignorance, it's allocation. */
+  /* 04 — the problem, PJ's framing: in-house teams launch what they get
+     given. The failure isn't picking the wrong record, it's that the
+     creative never gets tested, so nobody learns anything either way.
+     Phrased at the workflow rather than the team — the person reading this
+     may well run that team. */
   {
     section: 'The problem',
     grain: true,
     html: `
       <div class="pad l-centre">
-        <h2 class="display display--m reveal"><span class="bracket">Which one gets the money</span></h2>
-        <div class="dashbox reveal" style="--d:.35s;width:118px;height:118px;margin-top:96px;font-size:44px;font-weight:300;color:#fff">?</div>
+        <h2 class="display display--m reveal"><span class="bracket">In-house teams launch what they're given</span></h2>
       </div>`,
   },
 
@@ -108,19 +110,60 @@ export const SLIDES = [
       ])}
       <div class="pad l-end">
         <div style="display:grid;grid-template-columns:1.05fr 0.72fr;align-items:end;gap:150px">
-          <h2 class="display reveal" style="font-size:64px;font-weight:700;letter-spacing:-0.035em;line-height:1.1">
-            You've got the roster and the catalogue. The hard part is knowing which record deserves a real budget.
+          <h2 class="display reveal" style="font-size:62px;font-weight:700;letter-spacing:-0.035em;line-height:1.12">
+            One edit goes out. Nobody ever finds out whether a different one would have worked better.
           </h2>
           <p class="body reveal" style="--d:.2s;max-width:none;padding-bottom:12px">
-            The decision usually gets made on instinct, a marketing meeting and a release date.
-            By the time the numbers come back the money is spent and the window has closed.
-            Testing turns that into an answer you can get in a week, for a fraction of the spend.
+            That isn't a criticism of the team — it's what the workflow allows.
+            Assets arrive, spend goes behind them, and the numbers come back after
+            the money's gone. When it underperforms there's no way to tell whether
+            it was the record, the audience or the edit, because only one edit ever ran.
           </p>
         </div>
       </div>`,
   },
 
-  /* 06 — the promise. The artist deck's is "In 90 days you'll know."
+  /* 06 — the answer to it, stated as a contrast. Covers PJ's four points:
+     content at scale, cost per result driven down, a straight read on what
+     works, and speed. */
+  {
+    section: 'The difference',
+    grain: 'soft',
+    html: `
+      <div class="pad l-mid">
+        <h2 class="display reveal" style="font-size:62px;line-height:1.14;margin-bottom:70px;max-width:1400px">
+          <span class="hl">We don't launch creative.</span> We find out which creative works, then launch that.
+        </h2>
+        <ol class="steps reveal" style="--d:.18s">
+          <li><span>01</span>
+            <div>
+              <div style="font-family:var(--sans);font-weight:700;font-size:26px;letter-spacing:-0.03em;margin-bottom:10px">Content at scale</div>
+              <p class="body" style="font-size:20px;max-width:620px">Dozens of edits per record, not the one the label was handed.</p>
+            </div>
+          </li>
+          <li><span>02</span>
+            <div>
+              <div style="font-family:var(--sans);font-weight:700;font-size:26px;letter-spacing:-0.03em;margin-bottom:10px">Cost driven down</div>
+              <p class="body" style="font-size:20px;max-width:620px">Volume is what gets a cost per result low. You can't optimise one asset.</p>
+            </div>
+          </li>
+          <li><span>03</span>
+            <div>
+              <div style="font-family:var(--sans);font-weight:700;font-size:26px;letter-spacing:-0.03em;margin-bottom:10px">A straight read</div>
+              <p class="body" style="font-size:20px;max-width:620px">We tell you what's working and what isn't, and which of the two the record is.</p>
+            </div>
+          </li>
+          <li><span>04</span>
+            <div>
+              <div style="font-family:var(--sans);font-weight:700;font-size:26px;letter-spacing:-0.03em;margin-bottom:10px">Days, not quarters</div>
+              <p class="body" style="font-size:20px;max-width:620px">Live in 24 hours, read within the week, while the release window is still open.</p>
+            </div>
+          </li>
+        </ol>
+      </div>`,
+  },
+
+  /* 07 — the promise. The artist deck's is "In 90 days you'll know."
      For a label the promise is speed. */
   {
     section: 'The promise',
@@ -136,7 +179,7 @@ export const SLIDES = [
       </div>`,
   },
 
-  /* 07 */
+  /* 08 */
   {
     section: 'The promise',
     html: `
@@ -163,7 +206,7 @@ export const SLIDES = [
       </div>`,
   },
 
-  /* 08 — section title */
+  /* 09 — section title */
   {
     section: 'The process',
     html: `
@@ -177,7 +220,7 @@ export const SLIDES = [
       </div>`,
   },
 
-  /* 09–12 — the four steps. "Find the sound" and "test the content at scale"
+  /* 10–13 — the four steps. "Find the sound" and "test the content at scale"
      are PJ's own headings. */
   ...[
     {
@@ -218,7 +261,7 @@ export const SLIDES = [
       </div>`,
   })),
 
-  /* 13 — the verdict, retoned. A label doesn't need to be told to stop
+  /* 14 — the verdict, retoned. A label doesn't need to be told to stop
      spending; it needs to know we'll call a record dead early enough to
      put the money on the next one. */
   {
@@ -241,7 +284,7 @@ export const SLIDES = [
       </div>`,
   },
 
-  /* 14 — reporting */
+  /* 15 — reporting */
   {
     section: 'Reporting',
     grain: 'soft',
@@ -266,7 +309,7 @@ export const SLIDES = [
       </div>`,
   },
 
-  /* 15 — offer section title. PJ's framing: two routes. */
+  /* 16 — offer section title. PJ's framing: two routes. */
   {
     section: 'The offer',
     grain: true,
@@ -276,7 +319,7 @@ export const SLIDES = [
       </div>`,
   },
 
-  /* 16 — the retainers. All PJ's numbers. */
+  /* 17 — the retainers. All PJ's numbers. */
   {
     section: 'The offer',
     grain: 'soft',
@@ -318,7 +361,7 @@ export const SLIDES = [
       </div>`,
   },
 
-  /* 17 — the one-off. */
+  /* 18 — the one-off. */
   {
     section: 'The offer',
     grain: 'soft',
@@ -360,7 +403,7 @@ export const SLIDES = [
       </div>`,
   },
 
-  /* 18 — close */
+  /* 19 — close */
   {
     section: 'Next',
     grain: 'soft',
