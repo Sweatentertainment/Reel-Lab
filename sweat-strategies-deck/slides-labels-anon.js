@@ -21,6 +21,13 @@
 import { bend } from './parts.js';
 import { anon as c } from './cases.js';
 
+/* Says so on every slide, not just the cover — this deck gets forwarded, and
+   a page of charts with no names on it should explain itself wherever it's
+   opened. Both the page shell and the standalone build read this. */
+export const OPTS = {
+  legal: 'Artist names, track titles and artwork have been anonymised.<br>All figures are unchanged. 2026 Sweat Strategies.',
+};
+
 export const SLIDES = [
   /* 01 — title */
   {
@@ -32,8 +39,9 @@ export const SLIDES = [
           <div class="label reveal" style="margin-bottom:40px">Labels &amp; partners</div>
           <h1 class="display reveal" style="--d:.1s;font-size:150px;line-height:0.94">Case<br>studies.</h1>
           <p class="body reveal" style="--d:.24s;font-size:23px;max-width:520px;margin-top:40px">
-            Results shown without the artist attached. Every figure is the
-            real one, straight off Spotify for Artists.
+            This data has been anonymised. Artist names, track titles and
+            artwork are removed — every figure is the real one, straight off
+            Spotify for Artists.
           </p>
         </div>
         <div style="display:flex;align-items:center;justify-content:center;gap:48px">
@@ -64,10 +72,10 @@ export const SLIDES = [
           <li>CAA</li><li>SJM</li><li>Disorder</li><li>Propeller</li><li>Redlight</li>
           <li>Too Lost</li><li>3000 Years</li><li>Funfair</li>
         </ul>
-        <p class="body reveal" style="--d:.46s;font-size:21px;max-width:1000px;margin-top:56px;opacity:0.75">
-          The campaigns that follow are drawn from this roster. We've kept the
-          results and left the names off — happy to talk through any of them
-          in person.
+        <p class="body reveal" style="--d:.46s;font-size:21px;max-width:1060px;margin-top:56px;opacity:0.75">
+          The campaigns that follow are drawn from this roster. For transparency:
+          the data has been anonymised — names, titles and artwork removed, every
+          number left exactly as it is. Happy to talk any of them through in person.
         </p>
       </div>`,
   },

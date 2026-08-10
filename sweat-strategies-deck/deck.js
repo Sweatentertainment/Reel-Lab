@@ -4,7 +4,10 @@
 
 const LEGAL = '2026 Sweat Strategies. All rights reserved.<br>Confidential and proprietary information.';
 
-export function mount(SLIDES) {
+/* opts.legal replaces the footer line — the anonymised deck uses it to say
+   so on every slide rather than only on the cover */
+export function mount(SLIDES, opts = {}) {
+  const legal = opts.legal ?? LEGAL;
   const scaler = document.getElementById('scaler');
   const rail = document.getElementById('rail');
   const hint = document.getElementById('hint');
@@ -27,7 +30,7 @@ export function mount(SLIDES) {
           <span class="chrome__num">${String(i + 1).padStart(2, '0')}</span>
           <span class="chrome__sect">${s.section}</span>
         </div>
-        <div class="chrome__legal">${LEGAL}</div>
+        <div class="chrome__legal">${legal}</div>
       </div>`;
 
     el.innerHTML = `${s.html}${chrome}`;

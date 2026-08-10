@@ -76,6 +76,10 @@ It leads with the EP campaign rather than the largest number, then runs largest
 first, and closes on the ADMT ticketing case — which the named labels deck
 doesn't carry, because it isn't a streaming result.
 
+The deck states its own anonymisation: on the cover, on the roster slide, and
+in the footer of every single slide, via `OPTS.legal` exported from the slide
+module and read by both the page shell and the standalone build.
+
 `scripts/anonymise.mjs` crops the entire header off each
 screenshot — artwork, release type, track title, all-time streams and release
 date — the artist photo cards are dropped, and the section and label are
@@ -109,9 +113,14 @@ originals by `scripts/prep-shots.mjs`, which collapses the dead white band in
 each Spotify header and downscales to 1500px. The collapse is confined to the
 top 42% of each image so no plotted area is ever squashed.
 
-Two figures come from `SweatProposalNewtonFaulkner` (PJ's own doc, 4 Aug 2026)
-rather than a screenshot: ADMT's ticket numbers and the cost-per-listener
-figures. Mark Tuan's merch number comes from Miguel's V3 deck.
+**Spend and CPR are not on the screenshots.** Spotify for Artists doesn't show
+what a campaign cost, so every spend and every CPR figure comes from Sweat's
+own numbers, supplied by PJ. Same for ADMT's ticket figures, Mark Tuan's merch
+revenue, and The Listros' 2M monthly-stream peak. Everything else — streams,
+listeners, playlist adds, saves, date ranges — is read off the chart beside it.
+
+ADMT's gross is £66K rather than the £70K carried over from V3, which is what
+makes 11:1 against £6K of spend arithmetically true.
 
 **Two things still need a decision before either deck goes to a client:**
 

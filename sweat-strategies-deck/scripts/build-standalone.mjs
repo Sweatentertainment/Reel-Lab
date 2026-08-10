@@ -106,7 +106,8 @@ const strip = (src) => src
 
 /* cases before slides — the slide file references the case constants */
 const js = inlineAssets(
-  `${strip(parts)}\n${strip(casesSrc)}\n${strip(slides)}\n${strip(deck)}\nmount(SLIDES);`,
+  `${strip(parts)}\n${strip(casesSrc)}\n${strip(slides)}\n${strip(deck)}\n`
+  + `mount(SLIDES, typeof OPTS === 'undefined' ? {} : OPTS);`,
 );
 
 /* ---- page ---- */
