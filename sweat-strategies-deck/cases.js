@@ -32,13 +32,16 @@
 
 import { caseChart, caseStats } from './parts.js';
 
-/* pick the named or anonymised face of a case */
+/* Pick the named or anonymised face of a case. Headline, kicker and body
+   fall through to the shared copy unless the anonymised cut needs its own
+   — either because the shared wording names the release type, or because
+   it quotes something the header crop takes away. */
 const chart = (c, anon) =>
   caseChart({
     section: anon ? c.anonSection : c.section,
     label: anon ? c.anonLabel : c.label,
-    headline: c.headline,
-    kicker: c.kicker,
+    headline: anon && c.anonHeadline ? c.anonHeadline : c.headline,
+    kicker: anon && c.anonKicker ? c.anonKicker : c.kicker,
     body: anon && c.anonBody ? c.anonBody : c.body,
     shot: anon ? (c.anonShot ?? c.shot.replace('.jpg', '__anon.jpg')) : c.shot,
     alt: anon ? c.anonAlt : c.alt,
@@ -122,17 +125,24 @@ const MARIBOU = {
   anonAlt: 'Spotify for Artists, artist withheld: 4,352,888 streams and 1,917,533 listeners over 28 days, up 14.1% on the previous period',
 };
 
-/* artist not shown in the screenshot */
+/* artist not shown in the screenshot. The anonymised cut drops "album"
+   entirely — the release type is a step towards identifying it — and leads
+   on the growth instead. */
 const FROM_GOOD_TO_BAD = {
   section: 'From Good To Bad',
-  anonSection: 'Album campaign',
+  anonSection: '3 month project growth',
   label: 'From Good To Bad And Then Back Again',
-  anonLabel: 'Album · sixteen weeks to release',
+  anonLabel: '3 month project growth',
   headline: '2M streams<br>across an album<br>campaign.',
+  anonHeadline: '5K to 50K<br>streams a day.',
   kicker: 'Averaged 18K a day · release week above 50K',
+  anonKicker: '2,016,983 streams · 545,129 listeners',
   body: `Built over sixteen weeks from about 5,000 a day to a release-week peak
          above 50,000, then held at four times where it started. 545,129
          listeners and 119,946 saves.`,
+  anonBody: `Grown from about 5,000 streams a day to a peak above 50,000, then
+             held at four times where it started. 66,169 playlist adds and
+             119,946 saves.`,
   shot: 'cs-from-good-to-bad.jpg',
   alt: 'Spotify for Artists: From Good To Bad And Then Back Again — 2,016,983 streams and 545,129 listeners, 10 February to 31 May 2026',
   anonAlt: 'Spotify for Artists, artist withheld: 2,016,983 streams and 545,129 listeners over sixteen weeks',
@@ -153,16 +163,19 @@ const RUTHANNE = {
   anonAlt: 'Spotify for Artists, artist withheld: 466,218 streams and 213,754 listeners over four months, rising from about 1,500 to 11,000 a day',
 };
 
-/* artist not shown in the screenshot */
+/* artist not shown in the screenshot. Per PJ: a debut track from an artist
+   with no social presence, run as a test — which is the whole point of the
+   slide, so it leads. */
 const FOREVER = {
   section: 'Forever',
-  anonSection: 'New single',
+  anonSection: 'Brand new artist',
   label: 'Forever',
-  anonLabel: 'Single · first month',
+  anonLabel: 'Debut track · no social media · launched as a&nbsp;test',
   headline: '257K streams<br>in the first month.',
   kicker: 'Peak day 19,930 · 101,943 listeners',
-  body: `Straight into a climb from release day. Twelve thousand playlist adds
-         and nearly sixteen thousand saves inside thirty days.`,
+  body: `A debut track from a brand new artist with no social media, launched
+         as a test. Twelve thousand playlist adds and nearly sixteen thousand
+         saves inside thirty days.`,
   shot: 'cs-forever.jpg',
   alt: 'Spotify for Artists: Forever — 257,251 streams and 101,943 listeners, 12 June to 12 July 2026, peaking at 19,930 on 10 July',
   anonAlt: 'Spotify for Artists, artist withheld: 257,251 streams and 101,943 listeners in the first month, peaking at 19,930',
@@ -259,7 +272,9 @@ const THE_LISTROS = {
   label: 'Unlocking catalogue value',
   anonLabel: 'Catalogue track · six months',
   headline: '76K to 300K<br>monthly listeners.',
-  kicker: 'Six months · 12p a listener',
+  /* the 2M monthly streams and the 12p both come from Sweat's own numbers —
+     the Chartmetric view beside this one plots listeners, not streams */
+  kicker: 'Peaking at 2M monthly streams · 12p a listener',
   body: `No new release and no new recording. A back-catalogue track that was
          already half-working, proved out on a test budget and then scaled.`,
   shot: 'chartmetric.jpg',

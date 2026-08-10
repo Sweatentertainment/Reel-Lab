@@ -13,7 +13,7 @@ Miguel's V3 deck, rebuilt in the **sweatstrategies.com** design language.
 | Proposal | `index.html` | `slides.js` | `Sweat-Strategies-Proposal-2026.pdf` (16pp) |
 | Case studies — independent artists | `case-studies-indie.html` | `slides-indie.js` | `…-Independent-Artists.pdf` (16pp) |
 | Case studies — labels & partners | `case-studies-labels.html` | `slides-labels.js` | `…-Labels.pdf` (12pp) |
-| Case studies — labels, anonymised | `case-studies-labels-anon.html` | `slides-labels-anon.js` | `…-Labels-Anonymised.pdf` (13pp) |
+| Case studies — labels, anonymised | `case-studies-labels-anon.html` | `slides-labels-anon.js` | `…-Labels-Anonymised.pdf` (14pp) |
 
 `deck.js` exports `mount(SLIDES)`; each page imports its own slide set and calls
 it. Shared fragments and slide archetypes (`caseChart`, `caseStats`, `bend`,
@@ -69,10 +69,14 @@ the threshold is checkable off the chart rather than taken on trust.
 The Listros and Mark Tuan are in both: one is measured in monthly listeners and
 the other in merch revenue, so the daily-streams rule doesn't reach either.
 ADMT is a ticketing result rather than a streaming one, so it sits in the indie
-deck only.
+deck and — at PJ's request — at the end of the anonymised one.
 
-**The anonymised labels deck** is the same cases in the same order, for sending
-over email. `scripts/anonymise.mjs` crops the entire header off each
+**The anonymised labels deck** carries the same cases, for sending over email.
+It leads with the EP campaign rather than the largest number, then runs largest
+first, and closes on the ADMT ticketing case — which the named labels deck
+doesn't carry, because it isn't a streaming result.
+
+`scripts/anonymise.mjs` crops the entire header off each
 screenshot — artwork, release type, track title, all-time streams and release
 date — the artist photo cards are dropped, and the section and label are
 replaced with a generic description. Every figure, date range and chart stays.
@@ -81,8 +85,17 @@ Cropping replaced an earlier attempt at blurring the artwork and title in
 place, which wasn't safe enough: a two-line title only had its second line
 caught, and pale artwork wasn't detected as artwork at all.
 
-Because the crop takes the all-time stream count with it, a case quoting that
-number needs an `anonBody` that doesn't — Maribou State is the one that does.
+Three cases override the shared copy for the anonymised cut, via `anonHeadline`,
+`anonKicker` and `anonBody`:
+
+- **Maribou State** quotes the all-time stream count, which the crop removes.
+- **From Good To Bad** is relabelled "3 month project growth" and leads on the
+  climb from 5K to 50K a day, because naming the release type is a step
+  towards naming the release. Note the window on the chart is 10 Feb – 31 May,
+  nearer sixteen weeks than three months.
+- **Forever** is framed as a debut track from an artist with no social presence,
+  launched as a test — PJ's description of the campaign, not something the
+  chart shows.
 
 ## Where the case-study numbers come from
 

@@ -60,9 +60,9 @@ export const SLIDES = [
         <div class="rule reveal" style="--d:.26s;margin:60px 0 40px"></div>
         <div class="label reveal" style="--d:.32s;margin-bottom:26px">Labels &amp; partners</div>
         <ul class="channels reveal" style="--d:.38s">
-          <li>BMG</li><li>Ninja Tune</li><li>Live Nation</li><li>CAA</li><li>SJM</li>
-          <li>Disorder</li><li>Propeller</li><li>Redlight</li><li>Too Lost</li>
-          <li>3000 Years</li><li>Funfair</li>
+          <li>Atlantic Records</li><li>BMG</li><li>Ninja Tune</li><li>Live Nation</li>
+          <li>CAA</li><li>SJM</li><li>Disorder</li><li>Propeller</li><li>Redlight</li>
+          <li>Too Lost</li><li>3000 Years</li><li>Funfair</li>
         </ul>
         <p class="body reveal" style="--d:.46s;font-size:21px;max-width:1000px;margin-top:56px;opacity:0.75">
           The campaigns that follow are drawn from this roster. We've kept the
@@ -72,12 +72,13 @@ export const SLIDES = [
       </div>`,
   },
 
-  /* above 10K streams a day, largest first — same order as the named deck */
-  c.distracted,          // averaged 202K a day
+  /* The EP leads, per PJ — it's the strongest opener. Everything after it
+     runs largest first, as in the named deck. */
   c.asSoonAsIGetHome,    // averaged 134K a day
+  c.distracted,          // averaged 202K a day
   c.harryT,              // averaged  76K a day
   c.maribouState,        // averaged 155K a day over 28 days
-  c.fromGoodToBad,       // averaged  18K a day, release week above 50K
+  c.fromGoodToBad,       // averaged  18K a day, peak above 50K
   c.ruthanne,            // climbed to 11K a day
   c.forever,             // peak day 19,930
   c.cristoph,            // climbed to 18K a day
@@ -86,4 +87,5 @@ export const SLIDES = [
   /* not measured in daily streams */
   c.theListros,          // monthly listeners
   c.markTuan,            // merch revenue
+  c.admt,                // tickets
 ];
