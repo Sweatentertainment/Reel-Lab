@@ -20,7 +20,19 @@
 import { img, spine, blobs, bend } from './parts.js';
 
 export const SLIDES = [
-  /* 01 — cover */
+  /* 01 — cover. Miguel's original, the same one that opens the artist deck:
+     used whole, with its own baked-in chrome, so we don't double up on the
+     slide furniture. */
+  {
+    section: 'Proposal',
+    chrome: 'none',
+    html: `
+      <div style="position:absolute;inset:0;z-index:0">
+        <img src="${img('cover.jpg')}" alt="" style="width:100%;height:100%;object-fit:cover">
+      </div>`,
+  },
+
+  /* 02 — the hook */
   {
     section: 'Proposal',
     grain: 'soft',
@@ -41,7 +53,7 @@ export const SLIDES = [
       </div>`,
   },
 
-  /* 02 — the problem, in label terms. The artist version is "most artists
+  /* 03 — the problem, in label terms. The artist version is "most artists
      never find out". A label's problem isn't ignorance, it's allocation. */
   {
     section: 'The problem',
@@ -53,7 +65,7 @@ export const SLIDES = [
       </div>`,
   },
 
-  /* 03 */
+  /* 04 */
   {
     section: 'The problem',
     html: `
@@ -77,7 +89,7 @@ export const SLIDES = [
       </div>`,
   },
 
-  /* 04 — the promise. The artist deck's is "In 90 days you'll know."
+  /* 05 — the promise. The artist deck's is "In 90 days you'll know."
      For a label the promise is speed. */
   {
     section: 'The promise',
@@ -93,7 +105,7 @@ export const SLIDES = [
       </div>`,
   },
 
-  /* 05 */
+  /* 06 */
   {
     section: 'The promise',
     html: `
@@ -120,7 +132,7 @@ export const SLIDES = [
       </div>`,
   },
 
-  /* 06 — section title */
+  /* 07 — section title */
   {
     section: 'The process',
     html: `
@@ -134,7 +146,7 @@ export const SLIDES = [
       </div>`,
   },
 
-  /* 07–10 — the four steps. "Find the sound" and "test the content at scale"
+  /* 08–11 — the four steps. "Find the sound" and "test the content at scale"
      are PJ's own headings. */
   ...[
     {
@@ -175,7 +187,7 @@ export const SLIDES = [
       </div>`,
   })),
 
-  /* 11 — the verdict, retoned. A label doesn't need to be told to stop
+  /* 12 — the verdict, retoned. A label doesn't need to be told to stop
      spending; it needs to know we'll call a record dead early enough to
      put the money on the next one. */
   {
@@ -198,7 +210,7 @@ export const SLIDES = [
       </div>`,
   },
 
-  /* 12 — reporting */
+  /* 13 — reporting */
   {
     section: 'Reporting',
     grain: 'soft',
@@ -223,7 +235,7 @@ export const SLIDES = [
       </div>`,
   },
 
-  /* 13 — offer section title. PJ's framing: two routes. */
+  /* 14 — offer section title. PJ's framing: two routes. */
   {
     section: 'The offer',
     grain: true,
@@ -233,7 +245,7 @@ export const SLIDES = [
       </div>`,
   },
 
-  /* 14 — the retainers. All PJ's numbers. */
+  /* 15 — the retainers. All PJ's numbers. */
   {
     section: 'The offer',
     grain: 'soft',
@@ -267,7 +279,7 @@ export const SLIDES = [
       </div>`,
   },
 
-  /* 15 — the one-off. */
+  /* 16 — the one-off. */
   {
     section: 'The offer',
     grain: 'soft',
@@ -309,7 +321,7 @@ export const SLIDES = [
       </div>`,
   },
 
-  /* 16 — close */
+  /* 17 — close */
   {
     section: 'Next',
     grain: 'soft',
