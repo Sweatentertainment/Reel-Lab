@@ -56,7 +56,13 @@ const css = inlineAssets(readFileSync(join(root, 'deck.css'), 'utf8'));
    would triple the page for no reason. */
 const slidesSrc = readFileSync(join(root, slidesFile), 'utf8');
 const partsSrc = readFileSync(join(root, 'parts.js'), 'utf8');
-const referenced = `${slidesSrc}\n${partsSrc}\n${css}`;
+
+/* the case-study decks keep their cases in a shared module; the proposal
+   doesn't, so only pull it in when the slide file actually imports it */
+const usesCases = /from '\.\/cases\.js'/.test(slidesSrc);
+const casesSrc = usesCases ? readFileSync(join(root, 'cases.js'), 'utf8') : '';
+
+const referenced = `${slidesSrc}\n${casesSrc}\n${partsSrc}\n${css}`;
 
 const byName = Object.fromEntries(
   [...assets]
@@ -80,7 +86,10 @@ const strip = (src) => src
   .replace(/^import\s+[^;]*from\s+'\.\/[^']*';\s*$/gm, '')
   .replace(/^export\s+(const|function)/gm, '$1');
 
-const js = inlineAssets(`${strip(parts)}\n${strip(slides)}\n${strip(deck)}\nmount(SLIDES);`);
+/* cases before slides — the slide file references the case constants */
+const js = inlineAssets(
+  `${strip(parts)}\n${strip(casesSrc)}\n${strip(slides)}\n${strip(deck)}\nmount(SLIDES);`,
+);
 
 /* ---- page ---- */
 

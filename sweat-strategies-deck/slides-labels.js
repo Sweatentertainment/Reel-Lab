@@ -1,25 +1,33 @@
 /* ------------------------------------------------------------------
    Case studies — Labels & partners
-   The bigger results: scaled spend, catalogue, revenue beyond streams.
 
-   This is an evidence document, not a pitch. One case study per slide:
-   the number, the window it covers, and the screenshot that proves it.
-   No method, no roster, no offer, no call to action — those live in the
-   proposal deck this is meant to accompany.
+   Only campaigns that took a record above 10,000 streams a day, biggest
+   first. Every kicker states the rate it's included on — an averaged
+   figure where the whole window clears the bar, a peak-day tooltip
+   where the climb crosses it — so the threshold is checkable off the
+   chart rather than taken on trust.
 
-   SOURCES.
-     [SP]  Spotify for Artists / Chartmetric screenshots in assets/img.
-           Every figure on these slides is read straight off the
-           screenshot beside it — streams, listeners, dates, all of it.
-     [NF]  SweatProposalNewtonFaulkner, PJ's own doc, 4 Aug 2026
-     [V3]  Miguel's V3 deck
+   Left out on that rule: House of the Silent (peak 1,469 a day),
+   Breathe Easy (~4,000) and the developing-artist growth slide (~550).
+   All three are in the independent-artists deck. ADMT is a ticketing
+   result rather than a streaming one, so it sits there too.
 
-   ARTIST NAMES. Several screenshots show the release but not the artist,
-   so those slides are titled by release and marked below. They need
-   naming before this goes out.
+   The Listros and Mark Tuan stay: one is measured in monthly listeners
+   and the other in merch revenue, so the daily-streams rule doesn't
+   reach either of them.
+
+   Evidence only. No method, no roster, no offer, no call to action —
+   those live in the proposal deck this is meant to accompany.
+
+   The cases themselves live in cases.js, shared with the indie deck.
    ------------------------------------------------------------------ */
 
-import { bend, caseChart, caseStats } from './parts.js';
+import { bend } from './parts.js';
+import {
+  distracted, asSoonAsIGetHome, harryT, maribouState, fromGoodToBad,
+  ruthanne, forever, cristoph, kogis,
+  theListros, markTuan,
+} from './cases.js';
 
 export const SLIDES = [
   /* 01 — title */
@@ -39,95 +47,18 @@ export const SLIDES = [
       </div>`,
   },
 
-  /* 02 — Harry T. The screenshot is now filtered to the actual 90-day window
-     (28 Sep – 31 Dec 2025), which reads 7,199,480 — not the 8M V3 claimed
-     off a five-month view. Headline follows the chart. [SP] + 20p from [NF] */
-  caseChart({
-    section: 'Harry T',
-    label: 'Harry T — 4AM',
-    headline: '0 to 7.2M streams<br>in 90 days.',
-    kicker: '£6K spend · 20p cost per listener',
-    body: `1.3 million listeners, 278,021 playlist adds and 401,579 saves in the
-           first three months. 25+ content variations tested before we scaled a
-           penny.`,
-    shot: 'cs-harry-t-4am-90.jpg',
-    alt: 'Spotify for Artists: Harry T, 4AM — 7,199,480 streams and 1,302,137 listeners, 28 September to 31 December 2025',
-    card: { src: 'artist__harry-t__lens.jpg', name: 'Harry T', w: 250, h: 250 },
-  }),
+  /* above 10K streams a day, largest first */
+  distracted,          // averaged 202K a day
+  asSoonAsIGetHome,    // averaged 134K a day
+  harryT,              // averaged  76K a day
+  maribouState,        // averaged 155K a day over 28 days
+  fromGoodToBad,       // averaged  18K a day, release week above 50K
+  ruthanne,            // climbed to 11K a day
+  forever,             // peak day 19,930
+  cristoph,            // climbed to 18K a day
+  kogis,               // peak day 25,470
 
-  /* 03 — Distracted. Artist not shown in the screenshot. [SP] */
-  caseChart({
-    section: 'Distracted',
-    label: 'Distracted — album',
-    headline: '73.8M streams<br>in twelve months.',
-    kicker: 'Up 437% year on year',
-    body: `14.6 million listeners, 3 million playlist adds and 5.9 million saves.
-           The record went from 13.7M streams the previous year to 73.8M.`,
-    shot: 'cs-distracted.jpg',
-    alt: 'Spotify for Artists: Distracted — 73,766,220 streams and 14,608,972 listeners, 7 August 2025 to 6 August 2026, up 437.5% on the previous period',
-  }),
-
-  /* 04 — As Soon As I Get Home. Artist not shown in the screenshot. [SP] */
-  caseChart({
-    section: 'As Soon As I Get Home',
-    label: 'As Soon As I Get Home — EP',
-    headline: '48.9M streams<br>on one EP.',
-    kicker: '8 million listeners · 6.1 streams each',
-    body: `1.16 million playlist adds and 656,650 saves. Six streams per listener
-           says the audience came back rather than passing through once.`,
-    shot: 'cs-as-soon-as-i-get-home.jpg',
-    alt: 'Spotify for Artists: As Soon As I Get Home — 48,893,352 streams and 8,048,437 listeners over twelve months to 6 August 2026',
-  }),
-
-  /* 05 — Maribou State. The catalogue argument, on a 2015 record. [SP] */
-  caseChart({
-    section: 'Maribou State',
-    label: 'Maribou State — Midas',
-    headline: '4.3M streams<br>in 28 days on a<br>2015 record.',
-    kicker: 'Up 14.1% on the previous month',
-    body: `Eleven years old, 234 million all-time, and still moving. Catalogue
-           doesn't decay on its own — it decays when nobody works it.`,
-    shot: 'cs-maribou-midas.jpg',
-    alt: 'Spotify for Artists: Maribou State, Midas — 4,352,888 streams and 1,917,533 listeners, 10 July to 6 August 2026, up 14.1% on the previous period',
-  }),
-
-  /* 06 — From Good To Bad. Artist not shown in the screenshot. [SP] */
-  caseChart({
-    section: 'From Good To Bad',
-    label: 'From Good To Bad And Then Back Again',
-    headline: '2M streams<br>across an album<br>campaign.',
-    kicker: '545,129 listeners · 119,946 saves',
-    body: `Built over sixteen weeks from about 5,000 a day to a release-week peak
-           above 50,000, then held at four times where it started.`,
-    shot: 'cs-from-good-to-bad.jpg',
-    alt: 'Spotify for Artists: From Good To Bad And Then Back Again — 2,016,983 streams and 545,129 listeners, 10 February to 31 May 2026',
-  }),
-
-  /* 07 — The Listros. Chart shows 300.77K, up 224.5K over six months, so the
-     start is ~76K — not zero, as V3 had it. [SP] + 12p from [NF] */
-  caseChart({
-    section: 'The Listros',
-    label: 'Unlocking catalogue value',
-    headline: '76K to 300K<br>monthly listeners.',
-    kicker: 'Six months · 12p a listener',
-    body: `No new release and no new recording. A back-catalogue track that was
-           already half-working, proved out on a test budget and then scaled.`,
-    shot: 'chartmetric.jpg',
-    alt: 'Chartmetric: The Listros Spotify monthly listeners at 300.77K, up 224.5K (294.52%) over six months',
-    card: { src: 'the-listros__lens.jpg', name: 'The Listros', w: 300, h: 208 },
-  }),
-
-  /* 08 — Mark Tuan. No chart and no photograph we can stand behind. [V3] */
-  caseStats({
-    section: 'Mark Tuan',
-    label: 'Multi-channel revenue',
-    headline: '$68K in merch<br>sales in two weeks.',
-    stats: [
-      { k: 'Merch revenue', v: '$68K' },
-      { k: 'Campaign length', v: '2 weeks' },
-      { k: 'Targeting', v: 'High-intent' },
-    ],
-    body: `A campaign that converted a streaming audience into merch buyers —
-           integrated strategy turning listeners into revenue.`,
-  }),
+  /* not measured in daily streams */
+  theListros,          // monthly listeners
+  markTuan,            // merch revenue
 ];

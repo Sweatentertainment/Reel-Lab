@@ -11,33 +11,68 @@ Miguel's V3 deck, rebuilt in the **sweatstrategies.com** design language.
 | Deck | Page | Content | PDF |
 |---|---|---|---|
 | Proposal | `index.html` | `slides.js` | `Sweat-Strategies-Proposal-2026.pdf` (19pp) |
-| Case studies — independent artists | `case-studies-indie.html` | `slides-indie.js` | `Sweat-Case-Studies-Independent-Artists.pdf` (10pp) |
-| Case studies — labels & partners | `case-studies-labels.html` | `slides-labels.js` | `Sweat-Case-Studies-Labels.pdf` (8pp) |
+| Case studies — independent artists | `case-studies-indie.html` | `slides-indie.js` | `Sweat-Case-Studies-Independent-Artists.pdf` (16pp) |
+| Case studies — labels & partners | `case-studies-labels.html` | `slides-labels.js` | `Sweat-Case-Studies-Labels.pdf` (12pp) |
 
 `deck.js` exports `mount(SLIDES)`; each page imports its own slide set and calls
 it. Shared fragments and slide archetypes (`caseChart`, `caseStats`, `bend`,
-`spine`) live in `parts.js`, so a change to the bend or the spine lands in all
-three decks at once.
+`spine`) live in `parts.js`.
 
-**The two case-study decks are evidence documents, not pitches.** They exist to
-be sent alongside the proposal deck, so they carry no method, no roster, no
-reporting product, no offer and no call to action — one case study per slide,
-each with its number and the screenshot that proves it, and nothing else.
-Adding a case study means adding one `caseChart` (there's a chart) or one
-`caseStats` (there isn't) to the relevant slide file.
+**The two case-study decks are evidence documents, not pitches.** They're sent
+alongside the proposal deck, so they carry no method, no roster, no reporting
+product, no offer and no call to action — one case study per slide, each with
+its number, the window it covers, and the screenshot that proves it.
 
-They split by campaign scale: independent artists carry the smaller,
-artist-funded campaigns, down to a record in its first week; labels carry the
-eight-figure results and the catalogue argument.
+The cases themselves live in **`cases.js`**, one definition each, shared by both
+decks so the two can never drift apart. The deck files only choose which cases
+to show and in what order. Adding a case study means adding one `caseChart`
+(there's a chart) or one `caseStats` (there isn't) to `cases.js`, then listing
+it in whichever decks should carry it.
+
+### How the two decks differ
+
+**Independent artists carries every case**, biggest first. The tail is the point
+of it: House of the Silent at 1,469 streams a day, Breathe Easy in its first
+week at 10,209 streams total, and a developing artist whose whole account is
+8.8K monthly listeners. An artist needs to see the campaign that looks like
+theirs, not only the ceiling.
+
+**Labels carries only campaigns that took a record above 10,000 streams a day.**
+Every kicker states the rate it qualified on — an averaged figure where the
+whole window clears the bar, a peak-day tooltip where the climb crosses it — so
+the threshold is checkable off the chart rather than taken on trust.
+
+| Case | Streams in window | Rate | In labels |
+|---|---|---|---|
+| Distracted | 73.8M | ~202K/day avg | yes |
+| As Soon As I Get Home | 48.9M | ~134K/day avg | yes |
+| Harry T — 4AM | 7.2M | ~76K/day avg | yes |
+| Maribou State — Midas | 4.35M | ~155K/day avg | yes |
+| From Good To Bad | 2.02M | ~18K/day avg | yes |
+| Ruthanne — The Moment | 466K | climbs to ~11K/day | yes |
+| Forever | 257K | peak 19,930 | yes |
+| Cristoph — Spacer | 244K | climbs to ~18K/day | yes |
+| KOGIS | 205K | peak 25,470 | yes |
+| House of the Silent | 38.5K | peak 1,469 | no |
+| Breathe Easy | 10.2K | peak ~4,000 | no |
+| Developing artist | 67K | ~550/day | no |
+
+The Listros and Mark Tuan are in both: one is measured in monthly listeners and
+the other in merch revenue, so the daily-streams rule doesn't reach either.
+ADMT is a ticketing result rather than a streaming one, so it sits in the indie
+deck only.
 
 ## Where the case-study numbers come from
 
-Every figure on a chart slide is read straight off the screenshot beside it —
-streams, listeners, dates, all of it. The screenshots live in `assets/img` as
-`cs-*.jpg`, processed from PJ's originals by `scripts/prep-shots.mjs`, which
-collapses the dead white band in each Spotify header and downscales to 1500px.
-The collapse is confined to the top 42% of each image so no plotted area is
-ever squashed.
+Every figure on a chart slide is read straight off the screenshot beside it.
+Where a slide quotes a per-day rate it is either a tooltip value from the chart
+("peak day") or the period total divided by the days in the window
+("averaged"). Nothing is estimated.
+
+The screenshots live in `assets/img` as `cs-*.jpg`, processed from PJ's
+originals by `scripts/prep-shots.mjs`, which collapses the dead white band in
+each Spotify header and downscales to 1500px. The collapse is confined to the
+top 42% of each image so no plotted area is ever squashed.
 
 Two figures come from `SweatProposalNewtonFaulkner` (PJ's own doc, 4 Aug 2026)
 rather than a screenshot: ADMT's ticket numbers and the cost-per-listener
@@ -45,14 +80,14 @@ figures. Mark Tuan's merch number comes from Miguel's V3 deck.
 
 **Two things still need a decision before either deck goes to a client:**
 
-1. **Artist names.** Five screenshots show the release but not the artist, so
-   those slides are titled by release: *Forever*, *House of the Silent*,
-   *Breathe Easy*, *Distracted*, *As Soon As I Get Home*, plus the artist-growth
-   slide. They need naming.
+1. **Artist names.** Six screenshots show the release but not the artist, so
+   those cases are titled by release: *Distracted*, *As Soon As I Get Home*,
+   *From Good To Bad*, *Forever*, *House of the Silent*, *Breathe Easy*, plus
+   the developing-artist case. They need naming.
 2. **ADMT.** V3 says 3,500 tickets on £10K at 7:1; the proposal doc says 5,000
    tickets on £6K at 11:1. The decks follow the proposal doc.
 
-Two conflicts are now **resolved** by the new screenshots:
+Two conflicts are **resolved** by the newer screenshots:
 
 - **Harry T.** V3 claimed 8M in 90 days off a five-month chart. The filtered
   view (28 Sep – 31 Dec 2025) reads **7,199,480**, so the headline is now 7.2M
@@ -83,6 +118,7 @@ index.html         proposal shell
 case-studies-*.html  case-study shells
 deck.css           the design system — tokens, slide archetypes, print rules
 parts.js           shared fragments and slide archetypes
+cases.js           the case studies, shared by both case-study decks
 slides*.js         the content, one object per slide  ← edit copy here
 deck.js            mount(SLIDES): render, navigation, motion, PDF mode
 scripts/           export-pdf.mjs, build-standalone.mjs, lens.mjs, prep-shots.mjs
