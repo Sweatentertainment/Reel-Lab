@@ -53,7 +53,38 @@ export const SLIDES = [
       </div>`,
   },
 
-  /* 03 — the problem, in label terms. The artist version is "most artists
+  /* 03 — who we work with. Sits here rather than late in the deck: a label
+     reading a cold proposal wants to know who we are before it'll entertain
+     our theory of its problem. "Currently running" is from PJ's own
+     proposal doc, 4 Aug 2026. */
+  {
+    section: 'Who we work with',
+    grain: 'soft',
+    html: `
+      <div class="pad l-mid">
+        <div class="label reveal" style="margin-bottom:28px">Currently running</div>
+        <p class="reveal" style="--d:.08s;font-family:var(--sans);font-weight:800;font-size:50px;line-height:1.28;letter-spacing:-0.04em;max-width:1620px">
+          Swedish House Mafia · Thundercat · Barry Can't Swim ·
+          Omar+ · St Lundi · ADMT
+        </p>
+        <div class="rule reveal" style="--d:.2s;margin:52px 0 36px"></div>
+        <div class="label reveal" style="--d:.26s;margin-bottom:24px">Also on the books</div>
+        <p class="reveal" style="--d:.32s;font-family:var(--sans);font-weight:700;font-size:31px;line-height:1.4;letter-spacing:-0.03em;max-width:1620px">
+          Disclosure · Bonobo · Maribou State · Blond:Ish · Mark Tuan ·
+          Leon Thomas · Harry T · Cristoph · The Listros · KOGIS · Ruthanne ·
+          Kid Apollo · Dolores Forever · The Knocks · Rules · Morly · Scout · Ormella
+        </p>
+        <div class="rule reveal" style="--d:.38s;margin:48px 0 32px"></div>
+        <div class="label reveal" style="--d:.44s;margin-bottom:24px">Labels &amp; partners</div>
+        <ul class="channels reveal" style="--d:.5s">
+          <li>Atlantic Records</li><li>BMG</li><li>Ninja Tune</li><li>Live Nation</li>
+          <li>CAA</li><li>SJM</li><li>Disorder</li><li>Propeller</li><li>Redlight</li>
+          <li>Too Lost</li><li>3000 Years</li><li>Funfair</li>
+        </ul>
+      </div>`,
+  },
+
+  /* 04 — the problem, in label terms. The artist version is "most artists
      never find out". A label's problem isn't ignorance, it's allocation. */
   {
     section: 'The problem',
@@ -65,7 +96,7 @@ export const SLIDES = [
       </div>`,
   },
 
-  /* 04 */
+  /* 05 */
   {
     section: 'The problem',
     html: `
@@ -89,7 +120,7 @@ export const SLIDES = [
       </div>`,
   },
 
-  /* 05 — the promise. The artist deck's is "In 90 days you'll know."
+  /* 06 — the promise. The artist deck's is "In 90 days you'll know."
      For a label the promise is speed. */
   {
     section: 'The promise',
@@ -105,7 +136,7 @@ export const SLIDES = [
       </div>`,
   },
 
-  /* 06 */
+  /* 07 */
   {
     section: 'The promise',
     html: `
@@ -132,7 +163,7 @@ export const SLIDES = [
       </div>`,
   },
 
-  /* 07 — section title */
+  /* 08 — section title */
   {
     section: 'The process',
     html: `
@@ -146,7 +177,7 @@ export const SLIDES = [
       </div>`,
   },
 
-  /* 08–11 — the four steps. "Find the sound" and "test the content at scale"
+  /* 09–12 — the four steps. "Find the sound" and "test the content at scale"
      are PJ's own headings. */
   ...[
     {
@@ -187,7 +218,7 @@ export const SLIDES = [
       </div>`,
   })),
 
-  /* 12 — the verdict, retoned. A label doesn't need to be told to stop
+  /* 13 — the verdict, retoned. A label doesn't need to be told to stop
      spending; it needs to know we'll call a record dead early enough to
      put the money on the next one. */
   {
@@ -210,7 +241,7 @@ export const SLIDES = [
       </div>`,
   },
 
-  /* 13 — reporting */
+  /* 14 — reporting */
   {
     section: 'Reporting',
     grain: 'soft',
@@ -235,7 +266,7 @@ export const SLIDES = [
       </div>`,
   },
 
-  /* 14 — offer section title. PJ's framing: two routes. */
+  /* 15 — offer section title. PJ's framing: two routes. */
   {
     section: 'The offer',
     grain: true,
@@ -245,7 +276,7 @@ export const SLIDES = [
       </div>`,
   },
 
-  /* 15 — the retainers. All PJ's numbers. */
+  /* 16 — the retainers. All PJ's numbers. */
   {
     section: 'The offer',
     grain: 'soft',
@@ -287,7 +318,7 @@ export const SLIDES = [
       </div>`,
   },
 
-  /* 16 — the one-off. */
+  /* 17 — the one-off. */
   {
     section: 'The offer',
     grain: 'soft',
@@ -329,7 +360,7 @@ export const SLIDES = [
       </div>`,
   },
 
-  /* 17 — close */
+  /* 18 — close */
   {
     section: 'Next',
     grain: 'soft',
