@@ -43,15 +43,15 @@ export const caseChart = ({ section, label, headline, kicker = '', body, shot, a
   section,
   grain: 'soft',
   html: `
-    <div class="pad l-split" style="align-items:center;gap:120px">
+    <div class="pad" style="display:grid;grid-template-columns:0.82fr 1.18fr;align-items:center;gap:90px;height:100%">
       <div>
         ${label ? `<div class="label reveal" style="font-size:18px;margin-bottom:32px">${label}</div>` : ''}
-        <h2 class="display reveal" style="--d:.1s;font-size:70px;margin-bottom:${kicker ? 28 : 34}px">${headline}</h2>
-        ${kicker ? `<div class="kicker reveal" style="--d:.16s;font-size:25px;margin-bottom:28px">${kicker}</div>` : ''}
-        <p class="body reveal" style="--d:.24s;font-size:23px;max-width:480px">${body}</p>
-        ${card ? `<div class="reveal" style="--d:.34s;margin-top:52px">${bend({ ...card, soft: true })}</div>` : ''}
+        <h2 class="display reveal" style="--d:.1s;font-size:66px;margin-bottom:${kicker ? 26 : 32}px">${headline}</h2>
+        ${kicker ? `<div class="kicker reveal" style="--d:.16s;font-size:24px;margin-bottom:26px">${kicker}</div>` : ''}
+        <p class="body reveal" style="--d:.24s;font-size:22px;max-width:470px">${body}</p>
+        ${card ? `<div class="reveal" style="--d:.34s;margin-top:48px">${bend({ ...card, soft: true })}</div>` : ''}
       </div>
-      <div class="shot reveal" style="--d:.3s;max-width:690px;justify-self:center">
+      <div class="shot reveal" style="--d:.3s;max-width:880px;justify-self:center">
         <img src="${img(shot)}" alt="${alt}">
       </div>
     </div>`,

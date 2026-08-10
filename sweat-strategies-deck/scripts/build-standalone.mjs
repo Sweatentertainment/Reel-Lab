@@ -50,9 +50,19 @@ const css = inlineAssets(readFileSync(join(root, 'deck.css'), 'utf8'));
 
 /* ---- js: concatenate parts + slides + engine, stripping the module seams ---- */
 
-/* swap the image resolver for a data-URI lookup keyed on bare filename */
+/* Swap the image resolver for a data-URI lookup keyed on bare filename.
+   Only images this deck actually names get inlined — assets/img holds the
+   originals for every deck plus the raw uploads, and carrying all of them
+   would triple the page for no reason. */
+const slidesSrc = readFileSync(join(root, slidesFile), 'utf8');
+const partsSrc = readFileSync(join(root, 'parts.js'), 'utf8');
+const referenced = `${slidesSrc}\n${partsSrc}\n${css}`;
+
 const byName = Object.fromEntries(
-  [...assets].filter(([k]) => k.startsWith('assets/img/')).map(([k, v]) => [k.slice('assets/img/'.length), v])
+  [...assets]
+    .filter(([k]) => k.startsWith('assets/img/'))
+    .map(([k, v]) => [k.slice('assets/img/'.length), v])
+    .filter(([name]) => referenced.includes(`'${name}'`) || referenced.includes(`/${name}`)),
 );
 
 const parts = readFileSync(join(root, 'parts.js'), 'utf8').replace(

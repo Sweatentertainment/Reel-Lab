@@ -11,8 +11,8 @@ Miguel's V3 deck, rebuilt in the **sweatstrategies.com** design language.
 | Deck | Page | Content | PDF |
 |---|---|---|---|
 | Proposal | `index.html` | `slides.js` | `Sweat-Strategies-Proposal-2026.pdf` (19pp) |
-| Case studies — independent artists | `case-studies-indie.html` | `slides-indie.js` | `Sweat-Case-Studies-Independent-Artists.pdf` (4pp) |
-| Case studies — labels & partners | `case-studies-labels.html` | `slides-labels.js` | `Sweat-Case-Studies-Labels.pdf` (4pp) |
+| Case studies — independent artists | `case-studies-indie.html` | `slides-indie.js` | `Sweat-Case-Studies-Independent-Artists.pdf` (10pp) |
+| Case studies — labels & partners | `case-studies-labels.html` | `slides-labels.js` | `Sweat-Case-Studies-Labels.pdf` (8pp) |
 
 `deck.js` exports `mount(SLIDES)`; each page imports its own slide set and calls
 it. Shared fragments and slide archetypes (`caseChart`, `caseStats`, `bend`,
@@ -22,48 +22,43 @@ three decks at once.
 **The two case-study decks are evidence documents, not pitches.** They exist to
 be sent alongside the proposal deck, so they carry no method, no roster, no
 reporting product, no offer and no call to action — one case study per slide,
-each with its number and the screenshot that proves it, and nothing else. Adding
-a case study means adding one `caseChart` (there's a chart) or one `caseStats`
-(there isn't) to the relevant slide file.
+each with its number and the screenshot that proves it, and nothing else.
+Adding a case study means adding one `caseChart` (there's a chart) or one
+`caseStats` (there isn't) to the relevant slide file.
 
 They split by campaign scale: independent artists carry the smaller,
-artist-funded campaigns; labels carry the bigger results. Both are currently
-short because they only cover what there's evidence for in `assets/img` —
-Cristoph, The Listros and ADMT on the indie side, Harry T, The Listros and Mark
-Tuan on the label side.
+artist-funded campaigns, down to a record in its first week; labels carry the
+eight-figure results and the catalogue argument.
 
 ## Where the case-study numbers come from
 
-Every figure traces to one of:
+Every figure on a chart slide is read straight off the screenshot beside it —
+streams, listeners, dates, all of it. The screenshots live in `assets/img` as
+`cs-*.jpg`, processed from PJ's originals by `scripts/prep-shots.mjs`, which
+collapses the dead white band in each Spotify header and downscales to 1500px.
+The collapse is confined to the top 42% of each image so no plotted area is
+ever squashed.
 
-| Tag | Source |
-|---|---|
-| `[SP]` | Spotify for Artists / Chartmetric screenshots in `assets/img` |
-| `[NF]` | `SweatProposalNewtonFaulkner`, PJ's own doc, 4 Aug 2026 |
-| `[AD]` | `ADMT — Advertising Campaign Structure & Budget Framework` |
-| `[V3]` | Miguel's V3 deck |
+Two figures come from `SweatProposalNewtonFaulkner` (PJ's own doc, 4 Aug 2026)
+rather than a screenshot: ADMT's ticket numbers and the cost-per-listener
+figures. Mark Tuan's merch number comes from Miguel's V3 deck.
 
-Nothing is estimated. Where `[NF]` and `[V3]` disagree the decks follow `[NF]`
-— it's PJ's own writing and the most recent — but **three conflicts need a
-decision before either deck goes to a client:**
+**Two things still need a decision before either deck goes to a client:**
 
-| Figure | `[V3]` says | `[NF]` says | Decks currently use |
-|---|---|---|---|
-| ADMT | 3,500 tickets, £10K spend, 7:1 | 5,000 tickets, £6K spend, 11:1 | `[NF]` |
-| Harry T cost per listener | 24p | 20p | `[NF]` |
-| The Listros | "0 to 300K" | 70K → 400K in six months, 12p | 76K → 300K, from the chart |
+1. **Artist names.** Five screenshots show the release but not the artist, so
+   those slides are titled by release: *Forever*, *House of the Silent*,
+   *Breathe Easy*, *Distracted*, *As Soon As I Get Home*, plus the artist-growth
+   slide. They need naming.
+2. **ADMT.** V3 says 3,500 tickets on £10K at 7:1; the proposal doc says 5,000
+   tickets on £6K at 11:1. The decks follow the proposal doc.
 
-On the last one: V3's "0 to 300K" can't be right. The Chartmetric screenshot on
-that slide reads 300.77K, up 224.5K over six months, so the track started around
-76K, not zero. `[NF]` says it has since reached 400K — if that's current, the
-chart needs re-exporting to match.
+Two conflicts are now **resolved** by the new screenshots:
 
-Still outstanding from the proposal deck: the Harry T chart spans 9 Sep 2025 to
-1 Feb 2026, about five months, under a headline claiming 90 days. A view
-filtered to late Sep–late Dec would make the chart prove the claim.
-
-The catalogue-play slide in the labels deck uses the shape of the `[NF]`
-proposal without naming the label — that document is marked confidential.
+- **Harry T.** V3 claimed 8M in 90 days off a five-month chart. The filtered
+  view (28 Sep – 31 Dec 2025) reads **7,199,480**, so the headline is now 7.2M
+  and the chart proves it.
+- **The Listros.** V3 said "0 to 300K". The Chartmetric shot reads 300.77K, up
+  224.5K over six months, so the track started around 76K. Corrected.
 
 ## Where the design comes from
 
@@ -90,7 +85,7 @@ deck.css           the design system — tokens, slide archetypes, print rules
 parts.js           shared fragments and slide archetypes
 slides*.js         the content, one object per slide  ← edit copy here
 deck.js            mount(SLIDES): render, navigation, motion, PDF mode
-scripts/           export-pdf.mjs, build-standalone.mjs, lens.mjs
+scripts/           export-pdf.mjs, build-standalone.mjs, lens.mjs, prep-shots.mjs
 assets/            Manrope + artist photography + the case-study screenshots
 ```
 
