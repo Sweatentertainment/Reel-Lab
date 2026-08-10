@@ -17,7 +17,7 @@
    — worth a look before this goes out.
    ------------------------------------------------------------------ */
 
-import { img, spine, blobs, bend, macbook } from './parts.js';
+import { img, spine, blobs, bend, browser } from './parts.js';
 
 export const SLIDES = [
   /* 01 — cover. Miguel's original, the same one that opens the artist deck:
@@ -84,17 +84,17 @@ export const SLIDES = [
       </div>`,
   },
 
-  /* 04 — the problem, PJ's framing: in-house teams launch what they get
-     given. The failure isn't picking the wrong record, it's that the
-     creative never gets tested, so nobody learns anything either way.
-     Phrased at the workflow rather than the team — the person reading this
-     may well run that team. */
+  /* 04 — the problem. PJ's underlying point is that in-house teams launch
+     what they're given, but stated that way it accuses the person reading
+     it, who may well run that team. Leading with the mechanism instead
+     makes it a fact rather than a charge — and it sets up the retainer
+     tiers, which are all about buying volume. */
   {
     section: 'The problem',
     grain: true,
     html: `
       <div class="pad l-centre">
-        <h2 class="display display--m reveal"><span class="bracket">In-house teams launch what they're given</span></h2>
+        <h2 class="display display--m reveal"><span class="bracket">You can't optimise four assets</span></h2>
       </div>`,
   },
 
@@ -144,7 +144,7 @@ export const SLIDES = [
           <li><span>02</span>
             <div>
               <div style="font-family:var(--sans);font-weight:700;font-size:26px;letter-spacing:-0.03em;margin-bottom:10px">Cost driven down</div>
-              <p class="body" style="font-size:20px;max-width:620px">Volume is what gets a cost per result low. You can't optimise one asset.</p>
+              <p class="body" style="font-size:20px;max-width:620px">Volume is what gets a cost per result low. A handful can't find the winner.</p>
             </div>
           </li>
           <li><span>03</span>
@@ -304,7 +304,7 @@ export const SLIDES = [
           </p>
         </div>
         <div class="reveal" style="--d:.32s;max-width:860px;justify-self:center;width:100%">
-          ${macbook({ src: 'dashboard.jpg', alt: 'Sweat.fm dashboard: per-artist monthly listeners, streams, saves and playlist adds tracked daily' })}
+          ${browser({ src: 'dashboard.jpg', alt: 'Sweat.fm dashboard: per-artist monthly listeners, streams, saves and playlist adds tracked daily' })}
         </div>
       </div>`,
   },

@@ -36,8 +36,22 @@ export const bend = ({ src, name, w, h, right = false, soft = false, style = '' 
     </div>
   </div>`;
 
-/* a screenshot in a laptop — drawn, not photographed, so it stays crisp
-   through the PDF export and isn't someone else's picture of a MacBook */
+/* Screenshots in a device frame — drawn, not photographed, so they stay
+   crisp through the PDF export and aren't someone else's picture of a
+   laptop.
+
+   browser() suits a wide dashboard: a laptop screen is a fixed 16:10 and
+   letterboxes anything wider. macbook() is there for 16:10 captures. */
+
+export const browser = ({ src, alt, url = 'sweat.fm' }) => `
+  <div class="brw">
+    <div class="brw__bar">
+      <span class="brw__dot"></span><span class="brw__dot"></span><span class="brw__dot"></span>
+      <span class="brw__url">${url}</span>
+    </div>
+    <div class="brw__view"><img src="${img(src)}" alt="${alt}"></div>
+  </div>`;
+
 export const macbook = ({ src, alt }) => `
   <div class="mac">
     <div class="mac__lid">
@@ -46,6 +60,7 @@ export const macbook = ({ src, alt }) => `
         <img src="${img(src)}" alt="${alt}">
       </div>
     </div>
+    <div class="mac__hinge"></div>
     <div class="mac__base"></div>
   </div>`;
 
