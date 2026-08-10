@@ -508,3 +508,67 @@ body.is-printing #scaler { position: static; transform: none !important; width: 
 body.is-printing .slide { position: relative; inset: auto; opacity: 1; visibility: visible; }
 body.is-printing .slide .reveal { filter: none; opacity: 1; transform: none; animation: none !important; }
 body.is-printing .slide .pathline path { stroke-dashoffset: 0 !important; animation: none !important; }
+
+/* ---------------------------------------------------------- macbook frame */
+/* A screenshot floating in a rounded rectangle reads as a screenshot. In a
+   laptop it reads as a product. Drawn rather than photographed: an image of
+   a MacBook would be someone else's photograph, and vector edges stay crisp
+   at any scale and through a PDF export. */
+
+.mac { display: block; width: 100%; }
+
+.mac__lid {
+  background: #1b1b1e;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 22px;
+  padding: 12px;
+  box-shadow: 0 44px 90px rgba(0, 0, 0, 0.62);
+}
+
+.mac__screen {
+  position: relative;
+  border-radius: 11px;
+  overflow: hidden;
+  background: #000;
+  line-height: 0;
+}
+
+.mac__screen img { display: block; width: 100%; height: auto; }
+
+/* the notch — small, centred, cut into the top bezel */
+.mac__notch {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 14.5%;
+  height: 1.7%;
+  min-height: 9px;
+  background: #1b1b1e;
+  border-radius: 0 0 7px 7px;
+  z-index: 2;
+}
+
+/* the base, seen head-on: a shallow aluminium bar a little wider than the
+   lid, with the thumb groove notched out of the front lip */
+.mac__base {
+  position: relative;
+  width: 116%;
+  margin: 0 -8% ;
+  height: 16px;
+  background: linear-gradient(180deg, #7b8087 0%, #c2c7cd 26%, #949aa1 74%, #5a5f65 100%);
+  border-radius: 0 0 13px 13px;
+}
+
+/* the thumb groove in the front lip */
+.mac__base::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 10%;
+  height: 5px;
+  background: linear-gradient(180deg, #565b61, #7d838a);
+  border-radius: 0 0 5px 5px;
+}

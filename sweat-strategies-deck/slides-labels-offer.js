@@ -17,7 +17,7 @@
    — worth a look before this goes out.
    ------------------------------------------------------------------ */
 
-import { img, spine, blobs, bend } from './parts.js';
+import { img, spine, blobs, bend, macbook } from './parts.js';
 
 export const SLIDES = [
   /* 01 — cover. Miguel's original, the same one that opens the artist deck:
@@ -111,13 +111,13 @@ export const SLIDES = [
       <div class="pad l-end">
         <div style="display:grid;grid-template-columns:1.05fr 0.72fr;align-items:end;gap:150px">
           <h2 class="display reveal" style="font-size:62px;font-weight:700;letter-spacing:-0.035em;line-height:1.12">
-            One edit goes out. Nobody ever finds out whether a different one would have worked better.
+            A few edits go out. Nobody ever finds out whether a different one would have worked better.
           </h2>
           <p class="body reveal" style="--d:.2s;max-width:none;padding-bottom:12px">
             That isn't a criticism of the team — it's what the workflow allows.
             Assets arrive, spend goes behind them, and the numbers come back after
             the money's gone. When it underperforms there's no way to tell whether
-            it was the record, the audience or the edit, because only one edit ever ran.
+            it was the record, the audience or the edit, because only a handful ever ran.
           </p>
         </div>
       </div>`,
@@ -138,7 +138,7 @@ export const SLIDES = [
           <li><span>01</span>
             <div>
               <div style="font-family:var(--sans);font-weight:700;font-size:26px;letter-spacing:-0.03em;margin-bottom:10px">Content at scale</div>
-              <p class="body" style="font-size:20px;max-width:620px">Dozens of edits per record, not the one the label was handed.</p>
+              <p class="body" style="font-size:20px;max-width:620px">Dozens of edits per record, not the handful you were handed.</p>
             </div>
           </li>
           <li><span>02</span>
@@ -303,8 +303,8 @@ export const SLIDES = [
             your whole team.
           </p>
         </div>
-        <div class="shot reveal" style="--d:.32s;max-width:840px;justify-self:center">
-          <img src="${img('dashboard.jpg')}" alt="Sweat.fm dashboard: per-artist monthly listeners, streams, saves and playlist adds tracked daily">
+        <div class="reveal" style="--d:.32s;max-width:860px;justify-self:center;width:100%">
+          ${macbook({ src: 'dashboard.jpg', alt: 'Sweat.fm dashboard: per-artist monthly listeners, streams, saves and playlist adds tracked daily' })}
         </div>
       </div>`,
   },

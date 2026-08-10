@@ -8,7 +8,7 @@
    Edit copy here — layout and styling live in deck.css.
    ------------------------------------------------------------------ */
 
-import { img, spine, blobs, tile, bend } from './parts.js';
+import { img, spine, blobs, tile, bend, macbook } from './parts.js';
 
 /* ------------------------------------------------------------ slides */
 
@@ -216,8 +216,8 @@ export const SLIDES = [
             Full review every month where we go through what the data's saying and what we're doing about it.
           </p>
         </div>
-        <div class="shot reveal" style="--d:.32s;max-width:840px;justify-self:center">
-          <img src="${img('dashboard.jpg')}" alt="Sweat.fm live dashboard">
+        <div class="reveal" style="--d:.32s;max-width:860px;justify-self:center;width:100%">
+          ${macbook({ src: 'dashboard.jpg', alt: 'Sweat.fm live dashboard' })}
         </div>
       </div>`,
   },

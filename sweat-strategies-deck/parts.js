@@ -36,6 +36,19 @@ export const bend = ({ src, name, w, h, right = false, soft = false, style = '' 
     </div>
   </div>`;
 
+/* a screenshot in a laptop — drawn, not photographed, so it stays crisp
+   through the PDF export and isn't someone else's picture of a MacBook */
+export const macbook = ({ src, alt }) => `
+  <div class="mac">
+    <div class="mac__lid">
+      <div class="mac__screen">
+        <div class="mac__notch"></div>
+        <img src="${img(src)}" alt="${alt}">
+      </div>
+    </div>
+    <div class="mac__base"></div>
+  </div>`;
+
 /* ------------------------------------------------------- slide archetypes */
 
 /* a case study carried by a chart: the number on the left, the evidence right */
