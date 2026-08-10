@@ -11,20 +11,51 @@ Miguel's V3 deck, rebuilt in the **sweatstrategies.com** design language.
 | Deck | Page | Content | PDF |
 |---|---|---|---|
 | Proposal | `index.html` | `slides.js` | `Sweat-Strategies-Proposal-2026.pdf` (19pp) |
-| Case studies — independent artists | `case-studies-indie.html` | `slides-indie.js` | `Sweat-Case-Studies-Independent-Artists.pdf` (7pp) |
-| Case studies — labels & partners | `case-studies-labels.html` | `slides-labels.js` | `Sweat-Case-Studies-Labels.pdf` (7pp) |
+| Case studies — independent artists | `case-studies-indie.html` | `slides-indie.js` | `Sweat-Case-Studies-Independent-Artists.pdf` (12pp) |
+| Case studies — labels & partners | `case-studies-labels.html` | `slides-labels.js` | `Sweat-Case-Studies-Labels.pdf` (13pp) |
 
 `deck.js` exports `mount(SLIDES)`; each page imports its own slide set and calls
-it. Shared fragments and slide archetypes (`caseChart`, `caseStats`,
-`bracketTitle`, `closer`, `bend`, `spine`) live in `parts.js`, so a change to the
-bend or the spine lands in all three decks at once.
+it. Shared fragments and slide archetypes (`caseChart`, `caseStats`, `bigThree`,
+`ladder`, `bracketTitle`, `closer`, `bend`, `spine`) live in `parts.js`, so a
+change to the bend or the spine lands in all three decks at once.
 
 The two case-study decks split by campaign scale: independent artists carry the
-smaller, artist-funded campaigns; labels carry the bigger results and the roster.
-Every figure in both comes from Sweat's own Independent Artists proposal or from
-the Spotify / Chartmetric / Sweat.fm screenshots in `assets/img` — nothing is
-estimated. Slides with no chart to show use the stat-block archetype rather than
-borrowing an unrelated image.
+smaller, artist-funded campaigns and lead on cost per result; labels carry the
+outcome, the catalogue argument and the roster. Slides with no chart to show use
+the stat-block or big-figure archetype rather than borrowing an unrelated image.
+
+## Where the case-study numbers come from
+
+Every figure traces to one of:
+
+| Tag | Source |
+|---|---|
+| `[SP]` | Spotify for Artists / Chartmetric screenshots in `assets/img` |
+| `[NF]` | `SweatProposalNewtonFaulkner`, PJ's own doc, 4 Aug 2026 |
+| `[AD]` | `ADMT — Advertising Campaign Structure & Budget Framework` |
+| `[V3]` | Miguel's V3 deck |
+
+Nothing is estimated. Where `[NF]` and `[V3]` disagree the decks follow `[NF]`
+— it's PJ's own writing and the most recent — but **three conflicts need a
+decision before either deck goes to a client:**
+
+| Figure | `[V3]` says | `[NF]` says | Decks currently use |
+|---|---|---|---|
+| ADMT | 3,500 tickets, £10K spend, 7:1 | 5,000 tickets, £6K spend, 11:1 | `[NF]` |
+| Harry T cost per listener | 24p | 20p | `[NF]` |
+| The Listros | "0 to 300K" | 70K → 400K in six months, 12p | 76K → 300K, from the chart |
+
+On the last one: V3's "0 to 300K" can't be right. The Chartmetric screenshot on
+that slide reads 300.77K, up 224.5K over six months, so the track started around
+76K, not zero. `[NF]` says it has since reached 400K — if that's current, the
+chart needs re-exporting to match.
+
+Still outstanding from the proposal deck: the Harry T chart spans 9 Sep 2025 to
+1 Feb 2026, about five months, under a headline claiming 90 days. A view
+filtered to late Sep–late Dec would make the chart prove the claim.
+
+The catalogue-play slide in the labels deck uses the shape of the `[NF]`
+proposal without naming the label — that document is marked confidential.
 
 ## Where the design comes from
 
