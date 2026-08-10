@@ -36,12 +36,23 @@ export const bend = ({ src, name, w, h, right = false, soft = false, style = '' 
     </div>
   </div>`;
 
-/* Screenshots in a device frame — drawn, not photographed, so they stay
-   crisp through the PDF export and aren't someone else's picture of a
-   laptop.
+/* Screenshots in a device frame — a screenshot floating on a slide reads as
+   a screenshot; in a device it reads as a product.
 
-   browser() suits a wide dashboard: a laptop screen is a fixed 16:10 and
-   letterboxes anything wider. macbook() is there for 16:10 captures. */
+   laptop() is the one in use. Its frame is the mockup PJ supplied, cut off
+   its checkerboard by scripts/cut-laptop.mjs, which leaves the display as a
+   hole in the PNG — so the screenshot sits behind the frame and shows
+   through it, rather than being pasted on top and having to be perspective-
+   matched.
+
+   browser() is the drawn alternative, kept because a laptop screen is a
+   fixed 16:10 and letterboxes anything much wider. */
+
+export const laptop = ({ src, alt }) => `
+  <div class="lap">
+    <div class="lap__screen"><img src="${img(src)}" alt="${alt}"></div>
+    <img class="lap__frame" src="${img('laptop.png')}" alt="">
+  </div>`;
 
 export const browser = ({ src, alt, url = 'sweat.fm' }) => `
   <div class="brw">
@@ -50,18 +61,6 @@ export const browser = ({ src, alt, url = 'sweat.fm' }) => `
       <span class="brw__url">${url}</span>
     </div>
     <div class="brw__view"><img src="${img(src)}" alt="${alt}"></div>
-  </div>`;
-
-export const macbook = ({ src, alt }) => `
-  <div class="mac">
-    <div class="mac__lid">
-      <div class="mac__screen">
-        <div class="mac__notch"></div>
-        <img src="${img(src)}" alt="${alt}">
-      </div>
-    </div>
-    <div class="mac__hinge"></div>
-    <div class="mac__base"></div>
   </div>`;
 
 /* ------------------------------------------------------- slide archetypes */

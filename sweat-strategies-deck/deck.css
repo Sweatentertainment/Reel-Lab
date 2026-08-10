@@ -562,72 +562,38 @@ body.is-printing .slide .pathline path { stroke-dashoffset: 0 !important; animat
 .brw__view { display: block; line-height: 0; background: #000; }
 .brw__view img { display: block; width: 100%; height: auto; }
 
-/* ---- laptop. Kept for anything shot at 16:10. ---- */
+/* ---- laptop. PJ's stock mockup, cut off its checkerboard by
+   scripts/cut-laptop.mjs. The display is a hole in the PNG, so the frame
+   is layered over the screenshot and the screenshot shows through it.
 
-.mac { display: block; width: 100%; }
+   The four percentages are the display's position within the trimmed
+   frame — the script prints them, so re-run it if the mockup is ever
+   swapped rather than nudging these by eye. ---- */
 
-.mac__lid {
-  background: linear-gradient(180deg, #232427 0%, #17181a 100%);
-  border-radius: 24px;
-  padding: 13px;
-  box-shadow:
-    0 0 0 1px rgba(255, 255, 255, 0.13),
-    0 1px 0 rgba(255, 255, 255, 0.16) inset,
-    0 46px 92px rgba(0, 0, 0, 0.66);
-}
+.lap { position: relative; width: 100%; line-height: 0; }
 
-.mac__screen {
-  position: relative;
-  border-radius: 12px;
+.lap__screen {
+  position: absolute;
+  left: 18.330%;
+  top: 2.198%;
+  width: 64.247%;
+  height: 83.883%;
+  display: flex;
+  align-items: center;
   overflow: hidden;
-  background: #000;
-  line-height: 0;
-  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.9) inset;
+  /* the dashboard's own ground, so its letterbox is invisible */
+  background: #0a0a0a;
+  /* the bezel is a thin stroke with rounded corners, and the PNG is
+     transparent outside it — without this the screenshot pokes out */
+  border-radius: 11px 11px 3px 3px;
 }
 
-.mac__screen img { display: block; width: 100%; height: auto; }
+.lap__screen img { display: block; width: 100%; height: auto; }
 
-.mac__notch {
-  position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 13%;
-  height: 20px;
-  background: #17181a;
-  border-radius: 0 0 8px 8px;
-  z-index: 2;
-}
-
-/* the hinge shadow where the lid meets the body */
-.mac__hinge {
-  width: 100%;
-  height: 5px;
-  background: linear-gradient(180deg, #0c0d0e, #1a1b1e);
-  border-radius: 0 0 4px 4px;
-}
-
-/* the body, seen head-on: a shallow aluminium bar wider than the lid, its
-   ends clipped back so it reads as a taper rather than a slab */
-.mac__base {
+.lap__frame {
   position: relative;
-  width: 122%;
-  margin: 0 -11%;
-  height: 17px;
-  background: linear-gradient(180deg, #8d939a 0%, #ced3d9 30%, #a2a8af 70%, #5f646a 100%);
-  clip-path: polygon(1.6% 0, 98.4% 0, 96.6% 100%, 3.4% 100%);
-  border-radius: 0 0 10px 10px;
-}
-
-/* the thumb groove in the front lip */
-.mac__base::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 9%;
-  height: 6px;
-  background: linear-gradient(180deg, #5e646b, #8b9199);
-  border-radius: 0 0 6px 6px;
+  z-index: 2;
+  display: block;
+  width: 100%;
+  height: auto;
 }

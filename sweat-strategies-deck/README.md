@@ -177,6 +177,43 @@ not re-invented:
 
 Artist photography is the site's own (`public/assets/images/artist__*.webp`).
 
+## The reporting slide
+
+Both proposals show the sweat.fm dashboard on a laptop. Two scripts build it.
+
+`scripts/prep-dashboard.mjs` takes PJ's raw 4112×2296 capture and does two
+things. It crops to just under the Top Countries header, because the grab
+ends mid-row and a sliced table row reads as a broken image rather than a
+scrolled screen. And it paints out the site's own scroll spine, which the
+capture caught running down the middle of the dashboard — fine in the gutters,
+but where it crosses a chart card and an ad thumbnail it just looks like
+damage. Each affected row is bridged across from the pixels either side. The
+search band is deliberately narrow and skips the rows the campaign table
+covers: widen it and it starts eating the Impr. and CPM columns.
+
+`scripts/cut-laptop.mjs` cuts the machine out of the stock mockup PJ supplied.
+The transparency checkerboard is baked into the JPEG, so two flood fills knock
+it out — one from the border, one seeded in the middle of the display, which
+leaves the screen as a hole in the PNG. The screenshot then sits *behind* the
+frame and shows through it, so there is nothing to perspective-match. The
+script prints the display's position as four percentages; those are what
+`.lap__screen` is set to in `deck.css`, so re-run it rather than nudging them
+by eye if the mockup is ever swapped.
+
+The cut edge is unmixed rather than thresholded — the outline pixels are a
+blend of laptop and checker, and solving `P = aF + (1-a)B` recovers a real
+alpha. A hard mask left a light halo, which is invisible on white and obvious
+on the black slide the frame actually sits on. The same sum drops the mockup's
+drawn contact shadow, which resolves to a very low alpha and would otherwise
+be a grey smudge under the machine.
+
+**Two things to settle before this goes out.** The mockup is an iStock preview
+file (`istockphoto-1402355455-612x612.jpg`) — the free comp, not a licensed
+asset — so it needs a licence or a replacement before the deck is sent to
+anyone. And the dashboard on screen is a live KOGIS campaign, showing £994.61
+spent against an £8,000 budget: fine in the artist deck, worth a thought in a
+deck going to other labels.
+
 ## Files
 
 ```
@@ -189,7 +226,8 @@ cases.js           the case studies, named and anonymised
 slides*.js         the content, one object per slide  ← edit copy here
 deck.js            mount(SLIDES): render, navigation, motion, PDF mode
 scripts/           export-pdf.mjs, build-standalone.mjs, lens.mjs,
-                   prep-shots.mjs, anonymise.mjs
+                   prep-shots.mjs, anonymise.mjs, prep-dashboard.mjs,
+                   cut-laptop.mjs
 assets/            Manrope + artist photography + the case-study screenshots
 ```
 

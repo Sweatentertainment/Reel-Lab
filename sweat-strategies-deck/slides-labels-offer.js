@@ -17,7 +17,7 @@
    — worth a look before this goes out.
    ------------------------------------------------------------------ */
 
-import { img, spine, blobs, bend, browser } from './parts.js';
+import { img, spine, blobs, bend, laptop } from './parts.js';
 
 export const SLIDES = [
   /* 01 — cover. Miguel's original, the same one that opens the artist deck:
@@ -289,7 +289,7 @@ export const SLIDES = [
     section: 'Reporting',
     grain: 'soft',
     html: `
-      <div class="pad" style="display:grid;grid-template-columns:0.8fr 1.2fr;align-items:center;gap:110px">
+      <div class="pad" style="display:grid;grid-template-columns:0.76fr 1.24fr;align-items:center;gap:70px">
         <div>
           <h2 class="display reveal" style="font-size:56px;letter-spacing:-0.04em;line-height:1.28;margin-bottom:16px">
             <span class="hl">A dashboard, daily.</span>
@@ -303,8 +303,8 @@ export const SLIDES = [
             your whole team.
           </p>
         </div>
-        <div class="reveal" style="--d:.32s;max-width:860px;justify-self:center;width:100%">
-          ${browser({ src: 'dashboard.jpg', alt: 'Sweat.fm dashboard: per-artist monthly listeners, streams, saves and playlist adds tracked daily' })}
+        <div class="reveal" style="--d:.32s;max-width:1060px;justify-self:center;width:100%">
+          ${laptop({ src: 'dashboard.jpg', alt: 'Sweat.fm dashboard: per-artist monthly listeners, streams, saves and playlist adds tracked daily' })}
         </div>
       </div>`,
   },

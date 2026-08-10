@@ -8,7 +8,7 @@
    Edit copy here — layout and styling live in deck.css.
    ------------------------------------------------------------------ */
 
-import { img, spine, blobs, tile, bend, browser } from './parts.js';
+import { img, spine, blobs, tile, bend, laptop } from './parts.js';
 
 /* ------------------------------------------------------------ slides */
 
@@ -203,7 +203,7 @@ export const SLIDES = [
     section: 'Reporting',
     grain: 'soft',
     html: `
-      <div class="pad" style="display:grid;grid-template-columns:0.8fr 1.2fr;align-items:center;gap:110px">
+      <div class="pad" style="display:grid;grid-template-columns:0.76fr 1.24fr;align-items:center;gap:70px">
         <div>
           <h2 class="display reveal" style="font-size:56px;letter-spacing:-0.04em;line-height:1.28;margin-bottom:16px">
             <span class="hl">You'll see everything.</span>
@@ -216,8 +216,8 @@ export const SLIDES = [
             Full review every month where we go through what the data's saying and what we're doing about it.
           </p>
         </div>
-        <div class="reveal" style="--d:.32s;max-width:860px;justify-self:center;width:100%">
-          ${browser({ src: 'dashboard.jpg', alt: 'Sweat.fm live dashboard' })}
+        <div class="reveal" style="--d:.32s;max-width:1060px;justify-self:center;width:100%">
+          ${laptop({ src: 'dashboard.jpg', alt: 'Sweat.fm live dashboard' })}
         </div>
       </div>`,
   },
