@@ -14,12 +14,7 @@
    ------------------------------------------------------------------ */
 
 import { bend } from './parts.js';
-import {
-  distracted, asSoonAsIGetHome, harryT, maribouState, fromGoodToBad,
-  ruthanne, forever, cristoph, kogis,
-  houseOfTheSilent, breatheEasy, artistGrowth,
-  theListros, admt, markTuan,
-} from './cases.js';
+import { named as c } from './cases.js';
 
 export const SLIDES = [
   /* 01 — title */
@@ -40,21 +35,21 @@ export const SLIDES = [
   },
 
   /* streams, largest first */
-  distracted,          // 73.8M
-  asSoonAsIGetHome,    // 48.9M
-  harryT,              //  7.2M
-  maribouState,        //  4.3M
-  fromGoodToBad,       //  2.0M
-  ruthanne,            //  466K
-  forever,             //  257K
-  cristoph,            //  244K
-  kogis,               //  205K
-  houseOfTheSilent,    // 38.5K
-  breatheEasy,         // 10.2K
-  artistGrowth,        // account-level growth on an 8.8K-listener artist
+  c.distracted,          // 73.8M
+  c.asSoonAsIGetHome,    // 48.9M
+  c.harryT,              //  7.2M
+  c.maribouState,        //  4.3M
+  c.fromGoodToBad,       //  2.0M
+  c.ruthanne,            //  466K
+  c.forever,             //  257K
+  c.cristoph,            //  244K
+  c.kogis,               //  205K
+  c.houseOfTheSilent,    // 38.5K
+  c.breatheEasy,         // 10.2K
+  c.artistGrowth,        // account-level growth on an 8.8K-listener artist
 
   /* not measured in streams */
-  theListros,          // monthly listeners
-  admt,                // tickets
-  markTuan,            // merch revenue
+  c.theListros,          // monthly listeners
+  c.admt,                // tickets
+  c.markTuan,            // merch revenue
 ];

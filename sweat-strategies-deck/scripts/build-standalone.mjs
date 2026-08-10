@@ -9,6 +9,7 @@
 
 import { readFileSync, writeFileSync, readdirSync } from 'node:fs';
 import { extname, join } from 'node:path';
+import { pathToFileURL } from 'node:url';
 
 const root = new URL('..', import.meta.url).pathname;
 const slidesFile = process.argv[2] || 'slides.js';
@@ -55,21 +56,29 @@ const css = inlineAssets(readFileSync(join(root, 'deck.css'), 'utf8'));
    originals for every deck plus the raw uploads, and carrying all of them
    would triple the page for no reason. */
 const slidesSrc = readFileSync(join(root, slidesFile), 'utf8');
-const partsSrc = readFileSync(join(root, 'parts.js'), 'utf8');
 
 /* the case-study decks keep their cases in a shared module; the proposal
    doesn't, so only pull it in when the slide file actually imports it */
 const usesCases = /from '\.\/cases\.js'/.test(slidesSrc);
 const casesSrc = usesCases ? readFileSync(join(root, 'cases.js'), 'utf8') : '';
 
-const referenced = `${slidesSrc}\n${casesSrc}\n${partsSrc}\n${css}`;
+/* Work out which images to inline by importing the slide module and reading
+   the markup it actually produces, rather than grepping the source. Source
+   text over-matches badly: cases.js names both the identifying screenshot
+   and its anonymised crop for every case, so a text scan put the originals
+   inside the anonymised build — which is the one deck whose whole purpose
+   is not to carry them. */
+const { SLIDES } = await import(pathToFileURL(join(root, slidesFile)).href);
+const rendered = SLIDES.map((s) => s.html).join('\n');
+const used = new Set([...rendered.matchAll(/assets\/img\/([^"')\s]+)/g)].map((m) => m[1]));
 
 const byName = Object.fromEntries(
   [...assets]
     .filter(([k]) => k.startsWith('assets/img/'))
     .map(([k, v]) => [k.slice('assets/img/'.length), v])
-    .filter(([name]) => referenced.includes(`'${name}'`) || referenced.includes(`/${name}`)),
+    .filter(([name]) => used.has(name)),
 );
+console.log(`  ${used.size} images referenced, ${Object.keys(byName).length} inlined`);
 
 const parts = readFileSync(join(root, 'parts.js'), 'utf8').replace(
   /^export const img = \(name\) => `\$\{IMG\}\/\$\{name\}`;$/m,
@@ -80,9 +89,18 @@ const slides = readFileSync(join(root, slidesFile), 'utf8');
 
 const deck = readFileSync(join(root, 'deck.js'), 'utf8');
 
-/* same directory, no name collisions — plain concatenation is a valid bundle
-   once the import lines and export keywords are stripped */
+/* Same directory, no name collisions — plain concatenation is a valid bundle
+   once the import lines and export keywords are stripped. Renamed imports
+   are the one thing that can't just be deleted: `import { named as c }`
+   leaves `c` undefined, so it becomes a local alias instead. */
 const strip = (src) => src
+  .replace(/^import\s+\{([^}]*)\}\s+from\s+'\.\/[^']*';\s*$/gm, (_, names) =>
+    names
+      .split(',')
+      .map((n) => n.trim().match(/^(\S+)\s+as\s+(\S+)$/))
+      .filter(Boolean)
+      .map(([, from, to]) => `const ${to} = ${from};`)
+      .join('\n'))
   .replace(/^import\s+[^;]*from\s+'\.\/[^']*';\s*$/gm, '')
   .replace(/^export\s+(const|function)/gm, '$1');
 

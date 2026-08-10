@@ -23,11 +23,7 @@
    ------------------------------------------------------------------ */
 
 import { bend } from './parts.js';
-import {
-  distracted, asSoonAsIGetHome, harryT, maribouState, fromGoodToBad,
-  ruthanne, forever, cristoph, kogis,
-  theListros, markTuan,
-} from './cases.js';
+import { named as c } from './cases.js';
 
 export const SLIDES = [
   /* 01 — title */
@@ -48,17 +44,17 @@ export const SLIDES = [
   },
 
   /* above 10K streams a day, largest first */
-  distracted,          // averaged 202K a day
-  asSoonAsIGetHome,    // averaged 134K a day
-  harryT,              // averaged  76K a day
-  maribouState,        // averaged 155K a day over 28 days
-  fromGoodToBad,       // averaged  18K a day, release week above 50K
-  ruthanne,            // climbed to 11K a day
-  forever,             // peak day 19,930
-  cristoph,            // climbed to 18K a day
-  kogis,               // peak day 25,470
+  c.distracted,          // averaged 202K a day
+  c.asSoonAsIGetHome,    // averaged 134K a day
+  c.harryT,              // averaged  76K a day
+  c.maribouState,        // averaged 155K a day over 28 days
+  c.fromGoodToBad,       // averaged  18K a day, release week above 50K
+  c.ruthanne,            // climbed to 11K a day
+  c.forever,             // peak day 19,930
+  c.cristoph,            // climbed to 18K a day
+  c.kogis,               // peak day 25,470
 
   /* not measured in daily streams */
-  theListros,          // monthly listeners
-  markTuan,            // merch revenue
+  c.theListros,          // monthly listeners
+  c.markTuan,            // merch revenue
 ];

@@ -4,32 +4,41 @@ Miguel's V3 deck, rebuilt in the **sweatstrategies.com** design language.
 
 - **Present it:** open `index.html` (any static server, or just open the file).
   `←` `→` / space / click to move, `F` for fullscreen, dots at the bottom to jump.
-- **Send it:** `Sweat-Strategies-Proposal-2026.pdf` — 19 pages, 16:9.
+- **Send it:** `Sweat-Strategies-Proposal-2026.pdf` — 16 pages, 16:9.
 
-## Three decks, one engine
+## Four decks, one engine
 
 | Deck | Page | Content | PDF |
 |---|---|---|---|
-| Proposal | `index.html` | `slides.js` | `Sweat-Strategies-Proposal-2026.pdf` (19pp) |
-| Case studies — independent artists | `case-studies-indie.html` | `slides-indie.js` | `Sweat-Case-Studies-Independent-Artists.pdf` (16pp) |
-| Case studies — labels & partners | `case-studies-labels.html` | `slides-labels.js` | `Sweat-Case-Studies-Labels.pdf` (12pp) |
+| Proposal | `index.html` | `slides.js` | `Sweat-Strategies-Proposal-2026.pdf` (16pp) |
+| Case studies — independent artists | `case-studies-indie.html` | `slides-indie.js` | `…-Independent-Artists.pdf` (16pp) |
+| Case studies — labels & partners | `case-studies-labels.html` | `slides-labels.js` | `…-Labels.pdf` (12pp) |
+| Case studies — labels, anonymised | `case-studies-labels-anon.html` | `slides-labels-anon.js` | `…-Labels-Anonymised.pdf` (13pp) |
 
 `deck.js` exports `mount(SLIDES)`; each page imports its own slide set and calls
 it. Shared fragments and slide archetypes (`caseChart`, `caseStats`, `bend`,
 `spine`) live in `parts.js`.
 
-**The two case-study decks are evidence documents, not pitches.** They're sent
-alongside the proposal deck, so they carry no method, no roster, no reporting
-product, no offer and no call to action — one case study per slide, each with
-its number, the window it covers, and the screenshot that proves it.
+**The proposal carries no case studies.** They came out so the proposal and a
+case-study deck can be sent as two documents.
 
-The cases themselves live in **`cases.js`**, one definition each, shared by both
-decks so the two can never drift apart. The deck files only choose which cases
-to show and in what order. Adding a case study means adding one `caseChart`
-(there's a chart) or one `caseStats` (there isn't) to `cases.js`, then listing
-it in whichever decks should carry it.
+**The case-study decks are evidence documents, not pitches.** No method, no
+roster, no reporting product, no offer and no call to action — one case study
+per slide, each with its number, the window it covers, and the screenshot that
+proves it. The one exception is the Artists & partners slide in the anonymised
+deck, which exists precisely because the results carry no names.
 
-### How the two decks differ
+The cases live in **`cases.js`**, one definition each, rendered two ways:
+
+| | |
+|---|---|
+| `named` | the artist, the release and the artwork |
+| `anon` | the same numbers with nothing identifying |
+
+Adding a case study means adding one entry to `cases.js` and listing it in
+whichever decks should carry it.
+
+### How the decks differ
 
 **Independent artists carries every case**, biggest first. The tail is the point
 of it: House of the Silent at 1,469 streams a day, Breathe Easy in its first
@@ -61,6 +70,19 @@ The Listros and Mark Tuan are in both: one is measured in monthly listeners and
 the other in merch revenue, so the daily-streams rule doesn't reach either.
 ADMT is a ticketing result rather than a streaming one, so it sits in the indie
 deck only.
+
+**The anonymised labels deck** is the same cases in the same order, for sending
+over email. `scripts/anonymise.mjs` crops the entire header off each
+screenshot — artwork, release type, track title, all-time streams and release
+date — the artist photo cards are dropped, and the section and label are
+replaced with a generic description. Every figure, date range and chart stays.
+
+Cropping replaced an earlier attempt at blurring the artwork and title in
+place, which wasn't safe enough: a two-line title only had its second line
+caught, and pale artwork wasn't detected as artwork at all.
+
+Because the crop takes the all-time stream count with it, a case quoting that
+number needs an `anonBody` that doesn't — Maribou State is the one that does.
 
 ## Where the case-study numbers come from
 
@@ -118,10 +140,11 @@ index.html         proposal shell
 case-studies-*.html  case-study shells
 deck.css           the design system — tokens, slide archetypes, print rules
 parts.js           shared fragments and slide archetypes
-cases.js           the case studies, shared by both case-study decks
+cases.js           the case studies, named and anonymised
 slides*.js         the content, one object per slide  ← edit copy here
 deck.js            mount(SLIDES): render, navigation, motion, PDF mode
-scripts/           export-pdf.mjs, build-standalone.mjs, lens.mjs, prep-shots.mjs
+scripts/           export-pdf.mjs, build-standalone.mjs, lens.mjs,
+                   prep-shots.mjs, anonymise.mjs
 assets/            Manrope + artist photography + the case-study screenshots
 ```
 
