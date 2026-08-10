@@ -11,18 +11,26 @@ Miguel's V3 deck, rebuilt in the **sweatstrategies.com** design language.
 | Deck | Page | Content | PDF |
 |---|---|---|---|
 | Proposal | `index.html` | `slides.js` | `Sweat-Strategies-Proposal-2026.pdf` (19pp) |
-| Case studies — independent artists | `case-studies-indie.html` | `slides-indie.js` | `Sweat-Case-Studies-Independent-Artists.pdf` (12pp) |
-| Case studies — labels & partners | `case-studies-labels.html` | `slides-labels.js` | `Sweat-Case-Studies-Labels.pdf` (13pp) |
+| Case studies — independent artists | `case-studies-indie.html` | `slides-indie.js` | `Sweat-Case-Studies-Independent-Artists.pdf` (4pp) |
+| Case studies — labels & partners | `case-studies-labels.html` | `slides-labels.js` | `Sweat-Case-Studies-Labels.pdf` (4pp) |
 
 `deck.js` exports `mount(SLIDES)`; each page imports its own slide set and calls
-it. Shared fragments and slide archetypes (`caseChart`, `caseStats`, `bigThree`,
-`ladder`, `bracketTitle`, `closer`, `bend`, `spine`) live in `parts.js`, so a
-change to the bend or the spine lands in all three decks at once.
+it. Shared fragments and slide archetypes (`caseChart`, `caseStats`, `bend`,
+`spine`) live in `parts.js`, so a change to the bend or the spine lands in all
+three decks at once.
 
-The two case-study decks split by campaign scale: independent artists carry the
-smaller, artist-funded campaigns and lead on cost per result; labels carry the
-outcome, the catalogue argument and the roster. Slides with no chart to show use
-the stat-block or big-figure archetype rather than borrowing an unrelated image.
+**The two case-study decks are evidence documents, not pitches.** They exist to
+be sent alongside the proposal deck, so they carry no method, no roster, no
+reporting product, no offer and no call to action — one case study per slide,
+each with its number and the screenshot that proves it, and nothing else. Adding
+a case study means adding one `caseChart` (there's a chart) or one `caseStats`
+(there isn't) to the relevant slide file.
+
+They split by campaign scale: independent artists carry the smaller,
+artist-funded campaigns; labels carry the bigger results. Both are currently
+short because they only cover what there's evidence for in `assets/img` —
+Cristoph, The Listros and ADMT on the indie side, Harry T, The Listros and Mark
+Tuan on the label side.
 
 ## Where the case-study numbers come from
 
