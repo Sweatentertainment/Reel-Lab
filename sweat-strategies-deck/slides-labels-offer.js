@@ -197,7 +197,14 @@ export const SLIDES = [
   },
 
   /* 10–13 — the four steps. "Find the sound" and "test the content at scale"
-     are PJ's own headings. */
+     are PJ's own headings.
+
+     Artist photography across this deck is ordered by profile, biggest first:
+     Disclosure and Thundercat open it, Blond:Ish and Bonobo carry the two
+     largest slides after that, and the remaining slots take the strongest
+     names left in the library. Kid Apollo, Dolores Forever and Rules are out
+     of the label deck — this document goes to labels, so the faces on it
+     should be the ones that buy us the meeting. */
   ...[
     {
       n: '01', title: 'Find the sound',
@@ -207,17 +214,17 @@ export const SLIDES = [
     {
       n: '02', title: 'Test the content at scale',
       body: 'Dozens of variations per record, made by our editors, running against cold audiences in every market that matters.',
-      src: 'artist__kid-apollo-compress__lens.jpg', name: 'Kid Apollo',
+      src: 'artist__the-knocks-compress__lens.jpg', name: 'The Knocks',
     },
     {
       n: '03', title: 'Validate the cost',
       body: 'Every test returns a real cost per new listener. That number decides what gets the budget and what gets dropped.',
-      src: 'artist__dolores-forever__lens.jpg', name: 'Dolores Forever',
+      src: 'artist__st-lundi__lens.jpg', name: 'St Lundi',
     },
     {
       n: '04', title: 'Scale what converts',
       body: 'Budget follows the number, reallocated daily, country by country, for as long as it keeps paying.',
-      src: 'artist__the-knocks-compress__lens.jpg', name: 'The Knocks',
+      src: 'Morly__lens.jpg', name: 'Morly',
     },
   ].map((s, k) => ({
     section: 'The process',
@@ -337,43 +344,37 @@ export const SLIDES = [
       </div>`,
   },
 
-  /* 18 — the one-off. */
+  /* 18 — the one-off. Carried an artist card until the roster was ranked by
+     profile: the four biggest names are spoken for by then, and the last slot
+     in the deck is the wrong place to introduce a small one. Set in the same
+     `l-mid` as the retainer slide it follows, so the two offers read as a pair. */
   {
     section: 'The offer',
     grain: 'soft',
     html: `
-      <div class="pad" style="display:grid;grid-template-columns:0.66fr 1.34fr;align-items:center;gap:86px">
-        <div class="reveal" style="display:flex;align-items:center;justify-content:center">
-          ${bend({ src: 'artist__rules__lens.jpg', name: 'Rules', w: 420, h: 590 })}
-        </div>
+      <div class="pad l-mid">
+        <div class="label reveal" style="margin-bottom:30px">Pay as you go</div>
+        <h2 class="display reveal" style="--d:.06s;font-size:60px;line-height:1.14;margin-bottom:20px">
+          <span class="hl">£550 a test.</span><br>Testing ad spend included.
+        </h2>
+        <p class="body reveal" style="--d:.12s;font-size:23px;max-width:900px;margin-bottom:58px">
+          One record, one campaign, no commitment.
+        </p>
 
-        <div style="display:flex;flex-direction:column;justify-content:center;gap:56px">
+        <div class="rule reveal" style="--d:.26s;margin:0 0 36px"></div>
+
+        <div class="reveal" style="--d:.32s;display:grid;grid-template-columns:repeat(2,auto);justify-content:start;gap:150px">
           <div>
-            <div class="label reveal" style="margin-bottom:28px">Pay as you go</div>
-            <h2 class="display reveal" style="--d:.06s;font-size:68px;line-height:1.2">
-              <span class="hl">£550 a test.</span>
-            </h2>
-            <p class="reveal" style="--d:.12s;font-size:36px;font-weight:600;margin-top:28px">Testing ad spend included.</p>
-            <p class="reveal" style="--d:.18s;font-size:23px;opacity:.62;margin-top:14px">
-              One record, one campaign, no commitment.
+            <div class="tier">Scaling</div>
+            <p class="body" style="font-size:23px;max-width:none">
+              20% commission, against 10% on a retainer.
             </p>
           </div>
-
-          <div class="rule reveal" style="--d:.26s"></div>
-
-          <div style="display:grid;grid-template-columns:1fr 1fr;gap:56px">
-            <div class="reveal" style="--d:.32s">
-              <div class="tier">Scaling</div>
-              <p class="body" style="font-size:23px;max-width:none">
-                20% commission, against 10% on a retainer.
-              </p>
-            </div>
-            <div class="reveal" style="--d:.38s">
-              <div class="tier">Minimum scale</div>
-              <p class="body" style="font-size:23px;max-width:none">
-                £1,000 once a record is worth pushing.
-              </p>
-            </div>
+          <div>
+            <div class="tier">Minimum scale</div>
+            <p class="body" style="font-size:23px;max-width:none">
+              £1,000 once a record is worth pushing.
+            </p>
           </div>
         </div>
       </div>`,
