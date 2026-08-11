@@ -37,12 +37,12 @@ import { img, spine, blobs, bend, roster, laptop, voicenote } from './parts.js';
    argument, so flipping through the deck reads as a list of platforms rather
    than a run of similar-looking type. `points` is the mechanism, `chips` the
    evidence — only Live has any. */
-const channel = ({ n, name, headline, body, points, chipsLabel = '', chips = [] }) => ({
+const channel = ({ n, name, headline, body, points, label = '', chipsLabel = '', chips = [] }) => ({
   section: 'Paid media',
   grain: 'soft',
   html: `
     <div class="pad l-mid">
-      <div class="label reveal" style="margin-bottom:26px">Paid media · ${n} of 04</div>
+      <div class="label reveal" style="margin-bottom:26px">${label || `Paid media · ${n} of 04`}</div>
       <h2 class="display reveal" style="--d:.06s;font-size:104px;line-height:1;color:var(--head);margin-bottom:30px">${name}</h2>
       <h3 class="display reveal" style="--d:.12s;font-size:44px;line-height:1.2;max-width:1300px;margin-bottom:28px">${headline}</h3>
       <p class="body reveal" style="--d:.2s;font-size:22px;max-width:1180px">${body}</p>
@@ -135,21 +135,29 @@ export const SLIDES = [
      they'll read our theory of their problem. */
   roster(),
 
-  /* 04 — the problem. Not "your team is bad" and not "you're not spending
-     enough": the platforms behave differently and the spend is placed as
-     though they don't. It sets up all four channel slides. */
+  /* 04 — the principle, not a problem. An earlier cut ran this as "every
+     platform gets bought the same way", which reads as an accusation aimed at
+     whoever is currently buying — and set as a full-bleed bracket it looked
+     like the deck's selling point rather than its setup. The thing worth
+     asserting is that the platforms are genuinely different animals. */
   {
-    section: 'The problem',
+    section: 'The principle',
     grain: true,
     html: `
       <div class="pad l-centre">
-        <h2 class="display display--m reveal"><span class="bracket">Every platform gets bought the same way</span></h2>
+        ${/* kept short enough to hold one line at display--m — the longer cut
+              of this wrapped onto "...behave the / same", which reads as a
+              mistake on a slide that is nothing but the line */ ''}
+        <h2 class="display display--m reveal"><span class="bracket">No two platforms behave the same</span></h2>
       </div>`,
   },
 
-  /* 05 */
+  /* 05 — and the correction that follows from it. Everything is meant to
+     convert; "conversion campaign" is a campaign type, not a synonym for
+     wanting a sale. Getting that distinction right is the whole reason the
+     four channel slides read differently from each other. */
   {
-    section: 'The problem',
+    section: 'The principle',
     html: `
       <div class="field"></div>
       ${blobs([
@@ -159,14 +167,15 @@ export const SLIDES = [
       <div class="pad l-end">
         <div style="display:grid;grid-template-columns:1.05fr 0.72fr;align-items:end;gap:150px">
           <h2 class="display reveal" style="font-size:62px;font-weight:700;letter-spacing:-0.035em;line-height:1.12">
-            A conversion campaign is the right answer on two of these channels and the wrong answer on the rest.
+            All of it is there to convert. What changes is the campaign that gets you there.
           </h2>
           <p class="body reveal" style="--d:.2s;max-width:none;padding-bottom:12px">
-            A ticket link converts. A store page converts. A TikTok doesn't — there
-            is nothing at the end of it to buy, so the campaign optimises towards a
-            click that was never worth anything. Budget gets spread evenly across
-            platforms that behave nothing like each other, and it comes back as one
-            number that hides which half of it worked.
+            Tickets, streams, subscribers, merch — every channel is driving somebody
+            to do something. But a conversion campaign is a campaign type, not a
+            synonym for wanting a sale, and it only earns its keep where there is a
+            transaction at the end and a pixel that can see it. Everywhere else the
+            same objective just buys clicks, and the route to the sale is a different
+            kind of buy.
           </p>
         </div>
       </div>`,
@@ -223,13 +232,14 @@ export const SLIDES = [
           Every channel, bought its own way.
         </h2>
         <ul class="channels reveal" style="--d:.18s">
-          <li>Streaming</li><li>Live</li><li>TikTok</li><li>YouTube</li><li>Merch</li><li>CRM &amp; fan flow</li>
+          <li>Streaming</li><li>Live</li><li>Ticketing</li><li>TikTok</li><li>YouTube</li><li>Merch</li><li>CRM &amp; fan flow</li>
         </ul>
         <div class="rule reveal" style="--d:.3s;margin:60px 0 40px"></div>
         <p class="body reveal" style="--d:.36s;font-size:22px;max-width:1100px">
-          Paid media, the creative testing behind it, and the CRM that keeps what it
-          buys. What follows is the streaming method first, because it is the one
-          with the longest record behind it, then the same discipline everywhere else.
+          Paid media, the creative testing behind it, the ticketing if you want it,
+          and the CRM that keeps what all of it buys. What follows is the streaming
+          method first, because it is the one with the longest record behind it, then
+          the same discipline everywhere else.
         </p>
       </div>`,
   },
@@ -302,31 +312,52 @@ export const SLIDES = [
   },
 
   /* 14–17 — the four channels. PJ's brief, tightened. */
+  /* Live gets two slides — it's the channel with the most to say and the one
+     place we can take the whole job, ticketing included. The criticism is
+     aimed at the standard practice rather than at the promoters named two
+     slides later, for the same reason the label deck's problem slide is
+     phrased at the workflow rather than the team. */
   channel({
     n: '01', name: 'Live',
-    headline: 'Conversion campaigns, run against the ticket link.',
-    body: `Tickets are one of the two places where a conversion objective is the
-      right call, so that is what we run — and we run it on tested creative rather
-      than on the tour asset. Where there are promoter partners we work alongside
-      their activity rather than around it, so the same audience isn't being bought
-      twice at twice the price.`,
+    headline: 'Ticket sales, run as a campaign rather than a blast.',
+    body: `Tour advertising usually goes out the way it always has: a wall of spend
+      at on-sale and another on pay-day weekend, against targeting that was built
+      years ago and hasn't been questioned since. It sells the tickets that were
+      going to sell anyway, at the price the auction happens to be that week, and
+      tells you nothing about the rest of the room.`,
     points: [
-      { t: 'Conversion campaigns', b: 'Optimised to the ticket sold, not to the click.' },
-      { t: 'Testing content', b: 'Creative tested the way we test a record, before the budget goes behind it.' },
-      { t: 'Promoter partners', b: 'Run with the promoter rather than against them, so the spend compounds instead of colliding.' },
+      { t: 'Tested content first', b: 'Creative tested the way we test a record, before any budget goes behind it.' },
+      { t: 'Slower, steadier spend', b: 'Consistent pressure across the whole on-sale rather than two spikes and silence, ramped up at the moments that actually matter.' },
+      { t: 'Read every day', b: 'Cold and warm funnels tracked apart, with hook rate, hold rate and conversion read daily — not after the show.' },
     ],
     chipsLabel: "Shows we've worked on with",
     chips: ['Live Nation', 'AEG', 'Communion One'],
   }),
 
   channel({
+    label: 'Paid media · Live · ticketing',
+    name: 'Ticketing',
+    headline: 'We can run the ticketing too, at no cost to the artist.',
+    body: `Through <strong style="font-weight:700">david.tickets</strong> we can take
+      the ticketing itself. It costs the artist nothing, and it closes the loop the
+      advertising opens: instead of waiting on someone else's weekly summary, the
+      artist and the team get full access to their own ticket data — which is the way
+      it should have worked all along.`,
+    points: [
+      { t: 'No cost to the artist', b: 'The ticketing is handled at no cost to you.' },
+      { t: 'Your data, in full', b: 'Live access for the artist and the team, not a report on somebody else’s schedule.' },
+      { t: 'One closed loop', b: 'The spend, the funnel and the sale all read in the same place, on the same day.' },
+    ],
+  }),
+
+  channel({
     n: '02', name: 'TikTok',
-    headline: "Conversion campaigns don't work here. Backing the winners does.",
-    body: `There is nothing at the end of a TikTok to convert, so a conversion
-      objective just buys clicks that go nowhere. What works is finding the post
-      that already earned attention on its own and putting money behind it, aimed
-      at the audience it earned — or going around paid media entirely and seeding
-      the record through our influencer networks.`,
+    headline: 'Still converting — just not with a conversion campaign.',
+    body: `There is no transaction at the end of a TikTok for a pixel to optimise
+      against, so a conversion objective spends against clicks that teach it nothing.
+      What converts here is money behind the posts that already earned attention on
+      their own, aimed at the audience they earned — or going around paid media
+      entirely and seeding the record through our influencer networks.`,
     points: [
       { t: 'Boost the best performers', b: 'Money goes behind the posts that have already proven they hold attention.' },
       { t: 'Audience targeting', b: 'Aimed at the audience the post actually found, not at a demographic guess.' },
@@ -337,10 +368,10 @@ export const SLIDES = [
   channel({
     n: '03', name: 'YouTube',
     headline: 'Engagement and reach, to generate traction.',
-    body: `Not a conversion channel either. YouTube is where a release gets watched
-      and picked up, so the campaigns are built for engagement and reach rather than
-      pointed at a link — enough of the right people in front of it for traction to
-      start.`,
+    body: `Another one where the objective isn't conversion but the point still is.
+      YouTube rewards being watched and interacted with, so that is what the campaigns
+      are built to buy — enough of the right people in front of a release for traction
+      to start, which is what everything downstream converts off.`,
     points: [
       { t: 'Engagement campaigns', b: 'Built to get watched and interacted with, which is what the platform rewards.' },
       { t: 'Reach campaigns', b: 'Impressions against the audiences that matter, at the volume it takes to register.' },
@@ -350,10 +381,11 @@ export const SLIDES = [
   channel({
     n: '04', name: 'Merch',
     headline: 'Funnels, drops, and the store behind them.',
-    body: `Paid traffic is only worth sending somewhere that converts, so we take
-      the whole path rather than just the campaign pointing at it: the funnel built
-      and tested end to end, the drop planned and measured, and the Shopify store
-      itself under management.`,
+    body: `One of the places a conversion campaign genuinely earns its keep — there
+      is a checkout at the end and a pixel that can see it. So we take the whole path
+      rather than just the campaign pointing at it: the funnel built and tested end
+      to end, the drop planned and measured, and the Shopify store itself under
+      management.`,
     points: [
       { t: 'Funnels', b: 'Built and tested from the ad through to the checkout.' },
       { t: 'Drop optimisation', b: 'Planned, timed and measured, so a launch is not a single day of guessing.' },

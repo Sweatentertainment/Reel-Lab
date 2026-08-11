@@ -12,7 +12,7 @@ Miguel's V3 deck, rebuilt in the **sweatstrategies.com** design language.
 |---|---|---|---|
 | Proposal — artists | `index.html` | `slides.js` | `Sweat-Strategies-Proposal-2026.pdf` (17pp) |
 | Proposal — labels | `labels-proposal.html` | `slides-labels-offer.js` | `Sweat-Labels-Proposal-2026.pdf` (19pp) |
-| Proposal — cross-platform | `cross-platform-proposal.html` | `slides-cross-platform.js` | `Sweat-Cross-Platform-Proposal-2026.pdf` (24pp) |
+| Proposal — cross-platform | `cross-platform-proposal.html` | `slides-cross-platform.js` | `Sweat-Cross-Platform-Proposal-2026.pdf` (25pp) |
 | Case studies — independent artists | `case-studies-indie.html` | `slides-indie.js` | `…-Independent-Artists.pdf` (16pp) |
 | Case studies — labels & partners | `case-studies-labels.html` | `slides-labels.js` | `…-Labels.pdf` (12pp) |
 | Case studies — labels, anonymised | `case-studies-labels-anon.html` | `slides-labels-anon.js` | `…-Labels-Anonymised.pdf` (14pp) |
@@ -54,20 +54,42 @@ streaming; this one argues that the channels are not interchangeable.
 | | Artists | Labels | Cross-platform |
 |---|---|---|---|
 | Reader | An artist with a song | A label with a record | An established artist already spending |
-| Problem | Most artists never find out | You can't optimise four assets | Every platform gets bought the same way |
-| Scope | Streaming | Streaming | Streaming, live, TikTok, YouTube, merch, CRM |
+| Setup | Most artists never find out | You can't optimise four assets | No two platforms behave the same |
+| Scope | Streaming | Streaming | Streaming, live, ticketing, TikTok, YouTube, merch, CRM |
 | Price | On the slide | On the slide | **None — scoped via conversation** |
 
-Three things make it different from the other two:
+**The setup is a principle, not a problem.** An earlier cut opened the section
+with "every platform gets bought the same way", which is an accusation aimed at
+whoever is currently buying — and set as a full-bleed bracket it read as the
+deck's selling point rather than its setup. It now asserts the thing that is
+actually true and actually useful: the platforms are different animals.
 
-**It carries the whole estate, not one channel.** Four channel slides, each
+**Everything converts. The campaign type is what changes.** "Conversion
+campaign" is a campaign type, not a synonym for wanting a sale, and slide 05
+says so explicitly — it only earns its keep where there is a transaction at the
+end and a pixel that can see it. That distinction is why the four channel slides
+read differently from each other, and it's worth protecting in any copy edit:
+the deck must never imply TikTok or YouTube aren't meant to sell anything.
+
+Three things make it different from the other two decks:
+
+**It carries the whole estate, not one channel.** Five channel slides, each
 stating what actually works there rather than pretending one playbook covers
-them all — Live is a conversion campaign against the ticket link plus promoter
-partners; TikTok explicitly is *not* a conversion channel, so the money goes
-behind posts that already earned attention or through influencer seeding;
-YouTube is engagement and reach for traction; merch is funnels, drop
-optimisation and Shopify store management. All of it is PJ's brief, tightened
-but not extended — nothing was invented to make a slide look fuller.
+them all:
+
+| Channel | The argument |
+|---|---|
+| Live | Ticket sales run as a campaign rather than a blast — the standard practice is a wall of spend at on-sale and again on pay-day weekend against targeting built years ago. We test content first, spend slower and more consistently with ramp-ups at the moments that matter, and read cold and warm funnels apart with hook rate, hold rate and conversion daily. |
+| Ticketing | We can take the ticketing itself through **david.tickets**, at no cost to the artist, with the artist and their team getting full live access to their own ticket data. |
+| TikTok | Still converting, just not with a conversion campaign — money behind the posts that already earned attention, or influencer seeding. |
+| YouTube | Engagement and reach, because that's what the platform rewards and what traction is built from. |
+| Merch | One of the places a conversion campaign genuinely earns its keep: funnels end to end, drop optimisation, Shopify store management. |
+
+All of it is PJ's brief, tightened but not extended — nothing was invented to
+make a slide look fuller. The criticism on the Live slide is aimed at the
+standard practice rather than at the promoters named in the chips underneath it,
+the same way the label deck's problem slide is phrased at the workflow rather
+than at the team.
 
 **The streaming method is unchanged.** Slides 09–12 are the label deck's four
 steps, word for word. It's the part with the evidence behind it, and rewriting
@@ -95,10 +117,12 @@ Thundercat, Blond:Ish, Bonobo — one each on the four streaming slides and
 nowhere else. The hook is typographic instead of carrying cards, which is what
 keeps every face in the deck a top-tier one.
 
-Two lines to check before it goes out. PJ's voice-note script reads "i'm glad
-you here"; the slide sets it as "I'm glad you're here". And the reporting slide
-stops at what sweat.fm actually shows — campaigns, costs and markets. If the
-platform starts carrying live and merch, that's the line to widen.
+Three things to check before it goes out. PJ's voice-note script reads "i'm glad
+you here"; the slide sets it as "I'm glad you're here". The reporting slide stops
+at what sweat.fm actually shows — campaigns, costs and markets — so if the
+platform starts carrying live and merch, that's the line to widen. And
+**david.tickets** is set as written in the brief; it needs a check against however
+the product is actually branded.
 
 **The case-study decks are evidence documents, not pitches.** No method, no
 roster, no reporting product, no offer and no call to action — one case study
