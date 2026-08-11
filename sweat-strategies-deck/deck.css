@@ -597,3 +597,118 @@ body.is-printing .slide .pathline path { stroke-dashoffset: 0 !important; animat
   width: 100%;
   height: auto;
 }
+
+/* ------------------------------------------------------------- the fan flow */
+
+/* A journey rather than a list, so the connector carries as much meaning as
+   the nodes: one rule across the slide with a marker sitting on it per step.
+   Boxed cards would read as six separate things, which is the opposite of
+   the point. */
+
+.flow {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 26px;
+  position: relative;
+}
+
+.flow::before {
+  content: "";
+  position: absolute;
+  left: 7px;
+  right: 7px;
+  top: 7px;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.flow__node { position: relative; padding-top: 46px; }
+
+.flow__node::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: var(--blue);
+  /* the ring is the slide ground, so the rule appears to pass behind the dot */
+  box-shadow: 0 0 0 6px var(--offblack);
+}
+
+/* the last step is the one where a person takes over from the automation */
+.flow__node--human::before { background: var(--white); }
+
+.flow__n {
+  font-family: var(--mono);
+  text-transform: uppercase;
+  font-size: 15px;
+  letter-spacing: 0.16em;
+  color: var(--head);
+  opacity: 0.66;
+  margin-bottom: 15px;
+}
+
+.flow__t {
+  font-family: var(--sans);
+  font-weight: 700;
+  font-size: 24px;
+  letter-spacing: -0.032em;
+  line-height: 1.16;
+  color: var(--white);
+  margin-bottom: 14px;
+}
+
+.flow__b {
+  font-size: 17px;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.72);
+}
+
+/* --------------------------------------------------------- the voice note */
+
+/* Drawn rather than screenshotted. A real Instagram voice note carries a real
+   fan's handle and profile picture, which is not something to put in a deck
+   that gets forwarded. */
+
+.vn {
+  display: flex;
+  align-items: center;
+  gap: 26px;
+  background: var(--blue);
+  border-radius: 999px;
+  padding: 28px 42px;
+}
+
+.vn__play {
+  flex: none;
+  width: 0;
+  height: 0;
+  border-left: 24px solid var(--white);
+  border-top: 15px solid transparent;
+  border-bottom: 15px solid transparent;
+}
+
+.vn__wave {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  height: 48px;
+}
+
+.vn__wave i {
+  display: block;
+  flex: 1;
+  border-radius: 2px;
+  background: rgba(255, 255, 255, 0.88);
+}
+
+.vn__time {
+  flex: none;
+  font-family: var(--mono);
+  font-size: 18px;
+  letter-spacing: 0.1em;
+  color: var(--white);
+}

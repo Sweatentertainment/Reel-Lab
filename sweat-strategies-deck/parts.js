@@ -63,6 +63,24 @@ export const browser = ({ src, alt, url = 'sweat.fm' }) => `
     <div class="brw__view"><img src="${img(src)}" alt="${alt}"></div>
   </div>`;
 
+/* An Instagram voice note, drawn rather than screenshotted — a real one carries
+   a real fan's handle and profile picture, and this deck gets forwarded.
+
+   The waveform is deterministic on purpose: Math.random() would redraw it on
+   every render, so the PDF and the live deck would disagree. */
+export const voicenote = ({ time = '0:14', bars = 46, alt = 'Voice note from the artist' }) => {
+  const wave = Array.from({ length: bars }, (_, i) => {
+    const h = 18 + Math.round(30 * Math.abs(Math.sin(i * 1.7) * Math.cos(i * 0.6)));
+    return `<i style="height:${h}px"></i>`;
+  }).join('');
+  return `
+    <div class="vn" role="img" aria-label="${alt}">
+      <span class="vn__play"></span>
+      <span class="vn__wave">${wave}</span>
+      <span class="vn__time">${time}</span>
+    </div>`;
+};
+
 /* ------------------------------------------------------------- the roster */
 
 /* Defined once and used by all three decks that carry it, so a name added

@@ -6,12 +6,13 @@ Miguel's V3 deck, rebuilt in the **sweatstrategies.com** design language.
   `←` `→` / space / click to move, `F` for fullscreen, dots at the bottom to jump.
 - **Send it:** `Sweat-Strategies-Proposal-2026.pdf` — 17 pages, 16:9.
 
-## Five decks, one engine
+## Six decks, one engine
 
 | Deck | Page | Content | PDF |
 |---|---|---|---|
 | Proposal — artists | `index.html` | `slides.js` | `Sweat-Strategies-Proposal-2026.pdf` (17pp) |
 | Proposal — labels | `labels-proposal.html` | `slides-labels-offer.js` | `Sweat-Labels-Proposal-2026.pdf` (19pp) |
+| Proposal — cross-platform | `cross-platform-proposal.html` | `slides-cross-platform.js` | `Sweat-Cross-Platform-Proposal-2026.pdf` (24pp) |
 | Case studies — independent artists | `case-studies-indie.html` | `slides-indie.js` | `…-Independent-Artists.pdf` (16pp) |
 | Case studies — labels & partners | `case-studies-labels.html` | `slides-labels.js` | `…-Labels.pdf` (12pp) |
 | Case studies — labels, anonymised | `case-studies-labels-anon.html` | `slides-labels-anon.js` | `…-Labels-Anonymised.pdf` (14pp) |
@@ -43,6 +44,61 @@ and the offer is PJ's two routes — partner retainer or pay as you go.
 Everything commercial in the label deck is PJ's, verbatim from his brief. Note
 the currency split: he gave the one-off as £550 and the scale minimum as £1K, so
 the retainer tiers are set in £ to match — while the artist deck is in $.
+
+## The cross-platform deck
+
+The third proposal, for **established artists buying paid media across every
+platform** rather than testing one record. The other two both argue about
+streaming; this one argues that the channels are not interchangeable.
+
+| | Artists | Labels | Cross-platform |
+|---|---|---|---|
+| Reader | An artist with a song | A label with a record | An established artist already spending |
+| Problem | Most artists never find out | You can't optimise four assets | Every platform gets bought the same way |
+| Scope | Streaming | Streaming | Streaming, live, TikTok, YouTube, merch, CRM |
+| Price | On the slide | On the slide | **None — scoped via conversation** |
+
+Three things make it different from the other two:
+
+**It carries the whole estate, not one channel.** Four channel slides, each
+stating what actually works there rather than pretending one playbook covers
+them all — Live is a conversion campaign against the ticket link plus promoter
+partners; TikTok explicitly is *not* a conversion channel, so the money goes
+behind posts that already earned attention or through influencer seeding;
+YouTube is engagement and reach for traction; merch is funnels, drop
+optimisation and Shopify store management. All of it is PJ's brief, tightened
+but not extended — nothing was invented to make a slide look fuller.
+
+**The streaming method is unchanged.** Slides 09–12 are the label deck's four
+steps, word for word. It's the part with the evidence behind it, and rewriting
+it for a different reader would only make two documents disagree.
+
+**The CRM fan flow gets its own act.** Six steps on one rule — new follower,
+automatic DM offering an exclusive, first-party capture, the email with the
+demo, the listen, then the Instagram voice note that admits the automation and
+hands over to the artist. The voice note is pulled out onto its own slide,
+because that line is the thing that makes the rest of it survive a fan who can
+tell.
+
+The voice note is **drawn** (`voicenote()` in `parts.js`, `.vn` in `deck.css`)
+rather than screenshotted: a real one carries a real fan's handle and profile
+picture, and this deck gets forwarded. Its waveform is generated from a fixed
+sine rather than `Math.random()`, so the PDF and the live deck can't disagree.
+
+**No prices, at PJ's instruction.** The engagement slide says pricing is scoped
+to the work, gives the reason (the mix is different for everyone at this level,
+so a fixed package either overcharges the quiet months or under-resources the
+loud ones), and asks for the three things a scope needs.
+
+Artist photography is the four biggest names in the library — Disclosure,
+Thundercat, Blond:Ish, Bonobo — one each on the four streaming slides and
+nowhere else. The hook is typographic instead of carrying cards, which is what
+keeps every face in the deck a top-tier one.
+
+Two lines to check before it goes out. PJ's voice-note script reads "i'm glad
+you here"; the slide sets it as "I'm glad you're here". And the reporting slide
+stops at what sweat.fm actually shows — campaigns, costs and markets. If the
+platform starts carrying live and merch, that's the line to widen.
 
 **The case-study decks are evidence documents, not pitches.** No method, no
 roster, no reporting product, no offer and no call to action — one case study
@@ -229,6 +285,7 @@ deck going to other labels.
 ```
 index.html         artist proposal shell
 labels-proposal.html label proposal shell
+cross-platform-proposal.html  cross-platform proposal shell
 case-studies-*.html  case-study shells
 deck.css           the design system — tokens, slide archetypes, print rules
 parts.js           shared fragments and slide archetypes
