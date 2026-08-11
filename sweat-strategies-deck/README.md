@@ -69,10 +69,11 @@ actually true and actually useful: the platforms are different animals.
 there*. On some channels spending straight at the sale is the cheapest way
 there; on others it is slower, or it is putting money behind what is already
 working and letting the sale follow. Two things to hold on to in any copy edit.
-The deck must never imply TikTok or YouTube aren't meant to sell anything — and
-it must not argue the point in ad-platform vocabulary. An earlier cut leaned on
-campaign types, objectives and pixels, which is the media buyer's language, not
-the reader's; the slides talk about outcomes and what they cost instead.
+Every channel slide states what we *do* there — none of them argues that
+something doesn't work, and TikTok in particular must not read as "conversion
+campaigns fail here". And none of it is argued in ad-platform vocabulary:
+earlier cuts leaned on campaign types, objectives, pixels and cost per result,
+which is the media buyer's language rather than the reader's.
 
 Three things make it different from the other two decks:
 
@@ -84,9 +85,9 @@ them all:
 |---|---|
 | Live | Ticket sales run as a campaign rather than a blast — the standard practice is a wall of spend at on-sale and again on pay-day weekend against targeting built years ago. We test content first, spend slower and more consistently with ramp-ups at the moments that matter, and read cold and warm funnels apart with hook rate, hold rate and conversion daily. |
 | Ticketing | We can take the ticketing itself through **david.tickets**, at no cost to the artist, with the artist and their team getting full live access to their own ticket data. |
-| TikTok | You *can* buy straight at the sale here — it just costs more, because TikTok isn't where people stop to buy. The cheaper route is money behind the posts that already earned attention, or influencer seeding. |
+| TikTok | Grow the audience on the content that is already working: audience targeting campaigns pointed at the posts that earned attention on their own, or influencer seeding where the record needs to be in other people's videos. |
 | YouTube | The goal is traction: watched, held to the end, picked up. Engagement and reach campaigns buy that. |
-| Merch | The one channel where the outcome is a straight sale, so the whole path has to earn it: funnels end to end, drop optimisation, Shopify store management. |
+| Merch | A drop only works if the whole path behind it does: funnels built and tested end to end, drop optimisation, Shopify store management. |
 
 All of it is PJ's brief, tightened but not extended — nothing was invented to
 make a slide look fuller. The criticism on the Live slide is aimed at the
@@ -117,6 +118,12 @@ sine rather than `Math.random()`, so the PDF and the live deck can't disagree.
 to the work, gives the reason (the mix is different for everyone at this level,
 so a fixed package either overcharges the quiet months or under-resources the
 loud ones), and asks for the three things a scope needs.
+
+The cover carries this deck's own title, **Full Funnel Deck**, set as a mono
+caption under the chrome wordmark. Its position is measured off the artwork
+rather than set to the deck's `--pad`: the wordmark's right edge sits ~45px from
+the frame, so a caption on the usual 96px gutter would read as misaligned with
+the thing directly above it.
 
 Artist photography is the four biggest names in the library — Disclosure,
 Thundercat, Blond:Ish, Bonobo — one each on the four streaming slides and

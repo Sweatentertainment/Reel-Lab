@@ -98,13 +98,24 @@ const FAN_FLOW = [
 ];
 
 export const SLIDES = [
-  /* 01 — cover. Miguel's original, as on both other proposals. */
+  /* 01 — cover. Miguel's original, as on both other proposals, with this deck's
+     own title set under the chrome wordmark.
+
+     Positions are measured off the artwork rather than set to the deck's `--pad`:
+     the wordmark's right edge sits ~45px from the frame, so a caption aligned to
+     the usual 96px gutter would read as misaligned with the thing directly above
+     it. The cover carries its own baked-in chrome, hence `chrome: 'none'`. */
   {
     section: 'Proposal',
     chrome: 'none',
     html: `
       <div style="position:absolute;inset:0;z-index:0">
         <img src="${img('cover.jpg')}" alt="" style="width:100%;height:100%;object-fit:cover">
+      </div>
+      <div class="reveal" style="--d:.5s;position:absolute;right:45px;top:712px;z-index:20;text-align:right">
+        <div style="font-family:var(--mono);text-transform:uppercase;font-size:30px;letter-spacing:0.22em;color:#fff;text-shadow:0 2px 24px rgba(0,0,0,0.55)">
+          Full Funnel Deck
+        </div>
       </div>`,
   },
 
@@ -352,15 +363,14 @@ export const SLIDES = [
 
   channel({
     n: '02', name: 'TikTok',
-    headline: 'You can buy straight at the sale here. It just costs you more.',
-    body: `It will spend and it will return something, but the cost of it never gets
-      good — TikTok isn't where people stop to buy. The cheaper route is putting money
-      behind the posts that already earned attention, aimed at the audience that gave
-      it to them, or going around paid media entirely and seeding the record through
-      our influencer networks. That's where the cost per result actually comes down.`,
+    headline: 'Grow the audience on the content that is already working.',
+    body: `Audience targeting campaigns, pointed at the posts that have already earned
+      attention on their own. Reach and audience growth is what the platform gives you,
+      so that is what we buy — and where the record needs to be in other people's videos
+      rather than in an ad, we seed it through our influencer networks instead.`,
     points: [
-      { t: 'Boost the best performers', b: 'Money goes behind the posts that have already proven they hold attention.' },
-      { t: 'Audience targeting', b: 'Aimed at the audience the post actually found, not at a demographic guess.' },
+      { t: 'Content that is already working', b: 'The budget goes behind posts that have proven they hold attention, not behind untested assets.' },
+      { t: 'Audience targeting', b: 'Built to reach and grow the audience the post actually found, rather than a demographic guess.' },
       { t: 'Influencer seeding', b: 'Our own networks, for when the record needs to be in other people’s videos rather than in an ad.' },
     ],
   }),
@@ -380,10 +390,9 @@ export const SLIDES = [
   channel({
     n: '04', name: 'Merch',
     headline: 'Funnels, drops, and the store behind them.',
-    body: `The one channel where the outcome is a straight sale, which means the
-      whole path has to earn it rather than just the ad pointing at it. We build and
-      test the funnel end to end, plan and measure the drop, and manage the Shopify
-      store the traffic lands on.`,
+    body: `A drop only works if the whole path behind it does, not just the ad
+      pointing at it. We build and test the funnel end to end, plan and measure the
+      drop, and manage the Shopify store the traffic lands on.`,
     points: [
       { t: 'Funnels', b: 'Built and tested from the ad through to the checkout.' },
       { t: 'Drop optimisation', b: 'Planned, timed and measured, so a launch is not a single day of guessing.' },
