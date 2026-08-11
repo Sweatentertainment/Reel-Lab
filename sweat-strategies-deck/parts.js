@@ -68,7 +68,7 @@ export const browser = ({ src, alt, url = 'sweat.fm' }) => `
 
    The waveform is deterministic on purpose: Math.random() would redraw it on
    every render, so the PDF and the live deck would disagree. */
-export const voicenote = ({ time = '0:14', bars = 46, alt = 'Voice note from the artist' }) => {
+export const voicenote = ({ time = '0:14', bars = 28, alt = 'Voice note from the artist' }) => {
   const wave = Array.from({ length: bars }, (_, i) => {
     const h = 18 + Math.round(30 * Math.abs(Math.sin(i * 1.7) * Math.cos(i * 0.6)));
     return `<i style="height:${h}px"></i>`;

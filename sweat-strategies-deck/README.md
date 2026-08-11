@@ -12,7 +12,7 @@ Miguel's V3 deck, rebuilt in the **sweatstrategies.com** design language.
 |---|---|---|---|
 | Proposal — artists | `index.html` | `slides.js` | `Sweat-Strategies-Proposal-2026.pdf` (17pp) |
 | Proposal — labels | `labels-proposal.html` | `slides-labels-offer.js` | `Sweat-Labels-Proposal-2026.pdf` (19pp) |
-| Proposal — cross-platform | `cross-platform-proposal.html` | `slides-cross-platform.js` | `Sweat-Cross-Platform-Proposal-2026.pdf` (25pp) |
+| Proposal — cross-platform | `cross-platform-proposal.html` | `slides-cross-platform.js` | `Sweat-Cross-Platform-Proposal-2026.pdf` (24pp) |
 | Case studies — independent artists | `case-studies-indie.html` | `slides-indie.js` | `…-Independent-Artists.pdf` (16pp) |
 | Case studies — labels & partners | `case-studies-labels.html` | `slides-labels.js` | `…-Labels.pdf` (12pp) |
 | Case studies — labels, anonymised | `case-studies-labels-anon.html` | `slides-labels-anon.js` | `…-Labels-Anonymised.pdf` (14pp) |
@@ -21,10 +21,10 @@ Miguel's V3 deck, rebuilt in the **sweatstrategies.com** design language.
 it. Shared fragments and slide archetypes (`caseChart`, `caseStats`, `bend`,
 `spine`) live in `parts.js`.
 
-**Neither proposal carries case studies.** They came out so a proposal and a
+**No proposal carries case studies.** They came out so a proposal and a
 case-study deck can be sent as two documents.
 
-**The two proposals argue different things.** The artist deck sells a question —
+**The artist and label proposals argue different things.** The artist deck sells a question —
 *have you got a song?* — and promises an answer in 90 days. A label already
 believes it has the record; it wants a hit, and it buys speed, volume and a cost
 per new listener it can plan against. So the label deck keeps the same bones
@@ -64,12 +64,15 @@ whoever is currently buying — and set as a full-bleed bracket it read as the
 deck's selling point rather than its setup. It now asserts the thing that is
 actually true and actually useful: the platforms are different animals.
 
-**Everything converts. The campaign type is what changes.** "Conversion
-campaign" is a campaign type, not a synonym for wanting a sale, and slide 05
-says so explicitly — it only earns its keep where there is a transaction at the
-end and a pixel that can see it. That distinction is why the four channel slides
-read differently from each other, and it's worth protecting in any copy edit:
-the deck must never imply TikTok or YouTube aren't meant to sell anything.
+**Everything converts. The route is what changes.** Slide 05 carries it:
+*all of it is there to convert, what changes is the campaign that gets you
+there*. On some channels spending straight at the sale is the cheapest way
+there; on others it is slower, or it is putting money behind what is already
+working and letting the sale follow. Two things to hold on to in any copy edit.
+The deck must never imply TikTok or YouTube aren't meant to sell anything — and
+it must not argue the point in ad-platform vocabulary. An earlier cut leaned on
+campaign types, objectives and pixels, which is the media buyer's language, not
+the reader's; the slides talk about outcomes and what they cost instead.
 
 Three things make it different from the other two decks:
 
@@ -81,9 +84,9 @@ them all:
 |---|---|
 | Live | Ticket sales run as a campaign rather than a blast — the standard practice is a wall of spend at on-sale and again on pay-day weekend against targeting built years ago. We test content first, spend slower and more consistently with ramp-ups at the moments that matter, and read cold and warm funnels apart with hook rate, hold rate and conversion daily. |
 | Ticketing | We can take the ticketing itself through **david.tickets**, at no cost to the artist, with the artist and their team getting full live access to their own ticket data. |
-| TikTok | Still converting, just not with a conversion campaign — money behind the posts that already earned attention, or influencer seeding. |
-| YouTube | Engagement and reach, because that's what the platform rewards and what traction is built from. |
-| Merch | One of the places a conversion campaign genuinely earns its keep: funnels end to end, drop optimisation, Shopify store management. |
+| TikTok | You *can* buy straight at the sale here — it just costs more, because TikTok isn't where people stop to buy. The cheaper route is money behind the posts that already earned attention, or influencer seeding. |
+| YouTube | The goal is traction: watched, held to the end, picked up. Engagement and reach campaigns buy that. |
+| Merch | The one channel where the outcome is a straight sale, so the whole path has to earn it: funnels end to end, drop optimisation, Shopify store management. |
 
 All of it is PJ's brief, tightened but not extended — nothing was invented to
 make a slide look fuller. The criticism on the Live slide is aimed at the
@@ -98,9 +101,12 @@ it for a different reader would only make two documents disagree.
 **The CRM fan flow gets its own act.** Six steps on one rule — new follower,
 automatic DM offering an exclusive, first-party capture, the email with the
 demo, the listen, then the Instagram voice note that admits the automation and
-hands over to the artist. The voice note is pulled out onto its own slide,
-because that line is the thing that makes the rest of it survive a fan who can
-tell.
+hands over to the artist. The last node is marked in white rather than blue,
+because that is where a person takes over.
+
+The voice note itself had a slide of its own until PJ folded the two together.
+It is the payoff of the sequence rather than a separate idea, and on one slide
+the quote sits directly under the node it belongs to.
 
 The voice note is **drawn** (`voicenote()` in `parts.js`, `.vn` in `deck.css`)
 rather than screenshotted: a real one carries a real fan's handle and profile

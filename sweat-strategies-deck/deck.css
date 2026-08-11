@@ -694,13 +694,18 @@ body.is-printing .slide .pathline path { stroke-dashoffset: 0 !important; animat
   flex: 1;
   display: flex;
   align-items: center;
-  gap: 5px;
+  gap: 4px;
   height: 48px;
+  overflow: hidden;
 }
 
+/* Fixed bar width rather than flex: at a narrow bubble the gaps eat the whole
+   track and every bar rounds to sub-pixel, which renders as an empty blue
+   pill. Pass fewer bars for a narrower slot instead. */
 .vn__wave i {
   display: block;
-  flex: 1;
+  flex: none;
+  width: 3px;
   border-radius: 2px;
   background: rgba(255, 255, 255, 0.88);
 }

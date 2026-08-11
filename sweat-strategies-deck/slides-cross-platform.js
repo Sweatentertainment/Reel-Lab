@@ -92,7 +92,7 @@ const FAN_FLOW = [
   },
   {
     n: 'Step 06', t: 'The voice note',
-    b: 'An Instagram voice note from the artist: yes, that was automated — but I am a real person, and I am glad you are here.',
+    b: 'An Instagram voice note, in the artist’s own voice — which is where the automation hands over to a person.',
     human: true,
   },
 ];
@@ -152,10 +152,10 @@ export const SLIDES = [
       </div>`,
   },
 
-  /* 05 — and the correction that follows from it. Everything is meant to
-     convert; "conversion campaign" is a campaign type, not a synonym for
-     wanting a sale. Getting that distinction right is the whole reason the
-     four channel slides read differently from each other. */
+  /* 05 — and what follows from it. Everything is meant to convert; what
+     differs is the route that gets there for the least money. An earlier cut
+     argued this in ad-platform terms — campaign types, objectives, pixels —
+     which is the buyer's vocabulary, not the reader's. Kept on outcomes. */
   {
     section: 'The principle',
     html: `
@@ -170,12 +170,12 @@ export const SLIDES = [
             All of it is there to convert. What changes is the campaign that gets you there.
           </h2>
           <p class="body reveal" style="--d:.2s;max-width:none;padding-bottom:12px">
-            Tickets, streams, subscribers, merch — every channel is driving somebody
-            to do something. But a conversion campaign is a campaign type, not a
-            synonym for wanting a sale, and it only earns its keep where there is a
-            transaction at the end and a pixel that can see it. Everywhere else the
-            same objective just buys clicks, and the route to the sale is a different
-            kind of buy.
+            Tickets, streams, subscribers, merch — every channel has an outcome we're
+            driving somebody towards. What differs is the route. On some, spending
+            straight at the sale is the cheapest way there. On others it's slower, or
+            it's putting money behind what's already working and letting the sale
+            follow. We buy each one the way that reaches the outcome for the least
+            money, not the way that looks the most direct.
           </p>
         </div>
       </div>`,
@@ -352,12 +352,12 @@ export const SLIDES = [
 
   channel({
     n: '02', name: 'TikTok',
-    headline: 'Still converting — just not with a conversion campaign.',
-    body: `There is no transaction at the end of a TikTok for a pixel to optimise
-      against, so a conversion objective spends against clicks that teach it nothing.
-      What converts here is money behind the posts that already earned attention on
-      their own, aimed at the audience they earned — or going around paid media
-      entirely and seeding the record through our influencer networks.`,
+    headline: 'You can buy straight at the sale here. It just costs you more.',
+    body: `It will spend and it will return something, but the cost of it never gets
+      good — TikTok isn't where people stop to buy. The cheaper route is putting money
+      behind the posts that already earned attention, aimed at the audience that gave
+      it to them, or going around paid media entirely and seeding the record through
+      our influencer networks. That's where the cost per result actually comes down.`,
     points: [
       { t: 'Boost the best performers', b: 'Money goes behind the posts that have already proven they hold attention.' },
       { t: 'Audience targeting', b: 'Aimed at the audience the post actually found, not at a demographic guess.' },
@@ -368,10 +368,9 @@ export const SLIDES = [
   channel({
     n: '03', name: 'YouTube',
     headline: 'Engagement and reach, to generate traction.',
-    body: `Another one where the objective isn't conversion but the point still is.
-      YouTube rewards being watched and interacted with, so that is what the campaigns
-      are built to buy — enough of the right people in front of a release for traction
-      to start, which is what everything downstream converts off.`,
+    body: `The goal here is traction: a release being watched, held to the end and
+      picked up. So that is what the campaigns are built to buy — enough of the right
+      people in front of it, often enough, for it to start moving on its own.`,
     points: [
       { t: 'Engagement campaigns', b: 'Built to get watched and interacted with, which is what the platform rewards.' },
       { t: 'Reach campaigns', b: 'Impressions against the audiences that matter, at the volume it takes to register.' },
@@ -381,11 +380,10 @@ export const SLIDES = [
   channel({
     n: '04', name: 'Merch',
     headline: 'Funnels, drops, and the store behind them.',
-    body: `One of the places a conversion campaign genuinely earns its keep — there
-      is a checkout at the end and a pixel that can see it. So we take the whole path
-      rather than just the campaign pointing at it: the funnel built and tested end
-      to end, the drop planned and measured, and the Shopify store itself under
-      management.`,
+    body: `The one channel where the outcome is a straight sale, which means the
+      whole path has to earn it rather than just the ad pointing at it. We build and
+      test the funnel end to end, plan and measure the drop, and manage the Shopify
+      store the traffic lands on.`,
     points: [
       { t: 'Funnels', b: 'Built and tested from the ad through to the checkout.' },
       { t: 'Drop optimisation', b: 'Planned, timed and measured, so a launch is not a single day of guessing.' },
@@ -431,14 +429,20 @@ export const SLIDES = [
       </div>`,
   },
 
-  /* 20 — the flow itself. */
+  /* 20 — the flow, with step 06 landing underneath it. The voice note had a
+     slide of its own until PJ folded the two together: it's the payoff of the
+     sequence rather than a separate idea, and on one slide the quote sits
+     directly under the node it belongs to.
+
+     The voice note is drawn rather than screenshotted — see voicenote() in
+     parts.js. */
   {
     section: 'CRM',
     grain: 'soft',
     html: `
       <div class="pad l-mid">
-        <div class="label reveal" style="margin-bottom:30px">CRM · the fan flow</div>
-        <h2 class="display reveal" style="--d:.08s;font-size:66px;line-height:1.1;margin-bottom:96px;max-width:1500px">
+        <div class="label reveal" style="margin-bottom:26px">CRM · the fan flow</div>
+        <h2 class="display reveal" style="--d:.08s;font-size:58px;line-height:1.1;margin-bottom:74px;max-width:1500px">
           From a new follower to a real conversation.
         </h2>
         <ol class="flow reveal" style="--d:.2s">
@@ -449,35 +453,25 @@ export const SLIDES = [
               <p class="flow__b">${s.b}</p>
             </li>`).join('')}
         </ol>
-        <p class="body reveal" style="--d:.42s;font-size:21px;max-width:1300px;margin-top:88px;opacity:0.75">
-          Every step after the first one runs on its own. The artist writes the voice
-          note once.
-        </p>
-      </div>`,
-  },
 
-  /* 21 — the last step, pulled out. It's the bit that makes the rest of it
-     work: the automation is admitted rather than hidden, and it ends with the
-     artist's own voice. Drawn, not screenshotted — see voicenote() in parts.js. */
-  {
-    section: 'CRM',
-    grain: 'soft',
-    html: `
-      <div class="pad l-mid">
-        <div class="label reveal" style="margin-bottom:34px">CRM · step 06</div>
-        <div class="reveal" style="--d:.08s;max-width:760px;margin-bottom:56px">
-          ${voicenote({ time: '0:14', alt: 'Voice note from the artist, fourteen seconds' })}
+        <div class="rule reveal" style="--d:.4s;margin:60px 0 46px"></div>
+
+        <div style="display:grid;grid-template-columns:430px 1fr;gap:64px;align-items:center">
+          <div class="reveal" style="--d:.46s">
+            ${voicenote({ time: '0:14', alt: 'Voice note from the artist, fourteen seconds' })}
+          </div>
+          <div>
+            <p class="reveal" style="--d:.52s;font-family:var(--sans);font-weight:700;font-size:34px;letter-spacing:-0.03em;line-height:1.28;margin-bottom:18px">
+              &ldquo;Hey — obviously this was automated. But I'm a real person, and I'm
+              glad you're here. I'm in my DMs if you want to say hey.&rdquo;
+            </p>
+            <p class="body reveal" style="--d:.58s;font-size:19px;max-width:none;opacity:0.75">
+              Admitting it is what makes the rest of the sequence survive a fan who can
+              tell. Everything before this runs on its own; the artist records the voice
+              note once.
+            </p>
+          </div>
         </div>
-        <h2 class="display reveal" style="--d:.16s;font-size:52px;line-height:1.22;max-width:1500px;margin-bottom:44px">
-          &ldquo;Hey — obviously this was automated. But I'm a real person, and I'm
-          glad you're here. I'm in my DMs if you want to say hey.&rdquo;
-        </h2>
-        <p class="body reveal" style="--d:.28s;font-size:22px;max-width:1180px">
-          Admitting the automation is the only version of this that survives a fan
-          who can tell — and it ends in the artist's actual voice with an open door.
-          By that point they have an exclusive nobody else has, and they're on a list
-          the artist keeps.
-        </p>
       </div>`,
   },
 
