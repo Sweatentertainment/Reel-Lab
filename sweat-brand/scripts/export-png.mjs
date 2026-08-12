@@ -1,19 +1,24 @@
-/* Render the ad templates to PNG at native size.
+/* Render the statement ads to PNG at native size.
  *
- *   npx http-server -p 8899 -s .          # from sweat-brand/
- *   node scripts/export-png.mjs           # every template -> out/
- *   node scripts/export-png.mjs story-1920.html
- *   node scripts/export-png.mjs --scale 2 # 2x, for print or retina
+ *   npx http-server -p 8899 -s .     # from sweat-brand/
+ *   node scripts/export-png.mjs                    # the whole set, every size
+ *   node scripts/export-png.mjs --id C4            # one ad, every size
+ *   node scripts/export-png.mjs --size story-1920  # every ad, one size
+ *   node scripts/export-png.mjs --scale 2          # 2x, for print or retina
  *
- * The size comes off the .ad element's own --cw / --ch, so a template that
- * changes its dimensions exports at the new ones without touching this file.
+ * The set comes from ads/statements.js, so adding an ad there is the only
+ * edit needed — nothing in this file lists them. Output goes to
+ * out/<size>/<id>.png.
+ *
  * <body> gets .is-exporting, which turns off the preview fit scaling, so the
- * output is native size whatever the window did.
+ * PNG is native size whatever the window did.
  */
 
 import { chromium } from 'playwright';
-import { readdirSync, mkdirSync } from 'node:fs';
+import { mkdirSync } from 'node:fs';
 import { join } from 'node:path';
+
+import { STATEMENTS, SIZES } from '../ads/statements.js';
 
 const root = new URL('..', import.meta.url).pathname;
 const argv = process.argv.slice(2);
@@ -25,52 +30,71 @@ const arg = (flag, fallback) => {
 
 const scale = Number(arg('--scale', 1));
 const port = arg('--port', 8899);
-const named = argv.filter((a) => a.endsWith('.html'));
+const onlyId = arg('--id', null);
+const onlySize = arg('--size', null);
 
-const pages = named.length
-  ? named
-  : readdirSync(join(root, 'ads')).filter((f) => f.endsWith('.html')).sort();
+const ads = onlyId ? STATEMENTS.filter((s) => s.id === onlyId) : STATEMENTS;
+const sizes = Object.keys(SIZES).filter((s) => !onlySize || s === onlySize);
 
-mkdirSync(join(root, 'out'), { recursive: true });
+if (!ads.length) {
+  console.error(`no ad with id ${onlyId} — ids are ${STATEMENTS.map((s) => s.id).join(', ')}`);
+  process.exit(1);
+}
+if (!sizes.length) {
+  console.error(`no size ${onlySize} — sizes are ${Object.keys(SIZES).join(', ')}`);
+  process.exit(1);
+}
 
 const browser = await chromium.launch();
 const problems = [];
+let n = 0;
 
-for (const file of pages) {
-  const page = await browser.newPage({ deviceScaleFactor: scale });
-  page.on('pageerror', (e) => problems.push(`${file}: ${e}`));
-  page.on('requestfailed', (r) => problems.push(`${file}: failed ${r.url()}`));
+for (const size of sizes) {
+  const dir = join(root, 'out', size);
+  mkdirSync(dir, { recursive: true });
 
-  await page.goto(`http://127.0.0.1:${port}/ads/${file}`, { waitUntil: 'networkidle' });
-  await page.evaluate(() => document.body.classList.add('is-exporting'));
+  for (const ad of ads) {
+    const page = await browser.newPage({ deviceScaleFactor: scale });
+    page.on('pageerror', (e) => problems.push(`${ad.id}/${size}: ${e}`));
+    page.on('requestfailed', (r) => problems.push(`${ad.id}/${size}: failed ${r.url()}`));
 
-  const ad = page.locator('.ad').first();
-  const box = await ad.evaluate((el) => {
-    const cs = getComputedStyle(el);
-    return { w: Number(cs.getPropertyValue('--cw')), h: Number(cs.getPropertyValue('--ch')) };
-  });
+    await page.goto(
+      `http://127.0.0.1:${port}/ads/statement.html?id=${ad.id}&size=${size}`,
+      { waitUntil: 'networkidle' }
+    );
+    await page.evaluate(() => document.body.classList.add('is-exporting'));
 
-  if (!box.w || !box.h) {
-    problems.push(`${file}: .ad has no --cw/--ch`);
+    const el = page.locator('.ad').first();
+    const box = await el.evaluate((node) => {
+      const cs = getComputedStyle(node);
+      return { w: Number(cs.getPropertyValue('--cw')), h: Number(cs.getPropertyValue('--ch')) };
+    });
+
+    if (!box.w || !box.h) {
+      problems.push(`${ad.id}/${size}: .ad has no --cw/--ch`);
+      await page.close();
+      continue;
+    }
+
+    /* size the viewport to the ad so nothing is clipped by a short window,
+       and let the webfont settle — an un-hinted first paint would put the
+       fallback metrics in the PNG, and the hero is fitted by measurement */
+    await page.setViewportSize({ width: box.w, height: box.h });
+    await page.evaluate(() => document.fonts.ready);
+    await page.waitForTimeout(300);
+
+    const suffix = scale > 1 ? `@${scale}x` : '';
+    await el.screenshot({ path: join(dir, `${ad.id}${suffix}.png`) });
+
+    n += 1;
+    console.log(`${size}/${ad.id}${suffix}.png  ${box.w * scale}x${box.h * scale}  ${ad.note}`);
     await page.close();
-    continue;
   }
-
-  /* size the viewport to the ad so nothing is clipped by a short window, and
-     let the webfont settle before the shot — an un-hinted first paint puts
-     the fallback metrics in the PNG */
-  await page.setViewportSize({ width: box.w, height: box.h });
-  await page.evaluate(() => document.fonts.ready);
-  await page.waitForTimeout(400);
-
-  const out = join(root, 'out', file.replace(/\.html$/, `${scale > 1 ? `@${scale}x` : ''}.png`));
-  await ad.screenshot({ path: out });
-
-  console.log(`${file}  ->  out/${out.split('/').pop()}  ${box.w * scale}x${box.h * scale}`);
-  await page.close();
 }
 
 await browser.close();
+
+console.log(`\n${n} ad${n === 1 ? '' : 's'} written to out/`);
 
 if (problems.length) {
   console.error(`\n${problems.join('\n')}`);

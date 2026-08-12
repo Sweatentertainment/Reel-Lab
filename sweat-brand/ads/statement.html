@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Sweat — statement ad</title>
+<link rel="icon" href="../img/sweat-favicon.png">
+<link rel="stylesheet" href="../system/tokens.css">
+<link rel="stylesheet" href="../system/system.css">
+<style>
+/* ------------------------------------------------------------------
+   The statement layout. One ad, one shape, every size.
+
+   There is deliberately no per-ad styling anywhere: the copy in
+   statements.js is the only thing that changes between the eleven, so
+   the set cannot drift. The one thing that adapts is the hero size,
+   and it adapts by measurement rather than by hand — see fitHero().
+   ------------------------------------------------------------------ */
+
+/* The wordmark is positioned out of flow at the top gutter, so the copy
+   block has to be told to start below it — otherwise a hero long enough to
+   fill the frame runs up underneath it. */
+.st {
+  justify-content: flex-end;
+  padding-top: calc(196 * var(--u));
+}
+
+/* the hero gets whatever height is left once the sub, the CTA and the
+   gaps have taken theirs — fitHero() then sizes the type to fill it */
+.st__hero {
+  font-family: var(--font-sans);
+  font-weight: var(--weight-black);
+  letter-spacing: var(--tracking-display);
+  line-height: 1.02;
+  color: var(--color-white);
+  text-wrap: balance;
+}
+
+.st__sub {
+  font-family: var(--font-sans);
+  font-weight: var(--weight-regular);
+  line-height: 1.46;
+  letter-spacing: var(--tracking-body);
+  color: rgba(255, 255, 255, 0.74);
+  margin-top: calc(38 * var(--u));
+  font-size: calc(30 * var(--u));
+  max-width: calc(880 * var(--u));
+}
+
+.st .cta { margin-top: calc(54 * var(--u)); }
+
+/* story safe areas: platform chrome eats roughly the top 250px and the
+   bottom 320px at 1920 tall */
+.ad[data-size="story-1920"] .st {
+  padding-top: calc(250 * var(--u));
+  padding-bottom: calc(320 * var(--u));
+}
+</style>
+</head>
+<body>
+
+<!-- Rendered from ../ads/statements.js.
+     Preview one:  statement.html?id=C4&size=story-1920
+     Export all:   npm run export                        -->
+
+<div class="ad grain" data-size="portrait-1350" style="--cw:1080; --ch:1350">
+
+  <!-- one field, thrown off the bottom-right. The only colour on the ad
+       besides the CTA. -->
+  <div class="blob blob--a" style="right:-34%; bottom:-40%; opacity:.62"></div>
+
+  <div class="mark mark--tl">
+    <span class="mark__name">Sweat Strategies</span>
+    <span class="mark__url">sweatstrategies.com</span>
+  </div>
+
+  <div class="pad st">
+    <h1 class="st__hero"></h1>
+    <p class="st__sub"></p>
+    <span class="cta">
+      <span class="cta__label"></span> <span class="cta__arr">&rarr;</span>
+    </span>
+  </div>
+
+</div>
+
+<script type="module">
+import { byId, STATEMENTS, SIZES, CTA } from './statements.js';
+import './frame.js';
+
+const q = new URLSearchParams(location.search);
+const ad = byId(q.get('id')) || STATEMENTS[0];
+const sizeName = SIZES[q.get('size')] ? q.get('size') : 'portrait-1350';
+const size = SIZES[sizeName];
+
+const el = document.querySelector('.ad');
+el.dataset.size = sizeName;
+el.style.setProperty('--cw', size.w);
+el.style.setProperty('--ch', size.h);
+el.style.setProperty('--uref', size.uref);
+
+document.querySelector('.st__hero').textContent = ad.hero;
+document.querySelector('.st__sub').textContent = ad.sub;
+document.querySelector('.cta__label').textContent = CTA;
+document.title = `${ad.id} — ${ad.note}`;
+
+/* Hero sizes are measured, not chosen.
+ *
+ * The eleven heroes run from 21 characters ("11 cents per result.") to 62,
+ * so one fixed size either shrinks the short ones into a corner or overflows
+ * the long ones. Picking a size per ad would mean eleven decisions that drift
+ * apart. Instead the box is identical on every ad and the type grows to fill
+ * whatever height the sub and the CTA leave behind — so the ads differ in
+ * point size but not in composition, which is what reads as a set.
+ *
+ * Search downward from the largest size that could ever fit, in whole
+ * multiples of --u, and stop at the first that does not overflow.
+ */
+const fitHero = () => {
+  const hero = document.querySelector('.st__hero');
+  const box = document.querySelector('.st');
+  const u = size.w / size.uref;
+
+  /* Measure the stack, not the scroll height. The block is anchored with
+     justify-content: flex-end, and content that outgrows a flex container
+     overflows past its START edge — which scrollHeight cannot see, so an
+     overflow test against it silently passes and the head runs off the top
+     of the ad. Comparing the first child's top to the last child's bottom
+     catches it whichever way the box is anchored. */
+  const cs = getComputedStyle(box);
+  const avail = box.clientHeight - parseFloat(cs.paddingTop) - parseFloat(cs.paddingBottom);
+
+  /* ceiling is the deck's display--xl, floor is where a head stops
+     out-ranking its own sub */
+  for (let n = 176; n >= 44; n -= 2) {
+    hero.style.fontSize = `${n * u}px`;
+    const used =
+      box.lastElementChild.getBoundingClientRect().bottom -
+      box.firstElementChild.getBoundingClientRect().top;
+    if (used <= avail) return n;
+  }
+  return 44;
+};
+
+await document.fonts.ready;
+fitHero();
+addEventListener('resize', fitHero);
+</script>
+</body>
+</html>

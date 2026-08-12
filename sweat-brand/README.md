@@ -8,7 +8,7 @@ site and the decks all look like the same company.
 ```
 decks/      the six approved PDFs, 16:9, ready to send
 system/     the design system: tokens, treatments, the typeface
-ads/        four ad templates you edit and re-export
+ads/        the statement ads — copy in statements.js, one renderer
 img/        the licensed photography, already treated
 out/        exported PNGs — what you actually upload
 scripts/    build the tokens, treat a new photo, export the ads
@@ -33,42 +33,77 @@ there and re-export; these are the output, not the source.
 > the PDFs above do — see the notes in the deck README before sending one to a
 > client.
 
-## Making an ad
+## The ads
+
+Eleven statement ads — **the C set** — drawn from the twelve case studies in
+`decks/Sweat-Case-Studies-Labels-Anonymised.pdf`. Pure text, no screenshots, no
+photography, one CTA: *Book a discovery call*.
+
+**Anonymous by construction.** No artist, track, label or partner is named
+anywhere in the set, and the layout carries no photography — a face beside a
+figure identifies a campaign as surely as a name does. That is what lets these
+run at all. Every figure is real.
 
 ```bash
 npm install                 # once
 npm run serve               # in one terminal
-npm run export              # in another — every template to out/
+npm run export              # in another — 11 ads × 3 sizes to out/
 ```
-
-Then: open `ads/square-1080.html`, edit the copy in place, reload, re-export.
-That is the whole loop. The templates are plain HTML — there is no build step
-between what you write and what comes out.
 
 ```bash
-npm run export -- story-1920.html     # just one
-npm run export:2x                     # 2x, for print or a retina placement
+npm run export -- --id C4              # one ad, every size
+npm run export -- --size story-1920    # every ad, one size
+npm run export:2x                      # 2x, for print or a retina placement
 ```
 
-| Template | Size | Shape |
+Output lands in `out/<size>/<id>.png`. To preview one in a browser:
+`ads/statement.html?id=C4&size=story-1920`.
+
+| | Ad | Hero |
 |---|---|---|
-| `square-1080.html` | 1080×1080 | Feed post. Typographic — the headline is the picture. |
-| `portrait-1350.html` | 1080×1350 | Feed post 4:5. A bent artist card over the figures. |
-| `story-1920.html` | 1080×1920 | Story / Reel / TikTok. Full-bleed photograph, copy over the fade. |
-| `landscape-1200.html` | 1200×628 | Link preview, display banner. One number, one line. |
+| **C1** | EP, compounding audience | 48.9 million streams on one EP. In twelve months. |
+| **C2** | Album, year-on-year | 73.8 million streams. Up 437% year on year. |
+| **C3** | Debut artist, zero following | 257,000 streams in month one. No social media. No following. |
+| **C4** | 11-year-old catalogue track | An 11-year-old track. 4.3 million streams in 28 days. |
+| **C5** | Cheapest CPR in the deck | 11 cents per result. |
+| **C6** | Growth that held | 5,000 to 50,000 streams a day. And it held there. |
+| **C7** | Steady spend, back catalogue | $2K a month. Four months. 1,500 to 11,000 streams a day. |
+| **C8** | Cold-start dance record | 0 to 18,000 streams a day. Three weeks. |
+| **C9** | New single, three weeks | Nothing on release day. 25,000 streams a day three weeks later. |
+| **C10** | New release, first 90 days | 0 to 7.2 million streams in 90 days. |
+| **C11** | Tickets | 5,000 tickets sold on $8K of ad spend. |
 
-### A new size
+Sizes: `portrait-1350` (1080×1350, the primary placement), `square-1080` and
+`story-1920`.
 
-Copy the nearest template and change two numbers:
+### Editing, adding, resizing
 
-```html
-<div class="ad grain" style="--cw:1440; --ch:1440">
+Everything lives in **`ads/statements.js`**. Change the copy there and
+re-export; nothing else lists the ads, including the export script. A new ad is
+a new entry. A new size is a new line in `SIZES`:
+
+```js
+export const SIZES = {
+  'landscape-1200': { w: 1200, h: 628, uref: 1200 },
+};
 ```
 
-`--cw` and `--ch` are the pixel size, and the exporter reads them off the
-element — so the file is the only place its dimensions are written down. Every
-size in the system is a multiple of `--u`, which is derived from `--cw`, so the
-whole thing rescales on its own.
+`w` and `h` are the pixel size and `uref` is the type scale — see below.
+
+Each entry also carries a `source` field with the deck figure it came from
+(`48.9M in window · £22K · 14p`), so a number can be reconciled against the
+deck without opening the PDF. The $ figures are converted from £ at roughly
+1.27 and rounded for a clean read — they are not exact FX.
+
+### One layout, eleven lengths
+
+The heroes run from 21 characters to 62. A single fixed size would either
+shrink the short ones into a corner or overflow the long ones, and choosing a
+size per ad would be eleven decisions that drift apart. So the box is identical
+on every ad and the type is **measured** into it — `fitHero()` in
+`statement.html` searches down from the deck's `display--xl` and stops at the
+first size that fits. The ads differ in point size but not in composition,
+which is what reads as a set.
 
 ## How the scale works
 
@@ -81,12 +116,11 @@ each one is emitted as `calc(N * var(--u))`.
 ```
 
 `--uref` is the width at which those numbers land at face value. Leave it at
-1920 and an ad is a straight proportional shrink of a slide. **The templates
-run it at 1080**, because an ad is read on a phone at a fraction of the size a
-slide is projected at, and a proportional shrink leaves the type too small to
-carry. Two of them tune it further: the story runs 960, which brings the type
-up about 12% on a tall canvas that would otherwise look empty, and the
-landscape runs 1200 because there the constraint is height, not width.
+1920 and an ad is a straight proportional shrink of a slide. **The ads run it
+at 1080**, because an ad is read on a phone at a fraction of the size a slide
+is projected at, and a proportional shrink leaves the type too small to carry.
+The story tunes it further to 960, which brings everything up about 12% on a
+tall canvas that would otherwise look empty.
 
 If an ad feels off, `--uref` is almost always the knob — not the individual
 font sizes.
@@ -157,13 +191,19 @@ upscale.
 
 ## House rules
 
-Four things the deck work established the hard way.
+Five things the deck work established the hard way.
+
+**0. The C set stays anonymous.** It is drawn from the anonymised deck, and
+that is the only reason a client's real spend and real CPR can go out as a
+public ad at all. Naming an artist, or putting a face on one of these, undoes
+it — including indirectly: a photograph of the artist whose figures the ad
+carries identifies them just as well as the name would.
 
 **1. A photograph next to a figure claims that figure.** Whatever the caption
 says, a face beside a number reads as that number's artist. The V3 deck put
 Harry T's 0→8M / £6K / 24p against Cristoph and it had to be unpicked. If you
 have not got a photograph of the artist who owns the number, run the ad
-typographically — `landscape-1200.html` is built that way on purpose.
+typographically — which is what the whole C set does.
 
 **2. Never warp a chart or a screenshot.** The lens treatment is for
 photography only. Bending data misrepresents it.
@@ -187,16 +227,21 @@ system/
   system.css               the treatments
   fonts/                   Manrope variable, 200–800
 ads/
+  statements.js            THE COPY — eleven ads and the sizes  ← edits live here
+  statement.html           the one renderer, every ad, every size
   frame.js                 draws the spine, fits the preview to the window
-  square-1080.html         1080×1080
-  portrait-1350.html       1080×1350
-  story-1920.html          1080×1920
-  landscape-1200.html      1200×628
 img/                       licensed photography, lens-treated
   _raw/                    drop untreated files here for npm run lens
-out/                       exported PNGs
+out/
+  portrait-1350/           C1..C11.png  1080×1350
+  square-1080/             C1..C11.png  1080×1080
+  story-1920/              C1..C11.png  1080×1920
 scripts/
   build-tokens.mjs         tokens.json -> tokens.css
   lens.mjs                 bake the site's lens into a photograph
-  export-png.mjs           templates -> out/, at native size
+  export-png.mjs           the set -> out/<size>/<id>.png, at native size
 ```
+
+The photography in `img/` is not used by the C set — it is there for the
+treatments in `system.css` (bent cards, full-bleed media) when something other
+than a statement ad is needed.
