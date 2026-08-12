@@ -2,36 +2,79 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<title>Sweat — statement ad</title>
+<title>Sweat — ad</title>
 <link rel="icon" href="../img/sweat-favicon.png">
 <link rel="stylesheet" href="../system/tokens.css">
 <link rel="stylesheet" href="../system/system.css">
 <style>
 /* ------------------------------------------------------------------
-   The statement layout. One ad, one shape, every size.
+   Two layouts, one set.
 
-   There is deliberately no per-ad styling anywhere: the copy in
-   statements.js is the only thing that changes between the eleven, so
-   the set cannot drift. The one thing that adapts is the hero size,
-   and it adapts by measurement rather than by hand — see fitHero().
+   There is deliberately no per-ad styling: the copy in statements.js is
+   the only thing that changes between the eleven, so the set cannot
+   drift. The one thing that adapts is the hero size, and it adapts by
+   measurement rather than by hand — see fitHero().
    ------------------------------------------------------------------ */
 
-/* The wordmark is positioned out of flow at the top gutter, so the copy
-   block has to be told to start below it — otherwise a hero long enough to
-   fill the frame runs up underneath it. */
-.st {
-  justify-content: flex-end;
-  padding-top: calc(196 * var(--u));
+/* the copy block. `safe` insets it past whatever platform chrome is
+   drawn over the creative; --pad-* are set per size from SIZES.safe. */
+.blk {
+  padding-top: calc(var(--safe-top) * var(--u));
+  padding-right: calc(var(--space-pad) + var(--safe-right) * var(--u));
+  padding-bottom: calc(var(--safe-bottom) * var(--u));
 }
 
-/* the hero gets whatever height is left once the sub, the CTA and the
-   gaps have taken theirs — fitHero() then sizes the type to fill it */
+/* ------------------------------------------------------------- editorial */
+/* The reference layout. Upper-weighted, enormous air below, no furniture.
+   Its restraint is the whole effect — resist adding to it. */
+
+.ed { justify-content: flex-start; }
+
+/* the block starts about a quarter of the way down, which is what leaves
+   the air underneath rather than around everything equally */
+.ed { padding-top: calc(var(--safe-top) * var(--u) + 26% - 26px); }
+
+.ed__label {
+  font-family: var(--font-mono);
+  text-transform: uppercase;
+  font-size: calc(21 * var(--u));
+  letter-spacing: var(--tracking-label);
+  margin-bottom: calc(52 * var(--u));
+}
+
+.ed__hero {
+  font-family: var(--font-sans);
+  font-weight: var(--weight-black);
+  letter-spacing: var(--tracking-display);
+  /* the reference runs about 1.5 — the air between the lines is doing as
+     much work as the air around the block */
+  line-height: 1.34;
+  text-wrap: balance;
+}
+
+.ed__sub {
+  font-family: var(--font-sans);
+  font-weight: var(--weight-regular);
+  font-size: calc(26 * var(--u));
+  line-height: 1.5;
+  letter-spacing: var(--tracking-body);
+  margin-top: calc(58 * var(--u));
+}
+
+/* ------------------------------------------------------------- statement */
+/* Bottom-weighted, with the wordmark and the CTA pill. */
+
+.st { justify-content: flex-end; }
+
+/* the wordmark is positioned out of flow at the top gutter, so the copy has
+   to be told to start below it or a full-height hero runs up underneath */
+.st { padding-top: calc(var(--safe-top) * var(--u) + 196 * var(--u)); }
+
 .st__hero {
   font-family: var(--font-sans);
   font-weight: var(--weight-black);
   letter-spacing: var(--tracking-display);
   line-height: 1.02;
-  color: var(--color-white);
   text-wrap: balance;
 }
 
@@ -40,105 +83,234 @@
   font-weight: var(--weight-regular);
   line-height: 1.46;
   letter-spacing: var(--tracking-body);
-  color: rgba(255, 255, 255, 0.74);
   margin-top: calc(38 * var(--u));
   font-size: calc(30 * var(--u));
-  max-width: calc(880 * var(--u));
 }
 
 .st .cta { margin-top: calc(54 * var(--u)); }
 
-/* story safe areas: platform chrome eats roughly the top 250px and the
-   bottom 320px at 1920 tall */
-.ad[data-size="story-1920"] .st {
-  padding-top: calc(250 * var(--u));
-  padding-bottom: calc(320 * var(--u));
+/* ---------------------------------------------------------------- inking */
+
+.ad--light .ed__label, .ad--light .st__label { color: rgba(0, 0, 0, 0.56); }
+.ad--light .ed__hero,  .ad--light .st__hero  { color: var(--color-black); }
+.ad--light .ed__sub,   .ad--light .st__sub   { color: rgba(0, 0, 0, 0.62); }
+
+.ad:not(.ad--light) .ed__label, .ad:not(.ad--light) .st__label { color: var(--color-head); }
+.ad:not(.ad--light) .ed__hero,  .ad:not(.ad--light) .st__hero  { color: var(--color-white); }
+.ad:not(.ad--light) .ed__sub,   .ad:not(.ad--light) .st__sub   { color: rgba(255, 255, 255, 0.74); }
+
+/* --------------------------------------------------------- safe overlay */
+/* ?safe=1 — never exported, just a way to see what the platform will draw
+   on top before spending money finding out. */
+
+.safe { position: absolute; inset: 0; z-index: 90; pointer-events: none; display: none; }
+body.show-safe .safe { display: block; }
+
+.safe i {
+  position: absolute;
+  background: rgba(255, 40, 40, 0.22);
+  outline: 1px dashed rgba(255, 90, 90, 0.85);
+}
+
+.safe b {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: var(--font-mono);
+  font-size: 15px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #ff8b8b;
+  font-weight: 400;
+}
+
+/* the 1:1 the Instagram profile grid crops a 4:5 down to */
+.safe u {
+  position: absolute;
+  left: 0; right: 0;
+  border-top: 1px dashed rgba(90, 190, 255, 0.9);
+  border-bottom: 1px dashed rgba(90, 190, 255, 0.9);
 }
 </style>
 </head>
 <body>
 
-<!-- Rendered from ../ads/statements.js.
-     Preview one:  statement.html?id=C4&size=story-1920
-     Export all:   npm run export                        -->
+<!-- Rendered from ./statements.js.
+     Preview:  statement.html?id=C4&size=story-1920
+     Overlay:  statement.html?id=C4&size=story-1920&safe=1
+     Compare:  statement.html?id=C10&layout=statement&ground=dark&cta=1
+     Export:   npm run export                                            -->
 
-<div class="ad grain" data-size="portrait-1350" style="--cw:1080; --ch:1350">
+<div class="ad grain" style="--cw:1080; --ch:1350">
 
-  <!-- one field, thrown off the bottom-right. The only colour on the ad
-       besides the CTA. -->
-  <div class="blob blob--a" style="right:-34%; bottom:-40%; opacity:.62"></div>
+  <!-- the one field of colour. Thrown well off the corner so it reads as
+       depth in the ground rather than as a shape on it. -->
+  <div class="blob blob--a"></div>
 
   <div class="mark mark--tl">
     <span class="mark__name">Sweat Strategies</span>
     <span class="mark__url">sweatstrategies.com</span>
   </div>
 
-  <div class="pad st">
-    <h1 class="st__hero"></h1>
-    <p class="st__sub"></p>
+  <div class="pad blk">
+    <div class="lbl"></div>
+    <h1 class="hero"></h1>
+    <p class="sub"></p>
     <span class="cta">
       <span class="cta__label"></span> <span class="cta__arr">&rarr;</span>
     </span>
   </div>
 
+  <div class="safe"></div>
+
 </div>
 
 <script type="module">
-import { byId, STATEMENTS, SIZES, CTA } from './statements.js';
+import { byId, STATEMENTS, SIZES, DESIGN, CTA } from './statements.js';
 import './frame.js';
 
 const q = new URLSearchParams(location.search);
+const on = (k, fallback) => (q.has(k) ? q.get(k) !== '0' && q.get(k) !== 'false' : fallback);
+
 const ad = byId(q.get('id')) || STATEMENTS[0];
-const sizeName = SIZES[q.get('size')] ? q.get('size') : 'portrait-1350';
+const sizeName = SIZES[q.get('size')] ? q.get('size') : Object.keys(SIZES)[0];
 const size = SIZES[sizeName];
 
+const layout = q.get('layout') === 'statement' ? 'statement'
+             : q.get('layout') === 'editorial' ? 'editorial'
+             : DESIGN.layout;
+const ground = q.get('ground') || DESIGN.ground;
+const wantCta = on('cta', DESIGN.cta);
+const wantMark = on('mark', DESIGN.mark);
+
 const el = document.querySelector('.ad');
+const blk = document.querySelector('.blk');
+const safe = size.safe || { top: 0, right: 0, bottom: 0 };
+
 el.dataset.size = sizeName;
 el.style.setProperty('--cw', size.w);
 el.style.setProperty('--ch', size.h);
 el.style.setProperty('--uref', size.uref);
+el.style.setProperty('--safe-top', safe.top);
+el.style.setProperty('--safe-right', safe.right);
+el.style.setProperty('--safe-bottom', safe.bottom);
+el.classList.toggle('ad--light', ground === 'paper');
 
-document.querySelector('.st__hero').textContent = ad.hero;
-document.querySelector('.st__sub').textContent = ad.sub;
-document.querySelector('.cta__label').textContent = CTA;
+/* the blue field is a black-ground device. On paper it would be a stain. */
+const blob = document.querySelector('.blob');
+if (ground === 'paper') {
+  blob.remove();
+} else {
+  Object.assign(blob.style, layout === 'editorial'
+    ? { right: '-38%', top: '-30%', opacity: 0.5 }
+    : { right: '-34%', bottom: '-40%', opacity: 0.62 });
+}
+
+/* layout-specific classes, so the two never share a rule by accident.
+   Grab the nodes before renaming them — the placeholder classes are gone
+   the moment className is reassigned. */
+const p = layout === 'editorial' ? 'ed' : 'st';
+const lbl = document.querySelector('.lbl');
+const hero = document.querySelector('.hero');
+const sub = document.querySelector('.sub');
+const cta = document.querySelector('.cta');
+const mark = document.querySelector('.mark');
+
+blk.classList.add(p);
+lbl.className = `${p}__label`;
+hero.className = `${p}__hero`;
+sub.className = `${p}__sub`;
+
+lbl.textContent = DESIGN.label;
+sub.textContent = ad.sub;
+
+/* The editorial layout breaks the hero a sentence at a time, which is what
+ * gives the reference its rhythm: "…in 90 days." finishes, and "On a new
+ * artist." starts fresh rather than running on from it. A sentence still
+ * wraps within its own block.
+ *
+ * Split on a full stop followed by whitespace, so decimals ("7.2 million",
+ * "4.35M") stay intact — there is no space inside them.
+ */
+if (layout === 'editorial') {
+  for (const line of ad.hero.split(/(?<=\.)\s+/)) {
+    const span = document.createElement('span');
+    span.style.display = 'block';
+    span.textContent = line;
+    hero.append(span);
+  }
+} else {
+  hero.textContent = ad.hero;
+}
+cta.querySelector('.cta__label').textContent = CTA;
+
+if (!wantCta) cta.remove();
+if (!wantMark) mark.remove();
+if (!DESIGN.label) lbl.remove();
+
 document.title = `${ad.id} — ${ad.note}`;
+
+/* the copy never runs wider than a comfortable measure, and never under the
+   Reels action rail — .blk's padding-right already holds it off, this caps
+   the line length on top of that */
+for (const n of blk.children) n.style.maxWidth = `calc(820 * var(--u))`;
+
+/* ---------------------------------------------------------- safe overlay */
+
+if (on('safe', false)) {
+  document.body.classList.add('show-safe');
+  const u = size.w / size.uref;
+  const box = document.querySelector('.safe');
+  const band = (css, label) =>
+    `<i style="${css}"></i>${label ? `<b style="${label.pos}">${label.text}</b>` : ''}`;
+
+  let html = '';
+  if (safe.top) html += band(`left:0;right:0;top:0;height:${safe.top * u}px`,
+    { pos: `top:${safe.top * u / 2 - 8}px`, text: `top ${safe.top}` });
+  if (safe.bottom) html += band(`left:0;right:0;bottom:0;height:${safe.bottom * u}px`,
+    { pos: `bottom:${safe.bottom * u / 2 - 8}px`, text: `bottom ${safe.bottom}` });
+  if (safe.right) html += band(`top:0;bottom:0;right:0;width:${safe.right * u}px`, null);
+  if (size.gridCrop) {
+    const inset = (size.h - size.w) / 2;
+    html += `<u style="top:${inset}px;height:${size.w}px"></u>`;
+  }
+  box.innerHTML = html;
+}
+
+/* -------------------------------------------------------------- hero fit */
 
 /* Hero sizes are measured, not chosen.
  *
- * The eleven heroes run from 21 characters ("11 cents per result.") to 62,
- * so one fixed size either shrinks the short ones into a corner or overflows
- * the long ones. Picking a size per ad would mean eleven decisions that drift
- * apart. Instead the box is identical on every ad and the type grows to fill
- * whatever height the sub and the CTA leave behind — so the ads differ in
- * point size but not in composition, which is what reads as a set.
- *
- * Search downward from the largest size that could ever fit, in whole
- * multiples of --u, and stop at the first that does not overflow.
+ * The eleven heroes run from 21 characters to 62, so one fixed size either
+ * shrinks the short ones into a corner or overflows the long ones. Picking a
+ * size per ad would mean eleven decisions that drift apart. Instead the box
+ * is identical on every ad and the type is fitted into it — so the ads differ
+ * in point size but not in composition, which is what reads as a set.
  */
 const fitHero = () => {
-  const hero = document.querySelector('.st__hero');
-  const box = document.querySelector('.st');
   const u = size.w / size.uref;
 
-  /* Measure the stack, not the scroll height. The block is anchored with
-     justify-content: flex-end, and content that outgrows a flex container
+  /* Measure the stack, not the scroll height. The statement block is anchored
+     with justify-content: flex-end, and content that outgrows a flex container
      overflows past its START edge — which scrollHeight cannot see, so an
-     overflow test against it silently passes and the head runs off the top
-     of the ad. Comparing the first child's top to the last child's bottom
-     catches it whichever way the box is anchored. */
-  const cs = getComputedStyle(box);
-  const avail = box.clientHeight - parseFloat(cs.paddingTop) - parseFloat(cs.paddingBottom);
+     overflow test against it silently passes and the head runs off the top of
+     the ad. Comparing the first child's top to the last child's bottom catches
+     it whichever way the box is anchored. */
+  const cs = getComputedStyle(blk);
+  const avail = blk.clientHeight - parseFloat(cs.paddingTop) - parseFloat(cs.paddingBottom);
 
-  /* ceiling is the deck's display--xl, floor is where a head stops
-     out-ranking its own sub */
-  for (let n = 176; n >= 44; n -= 2) {
+  /* the editorial ceiling is lower on purpose: past about 100 the restraint
+     that makes the layout work is gone */
+  const ceiling = layout === 'editorial' ? 104 : 176;
+
+  for (let n = ceiling; n >= 40; n -= 2) {
     hero.style.fontSize = `${n * u}px`;
     const used =
-      box.lastElementChild.getBoundingClientRect().bottom -
-      box.firstElementChild.getBoundingClientRect().top;
+      blk.lastElementChild.getBoundingClientRect().bottom -
+      blk.firstElementChild.getBoundingClientRect().top;
     if (used <= avail) return n;
   }
-  return 44;
+  return 40;
 };
 
 await document.fonts.ready;

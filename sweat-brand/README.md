@@ -36,8 +36,8 @@ there and re-export; these are the output, not the source.
 ## The ads
 
 Eleven statement ads — **the C set** — drawn from the twelve case studies in
-`decks/Sweat-Case-Studies-Labels-Anonymised.pdf`. Pure text, no screenshots, no
-photography, one CTA: *Book a discovery call*.
+`decks/Sweat-Case-Studies-Labels-Anonymised.pdf`. Pure text, no screenshots,
+no photography, no CTA in the image (see below).
 
 **Anonymous by construction.** No artist, track, label or partner is named
 anywhere in the set, and the layout carries no photography — a face beside a
@@ -76,6 +76,76 @@ Output lands in `out/<size>/<id>.png`. To preview one in a browser:
 Sizes: `portrait-1350` (1080×1350, the primary placement), `square-1080` and
 `story-1920`.
 
+### The treatment is one switch
+
+`DESIGN` at the top of `statements.js` sets the look for the whole set — flip
+a value, re-export, all eleven change together.
+
+```js
+export const DESIGN = {
+  layout: 'editorial',   // or 'statement'
+  ground: 'paper',       // or 'dark'
+  cta: false,
+  mark: false,
+  label: 'Paid media for music',
+};
+```
+
+**`editorial`** is the current set: label, hero, sub, upper-weighted, enormous
+air below, no CTA and no logo. It is modelled on the best-performing live ad.
+The hero breaks a sentence at a time — *"…in 90 days."* finishes and *"On a new
+artist."* starts fresh rather than running on — which is most of where that
+layout's rhythm comes from.
+
+**`statement`** is the alternative: bottom-weighted, wordmark top-left, CTA
+pill. Compare them without re-exporting the set:
+
+```
+ads/statement.html?id=C10&layout=statement&ground=dark&cta=1
+```
+
+### The CTA question
+
+**The set ships without one, and that is deliberate.** Meta draws its *own*
+call-to-action button underneath the creative in feed — Learn More, Book Now,
+Apply Now — so a second CTA baked into the image is two buttons stacked, which
+reads as a mistake and spends the ad's strongest real estate saying the same
+thing twice. The best-performing live ad has no CTA in the image at all.
+
+Ours being more specific than Meta's is a real point, but the fix is not to
+burn it into a PNG. Put it where it can still be changed:
+
+- pick **Book Now** as the Meta CTA button, which is the closest option;
+- put *"Book a discovery call"* in the primary text, where it can be edited and
+  A/B tested without re-exporting 33 files.
+
+Set `cta: true` only for a placement that draws no button of its own.
+
+### Safe zones and overlays
+
+`safe` in each `SIZES` entry is the platform chrome drawn **on top of** the
+creative, and the copy is inset by it automatically. See it before you spend
+money finding out:
+
+```
+ads/statement.html?id=C7&size=story-1920&safe=1
+```
+
+| Size | Top | Right | Bottom | Why |
+|---|---|---|---|---|
+| `portrait-1350` | — | — | — | Feed draws the profile row and the CTA button *outside* the image. Nothing overlaps. |
+| `square-1080` | — | — | — | Same. |
+| `story-1920` | 250 | 180 | 440 | Avatar and handle at the top; caption, handle and audio ticker at the bottom; the like/comment/share rail down the right. |
+
+The 9:16 numbers are the **stricter Reels set**, not the Stories set, because
+one export serves both — Stories alone would only need about 250 at the bottom.
+
+One thing the overlay marks that is not chrome: the blue dashed lines on the
+4:5 are the **1:1 that Instagram centre-crops a 4:5 to in the profile grid**.
+It does not affect a paid placement. It only matters if the same file is also
+posted organically — and the editorial layout survives it, because the copy
+sits in the upper middle rather than along the bottom edge.
+
 ### Editing, adding, resizing
 
 Everything lives in **`ads/statements.js`**. Change the copy there and
@@ -94,6 +164,13 @@ Each entry also carries a `source` field with the deck figure it came from
 (`48.9M in window · £22K · 14p`), so a number can be reconciled against the
 deck without opening the PDF. The $ figures are converted from £ at roughly
 1.27 and rounded for a clean read — they are not exact FX.
+
+> **C10 disagrees with the live ad.** The best-performing ad currently running
+> states this case as **8 million streams / 30¢**, which is the V3 and
+> proposal-doc figure (£6K · 24p). The anonymised deck states **7.2M · £6K ·
+> 20p**, which is what the v5 brief follows and what `statements.js` carries —
+> 7.2M / 25¢. Same campaign, two sets of numbers. One of them needs to win
+> before C10 runs alongside the live one.
 
 ### One layout, eleven lengths
 
@@ -227,8 +304,8 @@ system/
   system.css               the treatments
   fonts/                   Manrope variable, 200–800
 ads/
-  statements.js            THE COPY — eleven ads and the sizes  ← edits live here
-  statement.html           the one renderer, every ad, every size
+  statements.js            THE COPY — eleven ads, DESIGN, SIZES  ← edits live here
+  statement.html           the one renderer: both layouts, every size, safe overlay
   frame.js                 draws the spine, fits the preview to the window
 img/                       licensed photography, lens-treated
   _raw/                    drop untreated files here for npm run lens

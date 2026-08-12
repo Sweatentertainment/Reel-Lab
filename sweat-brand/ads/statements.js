@@ -3,7 +3,7 @@
    Source: Sweat-Case-Studies-Labels-Anonymised.pdf (decks/), twelve cases.
 
    ANONYMOUS BY CONSTRUCTION. No artist, track, label or partner is named
-   in this file, and the layout carries no photography — a face beside a
+   in this file, and no layout here carries photography — a face beside a
    figure identifies the campaign as surely as a name does. Every figure is
    real. If you add an ad here, it stays anonymous: that is the whole reason
    this set can run at all.
@@ -18,10 +18,64 @@
 
 export const CTA = 'Book a discovery call';
 
+/* ------------------------------------------------------------------ design
+
+   One switch for the whole set — flip a value and re-export, and all eleven
+   change together. That is the point: nothing is set per ad.
+
+   layout   'editorial'  the reference layout — label, hero, sub, upper-
+                         weighted, enormous air, no CTA and no wordmark.
+                         Modelled on the best-performing live ad.
+            'statement'  bottom-weighted with the wordmark and the CTA pill.
+
+   ground   'paper'      the light surface, ink on cream
+            'dark'       the black ground
+
+   cta      false        Meta renders its OWN call-to-action button under the
+                         creative in feed, and a second one baked into the
+                         image reads as a mistake — see README, "The CTA
+                         question". Turn it on only for a placement that has
+                         no platform button of its own.
+
+   mark     false        the reference carries no logo either. On at your
+                         discretion; it costs the ad some of its restraint.
+*/
+export const DESIGN = {
+  layout: 'editorial',
+  ground: 'paper',
+  cta: false,
+  mark: false,
+  label: 'Paid media for music',
+};
+
+/* ------------------------------------------------------------------- sizes
+
+   `safe` is the platform chrome that sits ON TOP of the creative, in pixels
+   at that size — the copy is inset by it. Feed placements have none: the
+   profile row and the CTA button are drawn outside the image. Stories and
+   Reels have plenty, and the numbers below are the stricter Reels set, since
+   one 9:16 export serves both.
+
+   `gridCrop` marks a size that Instagram centre-crops to 1:1 in the profile
+   grid. It does not affect a paid placement — it matters only if the same
+   file is also posted organically.
+*/
 export const SIZES = {
-  'portrait-1350': { w: 1080, h: 1350, uref: 1080 },  // 4:5 — the primary placement
-  'square-1080':   { w: 1080, h: 1080, uref: 1080 },
-  'story-1920':    { w: 1080, h: 1920, uref: 960 },   // safe areas handled in the template
+  'portrait-1350': {
+    w: 1080, h: 1350, uref: 1080,
+    safe: { top: 0, right: 0, bottom: 0 },
+    gridCrop: true,
+  },
+  'square-1080': {
+    w: 1080, h: 1080, uref: 1080,
+    safe: { top: 0, right: 0, bottom: 0 },
+  },
+  'story-1920': {
+    w: 1080, h: 1920, uref: 960,
+    /* top: avatar and handle row. bottom: caption, handle, audio ticker.
+       right: the like / comment / share / audio rail. */
+    safe: { top: 250, right: 180, bottom: 440 },
+  },
 };
 
 /* pick: the four PJ flagged to test first lead the set */
@@ -94,7 +148,12 @@ export const STATEMENTS = [
     note: 'New release, first 90 days',
     hero: '0 to 7.2 million streams in 90 days.',
     sub: '$8K spend. 25¢ CPR. 25+ content variations tested before a dollar scaled.',
-    source: '7.2M in window · £6K · 20p',
+    /* NOTE: the live best-performing ad states this case as 8 million / 30¢,
+       which is the V3 and proposal-doc figure (£6K · 24p). The anonymised
+       deck states 7.2M · £6K · 20p, which is what the v5 brief follows and
+       what is set above. Both are the same campaign — one of them needs to
+       win before this ad runs alongside the live one. */
+    source: '7.2M in window · £6K · 20p — live ad says 8M · 24p, see note',
   },
   {
     id: 'C11',
