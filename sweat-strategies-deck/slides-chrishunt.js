@@ -23,7 +23,7 @@
 
    2. He cannot be the face — professional reasons, his investors, and he
       raised the alter-ego idea himself. So the identity has to do the work
-      his face would normally do, which is why page 18 exists at all.
+      his face would normally do, which is why page 19 exists at all.
 
    NAMES AND TITLES ARE DELIBERATELY ABSENT. The alter-ego names are not
    decided, so it is "the pop project" and "the club project" throughout.
@@ -47,7 +47,7 @@
    this deck on the system.
    ------------------------------------------------------------------ */
 
-import { spine, blobs, tile, bend, roster, laptop } from './parts.js';
+import { img, spine, blobs, tile, bend, roster, laptop } from './parts.js';
 
 /* ------------------------------------------------------- local archetypes */
 
@@ -80,10 +80,33 @@ const steps = (items, delay = '.3s') => `
   </ol>`;
 
 export const SLIDES = [
-  /* 01 — cover. The source deck's grid treatment, which is its slide 02, used
-     as the cover here because this deck has no separate hook: page 2 is the
-     roster. "FIND THE ONE." is shorter than "FIND THE SONG." so it sets
-     narrower at the same size — left-aligned, so it simply ends sooner. */
+  /* 01 — cover. Miguel's artwork, used whole, exactly as the artist deck and
+     the Øneheart proposal open. Its chrome is baked into the JPEG, hence
+     chrome: 'none' — the wordmark and footer you can see are part of the
+     image, not slide furniture.
+
+     The client's name sits bottom-left on the deck's own 96px gutter rather
+     than under the wordmark. Under the wordmark it fights the thing directly
+     above it and needs a drop shadow to stay legible on bright sky, which is
+     what makes a caption look stuck on; down here the ground is already dark
+     and it reads unaided. */
+  {
+    section: 'Proposal',
+    chrome: 'none',
+    html: `
+      <div style="position:absolute;inset:0;z-index:0">
+        <img src="${img('cover.jpg')}" alt="" style="width:100%;height:100%;object-fit:cover">
+      </div>
+      <div class="reveal" style="--d:.5s;position:absolute;left:96px;bottom:172px;z-index:20">
+        <div style="font-family:var(--mono);text-transform:uppercase;font-size:26px;letter-spacing:0.24em;color:#fff">
+          Christopher Hunt
+        </div>
+      </div>`,
+  },
+
+  /* 02 — the hook. The source deck's grid treatment, its slide 02 there too.
+     "FIND THE ONE." is shorter than "FIND THE SONG." so it sets narrower at
+     the same size — left-aligned, so it simply ends sooner. */
   {
     section: 'Proposal',
     ground: 'light',
@@ -446,7 +469,7 @@ export const SLIDES = [
           <div class="rule reveal" style="--d:.44s"></div>
 
           <p class="body reveal" style="--d:.48s;font-size:20px;max-width:none;opacity:.7">
-            Both routes are separate to the testing and paid media fees on page 15.
+            Both routes are separate to the testing and paid media fees on page 16.
           </p>
         </div>
       </div>`,
@@ -473,7 +496,7 @@ export const SLIDES = [
           Ready? <a href="mailto:pj@sweatstrategies.com" style="color:var(--blue)">pj@sweatstrategies.com</a>
         </p>
         <p class="body reveal" style="--d:.5s;font-size:20px;margin-top:28px;opacity:.62">
-          Artwork, branding, production and distribution available as set out on page 18.
+          Artwork, branding, production and distribution available as set out on page 19.
         </p>
       </div>`,
   },
