@@ -1,0 +1,336 @@
+/* ------------------------------------------------------------------
+   Sweat Strategies — the treatments
+   Every rule here is the deck's, re-expressed against --u so it holds at
+   any canvas rather than only at 1920x1080. Load tokens.css first.
+
+   Nothing in this file assumes a slide. An .ad frame sets its own --cw
+   and everything below sizes off it.
+   ------------------------------------------------------------------ */
+
+* { box-sizing: border-box; margin: 0; padding: 0; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+
+body {
+  background: #16181c;                    /* the workbench, never exported */
+  font-family: var(--font-sans);
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 40px;
+}
+
+::selection { background-color: var(--color-blue); color: #fff; }
+
+/* an ad is a picture, not a document — a live link's underline and visited
+   colour both render into the PNG */
+a { color: inherit; text-decoration: none; }
+
+/* --------------------------------------------------------------- the frame */
+
+/* One ad. Set --cw and --ch to the pixel size you are exporting; the export
+   script reads them off the element, so the file is the single source of
+   truth for its own dimensions. --uref is the type scale — see tokens.css. */
+
+.ad {
+  --uref: 1080;
+  --u: calc(var(--cw) * 1px / var(--uref));
+  position: relative;
+  width: calc(var(--cw) * 1px);
+  height: calc(var(--ch) * 1px);
+  overflow: hidden;
+  background: var(--color-black);
+  color: var(--color-white);
+  flex: none;
+}
+
+/* Preview only. frame.js sets --fit so a 1080x1920 story fits the window;
+   the exporter forces it back to 1 so the PNG comes out at native size. */
+body:not(.is-exporting) .ad {
+  transform: scale(var(--fit, 1));
+  transform-origin: top center;
+}
+
+.ad--light { background: var(--color-paper); color: var(--color-black); }
+.ad--field { background: var(--color-blue-deep); }
+.ad--field-dark { background: var(--color-field-dark); }
+
+/* the gutter. Nothing crosses it but full-bleed imagery. */
+.pad {
+  position: absolute;
+  inset: 0;
+  padding: var(--space-pad);
+  z-index: 20;
+  display: flex;
+  flex-direction: column;
+}
+
+.pad--tight { padding: calc(56 * var(--u)); }
+.pad--end    { justify-content: flex-end; }
+.pad--mid    { justify-content: center; }
+.pad--centre { justify-content: center; align-items: center; text-align: center; }
+
+/* ------------------------------------------------------------------ grain */
+/* PJ: "black grainy". Sits above the artwork and below the type. */
+
+.grain::after {
+  content: "";
+  position: absolute;
+  inset: -50%;
+  pointer-events: none;
+  z-index: 15;
+  opacity: var(--effect-grain);
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='1.9' numOctaves='3' stitchTiles='stitch'/><feColorMatrix type='saturate' values='0'/></filter><rect width='220' height='220' filter='url(%23n)' opacity='0.55'/></svg>");
+}
+
+.grain--soft::after { opacity: var(--effect-grain-soft); }
+.ad--light.grain::after { opacity: 0.07; mix-blend-mode: multiply; }
+
+/* ------------------------------------------------------------ colour blurs */
+/* site: .ntk-text--scroller filter: blur(10px) + the hamburger's blur(100px) */
+
+.blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(var(--effect-blur-field));
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.75;
+}
+
+.blob--a { width: calc(900 * var(--u)); height: calc(900 * var(--u)); background: var(--color-blue); }
+.blob--b { width: calc(760 * var(--u)); height: calc(760 * var(--u)); background: var(--color-blue-deep); }
+.blob--c { width: calc(620 * var(--u)); height: calc(620 * var(--u)); background: var(--color-blue-bright); }
+
+/* ------------------------------------------------------------- the spine */
+/* the site's scroll-drawn SVG path — sweat-website/src/scripts/pathLine.js */
+
+.spine {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+.spine svg { height: 100%; width: auto; overflow: visible; }
+.spine path { fill: none; stroke: var(--color-line); stroke-width: 1.9; }
+.spine--light path { stroke: #ffffff85; }
+
+/* Dead centre is where the copy is. --spine-x pushes it into a real gutter,
+   the way the decks nudge it off a text column. */
+.spine { transform: translateX(var(--spine-x, 0)); }
+
+/* ------------------------------------------------------------------- type */
+
+.display {
+  font-family: var(--font-sans);
+  font-weight: var(--weight-black);
+  letter-spacing: var(--tracking-display);
+  line-height: var(--leading-display);
+  color: var(--color-white);
+  font-size: var(--size-display-m);
+}
+
+.display--xl { font-size: var(--size-display-xl); }
+.display--l  { font-size: var(--size-display-l); }
+.display--m  { font-size: var(--size-display-m); }
+.display--s  { font-size: var(--size-display-s); }
+
+/* a head set in --color-head reads quieter than white without going grey */
+.display--head { color: var(--color-head); }
+
+.ad--light .display, .ad--light .body { color: var(--color-black); }
+
+.body {
+  font-family: var(--font-sans);
+  font-weight: var(--weight-regular);
+  font-size: var(--size-body);
+  line-height: var(--leading-body);
+  letter-spacing: var(--tracking-body);
+  color: var(--color-white);
+  max-width: calc(640 * var(--u));
+}
+
+.body--s    { font-size: var(--size-body-s); }
+.body--wide { max-width: calc(780 * var(--u)); }
+.body--full { max-width: none; }
+.body + .body { margin-top: var(--space-s); }
+
+.kicker {
+  font-family: var(--font-sans);
+  font-weight: var(--weight-semibold);
+  font-size: var(--size-kicker);
+  letter-spacing: var(--tracking-snug);
+  color: var(--color-blue);
+}
+
+.label {
+  font-family: var(--font-mono);
+  text-transform: uppercase;
+  font-size: var(--size-label);
+  letter-spacing: var(--tracking-label);
+  color: var(--color-head);
+  font-weight: var(--weight-regular);
+}
+
+.label--s { font-size: var(--size-label-s); }
+.ad--field .label, .ad--field-dark .label { color: rgba(255, 255, 255, 0.8); }
+
+/* brackets — PJ: "I like the black background and brackets around the title
+   slides as a theme". Site precedent: [We Start With Strategy]. */
+
+.bracket { display: inline-block; position: relative; }
+.bracket::before, .bracket::after { color: var(--color-blue); font-weight: 300; opacity: 0.9; }
+.bracket::before { content: "("; margin-right: 0.14em; }
+.bracket::after  { content: ")"; margin-left: 0.14em; }
+.bracket--sq::before { content: "["; }
+.bracket--sq::after  { content: "]"; }
+
+/* on a blue field, blue-on-blue brackets disappear — go white */
+.bracket--light::before, .bracket--light::after { color: #ffffff; opacity: 0.55; }
+
+/* the highlight fill. Clones across line breaks rather than boxing the block. */
+.hl {
+  background: var(--color-blue);
+  color: var(--color-white);
+  padding: 0.08em 0.22em 0.16em;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+
+/* Display leading is 0.92, which is tighter than the fill is tall — the block
+   is font-size plus its own padding, so on multi-line display type it laps
+   over the descenders of the line above. Opening the leading only when a
+   highlight is actually present keeps every other head at the signature
+   setting; the fill also loses a little of its vertical padding here, so the
+   line does not have to open as far as it otherwise would. */
+.display:has(.hl) { line-height: 1.26; }
+.display .hl { padding: 0.04em 0.2em 0.12em; }
+
+.rule { height: 1px; background: var(--color-rule); }
+
+/* --------------------------------------------------------------- figures */
+
+.stats { display: flex; gap: calc(108 * var(--u)); flex-wrap: wrap; }
+
+.stats dt {
+  font-family: var(--font-mono);
+  text-transform: uppercase;
+  font-size: var(--size-label-s);
+  letter-spacing: var(--tracking-label);
+  color: var(--color-head);
+  opacity: 0.72;
+  margin-bottom: var(--space-xs);
+}
+
+.stats dd {
+  font-family: var(--font-sans);
+  font-weight: var(--weight-black);
+  font-size: var(--size-figure);
+  letter-spacing: -0.045em;
+  color: var(--color-blue);
+  font-variant-numeric: tabular-nums;
+}
+
+/* a set, not a sequence — so no numbering */
+.chips { list-style: none; display: flex; flex-wrap: wrap; gap: calc(12 * var(--u)); }
+
+.chips li {
+  font-family: var(--font-sans);
+  font-size: var(--size-chip);
+  font-weight: var(--weight-semibold);
+  letter-spacing: -0.01em;
+  color: var(--color-white);
+  border: 1px solid var(--color-chip-border);
+  border-radius: var(--radius-pill);
+  padding: calc(10 * var(--u)) calc(26 * var(--u));
+}
+
+/* ---------------------------------------------------------- bent artwork */
+/* site: .ntk-card perspective + rotateY(±30deg), carried to ±38 on a longer
+   perspective so the card turns hard but still lies flat */
+
+.bend { perspective: var(--effect-perspective); }
+.bend__inner { transform: rotateY(-38deg); transform-style: preserve-3d; will-change: transform; }
+.bend--right .bend__inner { transform: rotateY(38deg); }
+.bend--soft .bend__inner { transform: rotateY(-25deg); }
+.bend--soft.bend--right .bend__inner { transform: rotateY(25deg); }
+.bend img { display: block; width: 100%; height: 100%; object-fit: cover; }
+
+.bend__cap {
+  font-family: var(--font-mono);
+  text-transform: uppercase;
+  font-weight: var(--weight-regular);
+  color: #d3d3d3;
+  font-size: calc(19 * var(--u));
+  letter-spacing: 0.14em;
+  margin-bottom: calc(18 * var(--u));
+}
+
+/* full-bleed photography, faded into the ground rather than cropped against it */
+
+.media { position: absolute; inset: 0; z-index: 5; overflow: hidden; }
+.media img { width: 100%; height: 100%; object-fit: cover; }
+
+.media--half { left: auto; right: 0; width: 50%; }
+.media--top  { bottom: auto; height: 52%; }
+
+/* The fade direction follows the copy: type sits over the dark end.
+
+   These run long on purpose. A short ramp between a bright photograph and a
+   black ground reads as a cut-out pasted on rather than a photograph the
+   ground came out of — and copy laid over the tail of a short ramp lands on
+   midtone and loses its contrast. */
+.media::after { content: ""; position: absolute; inset: 0; }
+.media--fade-left::after   { background: linear-gradient(90deg, #000 0%, rgba(0,0,0,0.55) 34%, rgba(0,0,0,0) 68%); }
+.media--fade-bottom::after { background: linear-gradient(0deg, #000 16%, rgba(0,0,0,0.82) 38%, rgba(0,0,0,0) 78%); }
+.media--fade-both::after   { background: linear-gradient(0deg, #000 14%, rgba(0,0,0,0.8) 36%, rgba(0,0,0,0) 76%), linear-gradient(90deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0) 44%); }
+
+/* ------------------------------------------------------------- wordmark */
+
+.mark { display: flex; align-items: baseline; gap: calc(14 * var(--u)); }
+
+.mark__name {
+  font-family: var(--font-sans);
+  font-weight: var(--weight-medium);
+  font-size: calc(23 * var(--u));
+  letter-spacing: -0.01em;
+  color: var(--color-white);
+}
+
+.mark__url {
+  font-family: var(--font-mono);
+  text-transform: uppercase;
+  font-size: calc(15 * var(--u));
+  letter-spacing: var(--tracking-label);
+  color: var(--color-white);
+  opacity: 0.55;
+}
+
+.ad--light .mark__name, .ad--light .mark__url { color: var(--color-black); }
+
+/* the wordmark sits on the gutter, top-left, unless an ad says otherwise */
+.mark--tl { position: absolute; top: var(--space-pad); left: var(--space-pad); z-index: 30; }
+.mark--bl { position: absolute; bottom: var(--space-pad); left: var(--space-pad); z-index: 30; }
+
+/* ------------------------------------------------------------------- CTA */
+
+.cta {
+  display: inline-flex;
+  align-items: center;
+  gap: calc(14 * var(--u));
+  align-self: flex-start;
+  background: var(--color-blue);
+  color: var(--color-white);
+  font-family: var(--font-sans);
+  font-weight: var(--weight-bold);
+  font-size: calc(24 * var(--u));
+  letter-spacing: var(--tracking-snug);
+  border-radius: var(--radius-pill);
+  padding: calc(20 * var(--u)) calc(42 * var(--u));
+}
+
+.cta--ghost { background: none; border: 1px solid var(--color-chip-border); }
+.cta__arr { font-family: var(--font-mono); font-weight: var(--weight-regular); opacity: 0.9; }

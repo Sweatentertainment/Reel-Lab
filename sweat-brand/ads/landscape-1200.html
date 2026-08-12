@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Sweat — landscape 1200</title>
+<link rel="icon" href="../img/sweat-favicon.png">
+<link rel="stylesheet" href="../system/tokens.css">
+<link rel="stylesheet" href="../system/system.css">
+</head>
+<body>
+
+<!-- ==================================================================
+     LANDSCAPE  1200x628  ·  link preview / display banner
+     The figure ad. 628px is not much height, so this carries one number
+     and one line — anything more and the display size has to come down
+     far enough that the number stops being the point.
+
+     Typographic on purpose. The figure here belongs to a campaign, not to
+     a face, and an artist photograph beside a number reads as that
+     artist's number. If you want a photograph in this slot, use one whose
+     artist owns the figure.
+
+     --uref runs at 1200 rather than 1080 because the constraint is
+     height, not width.
+     ================================================================== -->
+
+<div class="ad grain grain--soft" style="--cw:1200; --ch:628; --uref:1200">
+
+  <!-- one field, thrown well off the corner. Two of them at this size flood
+       the right half and the ad stops reading as black. -->
+  <div class="blob blob--a" style="right:-26%; top:-92%; opacity:.42"></div>
+  <div class="spine spine--light" style="--spine-x:calc(392 * var(--u)); opacity:.5"></div>
+
+  <div class="pad pad--tight pad--mid" style="width:66%">
+
+    <div class="label label--s" style="margin-bottom:calc(20 * var(--u))">Independent artists</div>
+
+    <div class="display display--l" style="color:var(--color-blue); font-variant-numeric:tabular-nums; line-height:.86">
+      24p
+    </div>
+
+    <h1 class="display display--s" style="margin-top:calc(16 * var(--u)); max-width:calc(620 * var(--u))">
+      per new listener
+    </h1>
+
+    <p class="body body--s" style="margin-top:calc(24 * var(--u)); max-width:calc(560 * var(--u))">
+      0 to 8M streams on £6K. Test the record, find the audience that responds,
+      then scale only what converts.
+    </p>
+
+    <div class="mark" style="margin-top:calc(34 * var(--u))">
+      <span class="mark__name">Sweat Strategies</span>
+      <span class="mark__url">sweatstrategies.com</span>
+    </div>
+
+  </div>
+
+</div>
+
+<script type="module" src="./frame.js"></script>
+</body>
+</html>

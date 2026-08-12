@@ -4,11 +4,15 @@ Miguel's V3 deck, rebuilt in the **sweatstrategies.com** design language.
 
 - **Present it:** open `index.html` (any static server, or just open the file).
   `←` `→` / space / click to move, `F` for fullscreen, dots at the bottom to jump.
-- **Send it:** `Sweat-Strategies-Proposal-2026.pdf` — 17 pages, 16:9.
+- **Send it:** `../sweat-brand/decks/Sweat-Strategies-Proposal-2026.pdf` — 17 pages, 16:9.
+
+The exported PDFs live in [`../sweat-brand/`](../sweat-brand/) with the design
+system they were built from, so the sendable decks and the kit for making
+everything else sit in one place. This folder is where they are *authored*.
 
 ## Six decks, one engine
 
-| Deck | Page | Content | PDF |
+| Deck | Page | Content | PDF in `../sweat-brand/decks/` |
 |---|---|---|---|
 | Proposal — artists | `index.html` | `slides.js` | `Sweat-Strategies-Proposal-2026.pdf` (17pp) |
 | Proposal — labels | `labels-proposal.html` | `slides-labels-offer.js` | `Sweat-Labels-Proposal-2026.pdf` (19pp) |
@@ -377,9 +381,14 @@ Applied from PJ's notes on the V3 thread:
 
 ```bash
 npx http-server -p 8899 -s .                        # serve the decks
-node scripts/export-pdf.mjs index.html out.pdf      # needs playwright
-node scripts/export-pdf.mjs case-studies-indie.html out.pdf
+node scripts/export-pdf.mjs                         # needs playwright
+node scripts/export-pdf.mjs case-studies-indie.html \
+  ../sweat-brand/decks/Sweat-Case-Studies-Independent-Artists.pdf
 ```
+
+With no arguments it writes the artist proposal to
+`../sweat-brand/decks/`. Pass a page and an output path for any of the others —
+the filenames are in the table at the top.
 
 It loads `index.html?print=1` — which stacks every slide at full size and freezes
 the entrance animations on their end state — and prints at 1920×1080.

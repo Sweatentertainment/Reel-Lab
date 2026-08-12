@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Sweat — story 1920</title>
+<link rel="icon" href="../img/sweat-favicon.png">
+<link rel="stylesheet" href="../system/tokens.css">
+<link rel="stylesheet" href="../system/system.css">
+</head>
+<body>
+
+<!-- ==================================================================
+     STORY  1080x1920  ·  9:16, Stories / Reels / TikTok
+     Full-bleed photography fading into the ground, copy over the dark end.
+
+     Two things this format needs that the others don't:
+       · the safe area. Platform chrome eats roughly the top 250px and the
+         bottom 320px, so the pad is opened up rather than left at 96.
+       · a taller --uref. At 1080 wide the display sizes are tuned for a
+         square; on a 16:9-tall canvas they leave the frame empty, so this
+         runs 960 and the type comes up about 12%.
+     ================================================================== -->
+
+<div class="ad grain" style="--cw:1080; --ch:1920; --uref:960">
+
+  <!-- the photograph, fading out before it reaches the copy -->
+  <div class="media media--fade-bottom">
+    <img src="../img/thundercat.jpg" alt="Thundercat">
+  </div>
+
+  <div class="pad" style="padding:calc(250 * var(--u)) var(--space-pad) calc(320 * var(--u)); justify-content:space-between">
+
+    <div class="mark">
+      <span class="mark__name">Sweat Strategies</span>
+      <span class="mark__url">sweatstrategies.com</span>
+    </div>
+
+    <div>
+      <div class="label" style="margin-bottom:var(--space-s)">Cross-platform</div>
+
+      <h1 class="display display--m">
+        No two platforms
+        <span class="bracket">behave</span>
+        the same
+      </h1>
+
+      <p class="body" style="margin-top:var(--space-m)">
+        One operation running streaming, live, ticketing, TikTok, YouTube,
+        merch and CRM — read against each other rather than one at a time.
+      </p>
+
+      <a class="cta" style="margin-top:var(--space-l)" href="#">
+        See the deck <span class="cta__arr">&rarr;</span>
+      </a>
+    </div>
+
+  </div>
+
+</div>
+
+<script type="module" src="./frame.js"></script>
+</body>
+</html>

@@ -9,8 +9,10 @@
 
 import { chromium } from 'playwright';
 
+/* the approved PDFs live in the brand folder, alongside the design system —
+   see ../sweat-brand/README.md */
 const page_ = process.argv[2] || 'index.html';
-const out = process.argv[3] || 'Sweat-Strategies-Proposal-2026.pdf';
+const out = process.argv[3] || '../sweat-brand/decks/Sweat-Strategies-Proposal-2026.pdf';
 const port = process.argv[4] || 8899;
 
 const browser = await chromium.launch();
