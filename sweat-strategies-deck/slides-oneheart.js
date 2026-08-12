@@ -111,19 +111,22 @@ export const SLIDES = [
       <div style="position:absolute;inset:0;z-index:0">
         <img src="${img('cover.jpg')}" alt="" style="width:100%;height:100%;object-fit:cover">
       </div>
-      <div class="reveal" style="--d:.5s;position:absolute;right:45px;top:700px;z-index:20;text-align:right">
-        <div style="font-family:var(--mono);text-transform:uppercase;font-size:30px;letter-spacing:0.22em;color:#fff;text-shadow:0 2px 24px rgba(0,0,0,0.55)">
+      ${/* Bottom left, on the deck's own 96px gutter. Under the wordmark it
+             was fighting the thing directly above it and needed a shadow to
+             stay legible, which is what made it look stuck on. Down here the
+             ground is already dark, so it reads unaided. */ ''}
+      <div class="reveal" style="--d:.5s;position:absolute;left:96px;bottom:172px;z-index:20">
+        <div style="font-family:var(--mono);text-transform:uppercase;font-size:26px;letter-spacing:0.24em;color:#fff">
           Øneheart — naturecore
-        </div>
-        <div style="font-family:var(--mono);text-transform:uppercase;font-size:17px;letter-spacing:0.2em;color:#fff;opacity:.72;margin-top:16px;text-shadow:0 2px 24px rgba(0,0,0,0.55)">
-          Prepared for Marc Sheinman · 7980 Music
         </div>
       </div>`,
   },
 
-  /* 02 — the hook, in Marc's own words. Quoting the brief back is the fastest
-     way to show the call was heard; once is enough, so this is the only
-     verbatim quote in the deck. */
+  /* 02 — the hook. PJ's line. Set without quotation marks and under a "the
+     brief" label rather than attributed to Marc verbatim: he said the longer,
+     looser version of this on the call, and putting a tightened paraphrase
+     inside quote marks with his name on it would be putting words in his
+     mouth. The label does the attributing instead. */
   {
     section: 'Proposal',
     html: `
@@ -134,14 +137,13 @@ export const SLIDES = [
         { k: 'b', pos: 'left:38%;bottom:-440px;opacity:.55' },
       ])}
       <div class="pad l-mid">
-        <div class="label reveal" style="margin-bottom:44px">Øneheart · naturecore · September – January</div>
-        <h1 class="display reveal" style="--d:.1s;font-size:130px;line-height:0.98;color:#fff;max-width:1560px">
-          “Almost being a central<br>cog to it all.”
+        <div class="label reveal" style="margin-bottom:44px">The brief, in one line</div>
+        <h1 class="display reveal" style="--d:.1s;font-size:168px;line-height:0.92;color:#fff;max-width:1560px">
+          We need a<br>central cog.
         </h1>
-        <p class="body reveal" style="--d:.26s;font-size:27px;max-width:980px;margin-top:52px">
-          Your words on the call. There is a good team around this record already —
-          what there isn't is one person whose job is the whole of it.
-          That is the job we are proposing to take.
+        <p class="body reveal" style="--d:.26s;font-size:27px;max-width:1000px;margin-top:60px">
+          There is a good team around this record already. What there isn't is one
+          operation holding the whole of it — and that is the job we are proposing to take.
         </p>
       </div>`,
   },
@@ -345,22 +347,21 @@ export const SLIDES = [
         </div>
 
         <div class="reveal" style="--d:.3s">
-          <div class="label" style="font-size:18px;margin-bottom:28px">Already running inside Red Light</div>
-          <h3 class="display" style="font-size:54px;line-height:1.04;margin-bottom:34px">RuthAnne<br>— Complete Me</h3>
+          <div class="label" style="font-size:18px;margin-bottom:28px">An EP campaign, twelve months</div>
+          <h3 class="display" style="font-size:54px;line-height:1.04;margin-bottom:34px">Rules<br>— As Soon As I Get Home</h3>
           <dl class="stats" style="gap:70px;margin-bottom:34px">
-            <div><dt>Algorithmic streams</dt><dd>+941%</dd></div>
-            <div><dt>Cost per listener</dt><dd>19p</dd></div>
+            <div><dt>Streams</dt><dd>48.9M</dd></div>
+            <div><dt>Cost per result</dt><dd>14p</dd></div>
           </dl>
           <dl class="stats" style="gap:70px">
-            <div><dt>Monthly spend</dt><dd>£2K</dd></div>
-            <div><dt>Month on month</dt><dd>+474%</dd></div>
+            <div><dt>Spend</dt><dd>£22K</dd></div>
+            <div><dt>Streams per listener</dt><dd>6</dd></div>
           </dl>
           <p class="body" style="font-size:19px;max-width:620px;margin-top:36px;opacity:.8">
-            2 June – 4 August, with Matt Johnson's team. The same method, at a
-            fraction of this budget, on a record with none of naturecore's
-            preparation behind it.
+            134K streams a day averaged to 8 million listeners, with 1.16 million playlist
+            adds and 656,650 saves. Six streams per listener is an audience that came back
+            rather than passing through once — which is the thing naturecore is trying to build.
           </p>
-        </div>
       </div>`,
   },
 
@@ -468,13 +469,15 @@ export const SLIDES = [
 
   act({ label: 'How we work', line: 'One page, every week' }),
 
-  /* 16 — the team. PJ asked for the org shape explicitly: him on top, the
-     four pillars underneath.
+  /* 16 — the team. PJ on top, the three named roles underneath.
 
-     NAMES NEED CONFIRMING. Tobias, Holly and Oskar are taken from the
-     Sweat calendar and Lightfield; their exact remits here are inferred
-     from which client calls they sit on, not stated by anyone. Check
-     before this goes out. */
+     Deliberately NOT "your single point of contact": PJ may put someone
+     else on the day-to-day, and a proposal that promises him personally on
+     every thread is a promise that has to be walked back later. He is
+     accountable for it; who runs it day to day is left open.
+
+     Production has no owner named because nobody holds that title. It is
+     folded into what the team carries rather than invented as a person. */
   {
     section: 'How we work',
     grain: 'soft',
@@ -482,7 +485,7 @@ export const SLIDES = [
       <div class="pad l-mid">
         <div class="label reveal" style="margin-bottom:26px">Who does what</div>
         <h2 class="display reveal" style="--d:.08s;font-size:70px;line-height:1.06;max-width:1400px;margin-bottom:44px">
-          One name accountable,<br>four people working.
+          One team, and one<br>person accountable.
         </h2>
 
         <div class="reveal" style="--d:.16s;max-width:1400px">
@@ -491,26 +494,23 @@ export const SLIDES = [
             <div style="font-family:var(--mono);text-transform:uppercase;font-size:19px;letter-spacing:0.16em;color:var(--blue)">Orchestrator</div>
           </div>
           <p class="body" style="font-size:21px;max-width:1180px">
-            Your single point of contact and the person accountable for the campaign as a whole.
-            On the weekly, in the partner threads, and answerable for anything that slips.
+            Sits above the campaign and is accountable for it as a whole — the plan, the
+            partners, and anything that slips. In the room for the decisions that matter.
           </p>
         </div>
 
         <div class="rule reveal" style="--d:.26s;margin:44px 0 40px"></div>
 
-        <ol class="steps reveal" style="--d:.32s;grid-template-columns:repeat(4,1fr)">
-          <li><span>Campaign management</span>
-            <div style="font-family:var(--sans);font-weight:700;font-size:23px;letter-spacing:-0.03em;margin-bottom:10px">Tobias Steinborn</div>
-            <p class="body" style="font-size:18px;max-width:none">Holds the calendar across Lucid, We Generate, Jess and the creative director. Runs the weekly and chases the assets.</p></li>
+        <ol class="steps reveal" style="--d:.32s;grid-template-columns:repeat(3,1fr)">
+          <li><span>Senior Marketing Director</span>
+            <div style="font-family:var(--sans);font-weight:700;font-size:24px;letter-spacing:-0.03em;margin-bottom:10px">Tobias Steinborn</div>
+            <p class="body" style="font-size:19px;max-width:none">Holds the campaign across Lucid, We Generate, Jess and the creative director. Runs the weekly, chases the assets, and owns the manufacturing schedule end to end.</p></li>
+          <li><span>Campaign Strategist</span>
+            <div style="font-family:var(--sans);font-weight:700;font-size:24px;letter-spacing:-0.03em;margin-bottom:10px">Oskar</div>
+            <p class="body" style="font-size:19px;max-width:none">Plans each release — what gets tested, against which audiences, and what the result means for the next one. Also owns the capture flows into Laylo and the Discord.</p></li>
           <li><span>Paid media</span>
-            <div style="font-family:var(--sans);font-weight:700;font-size:23px;letter-spacing:-0.03em;margin-bottom:10px">Oskar</div>
-            <p class="body" style="font-size:18px;max-width:none">Builds and runs the tests, the cuts and the scaling — daily hands on the accounts across all three releases.</p></li>
-          <li><span>CRM &amp; first-party</span>
-            <div style="font-family:var(--sans);font-weight:700;font-size:23px;letter-spacing:-0.03em;margin-bottom:10px">Holly</div>
-            <p class="body" style="font-size:18px;max-width:none">The capture flows, the Laylo drops and the handover into the Discord. Owns the list from first email to album release.</p></li>
-          <li><span>Production</span>
-            <div style="font-family:var(--sans);font-weight:700;font-size:23px;letter-spacing:-0.03em;margin-bottom:10px">Label management</div>
-            <p class="body" style="font-size:18px;max-width:none">Manufacturing, plants, proofs and delivery dates — the physical schedule and the D2C store behind it.</p></li>
+            <div style="font-family:var(--sans);font-weight:700;font-size:24px;letter-spacing:-0.03em;margin-bottom:10px">Holly</div>
+            <p class="body" style="font-size:19px;max-width:none">Daily hands on the accounts. Builds the tests and the cuts, kills what is not working and scales what is, across all three releases.</p></li>
         </ol>
       </div>`,
   },
@@ -616,8 +616,10 @@ export const SLIDES = [
 
         <div class="rule reveal" style="--d:.36s;margin:56px 0 30px"></div>
         <p class="body reveal" style="--d:.42s;font-size:21px;max-width:1400px">
-          Fee only. Media spend and manufacturing are separate and at cost — we never mark up
-          either. September to January, covering all three releases and the album.
+          <strong style="color:#fff">This is the fee only.</strong> Ad spend, any third-party
+          software the campaign needs — Manychat, Laylo and the like — and manufacturing all
+          sit on top, billed at cost. We never mark up any of them. September to January,
+          covering all three releases and the album.
         </p>
       </div>`,
   },
