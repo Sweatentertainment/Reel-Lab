@@ -20,6 +20,7 @@ everything else sit in one place. This folder is where they are *authored*.
 | Case studies — independent artists | `case-studies-indie.html` | `slides-indie.js` | `…-Independent-Artists.pdf` (16pp) |
 | Case studies — labels & partners | `case-studies-labels.html` | `slides-labels.js` | `…-Labels.pdf` (12pp) |
 | Case studies — labels, anonymised | `case-studies-labels-anon.html` | `slides-labels-anon.js` | `…-Labels-Anonymised.pdf` (14pp) |
+| **Bespoke** — Øneheart / naturecore | `oneheart-proposal.html` | `slides-oneheart.js` | `Sweat-Oneheart-Naturecore-Proposal.pdf` (20pp) |
 
 `deck.js` exports `mount(SLIDES)`; each page imports its own slide set and calls
 it. Shared fragments and slide archetypes (`caseChart`, `caseStats`, `bend`,

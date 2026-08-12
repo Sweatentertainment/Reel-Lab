@@ -24,6 +24,7 @@ scripts/    build the tokens, treat a new photo, export the ads
 | `Sweat-Case-Studies-Independent-Artists.pdf` | 16 | Evidence, every case |
 | `Sweat-Case-Studies-Labels.pdf` | 12 | Evidence, above 10K streams a day |
 | `Sweat-Case-Studies-Labels-Anonymised.pdf` | 14 | Evidence, no names — for email |
+| `Sweat-Oneheart-Naturecore-Proposal.pdf` | 20 | **Bespoke** — Øneheart / naturecore, for Marc Sheinman at 7980 Music |
 
 Authored in [`../sweat-strategies-deck/`](../sweat-strategies-deck/). Edit copy
 there and re-export; these are the output, not the source.
