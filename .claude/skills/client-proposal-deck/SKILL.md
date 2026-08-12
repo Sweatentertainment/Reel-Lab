@@ -23,10 +23,35 @@ language, and leave out anything they did not ask for.
 The output is a new deck on the existing engine in `sweat-strategies-deck/` —
 a slide module, a page shell, and a PDF in `sweat-brand/decks/`.
 
+## Two ways this starts
+
+**PJ names a client and you go and find out.** Research the email and the
+call, ask the two questions the research could not answer, then build. Steps
+1–6 below.
+
+**PJ hands you a written brief.** Sometimes he has already done the thinking
+and writes the deck out page by page, with the copy, the fee and the footer
+order. Then the job is layout and judgement, not discovery — skip the
+research and the questions, and follow his structure exactly. He wrote it
+because he wants that deck, not your improved version of it.
+
+When a brief arrives like that, the useful work moves to three things:
+
+- **Which existing deck is it a variant of?** He will usually say. Open that
+  slide module and lift its treatments rather than inventing new ones —
+  matching an existing deck is a copy job, and any flourish you add is drift.
+- **Do the assets he asked for exist?** Check before you build, not after.
+- **What does the brief not say?** Section names, image slots, whether a
+  repeated block is deliberate. Follow the brief where it is explicit and use
+  the source deck's answer where it is silent.
+
+Either way the back half is the same: write it, render it, **look at it**,
+export, hand back with the open questions named.
+
 ## The shape of the job
 
 1. **Research** — the email thread and the call transcript. Do this before
-   asking PJ anything.
+   asking PJ anything. Skip if he supplied the brief.
 2. **Ask** — only what the research could not answer. Usually two questions.
 3. **Plan** — find the client's own sentence that the deck is going to argue.
 4. **Write** the slide module.
@@ -122,6 +147,28 @@ Open the slide module with a comment block recording where the content came
 from, what the argument is, and what the deck deliberately excludes and why.
 The next person to edit it — often PJ, often in a hurry — needs to know which
 omissions were decisions rather than oversights.
+
+### Check the images exist before you build
+
+If the brief names artists for the image slots, confirm each one is in the
+library first:
+
+```bash
+ls sweat-strategies-deck/assets/img/*__lens.jpg | sed 's|.*/||;s|__lens.jpg||'
+```
+
+Thirteen artists are licensed and that is the whole set. Swedish House Mafia,
+Lykke Li and Rudimental have each been asked for more than once and still are
+not in it — a name appearing in the roster does not mean there is a photograph
+of them. Watch for near-misses too: `cs-maribou-midas.jpg` is a Spotify chart
+screenshot, not a portrait, and will not work in a card.
+
+When a requested artist is missing, substitute rather than stall — the deck is
+usually wanted the same day. Take the biggest available name for the most
+prominent slot, and for a process or method slide take whichever artist the
+source deck already uses there. Then tell PJ plainly which two slots changed
+and why. Never solve it by pulling a press shot off the web: it is third-party
+copyright in a document going to a label or an investor.
 
 ### A shape that works
 
