@@ -48,6 +48,31 @@ export const DESIGN = {
   label: 'Paid media for music',
 };
 
+/* ---------------------------------------------------------------- variants
+
+   The A/B test cells. This is a clean 2x2: layout crossed with ground, and
+   NOTHING else moves between them.
+
+                    paper        dark
+     editorial        A            B
+     statement        C            D
+
+   Holding the CTA and the wordmark off in all four is the point. If A
+   carried a logo and B did not, a win for A would not tell you whether the
+   ground or the logo did it — and with four cells running at once there is
+   not enough traffic to untangle that afterwards. Test the frame first,
+   then test furniture inside the winner.
+
+   Copy is identical across all four, so the eleven ads are the sample, not
+   a variable.
+*/
+export const VARIANTS = {
+  A: { slug: 'editorial-paper', layout: 'editorial', ground: 'paper', cta: false, mark: false },
+  B: { slug: 'editorial-dark',  layout: 'editorial', ground: 'dark',  cta: false, mark: false },
+  C: { slug: 'statement-paper', layout: 'statement', ground: 'paper', cta: false, mark: false },
+  D: { slug: 'statement-dark',  layout: 'statement', ground: 'dark',  cta: false, mark: false },
+};
+
 /* ------------------------------------------------------------------- sizes
 
    `safe` is the platform chrome that sits ON TOP of the creative, in pixels

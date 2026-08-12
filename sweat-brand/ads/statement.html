@@ -16,12 +16,14 @@
    measurement rather than by hand — see fitHero().
    ------------------------------------------------------------------ */
 
-/* the copy block. `safe` insets it past whatever platform chrome is
-   drawn over the creative; --pad-* are set per size from SIZES.safe. */
+/* The copy block. `safe` insets it past whatever platform chrome is drawn
+   over the creative, ON TOP OF the frame gutter it already has — the two
+   add rather than replace. Writing the safe inset alone here collapsed the
+   bottom gutter to nothing on the feed sizes, whose safe value is 0, and
+   the copy ran to the very edge of the frame. */
 .blk {
-  padding-top: calc(var(--safe-top) * var(--u));
   padding-right: calc(var(--space-pad) + var(--safe-right) * var(--u));
-  padding-bottom: calc(var(--safe-bottom) * var(--u));
+  padding-bottom: calc(var(--space-pad) + var(--safe-bottom) * var(--u));
 }
 
 /* ------------------------------------------------------------- editorial */
@@ -67,8 +69,17 @@
 .st { justify-content: flex-end; }
 
 /* the wordmark is positioned out of flow at the top gutter, so the copy has
-   to be told to start below it or a full-height hero runs up underneath */
+   to be told to start below it or a full-height hero runs up underneath.
+   196u already clears the gutter, so this is the top inset in full. */
 .st { padding-top: calc(var(--safe-top) * var(--u) + 196 * var(--u)); }
+
+.st__label {
+  font-family: var(--font-mono);
+  text-transform: uppercase;
+  font-size: calc(20 * var(--u));
+  letter-spacing: var(--tracking-label);
+  margin-bottom: calc(30 * var(--u));
+}
 
 .st__hero {
   font-family: var(--font-sans);

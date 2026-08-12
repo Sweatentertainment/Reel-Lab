@@ -10,7 +10,7 @@ decks/      the six approved PDFs, 16:9, ready to send
 system/     the design system: tokens, treatments, the typeface
 ads/        the statement ads — copy in statements.js, one renderer
 img/        the licensed photography, already treated
-out/        exported PNGs — what you actually upload
+ab-test/    132 exported assets, four design cells — what you upload
 scripts/    build the tokens, treat a new photo, export the ads
 ```
 
@@ -47,17 +47,33 @@ run at all. Every figure is real.
 ```bash
 npm install                 # once
 npm run serve               # in one terminal
-npm run export              # in another — 11 ads × 3 sizes to out/
+npm run export              # in another — 11 ads × 4 cells × 3 sizes
 ```
 
 ```bash
-npm run export -- --id C4              # one ad, every size
-npm run export -- --size story-1920    # every ad, one size
-npm run export:2x                      # 2x, for print or a retina placement
+npm run export -- --variant A          # one design cell
+npm run export -- --id C4              # one ad
+npm run export -- --size story-1920    # one size
+npm run export -- --format png         # lossless instead of jpeg
 ```
 
-Output lands in `out/<size>/<id>.png`. To preview one in a browser:
+Output lands in `ab-test/<cell>/<id>__<variant>__<w>x<h>.jpg`, with a
+`manifest.csv` and a contact sheet — see [`ab-test/README.md`](ab-test/README.md)
+for how the test is set up and how to read it. To preview one in a browser:
 `ads/statement.html?id=C4&size=story-1920`.
+
+### The four cells
+
+A clean 2×2 of layout × ground, with the CTA and the wordmark held off in all
+of them so neither can confound the result.
+
+|  | paper | dark |
+|---|---|---|
+| **editorial** | A | B |
+| **statement** | C | D |
+
+`VARIANTS` in `statements.js` defines them. 11 ads × 4 cells × 3 sizes = 132
+assets, 22MB, about four minutes to build.
 
 | | Ad | Hero |
 |---|---|---|
@@ -97,8 +113,8 @@ The hero breaks a sentence at a time — *"…in 90 days."* finishes and *"On a 
 artist."* starts fresh rather than running on — which is most of where that
 layout's rhythm comes from.
 
-**`statement`** is the alternative: bottom-weighted, wordmark top-left, CTA
-pill. Compare them without re-exporting the set:
+**`statement`** is the alternative: bottom-weighted, tighter, with the wordmark
+and CTA pill available. Compare any combination without re-exporting:
 
 ```
 ads/statement.html?id=C10&layout=statement&ground=dark&cta=1
@@ -117,7 +133,7 @@ burn it into a PNG. Put it where it can still be changed:
 
 - pick **Book Now** as the Meta CTA button, which is the closest option;
 - put *"Book a discovery call"* in the primary text, where it can be edited and
-  A/B tested without re-exporting 33 files.
+  A/B tested without re-exporting the kit.
 
 Set `cta: true` only for a placement that draws no button of its own.
 
@@ -309,14 +325,18 @@ ads/
   frame.js                 draws the spine, fits the preview to the window
 img/                       licensed photography, lens-treated
   _raw/                    drop untreated files here for npm run lens
-out/
-  portrait-1350/           C1..C11.png  1080×1350
-  square-1080/             C1..C11.png  1080×1080
-  story-1920/              C1..C11.png  1080×1920
+ab-test/                   THE DELIVERABLE — 132 assets, generated
+  README.md                how the test is set up and how to read it
+  manifest.csv             filename -> cell, ad, size, copy
+  index.html               contact sheet
+  A-editorial-paper/       C1..C11 at three sizes
+  B-editorial-dark/
+  C-statement-paper/
+  D-statement-dark/
 scripts/
   build-tokens.mjs         tokens.json -> tokens.css
   lens.mjs                 bake the site's lens into a photograph
-  export-png.mjs           the set -> out/<size>/<id>.png, at native size
+  export-png.mjs           the set × the cells -> ab-test/, at native size
 ```
 
 The photography in `img/` is not used by the C set — it is there for the
