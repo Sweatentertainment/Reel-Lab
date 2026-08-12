@@ -11,23 +11,29 @@
    WHO IT IS WRITTEN FOR. He does infrastructure finance and private equity
    for a living and is treating music as a new venture. He understands
    staged capital deployment and payback periods, so the deck argues in
-   those terms: seven records are seven unpriced bets, testing is how you
-   price them, and the value is in the ones you stop. No hype, no agency
-   language.
+   those terms: the records are unpriced bets, testing is how you price them,
+   and the value is in the ones you stop rather than the one you scale. No
+   hype, no agency language.
 
    TWO THINGS SHAPE THE WHOLE DOCUMENT.
 
    1. It is not one project. The pop records and the club records want
       different audiences, creative and names, so the deck splits them
-      throughout rather than treating the seven as a catalogue.
+      throughout rather than treating them as one catalogue.
 
    2. He cannot be the face — professional reasons, his investors, and he
       raised the alter-ego idea himself. So the identity has to do the work
       his face would normally do, which is why page 19 exists at all.
 
+   NO RECORD COUNTS ANYWHERE. He has thirteen songs but several are reworks
+   of each other, so any figure invites an argument about what counts as a
+   record — and a numerate reader notices a deck that says thirteen on one
+   page and implies seven on another. The deck says "a catalogue" and states
+   the probability instead, which is true whatever the number turns out to be.
+
    NAMES AND TITLES ARE DELIBERATELY ABSENT. The alter-ego names are not
    decided, so it is "the pop project" and "the club project" throughout.
-   The seven track titles are never printed: they are profane and he is
+   The track titles are never printed: they are profane and he is
    anonymous by design, and a deck is a thing that gets forwarded.
 
    TWO IMAGE SUBSTITUTIONS, FLAGGED TO PJ. The brief asked for Swedish
@@ -134,14 +140,26 @@ export const SLIDES = [
   /* 02 — the roster, unchanged. Credibility before the problem. */
   roster(),
 
-  /* 03 — the problem, as a divider. Bracket plus the dashed question box,
-     the same pairing the source deck opens its problem section with. */
+  /* 04 — the problem, as a divider. Bracket plus the dashed question box,
+     the same pairing the source deck opens its problem section with.
+
+     NO COUNTS ANYWHERE IN THIS DECK. An earlier cut opened "Seven records.
+     No answer yet", which was both wrong — there are thirteen — and
+     unfixable by swapping the number, because several of the thirteen are
+     reworks of each other and any figure invites an argument about what
+     counts as a record. Worse, a numerate reader will notice a deck that
+     says thirteen on one page and implies seven on another.
+
+     So the line states the probability instead. It is true at any count,
+     and to someone who prices risk for a living "they are all equally
+     likely" IS the problem — it is the sentence that makes testing worth
+     paying for. */
   {
     section: 'The problem',
     grain: true,
     html: `
       <div class="pad l-centre">
-        <h2 class="display display--m reveal"><span class="bracket">Seven records. No answer yet</span></h2>
+        <h2 class="display display--m reveal"><span class="bracket">Right now they're all equally likely</span></h2>
         <div class="dashbox reveal" style="--d:.35s;width:118px;height:118px;margin-top:96px;font-size:44px;font-weight:300;color:#fff">?</div>
       </div>`,
   },
@@ -160,13 +178,12 @@ export const SLIDES = [
       <div class="pad l-end">
         <div style="display:grid;grid-template-columns:1.05fr 0.72fr;align-items:end;gap:150px">
           <h2 class="display reveal" style="font-size:64px;font-weight:700;letter-spacing:-0.035em;line-height:1.1">
-            You've got seven finished records. Somewhere in them there might be one that changes everything.
+            You've got a catalogue. Somewhere in it there might be one that changes everything.
           </h2>
           <div class="reveal" style="--d:.2s;padding-bottom:12px">
             <p class="body" style="max-width:none">
-              Right now all seven are equally likely. You could put $30,000 behind the one you love most and
-              learn nothing — not whether it was the record, the audience or the creative. Then do it again
-              on the next one, starting from zero.
+              You could put $30,000 behind the one you love most and learn nothing — not whether it was the
+              record, the audience or the creative. Then do it again on the next one, starting from zero.
             </p>
             <p class="body" style="max-width:none">
               That isn't a music problem. It's an information problem, and it's the cheapest one you'll
@@ -234,7 +251,7 @@ export const SLIDES = [
             We test every record you've got.
           </h2>
           <p class="body reveal" style="--d:.15s">
-            Up to 20. We could do all 13 you have now, plus anything you write in the next three months —
+            Up to 20. We could do everything you've got now, plus anything you write in the next three months —
             you make records three hours a day from the gym, and that costs you nothing extra in fees.
             Only ad spend.
           </p>
@@ -288,8 +305,9 @@ export const SLIDES = [
     },
   ].map(process),
 
-  /* 13 — the verdict. The line about the six we stop is the argument of the
-     whole deck for this reader: he buys information, not optimism. */
+  /* 14 — the verdict. The argument of the whole deck for this reader: he
+     buys information, not optimism. Was "the six we stop", which quietly
+     asserted a catalogue of seven — same counting problem as the divider. */
   {
     section: 'The verdict',
     grain: true,
@@ -305,7 +323,7 @@ export const SLIDES = [
           Plenty of agencies will spend a marketing budget for as long as you keep approving it. We won't.
         </p>
         <p class="body reveal" style="--d:.36s;max-width:1080px;text-align:center;font-size:26px;color:var(--blue);font-weight:600;margin-top:34px">
-          The value isn't in the record we scale. It's in the six we stop.
+          The value isn't in the record we scale. It's in the ones we stop.
         </p>
       </div>`,
   },
