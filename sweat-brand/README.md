@@ -156,6 +156,24 @@ ads/statement.html?id=C7&size=story-1920&safe=1
 The 9:16 numbers are the **stricter Reels set**, not the Stories set, because
 one export serves both — Stories alone would only need about 250 at the bottom.
 
+Safe values are **absolute platform pixels**, multiplied by `1px` and never by
+`--u`. `--u` tracks `--uref`, which is a typography knob someone may retune per
+size; scaling the chrome inset by it means the inset moves when the type does,
+and on any size whose `--uref` exceeds its width `--u` drops below 1 and the ad
+ends up inset *less* than the platform covers.
+
+`scripts/check-safe.mjs` measures every asset rather than trusting the CSS:
+
+```bash
+node scripts/check-safe.mjs
+```
+
+It renders all 132, takes the real bounding box of everything that puts ink on
+the frame — copy, wordmark, CTA — and fails if any of it lands inside a safe
+zone. Eyeballing one ad with `?safe=1` proves one ad; the hero is fitted by
+measurement and the two layouts anchor from opposite edges, so which ad comes
+closest to the chrome is not knowable by looking.
+
 One thing the overlay marks that is not chrome: the blue dashed lines on the
 4:5 are the **1:1 that Instagram centre-crops a 4:5 to in the profile grid**.
 It does not affect a paid placement. It only matters if the same file is also

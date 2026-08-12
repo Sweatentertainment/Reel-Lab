@@ -20,10 +20,17 @@
    over the creative, ON TOP OF the frame gutter it already has — the two
    add rather than replace. Writing the safe inset alone here collapsed the
    bottom gutter to nothing on the feed sizes, whose safe value is 0, and
-   the copy ran to the very edge of the frame. */
+   the copy ran to the very edge of the frame.
+
+   Safe values are ABSOLUTE PLATFORM PIXELS and are multiplied by 1px, never
+   by --u. --u is the type scale: it tracks --uref, which is a design knob
+   somebody may retune per size. Scaling the chrome inset by it means the
+   inset silently changes when the typography is adjusted — and on any size
+   whose --uref exceeds its width, --u drops below 1 and the ad ends up
+   inset LESS than the platform will cover. */
 .blk {
-  padding-right: calc(var(--space-pad) + var(--safe-right) * var(--u));
-  padding-bottom: calc(var(--space-pad) + var(--safe-bottom) * var(--u));
+  padding-right: calc(var(--space-pad) + var(--safe-right) * 1px);
+  padding-bottom: calc(var(--space-pad) + var(--safe-bottom) * 1px);
 }
 
 /* ------------------------------------------------------------- editorial */
@@ -34,7 +41,7 @@
 
 /* the block starts about a quarter of the way down, which is what leaves
    the air underneath rather than around everything equally */
-.ed { padding-top: calc(var(--safe-top) * var(--u) + 26% - 26px); }
+.ed { padding-top: calc(var(--safe-top) * 1px + 26% - 26px); }
 
 .ed__label {
   font-family: var(--font-mono);
@@ -71,7 +78,7 @@
 /* the wordmark is positioned out of flow at the top gutter, so the copy has
    to be told to start below it or a full-height hero runs up underneath.
    196u already clears the gutter, so this is the top inset in full. */
-.st { padding-top: calc(var(--safe-top) * var(--u) + 196 * var(--u)); }
+.st { padding-top: calc(var(--safe-top) * 1px + 196 * var(--u)); }
 
 .st__label {
   font-family: var(--font-mono);
@@ -270,17 +277,16 @@ for (const n of blk.children) n.style.maxWidth = `calc(820 * var(--u))`;
 
 if (on('safe', false)) {
   document.body.classList.add('show-safe');
-  const u = size.w / size.uref;
   const box = document.querySelector('.safe');
   const band = (css, label) =>
     `<i style="${css}"></i>${label ? `<b style="${label.pos}">${label.text}</b>` : ''}`;
 
   let html = '';
-  if (safe.top) html += band(`left:0;right:0;top:0;height:${safe.top * u}px`,
-    { pos: `top:${safe.top * u / 2 - 8}px`, text: `top ${safe.top}` });
-  if (safe.bottom) html += band(`left:0;right:0;bottom:0;height:${safe.bottom * u}px`,
-    { pos: `bottom:${safe.bottom * u / 2 - 8}px`, text: `bottom ${safe.bottom}` });
-  if (safe.right) html += band(`top:0;bottom:0;right:0;width:${safe.right * u}px`, null);
+  if (safe.top) html += band(`left:0;right:0;top:0;height:${safe.top}px`,
+    { pos: `top:${safe.top / 2 - 8}px`, text: `top ${safe.top}` });
+  if (safe.bottom) html += band(`left:0;right:0;bottom:0;height:${safe.bottom}px`,
+    { pos: `bottom:${safe.bottom / 2 - 8}px`, text: `bottom ${safe.bottom}` });
+  if (safe.right) html += band(`top:0;bottom:0;right:0;width:${safe.right}px`, null);
   if (size.gridCrop) {
     const inset = (size.h - size.w) / 2;
     html += `<u style="top:${inset}px;height:${size.w}px"></u>`;
