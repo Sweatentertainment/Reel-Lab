@@ -27,14 +27,18 @@
       which is true, and is a statement about how the platforms work
       rather than about anyone's competence.
 
-   2. It must not argue that streaming is the goal. Jay called the
-      monthly listener number "kind of a vanity metric" and said "we
-      don't necessarily see streaming as monetisation". PJ pushed back on
-      the call — "to get live bookings… it really helps to have Spotify
-      really moving" — so slide 06 states the disagreement openly and
-      lands on the honest position: the number is not the point, the
-      mechanism is. Pretending to agree would have been worse than
-      arguing.
+   2. It must not concede the streaming argument. Jay called the monthly
+      listener number "kind of a vanity metric" and said "we don't
+      necessarily see streaming as monetisation". PJ's position on the
+      call was the opposite — "to get live bookings… it really helps to
+      have Spotify really moving" — and PJ's instruction on this draft
+      was to argue streaming UP rather than half-agree. So slide 06 takes
+      the number seriously and makes the case an agent actually cares
+      about: it is the first thing they open, it is already a city-level
+      map, and it is what makes the 2027 ticket spend cheap. Growing it
+      is not the goal of the cycle; it is how the goal gets approved.
+      Disagreeing with the client here is deliberate — the earlier draft
+      hedged and undersold the service.
 
    3. It must not promise ticket sales as a standalone service. PJ was
       explicit on the call: "you kind of need the first two parts of the
@@ -193,13 +197,13 @@ export const SLIDES = [
         </ol>
 
         <div class="rule reveal" style="--d:.4s;margin:52px 0 32px"></div>
-        <p class="body reveal" style="--d:.46s;font-size:24px;max-width:1400px">
-          Six real assets. What none of them produces on its own is a list of people you can invite.
+        <p class="body reveal" style="--d:.46s;font-size:24px;max-width:1440px">
+          Six real assets. What none of them produces on its own is the evidence that gets a show booked.
         </p>
       </div>`,
   },
 
-  act({ label: 'The gap', line: 'You cannot invite a monthly listener' }),
+  act({ label: 'The gap', line: 'Numbers open doors, names fill rooms' }),
 
   /* 05 — the offer. PJ's three products in his own order, with reporting
      as the fourth because Jay is six hours out and will not be chasing. */
@@ -221,7 +225,7 @@ export const SLIDES = [
         <ol class="steps reveal" style="--d:.26s;grid-template-columns:repeat(4,1fr)">
           <li><span>01</span>
             <div style="font-family:var(--sans);font-weight:700;font-size:23px;letter-spacing:-0.03em;margin-bottom:10px">Paid media</div>
-            <p class="body" style="font-size:18px;max-width:none">Conversion testing on every section of every track, scaled country by country on the cuts and territories that genuinely respond.</p></li>
+            <p class="body" style="font-size:18px;max-width:none">Conversion testing on every section of every track, then scaled to grow the streaming audience deliberately in the cities where 2027 dates are plausible.</p></li>
           <li><span>02</span>
             <div style="font-family:var(--sans);font-weight:700;font-size:23px;letter-spacing:-0.03em;margin-bottom:10px">Fan flows</div>
             <p class="body" style="font-size:18px;max-width:none">Every new follower turned into a name, an email and a city. First-party data that stays yours when the campaign stops.</p></li>
@@ -235,38 +239,38 @@ export const SLIDES = [
       </div>`,
   },
 
-  /* 06 — the disagreement, stated openly. This is the slide that decides
-     whether the deck reads as bespoke. Jay called the listener count a
-     vanity metric; PJ said on the call that Spotify moving is what makes
-     live bookings easier. Both are right about different halves of it, and
-     saying so is worth more than agreeing with the client. */
+  /* 06 — the case for streaming, argued rather than conceded. Jay called
+     the listener count a vanity metric; this slide disagrees with him on
+     purpose, because an agent reads that number as a risk check and reads
+     it by city. Everything here is a reason a booker cares, not a reason
+     we care — which is what makes disagreeing with the client survivable. */
   {
     section: 'The plan',
     grain: 'soft',
     html: `
       <div class="pad l-mid">
-        <div class="label reveal" style="margin-bottom:26px">Where we half agree</div>
-        <h2 class="display reveal" style="--d:.08s;font-size:70px;line-height:1.06;max-width:1500px;margin-bottom:26px">
-          Streaming is a bad target<br>and a good instrument.
+        <div class="label reveal" style="margin-bottom:26px">Why the streaming number matters</div>
+        <h2 class="display reveal" style="--d:.08s;font-size:70px;line-height:1.06;max-width:1560px;margin-bottom:26px">
+          An agent opens Spotify before<br>they answer the email.
         </h2>
-        <p class="body reveal" style="--d:.16s;font-size:23px;max-width:1360px;margin-bottom:46px">
-          You called the monthly listener count a vanity metric. As a goal for this
-          cycle, we think you are right, and we are not going to ask you to buy one.
-          But it is still the cheapest, fastest and most measurable way to put an
-          unfamiliar record in front of a stranger — and that is the only part of it
-          we are actually interested in.
+        <p class="body reveal" style="--d:.16s;font-size:23px;max-width:1400px;margin-bottom:46px">
+          You called the monthly listener count a vanity metric, and read on its own it is.
+          But it is also the first thing a booking agent, a promoter and a festival
+          programmer look at, and they are not reading it as vanity — they are reading it
+          as a risk check, and they are reading it city by city. Growing that number is not
+          the goal of this cycle. It is how the goal gets approved.
         </p>
 
         <ol class="steps reveal" style="--d:.26s;grid-template-columns:repeat(3,1fr);max-width:1620px">
           <li><span>01</span>
-            <div style="font-family:var(--sans);font-weight:700;font-size:23px;letter-spacing:-0.03em;margin-bottom:10px">The number is not the deliverable</div>
-            <p class="body" style="font-size:18px;max-width:none">No monthly-listener target in this proposal. If one is useful for a distributor conversation we will set it, but it is not what we would be measured on.</p></li>
+            <div style="font-family:var(--sans);font-weight:700;font-size:23px;letter-spacing:-0.03em;margin-bottom:10px">It is the first door</div>
+            <p class="body" style="font-size:18px;max-width:none">Before anyone asks about the film or the live show, they check the profile. One that is moving says the project is live. One that is flat says it is over, whatever else is true.</p></li>
           <li><span>02</span>
-            <div style="font-family:var(--sans);font-weight:700;font-size:23px;letter-spacing:-0.03em;margin-bottom:10px">The mechanism is</div>
-            <p class="body" style="font-size:18px;max-width:none">Paid media is how you reach people who have never heard of this project, at a cost per person you can see. Nothing else at this stage does that reliably.</p></li>
+            <div style="font-family:var(--sans);font-weight:700;font-size:23px;letter-spacing:-0.03em;margin-bottom:10px">It is already a map</div>
+            <p class="body" style="font-size:18px;max-width:none">Spotify reports listeners city by city, which is the same data an agent uses to route a run of dates. We can grow it deliberately in the markets you actually want to play.</p></li>
           <li><span>03</span>
-            <div style="font-family:var(--sans);font-weight:700;font-size:23px;letter-spacing:-0.03em;margin-bottom:10px">The deliverable is a list</div>
-            <p class="body" style="font-size:18px;max-width:none">Names, emails and cities. Your question was how sticky those listeners are — a list is the only version of an audience where that question has an answer.</p></li>
+            <div style="font-family:var(--sans);font-weight:700;font-size:23px;letter-spacing:-0.03em;margin-bottom:10px">It makes the tickets cheap</div>
+            <p class="body" style="font-size:18px;max-width:none">Someone already streaming the record converts on a ticket ad at a fraction of what a stranger costs. Every listener built before February is spend the 2027 on-sale does not have to make.</p></li>
         </ol>
       </div>`,
   },
@@ -349,65 +353,111 @@ export const SLIDES = [
     n: '03',
     date: 'February',
     title: 'The EP, and the case',
-    headline: 'A booking agent does not want a stream count. They want a map.',
-    body: `By release the useful output is not how many people listened, it is who and where.
-      Five months of capture becomes a document that says: this many contactable people, in these
-      cities, at this level of engagement, who have heard from the artist directly and opened it.
-      That is a thing a promoter can price. A monthly listener figure is not.`,
+    headline: 'A booking agent wants to know where the people are.',
+    body: `By release the useful output is a geography rather than a single figure. Spotify reports
+      listeners city by city and the capture list reports contactable people city by city, and put
+      together they say: this many, here, at this depth, who have heard from the artist directly and
+      opened it. That is a thing a promoter can price a room against — and it is the same document
+      whether the conversation is about a support slot or a headline date.`,
     points: [
       { t: 'Release, properly supported', b: 'The EP gets the full campaign — but weighted with everything learned since September rather than started from scratch.' },
-      { t: 'Hand over the map', b: 'Audience by city, depth by city, and the list itself. Yours, in a format an agent or promoter can act on.' },
+      { t: 'Hand over the map', b: 'Streaming by city and list by city in one document. Yours, in a format an agent or promoter can act on without translating it first.' },
       { t: 'Ready for the dates', b: 'When shows are confirmed, the ticketing campaign runs against a warm audience instead of a cold one, which is a far cheaper exercise than starting from nothing.' },
     ],
   }),
 
-  /* 12 — the method. The one slide where Sweat talks about itself, so the
-     proof sits beside it. Cristoph is chosen deliberately: a dance record
-     starting from a cold audience is the closest thing in the book to
-     M07's actual position. */
+  /* 12 — the method. The one slide where Sweat talks about itself. It runs
+     full width so the proof can have its own page rather than being
+     squeezed into a column: two cold starts side by side say "repeatable"
+     in a way one case study beside a paragraph never does. */
   {
     section: 'Paid media',
     grain: 'soft',
     html: `
-      ${/* the gutter between the columns, not the middle of the left one */ ''}
-      ${spine('', 45)}
-      <div class="pad" style="display:grid;grid-template-columns:1.05fr 0.95fr;align-items:center;gap:90px;height:100%">
-        <div>
-          <div class="label reveal" style="margin-bottom:26px">How the paid media works</div>
-          <h2 class="display reveal" style="--d:.08s;font-size:64px;line-height:1.06;margin-bottom:28px">
-            We test the song,<br>not just the ad.
-          </h2>
-          <p class="body reveal" style="--d:.16s;font-size:21px;max-width:640px;margin-bottom:30px">
-            Every section of the record runs against a control visual until one of them
-            outperforms the rest, and then the creative is built to that sound. As spend
-            scales we read Spotify for Artists alongside the ad platform and go country by
-            country, because the cheapest conversion and the most valuable one are rarely
-            in the same place.
-          </p>
-          <ol class="steps reveal" style="--d:.26s;grid-template-columns:repeat(2,1fr);max-width:660px">
-            <li><span>01</span><p class="body" style="font-size:18px;max-width:none">Test every part of the song</p></li>
-            <li><span>02</span><p class="body" style="font-size:18px;max-width:none">Build the creative to the winner</p></li>
-            <li><span>03</span><p class="body" style="font-size:18px;max-width:none">Scale country by country</p></li>
-            <li><span>04</span><p class="body" style="font-size:18px;max-width:none">Report it back weekly</p></li>
-          </ol>
-        </div>
+      <div class="pad l-mid">
+        <div class="label reveal" style="margin-bottom:26px">How the paid media works</div>
+        <h2 class="display reveal" style="--d:.08s;font-size:70px;line-height:1.06;max-width:1400px;margin-bottom:26px">
+          We test the song,<br>not just the ad.
+        </h2>
+        <p class="body reveal" style="--d:.16s;font-size:23px;max-width:1440px;margin-bottom:46px">
+          The reason this works on records nobody has heard yet is that nothing about it is a
+          guess. Every section of the track competes against the others on cost until one of
+          them wins, and the campaign is then built on that answer rather than on somebody's
+          opinion about which bit is the hook. As spend scales we read Spotify for Artists
+          alongside the ad platform and go country by country, because the cheapest conversion
+          and the most valuable one are rarely in the same place.
+        </p>
 
-        <div class="reveal" style="--d:.3s">
-          <div class="label" style="font-size:18px;margin-bottom:28px">A dance record from a cold start</div>
-          <h3 class="display" style="font-size:54px;line-height:1.04;margin-bottom:34px">Cristoph<br>— Spacer</h3>
-          <dl class="stats" style="gap:70px;margin-bottom:34px">
-            <div><dt>Streams</dt><dd>243K</dd></div>
-            <div><dt>Cost per result</dt><dd>12p</dd></div>
-          </dl>
-          <dl class="stats" style="gap:70px">
-            <div><dt>Spend</dt><dd>£3K</dd></div>
-            <div><dt>To 18K a day in</dt><dd>3 wks</dd></div>
-          </dl>
-          <p class="body" style="font-size:19px;max-width:620px;margin-top:36px;opacity:.8">
-            Zero on release day to roughly eighteen thousand streams a day three weeks
-            later, reaching 140,514 listeners with fifteen thousand playlist adds. The
-            useful part is the budget it took to find out what worked.
-          </p>
+        <ol class="steps reveal" style="--d:.26s;grid-template-columns:repeat(4,1fr)">
+          <li><span>01</span>
+            <div style="font-family:var(--sans);font-weight:700;font-size:23px;letter-spacing:-0.03em;margin-bottom:10px">Test every part of the song</div>
+            <p class="body" style="font-size:18px;max-width:none">Intro, build, drop, breakdown — each against a control visual, so the winner is measured rather than chosen.</p></li>
+          <li><span>02</span>
+            <div style="font-family:var(--sans);font-weight:700;font-size:23px;letter-spacing:-0.03em;margin-bottom:10px">Build the creative to it</div>
+            <p class="body" style="font-size:18px;max-width:none">Variants cut to the winning sound, run against each other until the cost per result stops falling.</p></li>
+          <li><span>03</span>
+            <div style="font-family:var(--sans);font-weight:700;font-size:23px;letter-spacing:-0.03em;margin-bottom:10px">Scale country by country</div>
+            <p class="body" style="font-size:18px;max-width:none">Tier one markets read individually, weighted toward where the record is genuinely resonating and where you want to play.</p></li>
+          <li><span>04</span>
+            <div style="font-family:var(--sans);font-weight:700;font-size:23px;letter-spacing:-0.03em;margin-bottom:10px">Report it back weekly</div>
+            <p class="body" style="font-size:18px;max-width:none">Including what we turned off. A test that fails is the campaign working, not the campaign failing.</p></li>
+        </ol>
+      </div>`,
+  },
+
+  /* 13 — the repeatability proof, and the reason it gets its own page.
+     Both of these are cold starts on dance records with no audience to
+     begin with, which is M07's actual position; both bend inside three
+     weeks on a few thousand pounds. Figures come straight from cases.js
+     so they cannot drift from the case-study decks. */
+  {
+    section: 'Paid media',
+    grain: 'soft',
+    html: `
+      ${/* the 110px gutter between the two records — dead centre (960) is
+             the first character of the KOGIS column, not the gap */ ''}
+      ${spine('', -55)}
+      <div class="pad l-mid">
+        <div class="label reveal" style="margin-bottom:26px">The same method, twice</div>
+        <h2 class="display reveal" style="--d:.08s;font-size:70px;line-height:1.06;max-width:1500px;margin-bottom:26px">
+          Different records.<br>The same three weeks.
+        </h2>
+        <p class="body reveal" style="--d:.16s;font-size:22px;max-width:1500px;margin-bottom:56px">
+          Two dance records with no audience on release day, run the same way a few months apart.
+          Neither of these had a head start and neither needed a large budget — what they needed
+          was for the testing to find the audience before the scaling spent against it.
+        </p>
+
+        <div class="reveal" style="--d:.28s;display:grid;grid-template-columns:1fr 1fr;gap:110px;max-width:1620px">
+          <div>
+            <h3 class="display" style="font-size:46px;line-height:1.04;margin-bottom:30px">Cristoph<br>— Spacer</h3>
+            <dl class="stats" style="gap:64px;margin-bottom:26px">
+              <div><dt>Spend</dt><dd>£3K</dd></div>
+              <div><dt>Cost per result</dt><dd>12p</dd></div>
+            </dl>
+            <dl class="stats" style="gap:64px">
+              <div><dt>Streams</dt><dd>243K</dd></div>
+              <div><dt>To 18K a day in</dt><dd>3 wks</dd></div>
+            </dl>
+            <p class="body" style="font-size:18px;max-width:600px;margin-top:30px;opacity:.8">
+              140,514 listeners and fifteen thousand playlist adds inside the first three weeks.
+            </p>
+          </div>
+          <div>
+            <h3 class="display" style="font-size:46px;line-height:1.04;margin-bottom:30px">KOGIS<br>— Keeping Your Head Up</h3>
+            <dl class="stats" style="gap:64px;margin-bottom:26px">
+              <div><dt>Spend</dt><dd>£4.5K</dd></div>
+              <div><dt>Cost per result</dt><dd>15p</dd></div>
+            </dl>
+            <dl class="stats" style="gap:64px">
+              <div><dt>Streams</dt><dd>205K</dd></div>
+              <div><dt>To 25K a day in</dt><dd>3 wks</dd></div>
+            </dl>
+            <p class="body" style="font-size:18px;max-width:600px;margin-top:30px;opacity:.8">
+              Nothing on release day and 25,470 a day three weeks later. The line only bends once
+              the spend finds the audience that responds.
+            </p>
+          </div>
         </div>
       </div>`,
   },
@@ -548,11 +598,11 @@ export const SLIDES = [
             <div style="font-family:var(--sans);font-weight:700;font-size:23px;letter-spacing:-0.03em;margin-bottom:10px">What ran</div>
             <p class="body" style="font-size:18px;max-width:none">Spend, cost per result, the cuts and countries working and the ones we have switched off.</p></li>
           <li><span>02</span>
-            <div style="font-family:var(--sans);font-weight:700;font-size:23px;letter-spacing:-0.03em;margin-bottom:10px">What the list did</div>
-            <p class="body" style="font-size:18px;max-width:none">Captures, opens, replies and where they are — the number this campaign is actually judged on.</p></li>
-          <li><span>03</span>
             <div style="font-family:var(--sans);font-weight:700;font-size:23px;letter-spacing:-0.03em;margin-bottom:10px">What the record did</div>
-            <p class="body" style="font-size:18px;max-width:none">Streams, saves and the algorithmic picture, read against the spend rather than beside it.</p></li>
+            <p class="body" style="font-size:18px;max-width:none">Streams, saves, listeners by city and the algorithmic picture, read against the spend rather than beside it.</p></li>
+          <li><span>03</span>
+            <div style="font-family:var(--sans);font-weight:700;font-size:23px;letter-spacing:-0.03em;margin-bottom:10px">What the list did</div>
+            <p class="body" style="font-size:18px;max-width:none">Captures, opens and replies, and which cities they came from — the audience you still own when the campaign ends.</p></li>
           <li><span>04</span>
             <div style="font-family:var(--sans);font-weight:700;font-size:23px;letter-spacing:-0.03em;margin-bottom:10px">What is next</div>
             <p class="body" style="font-size:18px;max-width:none">The week ahead, and anything needing a decision from you with the date it is needed by.</p></li>
@@ -591,8 +641,11 @@ export const SLIDES = [
       </div>`,
   },
 
-  /* 20 — the fee. What sits on top is stated plainly, because a client who
-     finds out about a cost later remembers that longer than the number. */
+  /* 21 — the fee. Two genuinely different totals rather than two ways of
+     paying the same one, so committing up front is worth something: six
+     months is $15,000 monthly or $12,000 quarterly. What sits on top is
+     stated plainly, because a client who finds out about a cost later
+     remembers that longer than the number itself. */
   {
     section: 'Engagement',
     html: `
@@ -604,34 +657,35 @@ export const SLIDES = [
       <div class="pad l-mid">
         <div class="label reveal" style="margin-bottom:34px">The engagement</div>
         <h2 class="display reveal" style="--d:.08s;font-size:76px;line-height:1.04;margin-bottom:52px">
-          Six months,<br>September to February.
+          Six months,<br>two ways to do it.
         </h2>
 
         <div class="reveal" style="--d:.2s;display:grid;grid-template-columns:1fr 1fr;gap:80px;max-width:1500px">
           <div>
-            <div class="tier">The fee</div>
-            <div class="display" style="font-size:96px;line-height:1;margin-bottom:20px">$5,000<span style="font-size:38px;font-weight:500"> pcm</span></div>
+            <div class="tier">Monthly</div>
+            <div class="display" style="font-size:96px;line-height:1;margin-bottom:20px">$2,500<span style="font-size:38px;font-weight:500"> pcm</span></div>
             <p class="body" style="font-size:21px;max-width:600px">
-              Invoiced monthly from the start date. $30,000 across the term, covering the whole
-              cycle from the first test in September through to the EP and the handover.
+              Six payments across the term. $15,000 in total, invoiced monthly from the start date.
             </p>
           </div>
           <div>
-            <div class="tier">On top, at cost</div>
-            <div class="display" style="font-size:96px;line-height:1;margin-bottom:20px">Ad spend</div>
+            <div class="tier">By the quarter</div>
+            <div class="display" style="font-size:96px;line-height:1;margin-bottom:20px">$6,000<span style="font-size:38px;font-weight:500"> ×2</span></div>
             <p class="body" style="font-size:21px;max-width:600px">
-              Media is yours and set by you, paid to the platforms directly. Third-party software
-              the flows need — Manychat and similar — is the only other cost, at a few hundred a
-              month. <strong style="color:#fff">We never mark up either.</strong>
+              One on the start date and one on 1 December. The same six months for
+              <strong style="color:#fff">$3,000 less</strong> — committing up front is worth
+              something to us, so it is worth something to you.
             </p>
           </div>
         </div>
 
         <div class="rule reveal" style="--d:.36s;margin:56px 0 30px"></div>
-        <p class="body reveal" style="--d:.42s;font-size:21px;max-width:1440px">
-          For context on the media: the first cycle ran roughly $25,000 through Meta. We are not
-          asking for more than that, and the September phase is deliberately cheap — the point of
-          it is to be wrong inexpensively before anything is scaled.
+        <p class="body reveal" style="--d:.42s;font-size:21px;max-width:1460px">
+          <strong style="color:#fff">This is the fee only.</strong> Ad spend is yours, set by you
+          and paid to the platforms directly; the third-party software the flows need — Manychat
+          and similar — runs to a few hundred a month. We never mark up either. For context, the
+          first cycle ran roughly $25,000 through Meta, and the September phase is deliberately
+          cheap: the point of it is to be wrong inexpensively before anything is scaled.
         </p>
       </div>`,
   },
