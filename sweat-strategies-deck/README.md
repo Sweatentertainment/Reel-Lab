@@ -23,6 +23,7 @@ everything else sit in one place. This folder is where they are *authored*.
 | **Bespoke** — Øneheart / naturecore | `oneheart-proposal.html` | `slides-oneheart.js` | `Sweat-Oneheart-Naturecore-Proposal.pdf` (20pp) |
 | **Bespoke** — Christopher Hunt | `chrishunt-proposal.html` | `slides-chrishunt.js` | `Sweat-Christopher-Hunt-Proposal.pdf` (20pp) |
 | **Bespoke** — M07 / Key Factory | `keyfactory-proposal.html` | `slides-keyfactory.js` | `Sweat-M07-Proposal.pdf` (22pp) |
+| **Bespoke** — House Music With Love | `hmwl-proposal.html` | `slides-hmwl.js` | `Sweat-HMWL-Proposal.pdf` (23pp) |
 
 `deck.js` exports `mount(SLIDES)`; each page imports its own slide set and calls
 it. Shared fragments and slide archetypes (`caseChart`, `caseStats`, `bend`,

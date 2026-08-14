@@ -27,6 +27,7 @@ scripts/    build the tokens, treat a new photo, export the ads
 | `Sweat-Oneheart-Naturecore-Proposal.pdf` | 20 | **Bespoke** — Øneheart / naturecore, for Marc Sheinman at 7980 Music |
 | `Sweat-Christopher-Hunt-Proposal.pdf` | 20 | **Bespoke** — Christopher Hunt, Hunt Equity Group |
 | `Sweat-M07-Proposal.pdf` | 22 | **Bespoke** — M07, for Jay Lee at Key Factory |
+| `Sweat-HMWL-Proposal.pdf` | 23 | **Bespoke** — House Music With Love, for Alex Esser (label deck variant) |
 
 Authored in [`../sweat-strategies-deck/`](../sweat-strategies-deck/). Edit copy
 there and re-export; these are the output, not the source.
