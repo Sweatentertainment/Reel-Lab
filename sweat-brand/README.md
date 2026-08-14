@@ -26,6 +26,7 @@ scripts/    build the tokens, treat a new photo, export the ads
 | `Sweat-Case-Studies-Labels-Anonymised.pdf` | 14 | Evidence, no names — for email |
 | `Sweat-Oneheart-Naturecore-Proposal.pdf` | 20 | **Bespoke** — Øneheart / naturecore, for Marc Sheinman at 7980 Music |
 | `Sweat-Christopher-Hunt-Proposal.pdf` | 20 | **Bespoke** — Christopher Hunt, Hunt Equity Group |
+| `Sweat-M07-Proposal.pdf` | 21 | **Bespoke** — M07, for Jay Lee at Key Factory |
 
 Authored in [`../sweat-strategies-deck/`](../sweat-strategies-deck/). Edit copy
 there and re-export; these are the output, not the source.

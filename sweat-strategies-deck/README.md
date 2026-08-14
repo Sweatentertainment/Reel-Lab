@@ -22,6 +22,7 @@ everything else sit in one place. This folder is where they are *authored*.
 | Case studies — labels, anonymised | `case-studies-labels-anon.html` | `slides-labels-anon.js` | `…-Labels-Anonymised.pdf` (14pp) |
 | **Bespoke** — Øneheart / naturecore | `oneheart-proposal.html` | `slides-oneheart.js` | `Sweat-Oneheart-Naturecore-Proposal.pdf` (20pp) |
 | **Bespoke** — Christopher Hunt | `chrishunt-proposal.html` | `slides-chrishunt.js` | `Sweat-Christopher-Hunt-Proposal.pdf` (20pp) |
+| **Bespoke** — M07 / Key Factory | `keyfactory-proposal.html` | `slides-keyfactory.js` | `Sweat-M07-Proposal.pdf` (21pp) |
 
 `deck.js` exports `mount(SLIDES)`; each page imports its own slide set and calls
 it. Shared fragments and slide archetypes (`caseChart`, `caseStats`, `bend`,
