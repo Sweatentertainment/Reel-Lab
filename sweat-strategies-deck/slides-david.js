@@ -209,7 +209,7 @@ export const SLIDES = [
       <div class="pad l-mid">
         <div class="label reveal" style="margin-bottom:26px">The proof</div>
         <h2 class="display reveal" style="--d:.08s;font-size:72px;line-height:1.04;max-width:1500px;margin-bottom:52px">
-          When tours stop selling,<br>we get the call.
+          When tours stop selling,<br>their teams already call us.
         </h2>
 
         <div class="reveal" style="--d:.22s;display:grid;grid-template-columns:1fr 1fr;gap:110px;max-width:1620px;margin-bottom:44px">
@@ -229,8 +229,9 @@ export const SLIDES = [
 
         <div class="rule reveal" style="--d:.42s;margin:0 0 30px"></div>
         <p class="body reveal" style="--d:.48s;font-size:22px;max-width:1620px;margin-bottom:16px">
-          <strong style="color:var(--blue)">Both are Live Nation and AEG tours.</strong> They came to us
-          undersold — tours sit at 4–27% when our campaigns switch on — and these are the numbers after.
+          <strong style="color:var(--blue)">Live Nation and AEG already bring us their tours.</strong>
+          These two arrived undersold — tours sit at 4–27% when our campaigns switch on — and these are
+          the numbers after.
         </p>
         <p class="body reveal" style="--d:.54s;font-size:22px;max-width:1620px">
           One campaign across every market, one learning loop — a winning creative in Glasgow is live in

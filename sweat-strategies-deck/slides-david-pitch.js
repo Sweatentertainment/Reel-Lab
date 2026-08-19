@@ -131,7 +131,7 @@ export const SLIDES = [
     html: `
       <div class="pad l-mid">
         <h2 class="display reveal" style="font-size:82px;line-height:1.04;margin-bottom:64px">
-          When tours stop selling,<br>we get the call.
+          When tours stop selling,<br>their teams already call us.
         </h2>
         <div class="reveal" style="--d:.2s;display:grid;grid-template-columns:1fr 1fr;gap:120px;max-width:1560px">
           <div>
@@ -152,8 +152,8 @@ export const SLIDES = [
           </div>
         </div>
         <p class="body reveal" style="--d:.4s;font-size:24px;max-width:1560px;margin-top:56px">
-          <strong style="color:var(--blue)">Live Nation and AEG tours</strong>, both undersold when they
-          came to us.
+          <strong style="color:var(--blue)">Live Nation and AEG bring us their tours.</strong>
+          Both of these arrived undersold.
         </p>
       </div>`,
   },
