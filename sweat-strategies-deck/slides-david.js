@@ -261,8 +261,8 @@ export const SLIDES = [
         <div class="rule reveal" style="--d:.42s;margin:0 0 30px"></div>
         <p class="body reveal" style="--d:.48s;font-size:22px;max-width:1620px;margin-bottom:16px">
           <strong style="color:var(--blue)">The artists' teams bring us in.</strong>
-          Both of these were Live Nation and AEG tours that had stopped selling — tours sit at 4–27%
-          when our campaigns switch on, and these are the numbers after.
+          Both of these were Live Nation and AEG tours that had stopped selling. These shows we took on
+          were sitting at 4–27% sell-through before our marketing started.
         </p>
         <p class="body reveal" style="--d:.54s;font-size:22px;max-width:1620px">
           One campaign across every market, one learning loop — a winning creative in Glasgow is live in
@@ -353,7 +353,7 @@ export const SLIDES = [
             max: 25,
             rows: [
               { name: 'David', value: '13%', n: 13, hero: true },
-              { name: 'The old stack', value: '25%+', n: 25 },
+              { name: 'Existing major ticketing companies', value: '25%+', n: 25 },
             ],
           })}
           ${cmp({
@@ -361,7 +361,7 @@ export const SLIDES = [
             max: 20,
             rows: [
               { name: 'David · of gross', value: '7%', n: 7, hero: true },
-              { name: 'The old stack · of net, after padded costs', value: '~20%', n: 20 },
+              { name: 'Existing promoters · of net, after padded costs', value: '~20%', n: 20 },
             ],
           })}
         </div>
@@ -561,7 +561,7 @@ export const SLIDES = [
         </div>
       </div>`,
   },
-  act({ label: 'The business', line: 'A market nobody serves, and the plan to serve it' }),
+  act({ label: 'The business', line: 'A market nobody serves,<br>And a plan to serve it' }),
 
   /* 10 — competition. The deck had no competition slide at all, which in
      a seed pack reads as unexamined rather than confident.
@@ -581,9 +581,10 @@ export const SLIDES = [
           Nobody else is paid to fill the room.
         </h2>
         <p class="body reveal" style="--d:.14s;font-size:22px;max-width:1560px;margin-bottom:46px">
-          Ticketing platforms sell to the people who are already coming — they are a checkout, not a
-          demand engine. Promoters do market the show, on a budget fixed before the tour goes on sale
-          and measured afterwards by nobody. Neither of them loses money on a half-empty room.
+          Ticketing platforms are a checkout — they sell to the people who are already coming. Promoters
+          take the room and take the risk, but filling it falls to the artist: it is the artist's own
+          socials, on the artist's own time, that do the marketing. Neither of them loses anything on a
+          half-empty room.
         </p>
 
         <div class="reveal" style="--d:.26s;max-width:1728px">
@@ -593,8 +594,8 @@ export const SLIDES = [
               .map((h) => `<span class="label" style="font-size:14px">${h}</span>`).join('')}
           </div>
           ${[
-            ['Ticketing', 'Ticketmaster · AXS · DICE · See Tickets', ['No', 'No', '—'], false],
-            ['Promoters', 'Live Nation · AEG · local promoters', ['Fixed, low, unmeasured', 'No', 'No'], false],
+            ['Ticketing', 'Ticketmaster · AXS · DICE · See Tickets', ['No', 'No', 'No'], false],
+            ['Promoters', 'Live Nation · AEG · local promoters', ['No', 'No', 'Partial'], false],
             ['DAVID', 'The marketing is the product', ['Yes', 'Yes', 'Yes'], true],
           ].map(([who, sub, cells, hero]) => `
             <div style="display:grid;grid-template-columns:1.2fr 1fr 1fr 1fr;gap:40px;align-items:baseline;padding:24px 0;border-top:1px solid #ffffff1f">
@@ -609,10 +610,10 @@ export const SLIDES = [
 
         <div class="rule reveal" style="--d:.46s;margin:34px 0 26px"></div>
         <p class="body reveal" style="--d:.52s;font-size:22px;max-width:1680px">
-          Every one of them gets paid on a half-empty room.
-          <strong style="color:var(--blue)">We only get paid on a full one</strong> — our whole revenue is
-          a share of tickets actually sold, so the incentive that is missing everywhere else is the only
-          one we have.
+          Ticketing earns on tickets and does nothing to sell them. Promoters take the risk and get paid
+          either way, and leave the artist to market their own show.
+          <strong style="color:var(--blue)">We are the only one doing both jobs</strong> — and at 7% of
+          gross plus the booking fee, every ticket that goes unsold is our revenue too.
         </p>
       </div>`,
   },
@@ -786,10 +787,10 @@ export const SLIDES = [
         </p>
 
         <ol class="steps reveal" style="--d:.24s;grid-template-columns:repeat(4,1fr)">
-          <li><span>CEO</span>
+          <li><span>Co-CEO</span>
             <div style="font-family:var(--sans);font-weight:800;font-size:28px;letter-spacing:-0.04em;margin-bottom:12px">PJ Jarrett</div>
             <p class="body" style="font-size:18px;max-width:none">Founder of Sweat Strategies, Sweat Entertainment and Reel:lab. Technical lead — designed and built the David platform end to end.</p></li>
-          <li><span>Co-founder</span>
+          <li><span>Co-CEO</span>
             <div style="font-family:var(--sans);font-weight:800;font-size:28px;letter-spacing:-0.04em;margin-bottom:12px">Tom Rose</div>
             <p class="body" style="font-size:18px;max-width:none">CEO of Grape (formerly Propeller) — artist services across the UK, Germany and Norway: radio &amp; PR, management, label services.</p></li>
           <li><span>Co-founder · CMO</span>
@@ -799,15 +800,31 @@ export const SLIDES = [
             <div style="font-family:var(--sans);font-weight:800;font-size:28px;letter-spacing:-0.04em;margin-bottom:12px">Josh Ergatoudis</div>
             <p class="body" style="font-size:18px;max-width:none">Career booking agent — founded his own agency before joining as the first of the five TPMs.</p></li>
         </ol>
+
+        <div class="rule reveal" style="--d:.44s;margin:46px 0 28px"></div>
+        <p class="body reveal" style="--d:.5s;font-size:22px;max-width:1680px">
+          <strong style="color:var(--blue)">PJ and Tom each run a company turning over seven figures a
+          year today.</strong> Between them they have spent their careers brokering the deals that put
+          artists into these rooms — which is the part of this business that cannot be built, only known.
+        </p>
       </div>`,
   },
 
   /* 15 — the ask. Was three qualitative cards and a number. A seed ask
      without a use of funds and a date the money stops being needed is an
      incomplete ask, so the cards now carry the plan's own committed
-     spend and the runway sits under them. The three named lines come
-     straight out of the model's assumptions tab; the fourth is the
-     arithmetic balance of the raise, which is what it actually is.
+     spend and the runway sits under them.
+
+     THE SPLIT IS PJ'S, NOT THE MODEL'S. An earlier cut put £594k of the
+     raise into an eighteen-month build sprint, because that is the line
+     the plan carries. It is not what the money is for: the platform is
+     live and selling, and the raise exists to carry the tours, the
+     agents and the marketing until revenue does. The lines are still
+     sized off the plan — the booking team off the headcount tab (five
+     agents and a head of department, loaded), market entry off the
+     £10,500-a-month B2B line, licences off the one-off setup block — but
+     product is now retained development rather than a sprint, and the
+     largest single line is the team.
 
      Figures are white rather than the accent because the accent and the
      field--dark navy are close enough in value that blue on navy nearly
@@ -826,22 +843,21 @@ export const SLIDES = [
           £1m to go loud.
         </h2>
         <p class="body reveal" style="--d:.14s;font-size:22px;max-width:1560px;margin-bottom:44px">
-          Eighteen months of build, five more tour partnerships managers, and the engine pointed at the market.
+          It bankrolls the tours, the agent hires and the marketing. The platform is already built and
+          already selling — this is runway, not a build budget.
         </p>
 
-        <ol class="steps reveal" style="--d:.24s;grid-template-columns:repeat(4,1fr);max-width:1728px">
-          <li><span>Product</span>
-            <div style="font-family:var(--sans);font-weight:800;font-size:46px;letter-spacing:-0.04em;color:#fff;margin-bottom:12px">£594k</div>
-            <p class="body" style="font-size:18px;max-width:none">An eighteen-month build sprint. Advancing, settlement and tax through the machine rather than through people.</p></li>
-          <li><span>Go to market</span>
-            <div style="font-family:var(--sans);font-weight:800;font-size:46px;letter-spacing:-0.04em;color:#fff;margin-bottom:12px">£189k</div>
-            <p class="body" style="font-size:18px;max-width:none">The agent conferences — Eurosonic, The Great Escape, ADE, Reeperbahn — and B2B marketing every month.</p></li>
-          <li><span>Licences & setup</span>
-            <div style="font-family:var(--sans);font-weight:800;font-size:46px;letter-spacing:-0.04em;color:#fff;margin-bottom:12px">£60k</div>
-            <p class="body" style="font-size:18px;max-width:none">FCA payments opinion, contract templates, and VAT and tax registration in every territory we sell in.</p></li>
-          <li><span>Team & working capital</span>
-            <div style="font-family:var(--sans);font-weight:800;font-size:46px;letter-spacing:-0.04em;color:#fff;margin-bottom:12px">£157k</div>
-            <p class="body" style="font-size:18px;max-width:none">The balance. Five more TPMs — they are the constraint on how many tours the platform can carry.</p></li>
+        <ol class="steps reveal" style="--d:.24s;grid-template-columns:repeat(5,1fr);max-width:1728px">
+          ${[
+            ['Booking team', '£420k', 'Five tour partnerships managers and a head of department. They are the constraint on how many tours we can carry.'],
+            ['Tour float', '£230k', 'Show marketing goes out months before the box office settles. This is the working capital that lets us front it.'],
+            ['Market entry', '£190k', 'Eurosonic, The Great Escape, ADE, Reeperbahn, IMS — and B2B marketing every month in between.'],
+            ['Product', '£100k', 'Retained development and hosting. The platform is built and selling; this keeps it moving.'],
+            ['Licences &amp; setup', '£60k', 'FCA payments opinion, contract templates, and VAT and tax registration in every territory we sell in.'],
+          ].map(([k, n, sub]) => `
+            <li><span>${k}</span>
+              <div style="font-family:var(--sans);font-weight:800;font-size:42px;letter-spacing:-0.04em;color:#fff;margin-bottom:12px">${n}</div>
+              <p class="body" style="font-size:17px;max-width:none">${sub}</p></li>`).join('')}
         </ol>
 
         <div class="rule reveal" style="--d:.44s;margin:44px 0 30px"></div>

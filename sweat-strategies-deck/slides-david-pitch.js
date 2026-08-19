@@ -172,7 +172,7 @@ export const SLIDES = [
         </div>
         <p class="body reveal" style="--d:.4s;font-size:24px;max-width:1560px;margin-top:56px">
           <strong style="color:var(--blue)">The artists' teams bring us in.</strong>
-          Both of these were Live Nation and AEG tours that had stopped selling.
+          These shows we took on were sitting at 4–27% sell-through before our marketing started.
         </p>
       </div>`,
   },
@@ -413,7 +413,8 @@ export const SLIDES = [
           Nobody else is paid to fill the room.
         </h2>
         <p class="body reveal" style="--d:.12s;font-size:22px;max-width:1500px;margin-bottom:54px;color:var(--head)">
-          Ticketing sells to the people already coming. Promoters get paid either way.
+          Ticketing sells to the people already coming. Promoters take the risk — but filling the room
+          falls to the artist.
         </p>
 
         <div class="reveal" style="--d:.22s;max-width:1728px">
@@ -424,9 +425,9 @@ export const SLIDES = [
           </div>
           ${[
             ['Ticketing', 'Ticketmaster · AXS · DICE · See',
-              ['No', 'No', '—'], false],
+              ['No', 'No', 'No'], false],
             ['Promoters', 'Live Nation · AEG · local promoters',
-              ['Fixed, low, unmeasured', 'No', 'No'], false],
+              ['No', 'No', 'Partial'], false],
             ['DAVID', 'The product is the marketing',
               ['Yes', 'Yes', 'Yes'], true],
           ].map(([who, sub, cells, hero]) => `
@@ -442,8 +443,9 @@ export const SLIDES = [
 
         <div class="rule reveal" style="--d:.44s;margin:34px 0 26px"></div>
         <p class="body reveal" style="--d:.5s;font-size:23px;max-width:1680px">
-          Every one of them still gets paid on a half-empty room.
-          <strong style="color:var(--blue)">We only get paid on a full one.</strong>
+          They get paid either way, and leave the artist to market the show.
+          <strong style="color:var(--blue)">We take 7% of gross and the booking fee</strong> — every ticket
+          that goes unsold is our revenue too.
         </p>
       </div>`,
   },
@@ -586,8 +588,8 @@ export const SLIDES = [
 
         <ol class="steps reveal" style="--d:.24s;grid-template-columns:repeat(4,1fr);max-width:1728px">
           ${[
-            ['CEO', 'PJ Jarrett', 'Built the platform end to end. Founder of Sweat Strategies and Reel:lab.'],
-            ['Co-founder', 'Tom Rose', 'CEO of Grape — artist services across the UK, Germany and Norway.'],
+            ['Co-CEO', 'PJ Jarrett', 'Built the platform end to end. Founder of Sweat Strategies and Reel:lab.'],
+            ['Co-CEO', 'Tom Rose', 'CEO of Grape — artist services across the UK, Germany and Norway.'],
             ['Co-founder · CMO', 'Tobi Steinborn', 'Ran the campaigns behind Rules and ADMT. Co-founder of Sweat Strategies.'],
             ['Tour partnerships', 'Josh Ergatoudis', 'Career booking agent who founded his own agency. First TPM, in seat.'],
           ].map(([role, name, line]) => `
@@ -595,6 +597,12 @@ export const SLIDES = [
               <div style="font-family:var(--sans);font-weight:800;font-size:29px;letter-spacing:-0.04em;color:#fff;margin-bottom:14px">${name}</div>
               <p class="body" style="font-size:19px;max-width:none">${line}</p></li>`).join('')}
         </ol>
+
+        <div class="rule reveal" style="--d:.44s;margin:46px 0 26px"></div>
+        <p class="body reveal" style="--d:.5s;font-size:23px;max-width:1680px">
+          <strong style="color:var(--blue)">PJ and Tom each run a company turning over seven figures
+          today.</strong> Brokering the deals that fill these rooms is what we have always done.
+        </p>
       </div>`,
   },
 
@@ -616,19 +624,20 @@ export const SLIDES = [
           £1m to go loud.
         </h2>
         <p class="body reveal" style="--d:.12s;font-size:24px;max-width:1500px;margin-bottom:52px">
-          Eighteen months of build, five more tour partnerships managers, and the engine pointed at the market.
+          It bankrolls the tours, the agent hires and the marketing. The platform is already built.
         </p>
 
-        <ol class="steps reveal" style="--d:.24s;grid-template-columns:repeat(4,1fr);max-width:1728px;margin-bottom:44px">
+        <ol class="steps reveal" style="--d:.24s;grid-template-columns:repeat(5,1fr);max-width:1728px;margin-bottom:44px">
           ${[
-            ['Product', '£594k', '18-month build sprint'],
-            ['Go to market', '£189k', 'the agent conferences, B2B'],
+            ['Booking team', '£420k', 'five TPMs and a head of dept.'],
+            ['Tour float', '£230k', 'we front the show marketing'],
+            ['Market entry', '£190k', 'the agent conferences, B2B'],
+            ['Product', '£100k', 'retained dev and hosting'],
             ['Licences & setup', '£60k', 'FCA opinion, contracts, VAT'],
-            ['Team & working capital', '£157k', 'the balance, to profitability'],
           ].map(([k, n, sub]) => `
             <li><span>${k}</span>
-              <div class="display" style="font-size:58px;line-height:1;color:var(--blue);margin-bottom:12px">${n}</div>
-              <p class="body" style="font-size:18px;max-width:none">${sub}</p></li>`).join('')}
+              <div class="display" style="font-size:50px;line-height:1;color:var(--blue);margin-bottom:12px">${n}</div>
+              <p class="body" style="font-size:17px;max-width:none">${sub}</p></li>`).join('')}
         </ol>
 
         <div class="rule reveal" style="--d:.44s;margin:0 0 26px"></div>
