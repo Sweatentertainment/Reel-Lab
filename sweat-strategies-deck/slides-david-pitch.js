@@ -219,7 +219,7 @@ export const SLIDES = [
             max: 25,
             rows: [
               { name: 'David', value: '13%', n: 13, hero: true },
-              { name: 'Everyone else', value: '25%+', n: 25 },
+              { name: 'Existing major ticketing companies', value: '25%+', n: 25 },
             ],
           })}
           ${cmp({
