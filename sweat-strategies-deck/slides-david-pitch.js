@@ -122,10 +122,10 @@ export const SLIDES = [
           They get paid whether the show sells. <strong style="color:var(--blue)">So it doesn't.</strong>
         </p>
         <div class="reveal" style="--d:.52s;display:flex;align-items:baseline;gap:26px;flex-wrap:wrap">
-          <span class="display" style="font-size:76px;line-height:1;color:var(--blue);white-space:nowrap">21.9 → 10.9</span>
-          <span class="body" style="font-size:21px;max-width:620px">
-            shows on the average UK tour, 1993 to 2024
-            <span style="opacity:.8">— Music Venue Trust</span>
+          <span class="display" style="font-size:76px;line-height:1;color:var(--blue);white-space:nowrap">38.6%</span>
+          <span class="body" style="font-size:21px;max-width:840px">
+            average sell-through at UK grassroots shows
+            <span style="opacity:.8">— Music Venue Trust, 2024</span>
           </span>
         </div>
       </div>`,
@@ -159,8 +159,8 @@ export const SLIDES = [
           </div>
         </div>
         <p class="body reveal" style="--d:.4s;font-size:24px;max-width:1560px;margin-top:56px">
-          <strong style="color:var(--blue)">Live Nation and AEG bring us their tours.</strong>
-          Both of these arrived undersold.
+          <strong style="color:var(--blue)">The artists' teams bring us in.</strong>
+          Both of these were Live Nation and AEG tours that had stopped selling.
         </p>
       </div>`,
   },
@@ -244,8 +244,8 @@ export const SLIDES = [
         <h2 class="display reveal" style="font-size:76px;line-height:1.06;margin-bottom:20px">
           The artist takes home ~45% more.
         </h2>
-        <p class="body reveal" style="--d:.12s;font-size:22px;margin-bottom:52px;color:var(--head)">
-          Share of gross potential — Hoxton Hall, 350 capacity.
+        <p class="body reveal" style="--d:.12s;font-size:22px;max-width:1400px;margin-bottom:52px;color:var(--head)">
+          Example settlement · Hoxton Hall, 350 cap. Share of gross potential.
         </p>
 
         <div class="reveal" style="--d:.22s;display:grid;grid-template-columns:1fr 1fr 0.6fr;gap:100px;max-width:1728px">
@@ -267,7 +267,7 @@ export const SLIDES = [
                 </div>`).join('')}
             </div>`).join('')}
           <div>
-            <div class="label" style="font-size:17px;margin-bottom:30px">Per sold-out show · Hoxton Hall</div>
+            <div class="label" style="font-size:17px;margin-bottom:30px">Per sold-out show</div>
             <div class="display" style="font-size:66px;line-height:1;color:var(--blue);margin-bottom:8px">£2,922</div>
             <div style="font-family:var(--mono);text-transform:uppercase;font-size:14px;letter-spacing:0.1em;color:var(--head);margin-bottom:28px">David</div>
             <div style="font-family:var(--sans);font-weight:600;font-size:21px;color:var(--head);font-variant-numeric:tabular-nums;line-height:1.7">£2,228 trad.<br>£2,020 modern</div>
@@ -316,15 +316,15 @@ export const SLIDES = [
                 <div style="margin-bottom:30px">
                   <div style="font-family:var(--mono);text-transform:uppercase;font-size:14px;letter-spacing:0.12em;color:var(--head);margin-bottom:9px">${k}</div>
                   <div style="font-family:var(--sans);font-weight:800;font-size:${i === 2 ? 62 : 38}px;letter-spacing:-0.04em;font-variant-numeric:tabular-nums;color:${i === 2 ? (c.hero ? 'var(--blue)' : '#7a7a7a') : (c.hero ? '#fff' : 'var(--head)')};margin-bottom:7px">${v}</div>
-                  <div style="font-family:var(--sans);font-weight:500;font-size:18px;color:var(--head)">${sub}</div>
+                  <div style="font-family:var(--sans);font-weight:500;font-size:18px;color:var(--head)">${sub || '&nbsp;'}</div>
                 </div>`).join('')}
             </div>`).join('')}
         </div>
 
         <div class="rule reveal" style="--d:.46s;margin:14px 0 26px"></div>
         <p class="body reveal" style="--d:.52s;font-size:23px;max-width:1620px">
-          <strong style="color:var(--head)">38.6%</strong> is what the average UK grassroots room does
-          — Music Venue Trust, 2024.
+          We commit two to four times more per ticket, come in under half of it,
+          and the gap goes back to the artist.
         </p>
       </div>`,
   },

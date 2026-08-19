@@ -55,12 +55,12 @@
    gross calculated at a £22 average ticket — so the reader can still see
    what the number is made of.
 
-   TWO FIGURES COME FROM OUTSIDE THE SOURCE FILE, both from the Music
-   Venue Trust 2024 Annual Report and both cited on the slide that carries
-   them: 38.6% capacity utilisation on ticketed events at UK grassroots
-   venues (the sales-engine slide), and the average UK tour contracting
-   from 21.9 shows in 1993 to 10.9 in 2024 (the problem slide). Everything
-   else came out of DAVID_Seed_Deck_v1.pptx.
+   ONE FIGURE COMES FROM OUTSIDE THE SOURCE FILE, from the Music Venue
+   Trust 2024 Annual Report and cited on the slide that carries it: 38.6%
+   capacity utilisation on ticketed events at UK grassroots venues. It
+   sits on the problem slide, because it is the evidence that shows do
+   not sell — on the sales-engine slide it read as a stray benchmark with
+   no clear referent. Everything else came out of DAVID_Seed_Deck_v1.pptx.
    ------------------------------------------------------------------ */
 
 import { img, blobs } from './parts.js';
@@ -207,14 +207,15 @@ export const SLIDES = [
             The people who own live music make money whether or not the show sells.
             <strong style="color:var(--blue)">So it doesn't.</strong>
           </p>
-          ${/* the contraction, cited — this is the one figure on the slide from
-                 outside the source file, and it is the evidence for "cut down
-                 and cancelled" three columns to the left */ ''}
+          ${/* the one figure on this slide from outside the source file, and
+                 the evidence for the sentence beside it: the average room is
+                 more than half empty. It belongs here rather than on the sales
+                 engine, where it read as a stray benchmark */ ''}
           <div style="display:flex;align-items:baseline;gap:24px">
-            <span class="display" style="font-size:82px;line-height:1;color:var(--blue);white-space:nowrap">21.9 → 10.9</span>
+            <span class="display" style="font-size:82px;line-height:1;color:var(--blue);white-space:nowrap">38.6%</span>
             <span class="body" style="font-size:19px;max-width:420px">
-              shows on the average UK tour, 1993 to 2024
-              <span style="opacity:.8">— Music Venue Trust</span>
+              average sell-through at UK grassroots shows
+              <span style="opacity:.8">— Music Venue Trust, 2024</span>
             </span>
           </div>
         </div>
@@ -251,9 +252,9 @@ export const SLIDES = [
 
         <div class="rule reveal" style="--d:.42s;margin:0 0 30px"></div>
         <p class="body reveal" style="--d:.48s;font-size:22px;max-width:1620px;margin-bottom:16px">
-          <strong style="color:var(--blue)">Live Nation and AEG already bring us their tours.</strong>
-          These two arrived undersold — tours sit at 4–27% when our campaigns switch on — and these are
-          the numbers after.
+          <strong style="color:var(--blue)">The artists' teams bring us in.</strong>
+          Both of these were Live Nation and AEG tours that had stopped selling — tours sit at 4–27%
+          when our campaigns switch on, and these are the numbers after.
         </p>
         <p class="body reveal" style="--d:.54s;font-size:22px;max-width:1620px">
           One campaign across every market, one learning loop — a winning creative in Glasgow is live in
@@ -354,12 +355,12 @@ export const SLIDES = [
     grain: 'soft',
     html: `
       <div class="pad l-mid">
-        <div class="label reveal" style="margin-bottom:26px">Same show, three deals</div>
+        <div class="label reveal" style="margin-bottom:26px">Example settlement · Hoxton Hall, 350 cap</div>
         <h2 class="display reveal" style="--d:.08s;font-size:66px;line-height:1.06;max-width:1560px;margin-bottom:20px">
           The artist takes home ~45% more.
         </h2>
         <p class="body reveal" style="--d:.14s;font-size:20px;max-width:1560px;margin-bottom:42px;color:var(--head)">
-          Artist take-home as a share of gross potential, worked through on a real show — Hoxton Hall, 350 capacity.
+          Artist take-home as a share of gross potential, on the same show settled three ways.
         </p>
 
         <div class="reveal" style="--d:.24s;display:grid;grid-template-columns:1fr 1fr 0.62fr;gap:90px;max-width:1728px">
@@ -376,7 +377,7 @@ export const SLIDES = [
             ${bar({ label: 'Modern competitor', value: '17.3%', pct: 17.26 })}
           </div>
           <div>
-            <div class="label" style="font-size:17px;margin-bottom:26px">Per sold-out show · Hoxton Hall</div>
+            <div class="label" style="font-size:17px;margin-bottom:26px">Per sold-out show</div>
             <dl class="stats" style="display:block">
               <div style="margin-bottom:26px"><dt>DAVID</dt><dd style="font-size:52px">£2,922</dd></div>
             </dl>
@@ -444,16 +445,11 @@ export const SLIDES = [
                   <div style="margin-bottom:26px">
                     <div style="font-family:var(--mono);text-transform:uppercase;font-size:13px;letter-spacing:0.12em;color:var(--head);margin-bottom:8px">${k}</div>
                     <div style="font-family:var(--sans);font-weight:800;font-size:${i === 2 ? 46 : 32}px;letter-spacing:-0.04em;font-variant-numeric:tabular-nums;color:${i === 2 ? (c.hero ? 'var(--blue)' : '#7a7a7a') : (c.hero ? '#fff' : 'var(--head)')};margin-bottom:6px">${v}</div>
-                    <div style="font-family:var(--sans);font-weight:500;font-size:17px;color:var(--head)">${sub}</div>
+                    <div style="font-family:var(--sans);font-weight:500;font-size:17px;color:var(--head)">${sub || '&nbsp;'}</div>
                   </div>`).join('')}
               </div>`).join('')}
           </div>
           <div class="rule" style="margin:20px 0 24px;max-width:900px"></div>
-          <div style="display:flex;align-items:baseline;gap:20px;margin-bottom:16px">
-            <span style="font-family:var(--sans);font-weight:800;font-size:38px;letter-spacing:-0.04em;color:var(--head);font-variant-numeric:tabular-nums">38.6%</span>
-            <span class="body" style="font-size:19px;max-width:none">is what the average UK grassroots room actually does
-            <span style="opacity:.8">— Music Venue Trust, 2024</span></span>
-          </div>
           <p class="body" style="font-size:20px;max-width:900px">
             We commit two to four times more per ticket, come in under half of it, and the gap
             goes back to the artist.
