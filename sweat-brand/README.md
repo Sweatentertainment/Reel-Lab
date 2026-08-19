@@ -29,7 +29,8 @@ scripts/    build the tokens, treat a new photo, export the ads
 | `Sweat-M07-Proposal.pdf` | 22 | **Bespoke** — M07, for Jay Lee at Key Factory |
 | `Sweat-HMWL-Proposal.pdf` | 23 | **Bespoke** — House Music With Love, for Alex Esser (label deck variant) |
 | `Sweat-Investor-Deck.pdf` | 22 | **Investor** — Sweat Strategies fundraise. Financials are marked [TBC] |
-| `DAVID-Seed-Deck.pdf` | 14 | **Investor** — DAVID seed round. A different company: chrome and legal line are DAVID’s |
+| `DAVID-Seed-Deck.pdf` | 14 | **Investor** — DAVID seed round, the document cut. Emailed and read alone |
+| `DAVID-Pitch-Deck.pdf` | 12 | **Investor** — DAVID seed round, the pitch cut. 481 words, diagram-led, for presenting |
 
 Authored in [`../sweat-strategies-deck/`](../sweat-strategies-deck/). Edit copy
 there and re-export; these are the output, not the source.
