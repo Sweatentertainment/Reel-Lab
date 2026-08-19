@@ -228,10 +228,13 @@ export const SLIDES = [
         </div>
 
         <div class="rule reveal" style="--d:.42s;margin:0 0 30px"></div>
-        <p class="body reveal" style="--d:.48s;font-size:22px;max-width:1620px">
-          Tours sit at <strong style="color:var(--blue)">4–27% sold</strong> when our campaigns switch on. One
-          campaign across every market, one learning loop — a winning creative in Glasgow is live in Paris
-          the next morning.
+        <p class="body reveal" style="--d:.48s;font-size:22px;max-width:1620px;margin-bottom:16px">
+          <strong style="color:var(--blue)">Both are Live Nation and AEG tours.</strong> They came to us
+          undersold — tours sit at 4–27% when our campaigns switch on — and these are the numbers after.
+        </p>
+        <p class="body reveal" style="--d:.54s;font-size:22px;max-width:1620px">
+          One campaign across every market, one learning loop — a winning creative in Glasgow is live in
+          Paris the next morning.
         </p>
       </div>`,
   },
@@ -362,40 +365,70 @@ export const SLIDES = [
       </div>`,
   },
 
-  /* 08 — the sales engine. The cost-per-ticket comparison was buried in a
-     footnote in the original and it is one of the strongest numbers in the
-     deck, so it is drawn. Incumbent spend is shown as its stated range
-     rather than a midpoint we would be inventing. */
+  /* 08 — the sales engine, reframed. The first cut drew three cost bars,
+     and read backwards: the incumbent's £1.50 looked like better value
+     because cost was the only thing measured. Cost per ticket on its own
+     is the wrong axis — cheap spend on a half-empty room is not cheap. So
+     the slide now pairs what each side commits with what the room does,
+     which is the actual argument and is entirely PJ's own figures.
+
+     The 4-27% is stated as where tours sit WHEN WE ARE CALLED IN, not as
+     what incumbent marketing finally achieves. Those tours did not run to
+     completion on the old spend, so claiming it as their end result would
+     be a number we do not have. */
   {
     section: 'The sales engine',
     grain: 'soft',
     html: `
-      <div class="pad" style="display:grid;grid-template-columns:1.02fr 0.98fr;align-items:center;gap:90px;height:100%">
+      <div class="pad" style="display:grid;grid-template-columns:0.92fr 1.08fr;align-items:center;gap:80px;height:100%">
         <div>
           <div class="label reveal" style="margin-bottom:26px">The sales engine</div>
-          <h2 class="display reveal" style="--d:.08s;font-size:56px;line-height:1.1;margin-bottom:34px">
-            Up to 30% of ticket price on marketing — delivered at under £3 a ticket.
+          <h2 class="display reveal" style="--d:.08s;font-size:56px;line-height:1.1;margin-bottom:30px">
+            Their spend is cheaper.<br>Their rooms are emptier.
           </h2>
-          <ol class="steps reveal" style="--d:.2s;grid-template-columns:1fr;max-width:700px;row-gap:26px">
+          <p class="body reveal" style="--d:.14s;font-size:20px;max-width:640px;margin-bottom:30px">
+            Cost per ticket on its own is the wrong measure. £1.50 into a half-empty room is
+            not value — it is a budget too small to work, spent on targeting built years ago.
+          </p>
+          <ol class="steps reveal" style="--d:.2s;grid-template-columns:1fr;max-width:640px;row-gap:22px">
             <li><span>AI routing</span>
-              <p class="body" style="font-size:19px;max-width:none">Tours are planned on the artist's own audience data — dates land where the fans already are.</p></li>
+              <p class="body" style="font-size:18px;max-width:none">Dates land where the artist's own audience already is.</p></li>
             <li><span>AI campaign engine</span>
-              <p class="body" style="font-size:19px;max-width:none">Creative, targeting and budget managed per city, driven to cost-per-ticket. Every market feeds one learning loop.</p></li>
+              <p class="body" style="font-size:18px;max-width:none">Creative, targeting and budget per city, driven to cost-per-ticket. Every market feeds one loop.</p></li>
             <li><span>It compounds</span>
-              <p class="body" style="font-size:19px;max-width:none">The artist owns every buyer. This tour's audience is next tour's cheapest tickets sold.</p></li>
+              <p class="body" style="font-size:18px;max-width:none">The artist owns every buyer. This tour's audience is next tour's cheapest tickets sold.</p></li>
           </ol>
         </div>
 
         <div class="reveal" style="--d:.3s">
-          <div class="label" style="font-size:17px;margin-bottom:30px">Marketing per ticket, on a £20 ticket</div>
-          ${bar({ label: 'Committed', value: '£6.00', pct: 100, hero: false, sub: 'up to 30% of ticket price' })}
-          ${/* spelled out rather than "<£3.00": the less-than sign in Manrope
-                 reads as a guillemet at this weight and size */ ''}
-          ${bar({ label: 'Delivered', value: 'Under £3.00', pct: 50, hero: true, sub: 'across the last three tours' })}
-          ${bar({ label: 'Incumbents budget', value: '£1.50–2.50', pct: 41.7, hero: false, sub: 'and spend it blind' })}
-          <div class="rule" style="margin:34px 0 24px"></div>
-          <p class="body" style="font-size:20px;max-width:640px">
-            The gap between committed and delivered goes back to the artist.
+          <div class="label" style="font-size:17px;margin-bottom:34px">On a £20 ticket</div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:70px;max-width:900px">
+            ${[
+              { who: 'David', hero: true, rows: [
+                ['Committed', 'Up to £6.00', '30% of ticket price'],
+                ['Delivered', 'Under £3.00', 'across the last three tours'],
+                ['The room', '91–92%', 'sold'],
+              ] },
+              { who: 'Incumbents', hero: false, rows: [
+                ['Committed', '£1.50–2.50', 'and spent blind'],
+                ['Delivered', '—', 'no read published'],
+                ['The room', '4–27%', 'sold when we are called in'],
+              ] },
+            ].map((c) => `
+              <div>
+                <div class="label" style="font-size:16px;margin-bottom:26px;color:${c.hero ? 'var(--blue)' : 'var(--head)'}">${c.who}</div>
+                ${c.rows.map(([k, v, sub], i) => `
+                  <div style="margin-bottom:26px">
+                    <div style="font-family:var(--mono);text-transform:uppercase;font-size:13px;letter-spacing:0.12em;color:var(--head);margin-bottom:8px">${k}</div>
+                    <div style="font-family:var(--sans);font-weight:800;font-size:${i === 2 ? 46 : 32}px;letter-spacing:-0.04em;font-variant-numeric:tabular-nums;color:${i === 2 ? (c.hero ? 'var(--blue)' : '#7a7a7a') : (c.hero ? '#fff' : 'var(--head)')};margin-bottom:6px">${v}</div>
+                    <div style="font-family:var(--sans);font-weight:500;font-size:17px;color:var(--head)">${sub}</div>
+                  </div>`).join('')}
+              </div>`).join('')}
+          </div>
+          <div class="rule" style="margin:20px 0 24px;max-width:900px"></div>
+          <p class="body" style="font-size:20px;max-width:900px">
+            We commit two to four times more per ticket, come in under half of it, and the gap
+            goes back to the artist.
           </p>
         </div>
       </div>`,

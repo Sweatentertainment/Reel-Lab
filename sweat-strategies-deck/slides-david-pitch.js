@@ -152,7 +152,8 @@ export const SLIDES = [
           </div>
         </div>
         <p class="body reveal" style="--d:.4s;font-size:24px;max-width:1560px;margin-top:56px">
-          Both were flat when we switched on.
+          <strong style="color:var(--blue)">Live Nation and AEG tours</strong>, both undersold when they
+          came to us.
         </p>
       </div>`,
   },
@@ -269,39 +270,53 @@ export const SLIDES = [
       </div>`,
   },
 
-  /* 07 — the engine. Three bars, one line. */
+  /* 07 — the engine, reframed. Three cost bars read backwards: the
+     incumbent's £1.50 looked like better value because cost was the only
+     thing measured. Cheap spend on a half-empty room is not cheap, so the
+     slide pairs what each side commits with what the room does.
+
+     4-27% is where tours sit WHEN WE ARE CALLED IN, not what incumbent
+     marketing finally achieves — those tours never ran to completion on
+     the old spend, so the stronger claim is one we cannot make. */
   {
     section: 'The engine',
     grain: 'soft',
     html: `
       <div class="pad l-mid">
         <h2 class="display reveal" style="font-size:76px;line-height:1.06;margin-bottom:20px">
-          Under £3 a ticket.
+          Their spend is cheaper.<br>Their rooms are emptier.
         </h2>
-        <p class="body reveal" style="--d:.12s;font-size:22px;margin-bottom:56px;color:var(--head)">
-          Marketing spend per ticket, on a £20 ticket.
+        <p class="body reveal" style="--d:.12s;font-size:22px;margin-bottom:52px;color:var(--head)">
+          On a £20 ticket. Cost per ticket on its own is the wrong measure.
         </p>
 
-        <div class="reveal" style="--d:.22s;max-width:1500px">
+        <div class="reveal" style="--d:.22s;display:grid;grid-template-columns:1fr 1fr;gap:120px;max-width:1560px">
           ${[
-            ['Committed', '£6.00', 100, false, 'up to 30% of ticket price'],
-            ['Delivered', 'Under £3.00', 50, true, 'across the last three tours'],
-            ['Incumbents', '£1.50–2.50', 41.7, false, 'and spent blind'],
-          ].map(([name, val, pct, hero, sub]) => `
-            <div style="margin-bottom:34px">
-              <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:12px">
-                <span style="font-family:var(--sans);font-weight:${hero ? 800 : 600};font-size:26px;letter-spacing:-0.02em;color:${hero ? '#fff' : 'var(--head)'}">${name}</span>
-                <span style="font-family:var(--sans);font-weight:800;font-size:30px;letter-spacing:-0.03em;font-variant-numeric:tabular-nums;color:${hero ? 'var(--blue)' : 'var(--head)'}">${val}</span>
-              </div>
-              <div style="height:18px;background:#ffffff14;border-radius:0 9px 9px 0">
-                <div style="height:100%;width:${pct}%;background:${hero ? 'var(--blue)' : '#7a7a7a'};border-radius:0 9px 9px 0"></div>
-              </div>
-              <div style="font-family:var(--mono);text-transform:uppercase;font-size:14px;letter-spacing:0.1em;color:var(--head);opacity:.9;margin-top:10px">${sub}</div>
+            { who: 'David', hero: true, rows: [
+              ['Committed', 'Up to £6.00', '30% of ticket price'],
+              ['Delivered', 'Under £3.00', 'last three tours'],
+              ['The room', '91–92%', 'sold'],
+            ] },
+            { who: 'Incumbents', hero: false, rows: [
+              ['Committed', '£1.50–2.50', 'and spent blind'],
+              ['Delivered', '—', 'no read published'],
+              ['The room', '4–27%', 'sold when we are called in'],
+            ] },
+          ].map((c) => `
+            <div>
+              <div class="label" style="font-size:17px;margin-bottom:30px;color:${c.hero ? 'var(--blue)' : 'var(--head)'}">${c.who}</div>
+              ${c.rows.map(([k, v, sub], i) => `
+                <div style="margin-bottom:30px">
+                  <div style="font-family:var(--mono);text-transform:uppercase;font-size:14px;letter-spacing:0.12em;color:var(--head);margin-bottom:9px">${k}</div>
+                  <div style="font-family:var(--sans);font-weight:800;font-size:${i === 2 ? 62 : 38}px;letter-spacing:-0.04em;font-variant-numeric:tabular-nums;color:${i === 2 ? (c.hero ? 'var(--blue)' : '#7a7a7a') : (c.hero ? '#fff' : 'var(--head)')};margin-bottom:7px">${v}</div>
+                  <div style="font-family:var(--sans);font-weight:500;font-size:18px;color:var(--head)">${sub}</div>
+                </div>`).join('')}
             </div>`).join('')}
         </div>
 
-        <p class="body reveal" style="--d:.5s;font-size:23px;max-width:1620px;margin-top:14px">
-          One campaign across every market, one learning loop.
+        <div class="rule reveal" style="--d:.46s;margin:14px 0 26px"></div>
+        <p class="body reveal" style="--d:.52s;font-size:23px;max-width:1620px">
+          Two to four times more committed, delivered for under half of it.
         </p>
       </div>`,
   },
