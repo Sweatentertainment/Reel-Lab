@@ -117,10 +117,17 @@ export const SLIDES = [
           <li><span>The data</span>${stat({ n: 'Not yours.', cap: 'the promoter keeps it', size: 68 })}</li>
           <li><span>The marketing</span>${stat({ n: '2015', cap: 'fixed low, spent blind', size: 68 })}</li>
         </ol>
-        <div class="rule reveal" style="--d:.4s;margin:56px 0 30px"></div>
-        <p class="body reveal" style="--d:.46s;font-size:27px;max-width:1500px">
+        <div class="rule reveal" style="--d:.4s;margin:52px 0 28px"></div>
+        <p class="body reveal" style="--d:.46s;font-size:27px;max-width:1500px;margin-bottom:26px">
           They get paid whether the show sells. <strong style="color:var(--blue)">So it doesn't.</strong>
         </p>
+        <div class="reveal" style="--d:.52s;display:flex;align-items:baseline;gap:26px;flex-wrap:wrap">
+          <span class="display" style="font-size:76px;line-height:1;color:var(--blue);white-space:nowrap">21.9 → 10.9</span>
+          <span class="body" style="font-size:21px;max-width:620px">
+            shows on the average UK tour, 1993 to 2024
+            <span style="opacity:.8">— Music Venue Trust</span>
+          </span>
+        </div>
       </div>`,
   },
 

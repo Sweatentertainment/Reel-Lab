@@ -55,11 +55,12 @@
    gross calculated at a £22 average ticket — so the reader can still see
    what the number is made of.
 
-   THE ONE FIGURE FROM OUTSIDE THE SOURCE FILE is the 38.6% average
-   capacity utilisation on the sales-engine slide, which is the Music
-   Venue Trust 2024 Annual Report's figure for ticketed events at UK
-   grassroots venues, and is cited on the slide. Everything else in this
-   deck came out of DAVID_Seed_Deck_v1.pptx.
+   TWO FIGURES COME FROM OUTSIDE THE SOURCE FILE, both from the Music
+   Venue Trust 2024 Annual Report and both cited on the slide that carries
+   them: 38.6% capacity utilisation on ticketed events at UK grassroots
+   venues (the sales-engine slide), and the average UK tour contracting
+   from 21.9 shows in 1993 to 10.9 in 2024 (the problem slide). Everything
+   else came out of DAVID_Seed_Deck_v1.pptx.
    ------------------------------------------------------------------ */
 
 import { img, blobs } from './parts.js';
@@ -200,11 +201,23 @@ export const SLIDES = [
             <p class="body" style="font-size:18px;max-width:none">Spend fixed low and blind — so tours get papered, cut down and cancelled.</p></li>
         </ol>
 
-        <div class="rule reveal" style="--d:.44s;margin:52px 0 30px"></div>
-        <p class="body reveal" style="--d:.5s;font-size:25px;max-width:1500px">
-          The people who own live music make money whether or not the show sells.
-          <strong style="color:var(--blue)">So it doesn't.</strong>
-        </p>
+        <div class="rule reveal" style="--d:.44s;margin:48px 0 28px"></div>
+        <div class="reveal" style="--d:.5s;display:grid;grid-template-columns:0.95fr 1.05fr;gap:90px;align-items:center;max-width:1728px">
+          <p class="body" style="font-size:25px;max-width:none">
+            The people who own live music make money whether or not the show sells.
+            <strong style="color:var(--blue)">So it doesn't.</strong>
+          </p>
+          ${/* the contraction, cited — this is the one figure on the slide from
+                 outside the source file, and it is the evidence for "cut down
+                 and cancelled" three columns to the left */ ''}
+          <div style="display:flex;align-items:baseline;gap:24px">
+            <span class="display" style="font-size:82px;line-height:1;color:var(--blue);white-space:nowrap">21.9 → 10.9</span>
+            <span class="body" style="font-size:19px;max-width:420px">
+              shows on the average UK tour, 1993 to 2024
+              <span style="opacity:.8">— Music Venue Trust</span>
+            </span>
+          </div>
+        </div>
       </div>`,
   },
 
