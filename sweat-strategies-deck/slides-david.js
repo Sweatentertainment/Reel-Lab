@@ -53,7 +53,7 @@
    that never had it. The traction slide keeps its verification date.
    ------------------------------------------------------------------ */
 
-import { img, spine, blobs } from './parts.js';
+import { img, blobs } from './parts.js';
 
 /* ------------------------------------------------------- local archetypes */
 
@@ -186,8 +186,6 @@ export const SLIDES = [
     section: 'The proof',
     grain: 'soft',
     html: `
-      ${/* the gutter between the two tours, not the middle of the left one */ ''}
-      ${spine('', -55)}
       <div class="pad l-mid">
         <div class="label reveal" style="margin-bottom:26px">The proof</div>
         <h2 class="display reveal" style="--d:.08s;font-size:72px;line-height:1.04;max-width:1500px;margin-bottom:52px">
@@ -227,7 +225,6 @@ export const SLIDES = [
     section: 'The insight',
     grain: 'soft',
     html: `
-      ${spine('', -55)}
       <div class="pad l-mid">
         <div class="label reveal" style="margin-bottom:26px">The insight</div>
         <h2 class="display reveal" style="--d:.08s;font-size:66px;line-height:1.08;max-width:1560px;margin-bottom:52px">
@@ -361,7 +358,6 @@ export const SLIDES = [
     section: 'The sales engine',
     grain: 'soft',
     html: `
-      ${spine('', 45)}
       <div class="pad" style="display:grid;grid-template-columns:1.02fr 0.98fr;align-items:center;gap:90px;height:100%">
         <div>
           <div class="label reveal" style="margin-bottom:26px">The sales engine</div>
@@ -469,7 +465,6 @@ export const SLIDES = [
     section: 'Go to market',
     grain: 'soft',
     html: `
-      ${spine('', 45)}
       <div class="pad" style="display:grid;grid-template-columns:1.08fr 0.92fr;align-items:center;gap:90px;height:100%">
         <div>
           <div class="label reveal" style="margin-bottom:26px">Go to market</div>
