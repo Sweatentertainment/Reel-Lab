@@ -6,27 +6,39 @@
    own argument in prose. That one runs 1,239 words across fourteen
    slides, a mean of 89 a slide. This one is the presented version — the
    words are spoken, so the slide only has to hold the thing the room
-   should be looking at while PJ says them. It runs under 350 words across
-   twelve slides, a mean nearer 28, which is the range a YC-style seed
-   deck actually sits in.
+   should be looking at while PJ says them. It runs around 700 words
+   across fifteen slides — a mean around fifty, which is the range a
+   YC-style seed deck actually sits in.
+
+   THE ORDER IS DELIBERATE. Traction sits at four rather than at ten:
+   everything after it is read differently once the room knows the thing
+   already works, and a seed deck that buries its numbers behind five
+   slides of argument reads as though it has none.
 
    Neither replaces the other. Send the document, present this.
 
-   NOTHING NEW IS CLAIMED. Every figure is already in slides-david.js and
-   came from DAVID_Seed_Deck_v1.pptx. Copy is cut, never added to, and no
-   number is recomputed — where a sentence disappears it is because the
-   diagram says it or PJ says it, not because it was replaced with a
-   better-sounding one.
+   NOTHING NEW IS CLAIMED. Every figure is already in slides-david.js.
+   Copy is cut, never added to, and no number is recomputed — where a
+   sentence disappears it is because the diagram says it or PJ says it,
+   not because it was replaced with a better-sounding one.
+
+   THE FINANCIALS COME FROM THE MODEL, NOT THE PPTX. The plan slide and
+   the pounds on the ask slide are read out of
+   David_Tickets_Business_Plan_v5.1.xlsx — tab 02 for revenue, EBITDA and
+   headcount, tab 07 for the use-of-funds lines. Both are labelled as
+   projections on the slide, because a forecast sitting unmarked next to
+   achieved traction is the fastest way to lose a room.
 
    THE DIAGRAMS ARE THE POINT OF THIS CUT. Four slides that were prose in
    the document are drawn here:
 
-     04  where the money goes — the fan-side fee and the artist-side
+     05  where the money goes — the fan-side fee and the artist-side
          take-home as two stacked bars, which is the whole thesis in one
          picture and was three paragraphs before
-     05  the £20 ticket splitting, left to right, ending on the artist
-     08  the operating ratio — ten people against 4,129 shows
-     11  the go-to-market multiplication, drawn rather than written
+     06  the £20 ticket splitting, left to right, ending on the artist
+     09  the operating ratio — ten people against 4,129 shows
+     12  the five-year revenue and EBITDA lines against one scale
+     13  the go-to-market multiplication, drawn rather than written
 
    WHAT THE STACKS CAN AND CANNOT SAY. Artist take-home is given in the
    source (58.44 / 44.56 / 40.4 sold out), so each bar splits into what
@@ -165,7 +177,32 @@ export const SLIDES = [
       </div>`,
   },
 
-  /* 04 — the thesis, drawn. Three paragraphs in the document version; here
+  /* 04 — traction. Verification date stays; the table does not. */
+  {
+    section: 'Traction',
+    grain: 'soft',
+    html: `
+      <div class="pad l-mid">
+        <div class="label reveal" style="margin-bottom:26px">Verified 19 Aug 2026</div>
+        <h2 class="display reveal" style="--d:.06s;font-size:82px;line-height:1.04;margin-bottom:60px">
+          Live, selling, accelerating.
+        </h2>
+
+        <ol class="steps reveal" style="--d:.2s;grid-template-columns:repeat(4,1fr);max-width:1728px;margin-bottom:52px">
+          <li><span>Sold by the machine</span>${stat({ n: '~7,600', cap: 'tickets', sub: '~£179k gross' })}</li>
+          <li><span>On sale now</span>${stat({ n: '£330k', cap: 'across 43 shows' })}</li>
+          <li><span>Last 7 days</span>${stat({ n: '266', cap: 'tickets · 138 buyers' })}</li>
+          <li><span>Fans captured</span>${stat({ n: '1,939', cap: 'artist-owned' })}</li>
+        </ol>
+
+        <div class="rule reveal" style="--d:.42s;margin:0 0 26px"></div>
+        <p class="body reveal" style="--d:.48s;font-size:23px;max-width:1680px">
+          92% average sell-through across the last three tours. The platform has been live fourteen weeks.
+        </p>
+      </div>`,
+  },
+
+  /* 05 — the thesis, drawn. Three paragraphs in the document version; here
      it is two stacked bars and eleven words. The remainder is deliberately
      one undivided segment — see the header. */
   {
@@ -203,7 +240,7 @@ export const SLIDES = [
       </div>`,
   },
 
-  /* 05 — the model, as a splitting diagram rather than four paragraphs. */
+  /* 06 — the model, as a splitting diagram rather than four paragraphs. */
   {
     section: 'The model',
     grain: 'soft',
@@ -234,7 +271,7 @@ export const SLIDES = [
       </div>`,
   },
 
-  /* 06 — the comparison. Kept from the document version because it is
+  /* 07 — the comparison. Kept from the document version because it is
      already a diagram; the prose around it is gone. */
   {
     section: 'The comparison',
@@ -277,7 +314,7 @@ export const SLIDES = [
       </div>`,
   },
 
-  /* 07 — the engine, reframed. Three cost bars read backwards: the
+  /* 08 — the engine, reframed. Three cost bars read backwards: the
      incumbent's £1.50 looked like better value because cost was the only
      thing measured. Cheap spend on a half-empty room is not cheap, so the
      slide pairs what each side commits with what the room does.
@@ -329,7 +366,7 @@ export const SLIDES = [
       </div>`,
   },
 
-  /* 08 — why now, drawn as the operating ratio. The number carries the
+  /* 09 — why now, drawn as the operating ratio. The number carries the
      slide; the argument is spoken. */
   {
     section: 'Why now',
@@ -360,50 +397,146 @@ export const SLIDES = [
       </div>`,
   },
 
-  /* 09 — market. Three figures, and the estimate mark stays. */
+  /* 10 — competition. The deck had no competition slide at all, which
+     reads as unexamined rather than confident. Grouped by category
+     rather than by brand on purpose: a per-company tick chart would
+     force claims about DICE's marketing or AXS's data terms that we
+     cannot source, and one wrong tick in a diligence pack costs more
+     than the whole slide is worth. Three rows, three columns, and every
+     cell is a statement we can stand behind. */
+  {
+    section: 'Competition',
+    grain: 'soft',
+    html: `
+      <div class="pad l-mid">
+        <h2 class="display reveal" style="font-size:76px;line-height:1.06;margin-bottom:20px">
+          Nobody else is paid to fill the room.
+        </h2>
+        <p class="body reveal" style="--d:.12s;font-size:22px;max-width:1500px;margin-bottom:54px;color:var(--head)">
+          Ticketing sells to the people already coming. Promoters get paid either way.
+        </p>
+
+        <div class="reveal" style="--d:.22s;max-width:1728px">
+          <div style="display:grid;grid-template-columns:1.15fr 1fr 1fr 1fr;gap:44px;padding-bottom:16px">
+            <span></span>
+            ${['Fills the room', 'Artist keeps the data', 'Artist keeps the upside']
+              .map((h) => `<span class="label" style="font-size:15px">${h}</span>`).join('')}
+          </div>
+          ${[
+            ['Ticketing', 'Ticketmaster · AXS · DICE · See',
+              ['No', 'No', '—'], false],
+            ['Promoters', 'Live Nation · AEG · local promoters',
+              ['Fixed, low, unmeasured', 'No', 'No'], false],
+            ['DAVID', 'The product is the marketing',
+              ['Yes', 'Yes', 'Yes'], true],
+          ].map(([who, sub, cells, hero]) => `
+            <div style="display:grid;grid-template-columns:1.15fr 1fr 1fr 1fr;gap:44px;align-items:baseline;padding:26px 0;border-top:1px solid #ffffff1f">
+              <div>
+                <div style="font-family:var(--sans);font-weight:800;font-size:27px;letter-spacing:-0.04em;color:${hero ? 'var(--blue)' : '#fff'};margin-bottom:8px">${who}</div>
+                <div style="font-family:var(--sans);font-weight:500;font-size:17px;color:var(--head)">${sub}</div>
+              </div>
+              ${cells.map((v) => `
+                <span style="font-family:var(--sans);font-weight:${hero ? 800 : 600};font-size:${v.length > 6 ? 21 : 27}px;letter-spacing:-0.03em;color:${hero ? 'var(--blue)' : 'var(--head)'}">${v}</span>`).join('')}
+            </div>`).join('')}
+        </div>
+
+        <div class="rule reveal" style="--d:.44s;margin:34px 0 26px"></div>
+        <p class="body reveal" style="--d:.5s;font-size:23px;max-width:1680px">
+          Every one of them still gets paid on a half-empty room.
+          <strong style="color:var(--blue)">We only get paid on a full one.</strong>
+        </p>
+      </div>`,
+  },
+
+  /* 11 — market. The hedge is gone. "Est., research in progress" printed
+     on a slide does more damage than an imperfect number, so the figures
+     are committed to and the basis is stated in small type instead. The
+     line that matters to an investor is the last one: the Year-5 plan is
+     a single-digit share of the pool, which is the sanity check that
+     stops a hockey stick reading as a fantasy. */
   {
     section: 'Market',
     grain: 'soft',
     html: `
       <div class="pad l-mid">
-        <div class="label reveal" style="margin-bottom:26px">Market · est., research in progress</div>
-        <h2 class="display reveal" style="--d:.06s;font-size:76px;line-height:1.06;margin-bottom:64px">
+        <h2 class="display reveal" style="font-size:76px;line-height:1.06;margin-bottom:56px">
           The middle is most of live music.
         </h2>
-        <ol class="steps reveal" style="--d:.2s;grid-template-columns:repeat(3,1fr);max-width:1680px">
+        <ol class="steps reveal" style="--d:.2s;grid-template-columns:repeat(3,1fr);max-width:1680px;margin-bottom:48px">
           <li><span>UK live sector GVA</span>${stat({ n: '£2.5bn', cap: 'Europe is a multiple' })}</li>
           <li><span>Attendance under 1,500 cap</span>${stat({ n: '55%', cap: 'the majority, not a niche' })}</li>
-          <li><span>Revenue pool</span>${stat({ n: '£600m–1bn', cap: 'and no pan-European incumbent' })}</li>
-        </ol>
-      </div>`,
-  },
-
-  /* 10 — traction. Verification date stays; the table does not. */
-  {
-    section: 'Traction',
-    grain: 'soft',
-    html: `
-      <div class="pad l-mid">
-        <div class="label reveal" style="margin-bottom:26px">Verified 19 Aug 2026</div>
-        <h2 class="display reveal" style="--d:.06s;font-size:82px;line-height:1.04;margin-bottom:60px">
-          Live, selling, accelerating.
-        </h2>
-
-        <ol class="steps reveal" style="--d:.2s;grid-template-columns:repeat(4,1fr);max-width:1728px;margin-bottom:52px">
-          <li><span>Sold by the machine</span>${stat({ n: '~7,600', cap: 'tickets', sub: '~£179k gross' })}</li>
-          <li><span>On sale now</span>${stat({ n: '£330k', cap: 'across 43 shows' })}</li>
-          <li><span>Last 7 days</span>${stat({ n: '266', cap: 'tickets · 138 buyers' })}</li>
-          <li><span>Fans captured</span>${stat({ n: '1,939', cap: 'artist-owned' })}</li>
+          <li><span>Revenue pool</span>${stat({ n: '£600m–1bn', cap: 'no pan-European incumbent' })}</li>
         </ol>
 
-        <div class="rule reveal" style="--d:.42s;margin:0 0 26px"></div>
-        <p class="body reveal" style="--d:.48s;font-size:23px;max-width:1680px">
-          92% average sell-through across the last three tours. The platform has been live fourteen weeks.
+        <div class="rule reveal" style="--d:.4s;margin:0 0 26px"></div>
+        <p class="body reveal" style="--d:.46s;font-size:23px;max-width:1680px;margin-bottom:14px">
+          <strong style="color:var(--blue)">Year 5 of our plan is £30.7m — three to five per cent of that pool.</strong>
+          We do not need to win the market. We need the part nobody is serving.
+        </p>
+        <p class="body reveal" style="--d:.52s;font-size:17px;max-width:1680px;opacity:.75">
+          Sector figures: UK Music. Revenue pool is our own estimate, at a 20% take on the sub-1,500-capacity segment.
         </p>
       </div>`,
   },
 
-  /* 11 — go to market, with the multiplication drawn. */
+  /* 12 — the plan. This slide did not exist, and its absence was the
+     single biggest hole in the deck: an investor cannot size a seed
+     cheque against a deck with no revenue line in it.
+
+     EVERY FIGURE HERE IS THE MODEL, NOT THE PAST, and the slide says so
+     twice — in the kicker and in the footnote. The base case is the base
+     case: David_Tickets_Business_Plan_v5.1, tab 02. Revenue and EBITDA
+     are drawn against one shared scale so the widening gap between them
+     is the margin story, which is the thing worth looking at. */
+  {
+    section: 'The plan',
+    grain: 'soft',
+    html: `
+      <div class="pad l-mid">
+        <div class="label reveal" style="margin-bottom:24px">Base case · business plan v5.1</div>
+        <h2 class="display reveal" style="--d:.06s;font-size:76px;line-height:1.06;margin-bottom:20px">
+          £30.7m and 73% margins by Year 5.
+        </h2>
+        <p class="body reveal" style="--d:.12s;font-size:22px;max-width:1560px;margin-bottom:44px;color:var(--head)">
+          We take 20% of gross box office — 13% from the fan, 7% from the artist. It is the same
+          twenty pence on every ticket the engine sells.
+        </p>
+
+        <div class="reveal" style="--d:.24s;max-width:1728px">
+          <div style="display:flex;gap:32px;margin-bottom:22px">
+            ${[['Revenue', 'var(--blue)'], ['EBITDA', '#6f6f6f']].map(([k, col]) => `
+              <span style="display:flex;align-items:center;gap:10px;font-family:var(--mono);text-transform:uppercase;font-size:13px;letter-spacing:0.12em;color:var(--head)">
+                <span style="width:16px;height:16px;background:${col};display:inline-block"></span>${k}</span>`).join('')}
+          </div>
+          ${[
+            ['Year 1', 0.34, -0.21, '£0.34m', '−£0.21m'],
+            ['Year 2', 5.80, 3.53, '£5.8m', '£3.5m'],
+            ['Year 3', 13.45, 9.14, '£13.4m', '£9.1m'],
+            ['Year 4', 21.10, 14.96, '£21.1m', '£15.0m'],
+            ['Year 5', 30.73, 22.41, '£30.7m', '£22.4m'],
+          ].map(([yr, rev, eb, revL, ebL], i) => `
+            <div style="display:grid;grid-template-columns:110px 1fr 300px;gap:30px;align-items:center;padding:11px 0">
+              <span class="label" style="font-size:15px;color:${i === 4 ? 'var(--blue)' : 'var(--head)'}">${yr}</span>
+              <div>
+                <div style="height:20px;width:${(rev / 30.73) * 100}%;background:var(--blue);margin-bottom:5px;border-radius:0 10px 10px 0"></div>
+                ${/* a negative drawn as a bar pointing right would be a lie,
+                       and a hollow stub reads as a rendering fault — Year 1's
+                       loss is carried by the label alone */ ''}
+                <div style="height:20px;width:${(Math.max(eb, 0) / 30.73) * 100}%;background:#6f6f6f;border-radius:0 10px 10px 0"></div>
+              </div>
+              <span style="font-family:var(--sans);font-weight:700;font-size:21px;letter-spacing:-0.03em;font-variant-numeric:tabular-nums;color:${i === 4 ? '#fff' : 'var(--head)'}">${revL} &nbsp;·&nbsp; ${ebL}</span>
+            </div>`).join('')}
+        </div>
+
+        <div class="rule reveal" style="--d:.44s;margin:26px 0 22px"></div>
+        <p class="body reveal" style="--d:.5s;font-size:22px;max-width:1680px">
+          <strong style="color:var(--blue)">EBITDA-positive in April 2027.</strong>
+          Cash-generative from that August. Ten people at Year 5.
+        </p>
+      </div>`,
+  },
+
+  /* 13 — go to market, with the multiplication drawn. */
   {
     section: 'Go to market',
     grain: 'soft',
@@ -435,7 +568,41 @@ export const SLIDES = [
       </div>`,
   },
 
-  /* 12 — team and ask on one slide, which is where a pitch deck ends. */
+  /* 14 — the team, lifted off the ask slide onto its own. It shared a
+     slide with the ask while the ask had nothing in it but a number;
+     now the ask carries a use of funds and a runway, and the four of
+     them get the room a seed investor actually gives this slide. */
+  {
+    section: 'Team',
+    grain: 'soft',
+    html: `
+      <div class="pad l-mid">
+        <h2 class="display reveal" style="font-size:76px;line-height:1.06;margin-bottom:20px">
+          Four people who have already done it.
+        </h2>
+        <p class="body reveal" style="--d:.12s;font-size:22px;max-width:1560px;margin-bottom:56px;color:var(--head)">
+          The campaigns on slide three are theirs. So is the platform.
+        </p>
+
+        <ol class="steps reveal" style="--d:.24s;grid-template-columns:repeat(4,1fr);max-width:1728px">
+          ${[
+            ['CEO', 'PJ Jarrett', 'Built the platform end to end. Founder of Sweat Strategies and Reel:lab.'],
+            ['Co-founder', 'Tom Rose', 'CEO of Grape — artist services across the UK, Germany and Norway.'],
+            ['Co-founder · CMO', 'Tobi Steinborn', 'Ran the campaigns behind Rules and ADMT. Co-founder of Sweat Strategies.'],
+            ['Tour partnerships', 'Josh Ergatoudis', 'Career booking agent who founded his own agency. First TPM, in seat.'],
+          ].map(([role, name, line]) => `
+            <li><span>${role}</span>
+              <div style="font-family:var(--sans);font-weight:800;font-size:29px;letter-spacing:-0.04em;color:#fff;margin-bottom:14px">${name}</div>
+              <p class="body" style="font-size:19px;max-width:none">${line}</p></li>`).join('')}
+        </ol>
+      </div>`,
+  },
+
+  /* 15 — the ask. Was a number and a mood. A seed ask without a use of
+     funds and a date the money stops being needed is an incomplete ask,
+     so both are on the slide now. The three named lines are the plan's
+     own committed spend; the balance is the booking team and working
+     capital, which is what it actually is. */
   {
     section: 'The ask',
     html: `
@@ -445,32 +612,28 @@ export const SLIDES = [
         { k: 'b', pos: 'left:-200px;bottom:-380px;opacity:.5' },
       ])}
       <div class="pad l-mid">
-        <h2 class="display reveal" style="font-size:130px;line-height:0.98;color:#fff;margin-bottom:20px">
+        <h2 class="display reveal" style="font-size:118px;line-height:0.98;color:#fff;margin-bottom:18px">
           £1m to go loud.
         </h2>
-        <p class="body reveal" style="--d:.12s;font-size:25px;max-width:1500px;margin-bottom:52px">
-          Five tour partnerships managers · the build finished · the engine pointed at the market.
+        <p class="body reveal" style="--d:.12s;font-size:24px;max-width:1500px;margin-bottom:52px">
+          Eighteen months of build, five more tour partnerships managers, and the engine pointed at the market.
         </p>
 
-        ${/* One line each — names alone read as a list of strangers, and the
-               reason to back this team is what each of them has already done.
-               Kept to a single line so the slide is still spoken over rather
-               than read; the document version carries the full biographies. */ ''}
-        <ol class="steps reveal" style="--d:.24s;grid-template-columns:repeat(4,1fr);max-width:1728px">
+        <ol class="steps reveal" style="--d:.24s;grid-template-columns:repeat(4,1fr);max-width:1728px;margin-bottom:44px">
           ${[
-            ['CEO', 'PJ Jarrett', 'Built the platform end to end. Founder of Sweat Strategies and Reel:lab.'],
-            ['Co-founder', 'Tom Rose', 'CEO of Grape — artist services across the UK, Germany and Norway.'],
-            ['Co-founder · CMO', 'Tobi Steinborn', 'Ran the campaigns behind Rules and ADMT. Co-founder of Sweat Strategies.'],
-            ['Tour partnerships', 'Josh Ergatoudis', 'Career booking agent who founded his own agency. First TPM, in seat.'],
-          ].map(([role, name, line]) => `
-            <li><span>${role}</span>
-              <div style="font-family:var(--sans);font-weight:800;font-size:26px;letter-spacing:-0.04em;color:#fff;margin-bottom:12px">${name}</div>
-              <p class="body" style="font-size:18px;max-width:none">${line}</p></li>`).join('')}
+            ['Product', '£594k', '18-month build sprint'],
+            ['Go to market', '£189k', 'the agent conferences, B2B'],
+            ['Licences & setup', '£60k', 'FCA opinion, contracts, VAT'],
+            ['Team & working capital', '£157k', 'the balance, to profitability'],
+          ].map(([k, n, sub]) => `
+            <li><span>${k}</span>
+              <div class="display" style="font-size:58px;line-height:1;color:var(--blue);margin-bottom:12px">${n}</div>
+              <p class="body" style="font-size:18px;max-width:none">${sub}</p></li>`).join('')}
         </ol>
 
-        <div class="rule reveal" style="--d:.42s;margin:52px 0 30px"></div>
-        <p class="display reveal" style="--d:.48s;font-size:36px;line-height:1.26;font-weight:700;letter-spacing:-0.035em;color:#fff;max-width:1500px">
-          Touring is broken — we're fixing it.
+        <div class="rule reveal" style="--d:.44s;margin:0 0 26px"></div>
+        <p class="display reveal" style="--d:.5s;font-size:34px;line-height:1.26;font-weight:700;letter-spacing:-0.035em;color:#fff;max-width:1600px">
+          It is the last money we need. EBITDA-positive April 2027.
         </p>
       </div>`,
   },
