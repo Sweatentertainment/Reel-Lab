@@ -398,7 +398,7 @@ export const SLIDES = [
 
         <div class="rule reveal" style="--d:.42s;margin:0 0 26px"></div>
         <p class="body reveal" style="--d:.48s;font-size:23px;max-width:1680px">
-          Nine sell-outs across the last three tours. The platform has been live fourteen weeks.
+          92% average sell-through across the last three tours. The platform has been live fourteen weeks.
         </p>
       </div>`,
   },

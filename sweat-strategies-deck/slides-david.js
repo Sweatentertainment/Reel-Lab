@@ -604,8 +604,8 @@ export const SLIDES = [
           <li><span>ADMT Feb ’27</span>
             <div class="display" style="font-size:54px;line-height:1;color:var(--blue);margin-bottom:12px">22.7%</div>
             <p class="body" style="font-size:17px;max-width:none">sold, six months out</p></li>
-          <li><span>Sell-outs</span>
-            <div class="display" style="font-size:54px;line-height:1;color:var(--blue);margin-bottom:12px">9</div>
+          <li><span>Sell-through</span>
+            <div class="display" style="font-size:54px;line-height:1;color:var(--blue);margin-bottom:12px">92%</div>
             <p class="body" style="font-size:17px;max-width:none">across the last three tours</p></li>
           <li><span>Fans captured</span>
             <div class="display" style="font-size:54px;line-height:1;color:var(--blue);margin-bottom:12px">1,939</div>
