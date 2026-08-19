@@ -238,7 +238,7 @@ export const SLIDES = [
           The artist takes home ~45% more.
         </h2>
         <p class="body reveal" style="--d:.12s;font-size:22px;margin-bottom:52px;color:var(--head)">
-          Share of gross potential, worked through on a 350-capacity show.
+          Share of gross potential — Hoxton Hall, 350 capacity.
         </p>
 
         <div class="reveal" style="--d:.22s;display:grid;grid-template-columns:1fr 1fr 0.6fr;gap:100px;max-width:1728px">
@@ -260,7 +260,7 @@ export const SLIDES = [
                 </div>`).join('')}
             </div>`).join('')}
           <div>
-            <div class="label" style="font-size:17px;margin-bottom:30px">Per sold-out show</div>
+            <div class="label" style="font-size:17px;margin-bottom:30px">Per sold-out show · Hoxton Hall</div>
             <div class="display" style="font-size:66px;line-height:1;color:var(--blue);margin-bottom:8px">£2,922</div>
             <div style="font-family:var(--mono);text-transform:uppercase;font-size:14px;letter-spacing:0.1em;color:var(--head);margin-bottom:28px">David</div>
             <div style="font-family:var(--sans);font-weight:600;font-size:21px;color:var(--head);font-variant-numeric:tabular-nums;line-height:1.7">£2,228 trad.<br>£2,020 modern</div>
@@ -299,7 +299,7 @@ export const SLIDES = [
             ] },
             { who: 'Incumbents', hero: false, rows: [
               ['Committed', '£1.50–2.50', 'and spent blind'],
-              ['Delivered', '—', 'no read published'],
+              ['Delivered', 'Not attributed', ''],
               ['The room', '4–27%', 'sold when we are called in'],
             ] },
           ].map((c) => `
@@ -316,7 +316,8 @@ export const SLIDES = [
 
         <div class="rule reveal" style="--d:.46s;margin:14px 0 26px"></div>
         <p class="body reveal" style="--d:.52s;font-size:23px;max-width:1620px">
-          Two to four times more committed, delivered for under half of it.
+          <strong style="color:var(--head)">38.6%</strong> is what the average UK grassroots room does
+          — Music Venue Trust, 2024.
         </p>
       </div>`,
   },
@@ -382,7 +383,7 @@ export const SLIDES = [
         </h2>
 
         <ol class="steps reveal" style="--d:.2s;grid-template-columns:repeat(4,1fr);max-width:1728px;margin-bottom:52px">
-          <li><span>Sold by the machine</span>${stat({ n: '~7,600', cap: 'tickets', sub: '~£179k gross (est.)' })}</li>
+          <li><span>Sold by the machine</span>${stat({ n: '~7,600', cap: 'tickets', sub: '~£179k gross' })}</li>
           <li><span>On sale now</span>${stat({ n: '£330k', cap: 'across 43 shows' })}</li>
           <li><span>Last 7 days</span>${stat({ n: '266', cap: 'tickets · 138 buyers' })}</li>
           <li><span>Fans captured</span>${stat({ n: '1,939', cap: 'artist-owned' })}</li>

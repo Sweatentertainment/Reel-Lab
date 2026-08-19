@@ -47,10 +47,19 @@
    a scoped override in david-proposal.html, because deck.css is shared by
    ten decks and none of the others should move.
 
-   FIGURES ARE REPRODUCED, NOT RECOMPUTED. The estimates keep their "est."
-   marks and the market slide keeps its "research in progress" caveat,
-   because an investor deck that quietly drops a hedge is worse than one
-   that never had it. The traction slide keeps its verification date.
+   FIGURES ARE REPRODUCED, NOT RECOMPUTED. The market slide keeps its
+   "research in progress" caveat and the traction slide keeps its
+   verification date, because an investor deck that quietly drops a hedge
+   is worse than one that never had it. PJ removed the "est." marks from
+   the traction figures himself; the basis is still stated underneath —
+   gross calculated at a £22 average ticket — so the reader can still see
+   what the number is made of.
+
+   THE ONE FIGURE FROM OUTSIDE THE SOURCE FILE is the 38.6% average
+   capacity utilisation on the sales-engine slide, which is the Music
+   Venue Trust 2024 Annual Report's figure for ticketed events at UK
+   grassroots venues, and is cited on the slide. Everything else in this
+   deck came out of DAVID_Seed_Deck_v1.pptx.
    ------------------------------------------------------------------ */
 
 import { img, blobs } from './parts.js';
@@ -337,7 +346,7 @@ export const SLIDES = [
           The artist takes home ~45% more.
         </h2>
         <p class="body reveal" style="--d:.14s;font-size:20px;max-width:1560px;margin-bottom:42px;color:var(--head)">
-          Artist take-home as a share of gross potential. Worked through on a 350-capacity show.
+          Artist take-home as a share of gross potential, worked through on a real show — Hoxton Hall, 350 capacity.
         </p>
 
         <div class="reveal" style="--d:.24s;display:grid;grid-template-columns:1fr 1fr 0.62fr;gap:90px;max-width:1728px">
@@ -354,7 +363,7 @@ export const SLIDES = [
             ${bar({ label: 'Modern competitor', value: '17.3%', pct: 17.26 })}
           </div>
           <div>
-            <div class="label" style="font-size:17px;margin-bottom:26px">Per sold-out show</div>
+            <div class="label" style="font-size:17px;margin-bottom:26px">Per sold-out show · Hoxton Hall</div>
             <dl class="stats" style="display:block">
               <div style="margin-bottom:26px"><dt>DAVID</dt><dd style="font-size:52px">£2,922</dd></div>
             </dl>
@@ -412,7 +421,7 @@ export const SLIDES = [
               ] },
               { who: 'Incumbents', hero: false, rows: [
                 ['Committed', '£1.50–2.50', 'and spent blind'],
-                ['Delivered', '—', 'no read published'],
+                ['Delivered', 'Not attributed', ''],
                 ['The room', '4–27%', 'sold when we are called in'],
               ] },
             ].map((c) => `
@@ -427,6 +436,11 @@ export const SLIDES = [
               </div>`).join('')}
           </div>
           <div class="rule" style="margin:20px 0 24px;max-width:900px"></div>
+          <div style="display:flex;align-items:baseline;gap:20px;margin-bottom:16px">
+            <span style="font-family:var(--sans);font-weight:800;font-size:38px;letter-spacing:-0.04em;color:var(--head);font-variant-numeric:tabular-nums">38.6%</span>
+            <span class="body" style="font-size:19px;max-width:none">is what the average UK grassroots room actually does
+            <span style="opacity:.8">— Music Venue Trust, 2024</span></span>
+          </div>
           <p class="body" style="font-size:20px;max-width:900px">
             We commit two to four times more per ticket, come in under half of it, and the gap
             goes back to the artist.
@@ -595,8 +609,8 @@ export const SLIDES = [
           </div>
           ${[
             ['David platform — since first tour on-sale, 8 May 2026 (14 weeks)', '1,982', '£54k', true],
-            ['The engine that became David — pre-platform tours (ADMT, St Lundi, Scout)', '~5,650', '~£124k (est.)', false],
-            ['Total sold by the machine', '~7,600', '~£179k (est.)', true],
+            ['The engine that became David — pre-platform tours (ADMT, St Lundi, Scout)', '~5,650', '~£124k', false],
+            ['Total sold by the machine', '~7,600', '~£179k', true],
           ].map(([label, tickets, gross, strong]) => `
             <div style="display:grid;grid-template-columns:1fr 200px 220px;gap:40px;padding:16px 0;border-bottom:1px solid var(--rule)">
               <span style="font-family:var(--sans);font-weight:${strong ? 700 : 500};font-size:20px;letter-spacing:-0.02em;color:${strong ? '#fff' : 'var(--head)'}">${label}</span>
@@ -606,8 +620,8 @@ export const SLIDES = [
         </div>
 
         <p class="body reveal" style="--d:.5s;font-size:17px;max-width:1728px;margin-top:26px;opacity:.92">
-          est. = £22 average ticket. All figures are tickets sold, not listed. Platform figure excludes £395
-          of pre-tour one-off sales (Mar–Apr).
+          Gross calculated at a £22 average ticket. All figures are tickets sold, not listed. Platform
+          figure excludes £395 of pre-tour one-off sales (Mar–Apr).
         </p>
       </div>`,
   },
