@@ -28,16 +28,24 @@
    library would import its own type, grid and palette and the deck would
    stop looking like one document.
 
-   On slide 06 the three deals are NOT three categorical hues. DAVID
-   carries the accent and the two competitors are deliberately neutral
-   grey, because they are context rather than peers — the eye should go
-   to one bar. Running the palette validator on #0f65dd / #c9c7c7 /
-   #7a7a7a against black FAILS its chroma-floor and lightness-band checks,
-   which is the validator correctly observing that two of the three are
+   On the comparison slide the three deals are NOT three categorical hues.
+   DAVID carries the accent and the two competitors are deliberately
+   neutral grey, because they are context rather than peers — the eye
+   should go to one bar. Running the palette validator on the accent
+   #bef264 against #7a7a7a on DAVID's #141414 ground FAILS its
+   lightness-band and chroma-floor checks, which is the validator
+   correctly observing that the lime is very light and the grey is
    achromatic on purpose. The checks that decide whether a reader can
-   separate the bars all pass comfortably — CVD ΔE 25.1, normal-vision
-   ΔE 25.2, every mark above 3:1 on the surface — and every bar carries a
-   direct value label, so identity never rests on colour alone.
+   separate the bars pass with room — CVD ΔE 35.1, normal-vision ΔE 36.4,
+   both marks above 3:1 on the surface — and every bar carries a direct
+   value label, so identity never rests on colour alone.
+
+   THE PALETTE IS DAVID'S OWN, read out of the source pptx rather than
+   chosen: #141414 grounds, lime #bef264 / #d9f99d accents and warm
+   neutral greys are what their slides already use. The theme block in
+   that file is the stock Office scheme and was ignored. It is applied as
+   a scoped override in david-proposal.html, because deck.css is shared by
+   ten decks and none of the others should move.
 
    FIGURES ARE REPRODUCED, NOT RECOMPUTED. The estimates keep their "est."
    marks and the market slide keeps its "research in progress" caveat,
@@ -76,7 +84,7 @@ const bar = ({ label, value, pct, hero = false, sub = '' }) => `
   <div style="margin-bottom:26px">
     <div style="display:flex;align-items:baseline;justify-content:space-between;margin-bottom:10px">
       <span style="font-family:var(--sans);font-weight:${hero ? 800 : 600};font-size:23px;letter-spacing:-0.02em;color:${hero ? '#fff' : 'var(--head)'}">${label}</span>
-      <span style="font-family:var(--sans);font-weight:800;font-size:26px;letter-spacing:-0.03em;font-variant-numeric:tabular-nums;color:${hero ? 'var(--blue-bright, #2a7bff)' : 'var(--head)'}">${value}</span>
+      <span style="font-family:var(--sans);font-weight:800;font-size:26px;letter-spacing:-0.03em;font-variant-numeric:tabular-nums;color:${hero ? 'var(--blue)' : 'var(--head)'}">${value}</span>
     </div>
     <div style="height:14px;background:#ffffff14;border-radius:0 7px 7px 0">
       <div style="height:100%;width:${pct}%;background:${hero ? 'var(--blue)' : '#7a7a7a'};border-radius:0 7px 7px 0"></div>
