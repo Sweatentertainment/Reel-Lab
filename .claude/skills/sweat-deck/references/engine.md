@@ -173,6 +173,13 @@ to its own content, so three big figures with captions of different lengths
 end up at irregular intervals and read as a mistake. Use `repeat(3,1fr)`
 with a `max-width` when the columns should feel evenly placed.
 
+**The accent disappears on the dark field.** `--blue` and the `field--dark`
+navy are close in value, so blue type on that ground nearly vanishes — fine
+on black, unreadable on navy. Anything set in the accent needs to switch to
+white on `.field` and `.field--dark`. This is invisible in the source and
+obvious the moment you look at the slide, which is the whole argument for
+looking.
+
 **The cover's chrome is baked into the artwork.** `cover.jpg` has the
 wordmark and footer rendered into the JPEG, which is why covers set
 `chrome: 'none'`. Place the project title away from the wordmark —
