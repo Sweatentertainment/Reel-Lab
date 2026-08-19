@@ -1,5 +1,11 @@
 # The deck engine
 
+> The fuller reference now lives in the **sweat-deck** skill —
+> `.claude/skills/sweat-deck/references/engine.md` covers `cases.js`, the
+> `parts.js` fragments and several layout traps this file does not. Read that
+> one when you need something you cannot find here, and add new engine
+> knowledge there rather than here so the two do not drift.
+
 Everything lives in `sweat-strategies-deck/`. `deck.js` is content-agnostic —
 each page imports its own slide module and calls `mount(SLIDES)`. You are only
 writing content; do not edit `deck.js`, `deck.css` or `parts.js`, because six
