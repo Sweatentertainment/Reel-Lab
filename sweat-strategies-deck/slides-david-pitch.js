@@ -429,15 +429,20 @@ export const SLIDES = [
           Five tour partnerships managers · the build finished · the engine pointed at the market.
         </p>
 
+        ${/* One line each — names alone read as a list of strangers, and the
+               reason to back this team is what each of them has already done.
+               Kept to a single line so the slide is still spoken over rather
+               than read; the document version carries the full biographies. */ ''}
         <ol class="steps reveal" style="--d:.24s;grid-template-columns:repeat(4,1fr);max-width:1728px">
-          <li><span>CEO</span>
-            <div style="font-family:var(--sans);font-weight:800;font-size:26px;letter-spacing:-0.04em;color:#fff">PJ Jarrett</div></li>
-          <li><span>Co-founder</span>
-            <div style="font-family:var(--sans);font-weight:800;font-size:26px;letter-spacing:-0.04em;color:#fff">Tom Rose</div></li>
-          <li><span>Co-founder · CMO</span>
-            <div style="font-family:var(--sans);font-weight:800;font-size:26px;letter-spacing:-0.04em;color:#fff">Tobi Steinborn</div></li>
-          <li><span>Tour partnerships</span>
-            <div style="font-family:var(--sans);font-weight:800;font-size:26px;letter-spacing:-0.04em;color:#fff">Josh Ergatoudis</div></li>
+          ${[
+            ['CEO', 'PJ Jarrett', 'Built the platform end to end. Founder of Sweat Strategies and Reel:lab.'],
+            ['Co-founder', 'Tom Rose', 'CEO of Grape — artist services across the UK, Germany and Norway.'],
+            ['Co-founder · CMO', 'Tobi Steinborn', 'Ran the campaigns behind Rules and ADMT. Co-founder of Sweat Strategies.'],
+            ['Tour partnerships', 'Josh Ergatoudis', 'Career booking agent who founded his own agency. First TPM, in seat.'],
+          ].map(([role, name, line]) => `
+            <li><span>${role}</span>
+              <div style="font-family:var(--sans);font-weight:800;font-size:26px;letter-spacing:-0.04em;color:#fff;margin-bottom:12px">${name}</div>
+              <p class="body" style="font-size:18px;max-width:none">${line}</p></li>`).join('')}
         </ol>
 
         <div class="rule reveal" style="--d:.42s;margin:52px 0 30px"></div>
