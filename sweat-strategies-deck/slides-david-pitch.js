@@ -48,23 +48,23 @@ import { blobs } from './parts.js';
 
 /* ------------------------------------------------------- local archetypes */
 
-/* A horizontal stacked bar. Segments carry a 2px gap so two fills never
-   touch, and each is labelled in place — the reader should never have to
-   go to a legend and come back. */
-const stack = ({ label, segments, note = '' }) => `
+/* A comparison group: rows measured against a common scale, stated in the
+   label. Deliberately NOT a stacked bar — the fan-side fees are two
+   separate quantities, and stacking them would imply they are parts of one
+   whole. Each row is its share of `max`, and carries its own value. */
+const cmp = ({ label, max, rows }) => `
   <div style="margin-bottom:44px">
-    <div class="label" style="font-size:17px;margin-bottom:18px">${label}</div>
-    <div style="display:flex;gap:2px;height:58px;border-radius:6px;overflow:hidden">
-      ${segments.map((s) => `
-        <div style="width:${s.pct}%;background:${s.fill};display:flex;align-items:center;padding-left:20px">
-          <span style="font-family:var(--sans);font-weight:800;font-size:26px;letter-spacing:-0.03em;color:${s.ink};font-variant-numeric:tabular-nums">${s.value}</span>
-        </div>`).join('')}
-    </div>
-    <div style="display:flex;gap:2px;margin-top:12px">
-      ${segments.map((s) => `
-        <div style="width:${s.pct}%;font-family:var(--mono);text-transform:uppercase;font-size:14px;letter-spacing:0.1em;color:var(--head);opacity:.75;padding-left:20px">${s.name}</div>`).join('')}
-    </div>
-    ${note ? `<p class="body" style="font-size:19px;max-width:none;margin-top:14px;opacity:.8">${note}</p>` : ''}
+    <div class="label" style="font-size:17px;margin-bottom:22px">${label}</div>
+    ${rows.map((r) => `
+      <div style="margin-bottom:22px">
+        <div style="display:flex;align-items:baseline;justify-content:space-between;margin-bottom:10px;max-width:1500px">
+          <span style="font-family:var(--sans);font-weight:${r.hero ? 800 : 600};font-size:23px;letter-spacing:-0.02em;color:${r.hero ? '#fff' : 'var(--head)'}">${r.name}</span>
+          <span style="font-family:var(--sans);font-weight:800;font-size:28px;letter-spacing:-0.03em;font-variant-numeric:tabular-nums;color:${r.hero ? 'var(--blue)' : 'var(--head)'}">${r.value}</span>
+        </div>
+        <div style="height:18px;background:#ffffff14;border-radius:0 9px 9px 0;max-width:1500px">
+          <div style="height:100%;width:${(r.n / max) * 100}%;background:${r.hero ? 'var(--blue)' : '#7a7a7a'};border-radius:0 9px 9px 0"></div>
+        </div>
+      </div>`).join('')}
   </div>`;
 
 /* A big figure with a short caption. The unit of this whole deck.
@@ -77,7 +77,7 @@ const stat = ({ n, cap, sub = '', size = 96 }) => `
   <div>
     <div class="display" style="font-size:${size}px;line-height:1;color:var(--blue);margin-bottom:14px;white-space:nowrap">${n}</div>
     <div style="font-family:var(--sans);font-weight:700;font-size:23px;letter-spacing:-0.03em;margin-bottom:${sub ? 8 : 0}px">${cap}</div>
-    ${sub ? `<div style="font-family:var(--mono);text-transform:uppercase;font-size:14px;letter-spacing:0.1em;color:var(--head);opacity:.7">${sub}</div>` : ''}
+    ${sub ? `<div style="font-family:var(--mono);text-transform:uppercase;font-size:14px;letter-spacing:0.1em;color:var(--head);opacity:.92">${sub}</div>` : ''}
   </div>`;
 
 export const SLIDES = [
@@ -144,9 +144,9 @@ export const SLIDES = [
           </div>
           <div>
             <div class="label" style="font-size:17px;margin-bottom:24px">ADMT · UK 2025</div>
-            <div class="display" style="font-size:150px;line-height:1;color:var(--blue)">81%</div>
+            <div class="display" style="font-size:150px;line-height:1;color:var(--blue)">92%</div>
             <div style="height:14px;background:#ffffff14;border-radius:0 7px 7px 0;margin:22px 0 20px">
-              <div style="height:100%;width:81%;background:var(--blue);border-radius:0 7px 7px 0"></div>
+              <div style="height:100%;width:92%;background:var(--blue);border-radius:0 7px 7px 0"></div>
             </div>
             <div style="font-family:var(--sans);font-weight:600;font-size:24px;color:var(--head)">sold · £2.59 a ticket</div>
           </div>
@@ -169,21 +169,25 @@ export const SLIDES = [
           We charge less, and sell more.
         </h2>
         <div class="reveal" style="--d:.2s;max-width:1620px">
-          ${stack({
+          ${cmp({
             label: 'What the fan pays on top',
-            segments: [
-              { pct: 35, value: '13%', name: 'David', fill: 'var(--blue)', ink: '#141414' },
-              { pct: 65, value: '25%+', name: 'Everyone else', fill: '#7a7a7a', ink: '#141414' },
+            max: 25,
+            rows: [
+              { name: 'David', value: '13%', n: 13, hero: true },
+              { name: 'Everyone else', value: '25%+', n: 25 },
             ],
           })}
-          ${stack({
+          ${cmp({
             label: 'What the artist keeps, on a sold-out show',
-            segments: [
-              { pct: 58.44, value: '58%', name: 'David', fill: 'var(--blue)', ink: '#141414' },
-              { pct: 41.56, value: '45% · 40%', name: 'Trad. promoter · modern competitor', fill: '#7a7a7a', ink: '#141414' },
+            max: 58.44,
+            rows: [
+              { name: 'David', value: '58%', n: 58.44, hero: true },
+              { name: 'Trad. promoter', value: '45%', n: 44.56 },
+              { name: 'Modern competitor', value: '40%', n: 40.4 },
             ],
           })}
         </div>
+
         <div class="rule reveal" style="--d:.42s;margin:10px 0 28px"></div>
         <p class="body reveal" style="--d:.48s;font-size:24px;max-width:1620px">
           Smaller fee, bigger gross. <strong style="color:var(--blue)">The artist wins on both sides.</strong>
@@ -198,7 +202,7 @@ export const SLIDES = [
     html: `
       <div class="pad l-mid">
         <h2 class="display reveal" style="font-size:82px;line-height:1.04;margin-bottom:60px">
-          Our only cut is 7%.
+          Our only cut of the artist's<br>revenue is 7% of gross.
         </h2>
 
         <ol class="flow reveal" style="--d:.2s;grid-template-columns:repeat(4,1fr);max-width:1728px">
@@ -233,7 +237,7 @@ export const SLIDES = [
           The artist takes home ~45% more.
         </h2>
         <p class="body reveal" style="--d:.12s;font-size:22px;margin-bottom:52px;color:var(--head)">
-          Share of gross potential, same show.
+          Share of gross potential, worked through on a 350-capacity show.
         </p>
 
         <div class="reveal" style="--d:.22s;display:grid;grid-template-columns:1fr 1fr 0.6fr;gap:100px;max-width:1728px">
@@ -262,10 +266,6 @@ export const SLIDES = [
           </div>
         </div>
 
-        <div class="rule reveal" style="--d:.44s;margin:44px 0 26px"></div>
-        <p class="body reveal" style="--d:.5s;font-size:23px;max-width:1620px">
-          <strong style="color:var(--blue)">£735 floor per show</strong>, paid whatever it sells.
-        </p>
       </div>`,
   },
 
@@ -296,7 +296,7 @@ export const SLIDES = [
               <div style="height:18px;background:#ffffff14;border-radius:0 9px 9px 0">
                 <div style="height:100%;width:${pct}%;background:${hero ? 'var(--blue)' : '#7a7a7a'};border-radius:0 9px 9px 0"></div>
               </div>
-              <div style="font-family:var(--mono);text-transform:uppercase;font-size:14px;letter-spacing:0.1em;color:var(--head);opacity:.65;margin-top:10px">${sub}</div>
+              <div style="font-family:var(--mono);text-transform:uppercase;font-size:14px;letter-spacing:0.1em;color:var(--head);opacity:.9;margin-top:10px">${sub}</div>
             </div>`).join('')}
         </div>
 

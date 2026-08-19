@@ -89,7 +89,27 @@ const bar = ({ label, value, pct, hero = false, sub = '' }) => `
     <div style="height:14px;background:#ffffff14;border-radius:0 7px 7px 0">
       <div style="height:100%;width:${pct}%;background:${hero ? 'var(--blue)' : '#7a7a7a'};border-radius:0 7px 7px 0"></div>
     </div>
-    ${sub ? `<div style="font-family:var(--mono);text-transform:uppercase;font-size:15px;letter-spacing:0.12em;color:var(--head);opacity:.6;margin-top:10px">${sub}</div>` : ''}
+    ${sub ? `<div style="font-family:var(--mono);text-transform:uppercase;font-size:15px;letter-spacing:0.12em;color:var(--head);opacity:.9;margin-top:10px">${sub}</div>` : ''}
+  </div>`;
+
+/* A comparison group: rows measured against a common scale, stated in the
+   label. Deliberately NOT a stacked bar — 13% and 25% are two separate
+   quantities, and stacking them would imply they are parts of one whole,
+   which is a picture telling a lie the numbers do not. Each row is drawn
+   as its share of `max` and carries its own value. */
+const cmp = ({ label, max, rows }) => `
+  <div style="margin-bottom:40px">
+    <div class="label" style="font-size:17px;margin-bottom:20px">${label}</div>
+    ${rows.map((r) => `
+      <div style="margin-bottom:20px">
+        <div style="display:flex;align-items:baseline;justify-content:space-between;margin-bottom:9px;max-width:1500px">
+          <span style="font-family:var(--sans);font-weight:${r.hero ? 800 : 600};font-size:22px;letter-spacing:-0.02em;color:${r.hero ? '#fff' : 'var(--head)'}">${r.name}</span>
+          <span style="font-family:var(--sans);font-weight:800;font-size:26px;letter-spacing:-0.03em;font-variant-numeric:tabular-nums;color:${r.hero ? 'var(--blue)' : 'var(--head)'}">${r.value}</span>
+        </div>
+        <div style="height:16px;background:#ffffff14;border-radius:0 8px 8px 0;max-width:1500px">
+          <div style="height:100%;width:${(r.n / max) * 100}%;background:${r.hero ? 'var(--blue)' : '#7a7a7a'};border-radius:0 8px 8px 0"></div>
+        </div>
+      </div>`).join('')}
   </div>`;
 
 /* A sell-through figure with the proportion drawn under it. The number is
@@ -105,7 +125,7 @@ const gauge = ({ pct, title, note, meta }) => `
       <div style="height:100%;width:${pct}%;background:var(--blue);border-radius:0 7px 7px 0"></div>
     </div>
     <p class="body" style="font-size:20px;max-width:600px;margin-bottom:12px">${note}</p>
-    <div style="font-family:var(--mono);text-transform:uppercase;font-size:15px;letter-spacing:0.12em;color:var(--head);opacity:.7">${meta}</div>
+    <div style="font-family:var(--mono);text-transform:uppercase;font-size:15px;letter-spacing:0.12em;color:var(--head);opacity:.92">${meta}</div>
   </div>`;
 
 export const SLIDES = [
@@ -132,9 +152,9 @@ export const SLIDES = [
         <div class="rule reveal" style="--d:.3s;margin:56px 0 32px;max-width:1360px"></div>
         <div class="reveal" style="--d:.36s;display:flex;align-items:baseline;gap:40px;flex-wrap:wrap">
           <span style="font-family:var(--sans);font-weight:800;font-size:40px;letter-spacing:-0.04em;color:#fff">Raising £1m</span>
-          <span style="font-family:var(--mono);text-transform:uppercase;font-size:20px;letter-spacing:0.18em;color:#fff;opacity:.75">david.tickets</span>
+          <span style="font-family:var(--mono);text-transform:uppercase;font-size:20px;letter-spacing:0.18em;color:#fff;opacity:.92">david.tickets</span>
         </div>
-        <p class="body reveal" style="--d:.44s;font-size:21px;max-width:1240px;margin-top:34px;opacity:.85">
+        <p class="body reveal" style="--d:.44s;font-size:21px;max-width:1240px;margin-top:34px;opacity:.95">
           Founded by the marketing companies behind Bad Bunny, Raye, Thundercat, The Pixies and Swedish House Mafia.
         </p>
       </div>`,
@@ -200,7 +220,7 @@ export const SLIDES = [
             meta: '4 of 5 shows sold out · £2.55 cost per ticket',
           })}
           ${gauge({
-            pct: 81,
+            pct: 92,
             title: 'ADMT · UK tour 2025',
             note: 'Ten cities across the UK.',
             meta: '3,522 tickets sold · ~£77k gross (est.) · £2.59 cost per ticket',
@@ -218,53 +238,50 @@ export const SLIDES = [
 
   act({ label: 'The insight', line: 'Everyone makes money when tickets sell' }),
 
-  /* 05 — old stack against DAVID. Two columns, and the old stack is set in
-     grey throughout so the eye lands on the right-hand one without either
-     side needing a colour it has not earned. */
+  /* 05 — the insight, drawn. Was two columns of prose; the two sides of the
+     deal are a comparison, and a comparison is a picture. The paragraphs
+     that survive are the ones the bars cannot say: what the costs are and
+     why the incumbent does not need the marketing to work. */
   {
     section: 'The insight',
     grain: 'soft',
     html: `
       <div class="pad l-mid">
         <div class="label reveal" style="margin-bottom:26px">The insight</div>
-        <h2 class="display reveal" style="--d:.08s;font-size:66px;line-height:1.08;max-width:1560px;margin-bottom:52px">
+        <h2 class="display reveal" style="--d:.08s;font-size:66px;line-height:1.08;max-width:1560px;margin-bottom:46px">
           We sell more — and charge far less.
         </h2>
 
-        <div class="reveal" style="--d:.22s;display:grid;grid-template-columns:1fr 1fr;gap:110px;max-width:1620px;margin-bottom:40px">
-          <div>
-            <div class="label" style="font-size:18px;margin-bottom:30px;color:var(--head)">The old stack</div>
-            <p class="body" style="font-size:20px;max-width:640px;margin-bottom:24px;color:var(--head)">
-              <strong style="color:#fff">~20% of the artist's net</strong> — after costs that are avoidable, murky,
-              or padded to maximise their actual take.
-            </p>
-            <p class="body" style="font-size:20px;max-width:640px;margin-bottom:24px;color:var(--head)">
-              <strong style="color:#fff">25%+ booking fees</strong> on top of ticket gross, paid by the fan.
-            </p>
-            <p class="body" style="font-size:20px;max-width:640px;color:var(--head)">
-              They win even half-empty — so the marketing never has to work.
-            </p>
-          </div>
-          <div>
-            <div class="label" style="font-size:18px;margin-bottom:30px">David</div>
-            <p class="body" style="font-size:20px;max-width:640px;margin-bottom:24px">
-              <strong style="color:var(--blue)">7% of gross</strong> — the only artist-side deduction.
-              Costs at receipted actuals.
-            </p>
-            <p class="body" style="font-size:20px;max-width:640px;margin-bottom:24px">
-              <strong style="color:var(--blue)">13% fan fee</strong> on top of face value — it funds the marketing.
-            </p>
-            <p class="body" style="font-size:20px;max-width:640px">
-              AI through everything — routing, marketing and strategy, priced for the future.
-            </p>
-          </div>
+        <div class="reveal" style="--d:.2s;max-width:1620px">
+          ${cmp({
+            label: 'What the fan pays on top of face value',
+            max: 25,
+            rows: [
+              { name: 'David', value: '13%', n: 13, hero: true },
+              { name: 'The old stack', value: '25%+', n: 25 },
+            ],
+          })}
+          ${cmp({
+            label: "What comes out of the artist's side",
+            max: 20,
+            rows: [
+              { name: 'David · of gross', value: '7%', n: 7, hero: true },
+              { name: 'The old stack · of net, after padded costs', value: '~20%', n: 20 },
+            ],
+          })}
         </div>
 
-        <div class="rule reveal" style="--d:.42s;margin:0 0 30px"></div>
-        <p class="body reveal" style="--d:.48s;font-size:23px;max-width:1620px">
-          We sell more tickets, so the gross is bigger. Our fee is smaller.
-          <strong style="color:var(--blue)">The artist wins on both sides.</strong>
-        </p>
+        <div class="rule reveal" style="--d:.4s;margin:14px 0 28px"></div>
+        <div class="reveal" style="--d:.46s;display:grid;grid-template-columns:1fr 1fr;gap:110px;max-width:1620px">
+          <p class="body" style="font-size:21px;max-width:none">
+            Ours is the only artist-side deduction, and costs come off at receipted actuals.
+            Theirs comes off a net already padded to protect their take.
+          </p>
+          <p class="body" style="font-size:21px;max-width:none">
+            They win even half-empty, so the marketing never has to work.
+            <strong style="color:var(--blue)">The artist wins on both sides.</strong>
+          </p>
+        </div>
       </div>`,
   },
 
@@ -278,7 +295,7 @@ export const SLIDES = [
       <div class="pad l-mid">
         <div class="label reveal" style="margin-bottom:26px">The model</div>
         <h2 class="display reveal" style="--d:.08s;font-size:72px;line-height:1.04;max-width:1500px;margin-bottom:52px">
-          Our only cut is<br>7% of gross.
+          Our only cut of the artist's<br>revenue is 7% of gross.
         </h2>
 
         <ol class="flow reveal" style="--d:.2s;grid-template-columns:repeat(4,1fr);max-width:1728px">
@@ -313,10 +330,10 @@ export const SLIDES = [
       <div class="pad l-mid">
         <div class="label reveal" style="margin-bottom:26px">Same show, three deals</div>
         <h2 class="display reveal" style="--d:.08s;font-size:66px;line-height:1.06;max-width:1560px;margin-bottom:20px">
-          The artist takes home ~45% more — with a floor.
+          The artist takes home ~45% more.
         </h2>
         <p class="body reveal" style="--d:.14s;font-size:20px;max-width:1560px;margin-bottom:42px;color:var(--head)">
-          Artist take-home as a share of gross potential, on the same show.
+          Artist take-home as a share of gross potential. Worked through on a 350-capacity show.
         </p>
 
         <div class="reveal" style="--d:.24s;display:grid;grid-template-columns:1fr 1fr 0.62fr;gap:90px;max-width:1728px">
@@ -342,11 +359,6 @@ export const SLIDES = [
           </div>
         </div>
 
-        <div class="rule reveal" style="--d:.44s;margin:48px 0 28px"></div>
-        <p class="body reveal" style="--d:.5s;font-size:22px;max-width:1620px">
-          <strong style="color:var(--blue)">£735 guaranteed minimum per show</strong> — 10% of gross potential,
-          paid whatever it sells.
-        </p>
       </div>`,
   },
 
@@ -559,7 +571,7 @@ export const SLIDES = [
             </div>`).join('')}
         </div>
 
-        <p class="body reveal" style="--d:.5s;font-size:17px;max-width:1728px;margin-top:26px;opacity:.7">
+        <p class="body reveal" style="--d:.5s;font-size:17px;max-width:1728px;margin-top:26px;opacity:.92">
           est. = £22 average ticket. All figures are tickets sold, not listed. Platform figure excludes £395
           of pre-tour one-off sales (Mar–Apr).
         </p>
@@ -635,7 +647,7 @@ export const SLIDES = [
           We aren't here to whisper. Touring is broken — we're fixing it.
         </p>
         <p class="reveal" style="--d:.56s;font-size:26px;font-weight:700;margin-top:38px">
-          <a href="https://david.tickets" style="color:#fff;opacity:.8">david.tickets</a>
+          <a href="https://david.tickets" style="color:#fff;opacity:.95">david.tickets</a>
         </p>
       </div>`,
   },
