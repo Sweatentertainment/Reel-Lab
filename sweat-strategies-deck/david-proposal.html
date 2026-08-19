@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DAVID — Seed Deck</title>
+  <link rel="shortcut icon" href="assets/img/sweat-favicon.png" type="image/x-icon">
+  <meta name="robots" content="noindex,nofollow">
+  <link rel="stylesheet" href="deck.css">
+</head>
+<body>
+  <div id="stage">
+    <div id="scaler"></div>
+  </div>
+
+  <nav id="rail" aria-label="Slides"></nav>
+  <div id="hint">← → to move</div>
+
+  <script type="module">
+    import { SLIDES } from './slides-david.js';
+    import { mount } from './deck.js';
+    /* DAVID is not Sweat — the chrome has to carry its own name and its own
+       confidentiality line, or the deck reads as somebody else's document. */
+    mount(SLIDES, {
+      brand: 'DAVID',
+      legal: '2026 DAVID. All rights reserved.<br>Private and confidential.',
+    });
+  </script>
+</body>
+</html>

@@ -5,9 +5,16 @@
 const LEGAL = '2026 Sweat Strategies. All rights reserved.<br>Confidential and proprietary information.';
 
 /* opts.legal replaces the footer line — the anonymised deck uses it to say
-   so on every slide rather than only on the cover */
+   so on every slide rather than only on the cover.
+
+   opts.brand replaces the wordmark in the header. Sweat is not the only
+   company that presents off this engine — the DAVID deck is a different
+   business with its own investors reading it — and a deck headed with the
+   wrong company name is not a document you can send. Defaults to Sweat, so
+   every deck that passes nothing is unchanged. */
 export function mount(SLIDES, opts = {}) {
   const legal = opts.legal ?? LEGAL;
+  const brand = opts.brand ?? 'Sweat Strategies';
   const scaler = document.getElementById('scaler');
   const rail = document.getElementById('rail');
   const hint = document.getElementById('hint');
@@ -24,7 +31,7 @@ export function mount(SLIDES, opts = {}) {
 
     const chrome = s.chrome === 'none' ? '' : `
       <div class="chrome ${s.chrome === 'dark' ? 'chrome--dark' : ''}">
-        <div class="chrome__brand">Sweat Strategies</div>
+        <div class="chrome__brand">${brand}</div>
         <div class="chrome__year">2026</div>
         <div class="chrome__foot">
           <span class="chrome__num">${String(i + 1).padStart(2, '0')}</span>
