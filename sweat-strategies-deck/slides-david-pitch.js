@@ -397,7 +397,55 @@ export const SLIDES = [
       </div>`,
   },
 
-  /* 10 — competition. The deck had no competition slide at all, which
+  /* 10 — the roadmap. New. The three phases are PJ's; the triggers
+     between them are inferred and are the thing for him to overrule. The
+     take rate holding across all three is his call, confirmed — it is
+     what makes phase three worth drawing, because the economics do not
+     degrade as the work automates.
+
+     The last line is a guard rail: saying the raise is priced on phases
+     one and two is what stops phase three reading as the pitch. */
+  {
+    section: 'The roadmap',
+    grain: 'soft',
+    html: `
+      <div class="pad l-mid">
+        <h2 class="display reveal" style="font-size:76px;line-height:1.06;margin-bottom:56px">
+          The agent comes out of the loop.
+        </h2>
+
+        <div class="reveal" style="--d:.2s;display:grid;grid-template-columns:repeat(3,1fr);gap:70px;max-width:1728px">
+          ${[
+            { n: '01', status: 'Live today', name: 'Our desk',
+              who: 'Our TPMs book on the platform.',
+              next: 'Advancing and settlement run without a person' },
+            { n: '02', status: 'What the raise buys', name: 'Their desk',
+              who: "The artist's team plans the tour in it. We still book.",
+              next: 'A date confirms without a call' },
+            { n: '03', status: 'The upside', name: 'No desk',
+              who: 'It books itself. Agents move to A&R.',
+              next: '' },
+          ].map((p) => `
+            <div style="border-top:1px solid #ffffff1f;padding-top:26px;display:flex;flex-direction:column">
+              <div class="label" style="font-size:15px;margin-bottom:22px">Phase ${p.n} · ${p.status}</div>
+              <div class="display" style="font-size:56px;line-height:1;color:var(--blue);margin-bottom:18px">${p.name}</div>
+              <p class="body" style="font-size:21px;max-width:none;margin-bottom:${p.next ? 24 : 0}px">${p.who}</p>
+              ${p.next ? `<div style="font-family:var(--mono);text-transform:uppercase;font-size:12px;line-height:1.6;letter-spacing:0.1em;color:var(--head);margin-top:auto">Next when →<br>${p.next}</div>` : ''}
+            </div>`).join('')}
+        </div>
+
+        <div class="rule reveal" style="--d:.44s;margin:40px 0 26px"></div>
+        <p class="body reveal" style="--d:.5s;font-size:23px;max-width:1680px;margin-bottom:12px">
+          <strong style="color:var(--blue)">The take does not move.</strong> 13% from the fan, 7% from the
+          artist, at every phase.
+        </p>
+        <p class="body reveal" style="--d:.56s;font-size:17px;max-width:1680px;opacity:.75">
+          The raise is priced on phases one and two. Phase three is upside, not base case.
+        </p>
+      </div>`,
+  },
+
+  /* 11 — competition. The deck had no competition slide at all, which
      reads as unexamined rather than confident. Grouped by category
      rather than by brand on purpose: a per-company tick chart would
      force claims about DICE's marketing or AXS's data terms that we
@@ -450,7 +498,7 @@ export const SLIDES = [
       </div>`,
   },
 
-  /* 11 — market. The hedge is gone. "Est., research in progress" printed
+  /* 12 — market. The hedge is gone. "Est., research in progress" printed
      on a slide does more damage than an imperfect number, so the figures
      are committed to and the basis is stated in small type instead. The
      line that matters to an investor is the last one: the Year-5 plan is
@@ -481,7 +529,7 @@ export const SLIDES = [
       </div>`,
   },
 
-  /* 12 — the plan. This slide did not exist, and its absence was the
+  /* 13 — the plan. This slide did not exist, and its absence was the
      single biggest hole in the deck: an investor cannot size a seed
      cheque against a deck with no revenue line in it.
 
@@ -538,7 +586,7 @@ export const SLIDES = [
       </div>`,
   },
 
-  /* 13 — go to market, with the multiplication drawn. */
+  /* 14 — go to market, with the multiplication drawn. */
   {
     section: 'Go to market',
     grain: 'soft',
@@ -566,11 +614,12 @@ export const SLIDES = [
         <div class="rule reveal" style="--d:.42s;margin:0 0 26px"></div>
         <p class="body reveal" style="--d:.48s;font-size:23px;max-width:1680px">
           Ex-booking agents who already hold the relationships. Our first is in seat.
+          <span style="opacity:.8">That multiplication is phases one and two — phase three is what removes the ×.</span>
         </p>
       </div>`,
   },
 
-  /* 14 — the team, lifted off the ask slide onto its own. It shared a
+  /* 15 — the team, lifted off the ask slide onto its own. It shared a
      slide with the ask while the ask had nothing in it but a number;
      now the ask carries a use of funds and a runway, and the four of
      them get the room a seed investor actually gives this slide. */
@@ -606,7 +655,7 @@ export const SLIDES = [
       </div>`,
   },
 
-  /* 15 — the ask. Was a number and a mood. A seed ask without a use of
+  /* 16 — the ask. Was a number and a mood. A seed ask without a use of
      funds and a date the money stops being needed is an incomplete ask,
      so both are on the slide now. The three named lines are the plan's
      own committed spend; the balance is the booking team and working

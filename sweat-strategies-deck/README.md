@@ -25,8 +25,8 @@ everything else sit in one place. This folder is where they are *authored*.
 | **Bespoke** — M07 / Key Factory | `keyfactory-proposal.html` | `slides-keyfactory.js` | `Sweat-M07-Proposal.pdf` (22pp) |
 | **Bespoke** — House Music With Love | `hmwl-proposal.html` | `slides-hmwl.js` | `Sweat-HMWL-Proposal.pdf` (23pp) |
 | **Investor** — Sweat Strategies | `investor-proposal.html` | `slides-investor.js` | `Sweat-Investor-Deck.pdf` (22pp) |
-| **Investor** — DAVID, document cut | `david-proposal.html` | `slides-david.js` | `DAVID-Seed-Deck.pdf` (17pp) |
-| **Investor** — DAVID, pitch cut | `david-pitch.html` | `slides-david-pitch.js` | `DAVID-Pitch-Deck.pdf` (15pp) |
+| **Investor** — DAVID, document cut | `david-proposal.html` | `slides-david.js` | `DAVID-Seed-Deck.pdf` (18pp) |
+| **Investor** — DAVID, pitch cut | `david-pitch.html` | `slides-david-pitch.js` | `DAVID-Pitch-Deck.pdf` (16pp) |
 
 `deck.js` exports `mount(SLIDES)`; each page imports its own slide set and calls
 it. Shared fragments and slide archetypes (`caseChart`, `caseStats`, `bend`,

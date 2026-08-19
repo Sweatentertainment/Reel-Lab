@@ -561,9 +561,78 @@ export const SLIDES = [
         </div>
       </div>`,
   },
+  /* 10 — the roadmap. New, and the answer to the question the deck could
+     not previously answer: is this an agency with a dashboard on it.
+
+     The three phases are PJ's. What is inferred — and what he should
+     overrule if it is wrong — are the TRIGGERS between them: the move to
+     phase two is gated on advancing and settlement running without a
+     person, and the move to phase three on the venue network being dense
+     enough to confirm a date without a call. A roadmap without a stated
+     trigger reads as a wish, so they are on the slide rather than in a
+     footnote.
+
+     THE TAKE RATE HOLDING AT 20% ACROSS ALL THREE PHASES IS PJ'S CALL,
+     confirmed explicitly. It is the strong version of the argument — the
+     economics do not degrade as the work automates — and it is the reason
+     phase three is worth drawing at all. If that ever softens, this slide
+     is the first thing that has to change.
+
+     The last line is a guard rail, not modesty. Investors have been burned
+     by "services now, platform later"; saying out loud that the raise is
+     priced on phases one and two is what stops phase three reading as the
+     pitch. */
+  {
+    section: 'The roadmap',
+    grain: 'soft',
+    html: `
+      <div class="pad l-mid">
+        <div class="label reveal" style="margin-bottom:26px">The roadmap</div>
+        <h2 class="display reveal" style="--d:.08s;font-size:66px;line-height:1.06;max-width:1620px;margin-bottom:20px">
+          The agent comes out of the loop.
+        </h2>
+        <p class="body reveal" style="--d:.14s;font-size:21px;max-width:1560px;margin-bottom:42px">
+          Today our own tour partnerships managers run the booking on the platform. Next the artist's team
+          plans the tour inside it. Then a date books without a call — and the number of shows stops being
+          a function of how many people we employ.
+        </p>
+
+        <div class="reveal" style="--d:.26s;display:grid;grid-template-columns:repeat(3,1fr);gap:64px;max-width:1728px">
+          ${[
+            { n: '01', status: 'Live today', name: 'Our desk',
+              who: 'Our TPMs run the booking on the platform. Every tour on one system, every campaign feeding the next.',
+              next: 'Advancing and settlement run without a person' },
+            { n: '02', status: 'What the raise buys', name: 'Their desk',
+              who: "The artist's team plans the tour in the product. Our agents still book it — and we can finally measure how the platform is used.",
+              next: 'The venue network is deep enough to confirm a date without a call' },
+            { n: '03', status: 'The upside', name: 'No desk',
+              who: 'A date books itself. The agents move to A&R and client success rather than out of the business.',
+              next: '' },
+          ].map((p) => `
+            <div style="border-top:1px solid #ffffff1f;padding-top:24px;display:flex;flex-direction:column">
+              <div class="label" style="font-size:14px;margin-bottom:20px">Phase ${p.n} · ${p.status}</div>
+              <div class="display" style="font-size:46px;line-height:1;color:var(--blue);margin-bottom:16px">${p.name}</div>
+              <p class="body" style="font-size:19px;max-width:none;margin-bottom:${p.next ? 22 : 0}px">${p.who}</p>
+              ${p.next ? `<div style="font-family:var(--mono);text-transform:uppercase;font-size:12px;line-height:1.6;letter-spacing:0.1em;color:var(--head);margin-top:auto">Next when →<br>${p.next}</div>` : ''}
+            </div>`).join('')}
+        </div>
+
+        <div class="rule reveal" style="--d:.46s;margin:36px 0 26px"></div>
+        <p class="body reveal" style="--d:.52s;font-size:21px;max-width:1680px;margin-bottom:12px">
+          <strong style="color:var(--blue)">The take does not move.</strong> 13% from the fan and 7% from the
+          artist at every phase. What changes is how many shows one person can carry — and at 4,129 shows a
+          year the plan is still counting agents.
+        </p>
+        <p class="body reveal" style="--d:.58s;font-size:17px;max-width:1680px;opacity:.75">
+          This raise and the plan behind it are priced on phases one and two. Phase three is upside and is
+          not in the base case.
+        </p>
+      </div>`,
+  },
+
   act({ label: 'The business', line: 'A market nobody serves,<br>And a plan to serve it' }),
 
-  /* 10 — competition. The deck had no competition slide at all, which in
+  /* 11 — competition. The deck had no competition slide at all, which in
      a seed pack reads as unexamined rather than confident.
 
      GROUPED BY CATEGORY, NOT BY BRAND, deliberately. A per-company tick
@@ -618,7 +687,7 @@ export const SLIDES = [
       </div>`,
   },
 
-  /* 11 — market. The caveat in the original's eyebrow is kept verbatim: a
+  /* 12 — market. The caveat in the original's eyebrow is kept verbatim: a
      deck that drops a hedge in the redesign is worse than one that never
      carried it — but "research in progress" printed in the eyebrow reads
      as unfinished homework rather than as honesty. The hedge is now where
@@ -660,7 +729,7 @@ export const SLIDES = [
       </div>`,
   },
 
-  /* 12 — the plan. This slide did not exist, and its absence was the
+  /* 13 — the plan. This slide did not exist, and its absence was the
      largest hole in the pack: an investor cannot size a cheque against a
      deck with no revenue line in it.
 
@@ -722,7 +791,7 @@ export const SLIDES = [
       </div>`,
   },
 
-  /* 13 — go to market. The maths block was the strongest thing on the
+  /* 14 — go to market. The maths block was the strongest thing on the
      original slide and was set as small text; it now carries the right. */
   {
     section: 'Go to market',
@@ -764,12 +833,13 @@ export const SLIDES = [
           </div>
           <div class="rule" style="margin:0 0 26px;max-width:640px"></div>
           <div style="font-family:var(--sans);font-weight:800;font-size:34px;letter-spacing:-0.04em;margin-bottom:10px">3,000 shows a year</div>
-          <p class="body" style="font-size:20px;max-width:620px">Two tours a month per agent.</p>
+          <p class="body" style="font-size:20px;max-width:620px;margin-bottom:16px">Two tours a month per agent.</p>
+          <p class="body" style="font-size:18px;max-width:620px;opacity:.8">This is the phase one and two maths, and it is bounded by how many agents we hire. Phase three is what removes the multiplier.</p>
         </div>
       </div>`,
   },
 
-  /* 14 — the team. Split out from the original slide 12, which carried four
+  /* 15 — the team. Split out from the original slide 12, which carried four
      people, the use of funds and the closing line together. Four biographies
      at a readable size is a slide on its own. */
   {
@@ -810,7 +880,7 @@ export const SLIDES = [
       </div>`,
   },
 
-  /* 15 — the ask. Was three qualitative cards and a number. A seed ask
+  /* 16 — the ask. Was three qualitative cards and a number. A seed ask
      without a use of funds and a date the money stops being needed is an
      incomplete ask, so the cards now carry the plan's own committed
      spend and the runway sits under them.
