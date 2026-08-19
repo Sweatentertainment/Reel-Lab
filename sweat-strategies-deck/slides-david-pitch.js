@@ -397,14 +397,8 @@ export const SLIDES = [
       </div>`,
   },
 
-  /* 10 — the roadmap. New. The three phases are PJ's; the triggers
-     between them are inferred and are the thing for him to overrule. The
-     take rate holding across all three is his call, confirmed — it is
-     what makes phase three worth drawing, because the economics do not
-     degrade as the work automates.
-
-     The last line is a guard rail: saying the raise is priced on phases
-     one and two is what stops phase three reading as the pitch. */
+  /* 10 — the roadmap. Simplified on PJ's note. The inferred triggers are
+     gone; his dates and the margin per phase carry it instead. */
   {
     section: 'The roadmap',
     grain: 'soft',
@@ -416,31 +410,23 @@ export const SLIDES = [
 
         <div class="reveal" style="--d:.2s;display:grid;grid-template-columns:repeat(3,1fr);gap:70px;max-width:1728px">
           ${[
-            { n: '01', status: 'Live today', name: 'Our desk',
-              who: 'Our TPMs book on the platform.',
-              next: 'Advancing and settlement run without a person' },
-            { n: '02', status: 'What the raise buys', name: 'Their desk',
-              who: "The artist's team plans the tour in it. We still book.",
-              next: 'A date confirms without a call' },
-            { n: '03', status: 'The upside', name: 'No desk',
-              who: 'It books itself. Agents move to A&R.',
-              next: '' },
+            { n: '01', when: 'Today', name: 'Our desk', who: 'Our TPMs book on the platform.', margin: '68%' },
+            { n: '02', when: 'Feb 2028', name: 'Their desk', who: "The artist's team plans. We book.", margin: '80%' },
+            { n: '03', when: 'Aug 2029', name: 'No desk', who: 'They run it. Agents move to A&R.', margin: '83%' },
           ].map((p) => `
-            <div style="border-top:1px solid #ffffff1f;padding-top:26px;display:flex;flex-direction:column">
-              <div class="label" style="font-size:15px;margin-bottom:22px">Phase ${p.n} · ${p.status}</div>
-              <div class="display" style="font-size:56px;line-height:1;color:var(--blue);margin-bottom:18px">${p.name}</div>
-              <p class="body" style="font-size:21px;max-width:none;margin-bottom:${p.next ? 24 : 0}px">${p.who}</p>
-              ${p.next ? `<div style="font-family:var(--mono);text-transform:uppercase;font-size:12px;line-height:1.6;letter-spacing:0.1em;color:var(--head);margin-top:auto">Next when →<br>${p.next}</div>` : ''}
+            <div style="border-top:1px solid #ffffff1f;padding-top:26px">
+              <div class="label" style="font-size:15px;margin-bottom:22px">Phase ${p.n} · ${p.when}</div>
+              <div class="display" style="font-size:58px;line-height:1;color:var(--blue);margin-bottom:20px">${p.name}</div>
+              <p class="body" style="font-size:21px;max-width:none;margin-bottom:30px">${p.who}</p>
+              <div style="font-family:var(--sans);font-weight:800;font-size:46px;letter-spacing:-0.04em;color:#fff">${p.margin}</div>
+              <div class="label" style="font-size:13px;margin-top:8px">EBITDA margin</div>
             </div>`).join('')}
         </div>
 
-        <div class="rule reveal" style="--d:.44s;margin:40px 0 26px"></div>
-        <p class="body reveal" style="--d:.5s;font-size:23px;max-width:1680px;margin-bottom:12px">
-          <strong style="color:var(--blue)">The take does not move.</strong> 13% from the fan, 7% from the
-          artist, at every phase.
-        </p>
-        <p class="body reveal" style="--d:.56s;font-size:17px;max-width:1680px;opacity:.75">
-          The raise is priced on phases one and two. Phase three is upside, not base case.
+        <div class="rule reveal" style="--d:.44s;margin:44px 0 26px"></div>
+        <p class="body reveal" style="--d:.5s;font-size:23px;max-width:1680px">
+          <strong style="color:var(--blue)">The take does not move.</strong> Same shows, same revenue.
+          The margin comes from the work moving into the machine.
         </p>
       </div>`,
   },
@@ -514,7 +500,7 @@ export const SLIDES = [
         </h2>
         <ol class="steps reveal" style="--d:.2s;grid-template-columns:repeat(3,1fr);max-width:1680px;margin-bottom:48px">
           <li><span>UK live sector GVA</span>${stat({ n: '£2.5bn', cap: 'Europe is a multiple' })}</li>
-          <li><span>Attendance under 1,500 cap</span>${stat({ n: '55%', cap: 'the majority, not a niche' })}</li>
+          <li><span>Share of UK live attendance</span>${stat({ n: '55%', cap: 'is in rooms under 1,500 cap' })}</li>
           <li><span>Revenue pool</span>${stat({ n: '£600m–1bn', cap: 'no pan-European incumbent' })}</li>
         </ol>
 
@@ -543,9 +529,9 @@ export const SLIDES = [
     grain: 'soft',
     html: `
       <div class="pad l-mid">
-        <div class="label reveal" style="margin-bottom:24px">Base case · business plan v5.1</div>
+        <div class="label reveal" style="margin-bottom:24px">Base case · business plan v6</div>
         <h2 class="display reveal" style="--d:.06s;font-size:76px;line-height:1.06;margin-bottom:20px">
-          £30.7m and 73% margins by Year 5.
+          £30.7m and 83% margins by Year 5.
         </h2>
         <p class="body reveal" style="--d:.12s;font-size:22px;max-width:1560px;margin-bottom:44px;color:var(--head)">
           We take 20% of gross box office — 13% from the fan, 7% from the artist. It is the same
@@ -560,10 +546,10 @@ export const SLIDES = [
           </div>
           ${[
             ['Year 1', 0.34, -0.21, '£0.34m', '−£0.21m'],
-            ['Year 2', 5.80, 3.53, '£5.8m', '£3.5m'],
-            ['Year 3', 13.45, 9.14, '£13.4m', '£9.1m'],
-            ['Year 4', 21.10, 14.96, '£21.1m', '£15.0m'],
-            ['Year 5', 30.73, 22.41, '£30.7m', '£22.4m'],
+            ['Year 2', 5.80, 3.65, '£5.8m', '£3.7m'],
+            ['Year 3', 13.45, 9.89, '£13.4m', '£9.9m'],
+            ['Year 4', 21.10, 16.97, '£21.1m', '£17.0m'],
+            ['Year 5', 30.73, 25.51, '£30.7m', '£25.5m'],
           ].map(([yr, rev, eb, revL, ebL], i) => `
             <div style="display:grid;grid-template-columns:110px 1fr 300px;gap:30px;align-items:center;padding:11px 0">
               <span class="label" style="font-size:15px;color:${i === 4 ? 'var(--blue)' : 'var(--head)'}">${yr}</span>
@@ -581,7 +567,7 @@ export const SLIDES = [
         <div class="rule reveal" style="--d:.44s;margin:26px 0 22px"></div>
         <p class="body reveal" style="--d:.5s;font-size:22px;max-width:1680px">
           <strong style="color:var(--blue)">EBITDA-positive in April 2027.</strong>
-          Cash-generative from that August. Ten people at Year 5.
+          The margin climbs because the roadmap does — 68% today, 83% once the artist's team runs it.
         </p>
       </div>`,
   },
@@ -678,8 +664,8 @@ export const SLIDES = [
 
         <ol class="steps reveal" style="--d:.24s;grid-template-columns:repeat(5,1fr);max-width:1728px;margin-bottom:44px">
           ${[
-            ['Booking team', '£420k', 'five TPMs and a head of dept.'],
-            ['Tour float', '£230k', 'we front the show marketing'],
+            ['Team ahead of revenue', '£435k', 'until trading carries it'],
+            ['Tour float', '£215k', 'we front the show marketing'],
             ['Market entry', '£190k', 'the agent conferences, B2B'],
             ['Product', '£100k', 'retained dev and hosting'],
             ['Licences & setup', '£60k', 'FCA opinion, contracts, VAT'],
@@ -691,7 +677,7 @@ export const SLIDES = [
 
         <div class="rule reveal" style="--d:.44s;margin:0 0 26px"></div>
         <p class="display reveal" style="--d:.5s;font-size:34px;line-height:1.26;font-weight:700;letter-spacing:-0.035em;color:#fff;max-width:1600px">
-          It is the last money we need. EBITDA-positive April 2027.
+          The plan needs £516k to break even. We are raising twice that, so a slow month is not a second round.
         </p>
       </div>`,
   },
