@@ -31,6 +31,7 @@ scripts/    build the tokens, treat a new photo, export the ads
 | `Sweat-Investor-Deck.pdf` | 22 | **Investor** — Sweat Strategies fundraise. Financials are marked [TBC] |
 | `DAVID-Seed-Deck.pdf` | 18 | **Investor** — DAVID seed round, the document cut. Emailed and read alone |
 | `DAVID-Pitch-Deck.pdf` | 16 | **Investor** — DAVID seed round, the pitch cut. 757 words, diagram-led, for presenting |
+| `DAVID-Artists-Agents.pdf` | 13 | **Sales** — DAVID for artists and their agents. Josh's deck: take-home, sell-through and fan ownership, no financials |
 
 Authored in [`../sweat-strategies-deck/`](../sweat-strategies-deck/). Edit copy
 there and re-export; these are the output, not the source.
