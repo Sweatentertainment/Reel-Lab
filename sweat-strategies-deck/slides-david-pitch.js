@@ -331,7 +331,7 @@ export const SLIDES = [
           Their spend is cheaper.<br>Their rooms are emptier.
         </h2>
         <p class="body reveal" style="--d:.12s;font-size:22px;margin-bottom:52px;color:var(--head)">
-          On a £20 ticket. Cost per ticket on its own is the wrong measure.
+          Allocated spend per ticket, on a £20 ticket.
         </p>
 
         <div class="reveal" style="--d:.22s;display:grid;grid-template-columns:1fr 1fr;gap:120px;max-width:1560px">
@@ -341,10 +341,10 @@ export const SLIDES = [
               ['Delivered', 'Under £3.00', 'last three tours'],
               ['The room', '91–92%', 'sold'],
             ] },
-            { who: 'Incumbents', hero: false, rows: [
-              ['Committed', '£1.50–2.50', 'and spent blind'],
+            { who: 'Traditional promoters', hero: false, rows: [
+              ['Committed', '£1–2', 'and spent blind'],
               ['Delivered', 'Not attributed', ''],
-              ['The room', '4–27%', 'sold when we are called in'],
+              ['The room', '38.6%', 'the UK average — MVT 2024'],
             ] },
           ].map((c) => `
             <div>
@@ -360,7 +360,7 @@ export const SLIDES = [
 
         <div class="rule reveal" style="--d:.46s;margin:14px 0 26px"></div>
         <p class="body reveal" style="--d:.52s;font-size:23px;max-width:1620px">
-          We commit two to four times more per ticket, come in under half of it,
+          We commit three to six times more per ticket, come in under half of it,
           and the gap goes back to the artist.
         </p>
       </div>`,
@@ -405,7 +405,7 @@ export const SLIDES = [
     html: `
       <div class="pad l-mid">
         <h2 class="display reveal" style="font-size:76px;line-height:1.06;margin-bottom:56px">
-          The agent comes out of the loop.
+          Our TPMs come out<br>of the booking loop.
         </h2>
 
         <div class="reveal" style="--d:.2s;display:grid;grid-template-columns:repeat(3,1fr);gap:70px;max-width:1728px">
@@ -534,8 +534,8 @@ export const SLIDES = [
           £30.7m and 83% margins by Year 5.
         </h2>
         <p class="body reveal" style="--d:.12s;font-size:22px;max-width:1560px;margin-bottom:44px;color:var(--head)">
-          We take 20% of gross box office — 13% from the fan, 7% from the artist. It is the same
-          twenty pence on every ticket the engine sells.
+          20% of gross box office — 13% from the fan, 7% from the artist. The margin comes from
+          the AI doing the routing, the advancing, the settlement and the campaign.
         </p>
 
         <div class="reveal" style="--d:.24s;max-width:1728px">
@@ -583,7 +583,7 @@ export const SLIDES = [
         </h2>
 
         <div class="reveal" style="--d:.2s;display:flex;align-items:center;gap:56px;flex-wrap:wrap;margin-bottom:50px">
-          ${[['6', 'Tour partnerships managers'], ['25', 'Tours each a year'], ['20', 'Dates a tour']]
+          ${[['6', 'Tour partnerships managers'], ['34', 'Tours each, by Year 5'], ['20', 'Dates a tour']]
             .map(([n, cap], i) => `
               ${i ? '<div class="display" style="font-size:64px;line-height:1;color:var(--head);opacity:.45">×</div>' : ''}
               <div>
@@ -592,7 +592,7 @@ export const SLIDES = [
               </div>`).join('')}
           <div class="display" style="font-size:64px;line-height:1;color:var(--head);opacity:.45">=</div>
           <div>
-            <div class="display" style="font-size:118px;line-height:1;color:var(--blue)">3,000</div>
+            <div class="display" style="font-size:118px;line-height:1;color:var(--blue)">4,129</div>
             <div class="label" style="font-size:15px;margin-top:12px;max-width:230px">Shows a year</div>
           </div>
         </div>
@@ -600,7 +600,7 @@ export const SLIDES = [
         <div class="rule reveal" style="--d:.42s;margin:0 0 26px"></div>
         <p class="body reveal" style="--d:.48s;font-size:23px;max-width:1680px">
           Ex-booking agents who already hold the relationships. Our first is in seat.
-          <span style="opacity:.8">That multiplication is phases one and two — phase three is what removes the ×.</span>
+          <span style="opacity:.8">The same six people. Thirteen tours each today, thirty-four by Year 5 — that is the roadmap, not more hiring.</span>
         </p>
       </div>`,
   },
@@ -659,15 +659,15 @@ export const SLIDES = [
           £1m to go loud.
         </h2>
         <p class="body reveal" style="--d:.12s;font-size:24px;max-width:1500px;margin-bottom:52px">
-          It bankrolls the tours, the agent hires and the marketing. The platform is already built.
+          It bankrolls the tours, the agent hires and the marketing — and finishes the build.
         </p>
 
         <ol class="steps reveal" style="--d:.24s;grid-template-columns:repeat(5,1fr);max-width:1728px;margin-bottom:44px">
           ${[
-            ['Team ahead of revenue', '£435k', 'until trading carries it'],
-            ['Tour float', '£215k', 'we front the show marketing'],
-            ['Market entry', '£190k', 'the agent conferences, B2B'],
-            ['Product', '£100k', 'retained dev and hosting'],
+            ['Team ahead of revenue', '£380k', 'until trading carries it'],
+            ['Product, data and AI', '£250k', 'the build phases 2 and 3 need'],
+            ['Tour float', '£160k', 'we front the show marketing'],
+            ['Market entry', '£150k', 'the agent conferences, B2B'],
             ['Licences & setup', '£60k', 'FCA opinion, contracts, VAT'],
           ].map(([k, n, sub]) => `
             <li><span>${k}</span>

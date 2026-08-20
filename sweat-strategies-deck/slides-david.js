@@ -458,16 +458,23 @@ export const SLIDES = [
   },
 
   /* 08 — the sales engine, reframed. The first cut drew three cost bars,
-     and read backwards: the incumbent's £1.50 looked like better value
-     because cost was the only thing measured. Cost per ticket on its own
-     is the wrong axis — cheap spend on a half-empty room is not cheap. So
-     the slide now pairs what each side commits with what the room does,
-     which is the actual argument and is entirely PJ's own figures.
+     and read backwards: the promoter's £1.50 looked like better value
+     because cost was the only thing measured. The axis is ALLOCATED SPEND
+     PER TICKET, named as such — what each side puts behind a ticket before
+     it sells, not what selling one ended up costing. So the slide pairs
+     what each side commits with what the room actually does.
 
-     The 4-27% is stated as where tours sit WHEN WE ARE CALLED IN, not as
-     what incumbent marketing finally achieves. Those tours did not run to
-     completion on the old spend, so claiming it as their end result would
-     be a number we do not have. */
+     THE ROOM, FOR THE PROMOTER SIDE, IS THE MVT AVERAGE (38.6%) rather
+     than the 4-27% this slide used to carry. That range is where tours sit
+     when we are called in, which is a rescue-call subset and not a fair
+     description of the market. The published average is both fairer and
+     harder to argue with, and it is already on the problem slide, so the
+     deck now says the same number twice instead of two different ones.
+
+     "Traditional promoters" rather than "incumbents": incumbent is vague —
+     incumbent ticketer or incumbent promoter? — and this comparison is
+     specifically about who markets the show. The competition slide already
+     groups them as Promoters, so the two slides now agree. */
   {
     section: 'The sales engine',
     grain: 'soft',
@@ -479,21 +486,21 @@ export const SLIDES = [
             Their spend is cheaper.<br>Their rooms are emptier.
           </h2>
           <p class="body reveal" style="--d:.14s;font-size:20px;max-width:640px;margin-bottom:30px">
-            Cost per ticket on its own is the wrong measure. £1.50 into a half-empty room is
-            not value — it is a budget too small to work, spent on targeting built years ago.
+            Allocated spend per ticket is the measure that matters, and £2 into a half-empty room
+            is not value — it is a budget too small to work, spent on targeting built years ago.
           </p>
           <ol class="steps reveal" style="--d:.2s;grid-template-columns:1fr;max-width:640px;row-gap:22px">
             <li><span>AI routing</span>
-              <p class="body" style="font-size:18px;max-width:none">Dates land where the artist's own audience already is.</p></li>
+              <p class="body" style="font-size:18px;max-width:none">We connect the artist's own audience data — streaming, socials, past ticket buyers — and route the tour to the cities that data points at, rather than to the rooms a promoter happens to hold.</p></li>
             <li><span>AI campaign engine</span>
-              <p class="body" style="font-size:18px;max-width:none">Creative, targeting and budget per city, driven to cost-per-ticket. Every market feeds one loop.</p></li>
+              <p class="body" style="font-size:18px;max-width:none">Creative, targeting and budget per city, driven to the cost of a ticket actually sold. Every market feeds one loop.</p></li>
             <li><span>It compounds</span>
               <p class="body" style="font-size:18px;max-width:none">The artist owns every buyer. This tour's audience is next tour's cheapest tickets sold.</p></li>
           </ol>
         </div>
 
         <div class="reveal" style="--d:.3s">
-          <div class="label" style="font-size:17px;margin-bottom:34px">On a £20 ticket</div>
+          <div class="label" style="font-size:17px;margin-bottom:34px">Allocated spend per ticket · on a £20 ticket</div>
           <div style="display:grid;grid-template-columns:1fr 1fr;gap:70px;max-width:900px">
             ${[
               { who: 'David', hero: true, rows: [
@@ -501,10 +508,10 @@ export const SLIDES = [
                 ['Delivered', 'Under £3.00', 'across the last three tours'],
                 ['The room', '91–92%', 'sold'],
               ] },
-              { who: 'Incumbents', hero: false, rows: [
-                ['Committed', '£1.50–2.50', 'and spent blind'],
+              { who: 'Traditional promoters', hero: false, rows: [
+                ['Committed', '£1–2', 'and spent blind'],
                 ['Delivered', 'Not attributed', ''],
-                ['The room', '4–27%', 'sold when we are called in'],
+                ['The room', '38.6%', 'the UK average — MVT 2024'],
               ] },
             ].map((c) => `
               <div>
@@ -519,15 +526,23 @@ export const SLIDES = [
           </div>
           <div class="rule" style="margin:20px 0 24px;max-width:900px"></div>
           <p class="body" style="font-size:20px;max-width:900px">
-            We commit two to four times more per ticket, come in under half of it, and the gap
-            goes back to the artist.
+            We commit three to six times more per ticket, come in under half of what we committed,
+            and the gap goes back to the artist.
           </p>
         </div>
       </div>`,
   },
 
   /* 09 — why now. The operating-model figure is the headline here, so it is
-     lifted out of the paragraph and set as a figure. */
+     lifted out of the paragraph and set as a figure.
+
+     THE THREE REASONS WERE REWRITTEN ON PJ'S NOTE. They used to read as
+     artist grievances — streaming pays nothing, fees are opaque — which
+     are true and are the wrong argument in a room where somebody is
+     deciding whether to fund this. Same three facts, turned to face the
+     investor: the supply of shows is growing, the incumbent's fee is a
+     regulatory liability while ours is half of it, and nobody has taken
+     the middle of the market yet. */
   {
     section: 'Why now',
     grain: 'soft',
@@ -552,11 +567,13 @@ export const SLIDES = [
               settlement and the marketing.
             </p>
           </div>
-          <ol class="steps" style="grid-template-columns:1fr 1fr">
-            <li><span>Streaming pays ~nothing</span>
-              <p class="body" style="font-size:19px;max-width:none">Touring is the income now — artists need every pound of it.</p></li>
-            <li><span>Transparency pressure</span>
-              <p class="body" style="font-size:19px;max-width:none">Fee-disclosure rules are tightening across the UK and EU.</p></li>
+          <ol class="steps" style="grid-template-columns:1fr 1fr 1fr">
+            <li><span>The supply is growing</span>
+              <p class="body" style="font-size:18px;max-width:none">Streaming pays close to nothing, so artists tour more and tour earlier. More shows every year, and nobody is serving the middle of them.</p></li>
+            <li><span>The fee model is exposed</span>
+              <p class="body" style="font-size:18px;max-width:none">Disclosure rules tightening across the UK and EU put a 25%+ booking fee on the wrong side of the regulator. Ours is 13%.</p></li>
+            <li><span>The window is open</span>
+              <p class="body" style="font-size:18px;max-width:none">No pan-European operator of the middle market exists — and the incumbents cannot build one without cannibalising their own fees.</p></li>
           </ol>
         </div>
       </div>`,
@@ -569,7 +586,14 @@ export const SLIDES = [
      thing the slide is for.
 
      THE MARGINS ARE THE REVISED MODEL, not v5.1. The plan slide carries
-     the same numbers and names the source. */
+     the same numbers and names the source.
+
+     PJ asked for the headline to name the TPMs rather than "the agent",
+     and wrote it as Tour Management Partners. The deck calls the role
+     Tour Partnerships Managers everywhere else — team slide, go to
+     market, the ask — so it is set that way here and the naming is his to
+     settle. A deck that gives one role two names is worse than either
+     name. */
   {
     section: 'The roadmap',
     grain: 'soft',
@@ -577,7 +601,7 @@ export const SLIDES = [
       <div class="pad l-mid">
         <div class="label reveal" style="margin-bottom:26px">The roadmap</div>
         <h2 class="display reveal" style="--d:.08s;font-size:66px;line-height:1.06;max-width:1620px;margin-bottom:48px">
-          The agent comes out of the loop.
+          Our Tour Partnerships Managers<br>come out of the booking loop.
         </h2>
 
         <div class="reveal" style="--d:.24s;display:grid;grid-template-columns:repeat(3,1fr);gap:70px;max-width:1728px">
@@ -728,7 +752,8 @@ export const SLIDES = [
         <p class="body reveal" style="--d:.14s;font-size:21px;max-width:1560px;margin-bottom:40px">
           We take 20% of gross box office — 13% from the fan as a booking fee, 7% from the artist.
           The margin comes from the operating model: the same ten people run four thousand shows as
-          run four hundred, because the advancing, the settlement and the tax are machine work.
+          run four hundred, because the AI does the routing, the advancing, the settlement, the tax
+          and the campaign management.
         </p>
 
         <div class="reveal" style="--d:.26s;max-width:1728px">
@@ -769,7 +794,17 @@ export const SLIDES = [
   },
 
   /* 14 — go to market. The maths block was the strongest thing on the
-     original slide and was set as small text; it now carries the right. */
+     original slide and was set as small text; it now carries the right.
+
+     THE MATHS NOW TIES TO THE MODEL. It used to read 6 x 25 tours x 20
+     dates = 3,000 shows, a round number that appears nowhere in the
+     financial plan and disagreed with the 4,129 on three other slides.
+     It is now driven off the projection: six TPMs and twenty dates a tour
+     throughout, with the tours each one carries rising from thirteen a
+     year to thirty-four. Year 2 lands on 1,530 shows and Year 5 on 4,129,
+     which are the model's own annual totals. The growth is productivity,
+     not hiring, which is what makes it the roadmap's slide as much as go
+     to market's. */
   {
     section: 'Go to market',
     grain: 'soft',
@@ -800,18 +835,23 @@ export const SLIDES = [
             <span class="display" style="font-size:80px;line-height:1;color:var(--blue)">6</span>
             <span style="font-family:var(--sans);font-weight:600;font-size:26px;color:var(--head)">TPMs</span>
           </div>
-          <div style="display:flex;align-items:baseline;gap:20px;margin-bottom:18px">
-            <span class="display" style="font-size:80px;line-height:1;color:var(--blue)">×25</span>
-            <span style="font-family:var(--sans);font-weight:600;font-size:26px;color:var(--head)">tours a year</span>
-          </div>
           <div style="display:flex;align-items:baseline;gap:20px;margin-bottom:30px">
             <span class="display" style="font-size:80px;line-height:1;color:var(--blue)">×20</span>
-            <span style="font-family:var(--sans);font-weight:600;font-size:26px;color:var(--head)">dates</span>
+            <span style="font-family:var(--sans);font-weight:600;font-size:26px;color:var(--head)">dates a tour</span>
           </div>
           <div class="rule" style="margin:0 0 26px;max-width:640px"></div>
-          <div style="font-family:var(--sans);font-weight:800;font-size:34px;letter-spacing:-0.04em;margin-bottom:10px">3,000 shows a year</div>
-          <p class="body" style="font-size:20px;max-width:620px;margin-bottom:16px">Two tours a month per agent.</p>
-          <p class="body" style="font-size:18px;max-width:620px;opacity:.8">This is the phase one and two maths, and it is bounded by how many agents we hire. Phase three is what removes the multiplier.</p>
+          ${[
+            ['Year 2', '13', 'tours each', '1,530'],
+            ['Year 5', '34', 'tours each', '4,129'],
+          ].map(([yr, t, cap, shows], i) => `
+            <div style="display:flex;align-items:baseline;gap:18px;margin-bottom:${i ? 26 : 16}px;max-width:640px">
+              <span class="label" style="font-size:14px;min-width:74px">${yr}</span>
+              <span style="font-family:var(--sans);font-weight:800;font-size:32px;letter-spacing:-0.04em;color:#fff;font-variant-numeric:tabular-nums">×${t}</span>
+              <span style="font-family:var(--sans);font-weight:600;font-size:19px;color:var(--head)">${cap}</span>
+              <span style="margin-left:auto;font-family:var(--sans);font-weight:800;font-size:32px;letter-spacing:-0.04em;color:var(--blue);font-variant-numeric:tabular-nums">${shows}</span>
+              <span style="font-family:var(--sans);font-weight:600;font-size:19px;color:var(--head)">shows</span>
+            </div>`).join('')}
+          <p class="body" style="font-size:19px;max-width:620px;opacity:.85">The same six people. One tour a month each today, three a month by Year 5 — that is the roadmap, not more hiring. Both totals are the financial model's own.</p>
         </div>
       </div>`,
   },
@@ -890,16 +930,16 @@ export const SLIDES = [
           £1m to go loud.
         </h2>
         <p class="body reveal" style="--d:.14s;font-size:22px;max-width:1560px;margin-bottom:44px">
-          It bankrolls the tours, the agent hires and the marketing. The platform is already built and
-          already selling — this is runway, not a build budget.
+          It bankrolls the tours, the agent hires and the marketing, and it finishes the build that
+          phases two and three depend on.
         </p>
 
         <ol class="steps reveal" style="--d:.24s;grid-template-columns:repeat(5,1fr);max-width:1728px">
           ${[
-            ['Team ahead of revenue', '£435k', 'The booking team and the directors, from the raise until trading revenue carries them. Five TPMs and a head of department are the constraint on how many tours we can take.'],
-            ['Tour float', '£215k', 'Show marketing goes out months before the box office settles. This is the working capital that lets us front it.'],
-            ['Market entry', '£190k', 'Eurosonic, The Great Escape, ADE, Reeperbahn, IMS — and B2B marketing every month in between.'],
-            ['Product', '£100k', 'Retained development and hosting. The platform is built and selling; this keeps it moving.'],
+            ['Team ahead of revenue', '£380k', 'The booking team and the directors, from the raise until trading revenue carries them. Five TPMs and a head of department are the constraint on how many tours we can take.'],
+            ['Product, data and AI', '£250k', 'The platform is live and selling, and it is nowhere near finished. Routing, the data learning that makes it better every tour, and the automation that phases two and three depend on are all still to build.'],
+            ['Tour float', '£160k', 'Show marketing goes out months before the box office settles. This is the working capital that lets us front it.'],
+            ['Market entry', '£150k', 'Eurosonic, The Great Escape, ADE, Reeperbahn, IMS — and B2B marketing every month in between.'],
             ['Licences &amp; setup', '£60k', 'FCA payments opinion, contract templates, and VAT and tax registration in every territory we sell in.'],
           ].map(([k, n, sub]) => `
             <li><span>${k}</span>
