@@ -10,7 +10,7 @@ The exported PDFs live in [`../sweat-brand/`](../sweat-brand/) with the design
 system they were built from, so the sendable decks and the kit for making
 everything else sit in one place. This folder is where they are *authored*.
 
-## Six decks, one engine
+## The decks, one engine
 
 | Deck | Page | Content | PDF in `../sweat-brand/decks/` |
 |---|---|---|---|
@@ -28,6 +28,7 @@ everything else sit in one place. This folder is where they are *authored*.
 | **Investor** — DAVID, document cut | `david-proposal.html` | `slides-david.js` | `DAVID-Seed-Deck.pdf` (18pp) |
 | **Investor** — DAVID, pitch cut | `david-pitch.html` | `slides-david-pitch.js` | `DAVID-Pitch-Deck.pdf` (16pp) |
 | **Sales** — DAVID, artists & agents | `david-artists.html` | `slides-david-artists.js` | `DAVID-Artists-Agents.pdf` (13pp) |
+| **Partner** — Clouted × Sweat, paid media | `clouted-proposal.html` | `slides-clouted.js` | `Sweat-Clouted-Paid-Media.pdf` (25pp) |
 
 `deck.js` exports `mount(SLIDES)`; each page imports its own slide set and calls
 it. Shared fragments and slide archetypes (`caseChart`, `caseStats`, `bend`,
