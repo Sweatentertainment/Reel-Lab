@@ -11,8 +11,12 @@
    So the reader is NOT Clouted. The reader is a Clouted client, and
    Clouted is the one handing it over. That decides three things:
 
-   · IT IS CO-BRANDED. The header carries both names and the deck talks
-     about "us" as the two companies together, not Sweat pitching in.
+   · IT IS ONE VOICE. Per PJ: "the tone should be as it's coming from
+     both of us." Nothing in here explains who does what, splits the two
+     companies apart, or routes the client through Clouted — the header
+     carries both names and everything under it says "we". A client
+     reading their own proposal should not be reading about the supply
+     chain behind it.
 
    · THE 20% CLOUTED TAKE IS NOT IN HERE. PJ, in the thread: "Then
      Clouted take 20% of our fees." That is the partner economics
@@ -36,6 +40,10 @@
    · The $4,500 / 3-month and $2,000 PCM retainers from the standard
      proposal. The Clouted deal is priced per campaign; showing the
      retainer next to it invites a comparison nobody asked for.
+   · A "who does what" slide, the ticketing and merch case studies, and
+     the worked example of a $1,500 budget. All three were in the first
+     cut; PJ took them out. The rates slide carries the arithmetic on
+     its own.
    · laptop() on the reporting slide — its frame is an unlicensed stock
      comp, and this is a document going out to third-party clients.
      browser() is drawn and carries no licence risk.
@@ -101,37 +109,32 @@ export const SLIDES = [
       </div>`,
   },
 
-  /* 02 — what the partnership actually is. First question a client asks when
-     a second company's name appears on their proposal is "who is doing what",
-     so it is answered before anything is pitched. */
+  /* 02 — a short intro to the media, in the joint voice. Was a "who does
+     what" slide splitting the two companies; PJ cut it — a client does not
+     need the org chart, they need to know the media is good. */
   {
-    section: 'The partnership',
+    section: 'Paid media',
     grain: 'soft',
     html: `
       <div class="pad l-mid">
-        <h2 class="display display--s reveal" style="margin-bottom:64px">Two teams, one campaign.</h2>
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:110px;max-width:1500px">
-          <div class="reveal" style="--d:.16s">
-            <div class="tier">Clouted</div>
-            <p class="body" style="font-size:23px;max-width:none">
-              Knows your record, your release plan and your audience. Stays where
-              they already are — across the campaign, on the calls, and the people
-              you speak to about it.
-            </p>
-          </div>
-          <div class="reveal" style="--d:.24s">
-            <div class="tier">Sweat Strategies</div>
-            <p class="body" style="font-size:23px;max-width:none">
-              Runs the media. Builds the creative, buys the ads, reads the data
-              daily and reports what it says. Nine figures of streams behind
-              artists on Atlantic, BMG, Ninja Tune and Live Nation.
-            </p>
-          </div>
-        </div>
-        <div class="rule reveal" style="--d:.32s;margin:76px 0 44px"></div>
-        <p class="reveal" style="--d:.38s;font-size:27px;font-weight:600;line-height:1.5;max-width:1180px">
-          You brief it once. Nothing about how you work with Clouted changes.
+        <h2 class="display display--s reveal" style="margin-bottom:44px">Best-in-class paid media.</h2>
+        <p class="body reveal" style="--d:.14s;font-size:26px;max-width:1240px">
+          We build the creative, buy the ads and read the data daily, for
+          major-label artists and independents alike. Nine figures of streams,
+          bought at somewhere between fourteen and twenty-four pence a listener.
         </p>
+        <p class="body reveal" style="--d:.24s;font-size:26px;max-width:1240px">
+          Every campaign is measured on what it returned, not on impressions.
+          That is the whole difference.
+        </p>
+        <div class="rule reveal" style="--d:.34s;margin:72px 0 40px"></div>
+        <div class="reveal" style="--d:.4s">
+          <div class="label" style="margin-bottom:26px">Labels &amp; partners</div>
+          <ul class="channels">
+            <li>Atlantic Records</li><li>BMG</li><li>Ninja Tune</li><li>Live Nation</li>
+            <li>CAA</li><li>SJM</li><li>Too Lost</li><li>Propeller</li>
+          </ul>
+        </div>
       </div>`,
   },
 
@@ -271,7 +274,7 @@ export const SLIDES = [
           Plenty of agencies will spend your money for as long as you'll keep giving it to them. We won't.
         </p>
         <p class="body reveal" style="--d:.26s;max-width:1080px;text-align:center;font-size:26px">
-          If a record isn't converting, we say so — to you and to Clouted — and we say what we'd try instead.
+          If a record isn't converting, we say so, and we say what we'd try instead.
         </p>
         <p class="body reveal" style="--d:.36s;max-width:1080px;text-align:center;font-size:26px;color:var(--blue);font-weight:600;margin-top:34px">
           You're not paying us to be optimistic. You're paying us for an answer.
@@ -282,17 +285,15 @@ export const SLIDES = [
   /* 13 */
   act({ section: 'The proof', title: 'The proof' }),
 
-  /* 14–19 — anonymised case studies. Streaming first, largest first, then the
-     two that aren't measured in streams at all, because they are what the
-     "other paid media" slide is promising. */
+  /* 14–17 — anonymised case studies, largest first. The ticketing and merch
+     cases were here too and PJ cut them; the deck stays on streaming, which
+     is what the rates price. */
   c.asSoonAsIGetHome,   // 48.9M on one EP
   c.distracted,         // 73.8M over twelve months
   c.harryT,             // 0 to 7.2M in 90 days
   c.maribouState,       // a 2015 record, 4.3M in 28 days
-  c.admt,               // 5,000 tickets on £6K
-  c.markTuan,           // $68K of merch in two weeks
 
-  /* 20 — reporting. browser() rather than laptop(): see the header note. */
+  /* 18 — reporting. browser() rather than laptop(): see the header note. */
   {
     section: 'Reporting',
     grain: 'soft',
@@ -303,12 +304,12 @@ export const SLIDES = [
             <span class="hl">You'll see everything.</span>
           </h2>
           <h2 class="display reveal" style="--d:.12s;font-size:56px;letter-spacing:-0.04em;line-height:1.12;color:var(--head);margin-bottom:40px">
-            So will Clouted.
+            We mean everything.
           </h2>
           <p class="body reveal" style="--d:.24s;font-size:23px">
             Live dashboard, updated daily. Written status report every week. Full
             review every month where we go through what the data's saying and what
-            we're doing about it. Clouted are on the same reports you are.
+            we're doing about it. Nothing held back and nothing rounded up.
           </p>
         </div>
         <div class="reveal" style="--d:.32s;max-width:1060px;justify-self:center;width:100%">
@@ -317,10 +318,10 @@ export const SLIDES = [
       </div>`,
   },
 
-  /* 21 */
+  /* 19 */
   act({ section: 'The rates', title: 'What it costs' }),
 
-  /* 22 — the rates, exactly as agreed. Two numbers and nothing else on the
+  /* 20 — the rates, exactly as agreed. Two numbers and nothing else on the
      left; the worked example on the right so nobody has to do the sum. */
   {
     section: 'The rates',
@@ -359,45 +360,7 @@ export const SLIDES = [
       </div>`,
   },
 
-  /* 23 — the worked example. This is Polly's own sum off the email thread,
-     which PJ confirmed line for line; it is in the deck because a client who
-     has to work the percentage out themselves assumes the worse reading. */
-  {
-    section: 'The rates',
-    grain: 'soft',
-    html: `
-      <div class="pad l-mid">
-        <div class="label reveal" style="margin-bottom:30px">Worked example</div>
-        <h2 class="display reveal" style="--d:.08s;font-size:64px;margin-bottom:64px">A $1,500 budget.</h2>
-
-        <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:70px;max-width:1660px;align-items:start">
-          ${[
-            ['Test campaign fee', '$425', 'Content, setup and the testing phase'],
-            ['Test campaign spend', '$425', 'Straight into the platforms'],
-            ['Further ad spend', '$520', 'Behind whatever the test says is working'],
-            ['Management fee', '$130', '20% of the spend that follows the test'],
-          ].map(([k, v, sub], i) => `
-            <div class="reveal" style="--d:${0.16 + i * 0.06}s">
-              <div class="label" style="font-size:17px;margin-bottom:20px">${k}</div>
-              <p style="font-family:var(--sans);font-weight:800;font-size:58px;letter-spacing:-0.04em;line-height:1;margin:0 0 18px">${v}</p>
-              <p class="body" style="font-size:19px;max-width:none;opacity:.8">${sub}</p>
-            </div>`).join('')}
-        </div>
-
-        <div class="rule reveal" style="--d:.44s;margin:70px 0 42px"></div>
-
-        <div class="reveal" style="--d:.5s;display:flex;gap:96px;align-items:baseline">
-          <p style="font-family:var(--sans);font-size:26px;font-weight:600;margin:0">
-            <span style="opacity:.6">Into the platforms</span> &nbsp;$945
-          </p>
-          <p style="font-family:var(--sans);font-size:26px;font-weight:600;margin:0">
-            <span style="opacity:.6">To Sweat</span> &nbsp;$555
-          </p>
-        </div>
-      </div>`,
-  },
-
-  /* 24 — the wider offer, kept as an "ask us" rather than a menu with prices
+  /* 21 — the wider offer, kept as an "ask us" rather than a menu with prices
      on it. PJ's steer: the deal we've agreed is the streaming campaign, and
      everything else is priced per job. */
   {
@@ -412,7 +375,7 @@ export const SLIDES = [
           <p class="body reveal" style="--d:.16s;max-width:520px">
             The rates above cover the streaming campaign. A record that's working
             rarely stops there — tickets, merch, a fan capture flow, a full
-            multi-channel rollout. Ask Clouted and we'll quote it per campaign.
+            multi-channel rollout. Ask and we'll quote it per campaign.
           </p>
         </div>
 
@@ -451,7 +414,7 @@ export const SLIDES = [
       </div>`,
   },
 
-  /* 25 — the close. The next step goes through Clouted, because that is the
+  /* 22 — the close. The next step goes through Clouted, because that is the
      relationship this deck is protecting. */
   {
     section: 'Next',
@@ -474,13 +437,13 @@ export const SLIDES = [
 
           <div>
             <ol class="steps reveal" style="--d:.26s">
-              <li><span>01</span>Tell Clouted which record you want tested.</li>
+              <li><span>01</span>Tell us which record you want tested.</li>
               <li><span>02</span>We pick the cuts and the markets together.</li>
               <li><span>03</span>Test live within a week.</li>
               <li><span>04</span>You get the answer, and decide what to spend.</li>
             </ol>
             <p class="reveal" style="--d:.36s;font-size:26px;font-weight:700;margin-top:44px;line-height:1.5">
-              Through Clouted, or straight to us —
+              Ready when you are —
               <a href="mailto:pj@sweatstrategies.com" style="color:var(--blue)">pj@sweatstrategies.com</a>
             </p>
           </div>
