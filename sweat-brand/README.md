@@ -28,6 +28,7 @@ scripts/    build the tokens, treat a new photo, export the ads
 | `Sweat-Christopher-Hunt-Proposal.pdf` | 20 | **Bespoke** — Christopher Hunt, Hunt Equity Group |
 | `Sweat-M07-Proposal.pdf` | 22 | **Bespoke** — M07, for Jay Lee at Key Factory |
 | `Sweat-HMWL-Proposal.pdf` | 23 | **Bespoke** — House Music With Love, for Alex Esser (label deck variant) |
+| `Sweat-St-Lundi-Proposal.pdf` | 25 | **Bespoke** — St Lundi, for Joe Kettle at ONErpm and Tom Rose at Grape. Cross-platform deck variant: three months, two singles and an EP, £750/£1,250 a month at half list |
 | `Sweat-Investor-Deck.pdf` | 22 | **Investor** — Sweat Strategies fundraise. Financials are marked [TBC] |
 | `DAVID-Seed-Deck.pdf` | 18 | **Investor** — DAVID seed round, the document cut. Emailed and read alone |
 | `DAVID-Pitch-Deck.pdf` | 16 | **Investor** — DAVID seed round, the pitch cut. 757 words, diagram-led, for presenting |
