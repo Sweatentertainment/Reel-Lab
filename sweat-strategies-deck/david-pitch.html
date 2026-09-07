@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DAVID — Pitch</title>
+  <link rel="shortcut icon" href="assets/img/sweat-favicon.png" type="image/x-icon">
+  <meta name="robots" content="noindex,nofollow">
+  <link rel="stylesheet" href="deck.css">
+
+  <!-- DAVID's palette, read out of DAVID_Seed_Deck_v1.pptx rather than chosen:
+       #141414 grounds, lime #BEF264 / #D9F99D accents and warm neutral greys are
+       the colours their own slides use. The theme block in that file is the
+       stock Office scheme and is ignored.
+
+       Scoped to this page. deck.css is shared by ten decks, so the DAVID
+       treatment overrides the tokens here instead of touching it. -->
+  <style>
+    :root {
+      --black:    #141414;   /* their ground, a warm near-black */
+      --offblack: #141414;
+      --head:     #c8c8c8;   /* their secondary text, lifted: #a3a3a3 on #141414 fell
+                                to ~3:1 once the mono sublabels dimmed it */
+      --blue:     #bef264;   /* the accent — lime-400 */
+      --blue-deep:#1c1c1c;   /* .field ground: DAVID keeps grounds dark and
+                                lets the lime do the work, so the act dividers
+                                lift to charcoal rather than flooding with hue */
+    }
+
+    /* Hardcoded in deck.css, so they need naming explicitly. */
+    .field--dark { background: #0d0d0d; }
+
+    /* The ambient glows go deep olive — a lime blob at 120px blur washes the
+       whole slide out, where lime-800 reads as depth. */
+    .blob--a { background: #3f6212; }
+    .blob--b { background: #1c1c1c; }
+    .blob--c { background: #35520f; }
+
+    /* White on lime is unreadable — the fill takes the ground colour instead. */
+    .hl { background: var(--blue); color: #141414; }
+    ::selection { background-color: var(--blue); color: #141414; }
+  </style>
+</head>
+<body>
+  <div id="stage">
+    <div id="scaler"></div>
+  </div>
+
+  <nav id="rail" aria-label="Slides"></nav>
+  <div id="hint">← → to move</div>
+
+  <script type="module">
+    import { SLIDES } from './slides-david-pitch.js';
+    import { mount } from './deck.js';
+    /* DAVID is not Sweat — the chrome has to carry its own name and its own
+       confidentiality line, or the deck reads as somebody else's document. */
+    mount(SLIDES, {
+      brand: 'DAVID',
+      legal: '2026 DAVID. All rights reserved.<br>Private and confidential.',
+    });
+  </script>
+</body>
+</html>
