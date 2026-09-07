@@ -55,19 +55,24 @@
      they're hard to generate." So slide 21 gives the numbers we hold
      ourselves to and the benchmarks we read, and says plainly that they
      are not a guarantee.
-   · It does not oversell reel:lab. PJ described it on the call as beta,
-     120 accounts, "quite experimental". The slide says so. Tom asked
-     for it by name, so leaving it out would be ignoring the ask;
-     dressing it up would be worse.
+   · It does not mention reel:lab at all. It had a pillar of its own in
+     the first cut, because Tom asked for it by name on the call — could
+     AI content lip-syncing Archie's songs take the trend workload off
+     him. PJ pulled it: this proposal is paid media and fan flows, and
+     nothing else. If Tom raises it again it is a separate conversation
+     and a separate quote, not a line in this document.
    · It does not use laptop() on the reporting slide — that frame is an
      unlicensed stock comp, and this document goes to a distributor.
      browser() is drawn.
 
    OPEN, AND FLAGGED TO PJ
-   · The fee reads £750/month Meta-only and £1,250/month all-platform as
-     the St Lundi price, at 50% off a £1,500 / £2,500 list. That is the
-     reading of PJ's note; if the discount comes off £750 instead, it is
-     two numbers on slide 22.
+   · The fee is £750/month for Meta paid media and £1,500/month for
+     cross-platform plus the fan flows, per month, billed quarterly. The
+     slide says these are half our standard rate but does not print a
+     struck-through list price, because the earlier £1,500 / £2,500
+     figures no longer halve to these numbers and inventing a new list
+     to make the arithmetic work would be worse than saying less. Give
+     me the two list prices and they go back in.
    · The timeline is a skeleton with no dates in it, because Tom said
      the EP timeline "we also need to discuss ... we'll discuss that on
      our weekly" the following day. Dates drop into slide 20 once that
@@ -158,9 +163,9 @@ export const SLIDES = [
       </div>`,
   },
 
-  /* 02 — the hook, which is Tom's sentence rather than ours. The tightened
-     line is set without quote marks; the verbatim quote underneath it is
-     exactly what he said, off the transcript. */
+  /* 02 — the hook. The first cut carried Tom's full quote off the transcript
+     set under a headline; PJ cut it as too low to open on. This is the
+     top-level version: what the engagement is, in one line. */
   {
     section: 'Proposal',
     html: `
@@ -171,16 +176,12 @@ export const SLIDES = [
         { k: 'b', pos: 'left:38%;bottom:-440px;opacity:.55' },
       ])}
       <div class="pad l-mid">
-        <div class="label reveal" style="margin-bottom:40px">Three months &middot; two singles and an EP</div>
-        <h1 class="display reveal" style="--d:.1s;font-size:128px;line-height:0.98;color:#fff">As much content<br>as possible &mdash;<br>and a way to know.</h1>
-        <p class="body reveal" style="--d:.26s;font-size:24px;max-width:1000px;margin-top:48px">
-          &ldquo;It just seems to be a complete numbers game at the moment. Creating as
-          much content as we possibly can &hellip; as long as there&rsquo;s a bit of a
-          strategy behind it. And then we can learn from all of these things with the
-          paid ads.&rdquo;
-        </p>
-        <p class="reveal" style="--d:.34s;font-family:var(--mono);text-transform:uppercase;font-size:15px;letter-spacing:0.18em;opacity:.6;margin-top:20px">
-          Tom Rose, 26 August
+        <div class="label reveal" style="margin-bottom:44px">Three months &middot; two singles and an EP</div>
+        <h1 class="display reveal" style="--d:.1s;font-size:150px;line-height:0.94;color:#fff">Paid media,<br>and the fans<br>it buys you.</h1>
+        <p class="body reveal" style="--d:.26s;font-size:27px;max-width:960px;margin-top:52px">
+          One team buying every platform the way that platform actually works &mdash;
+          and a fan flow underneath it, so what the spend finds is something Archie
+          keeps.
         </p>
       </div>`,
   },
@@ -297,15 +298,15 @@ export const SLIDES = [
       <div class="pad l-mid">
         <div class="label reveal" style="margin-bottom:34px">Scope of services</div>
         <h2 class="display reveal" style="--d:.08s;font-size:74px;line-height:1.1;margin-bottom:58px;max-width:1400px">
-          Five pillars.
+          Four pillars.
         </h2>
         <ul class="channels reveal" style="--d:.18s">
-          <li>Meta</li><li>TikTok</li><li>reel:lab</li><li>Live &amp; ticketing</li><li>CRM &amp; fan flow</li>
+          <li>Meta</li><li>TikTok</li><li>Live &amp; ticketing</li><li>CRM &amp; fan flow</li>
         </ul>
         <div class="rule reveal" style="--d:.3s;margin:60px 0 40px"></div>
         <p class="body reveal" style="--d:.36s;font-size:22px;max-width:1150px">
           Meta is the engine and the one with the longest record behind it, so the
-          method comes first. Then the four that feed it. YouTube sits inside the Meta
+          method comes first, then the three that feed it. YouTube sits inside the Meta
           pillar rather than beside it &mdash; engagement and reach campaigns on the
           videos, not a separate operation.
         </p>
@@ -395,35 +396,10 @@ export const SLIDES = [
     ],
   }),
 
-  /* 15 — reel:lab. This slide exists because Tom asked for it by name: could
-     AI content lip-syncing Archie's songs take the trend workload off him. It
-     is in beta and the slide says so, because he will find that out anyway and
-     it is better he reads it here. */
-  channel({
-    label: 'Pillar 03 · in beta',
-    name: 'reel:lab',
-    headline: 'The trend volume, without Archie having to be in it.',
-    body: `Tom&rsquo;s ask on the call: keep Archie&rsquo;s own channels for the
-      high-quality work with Josefine, and find another way to be present in trends.
-      reel:lab is our own product for exactly that — branded fan accounts posting
-      original AI content, each with its own identity, able to cross-pollinate. For
-      St Lundi we would build out sub-brands around the record and run lip-sync and
-      performance content through them. The ones that win become Meta ads.`,
-    points: [
-      { t: 'Sub-brands, not clones', b: 'Distinct accounts with their own look and subject, so the output does not read as one bot posting fifty times.' },
-      { t: 'Lip-sync and performance', b: 'The trend-shaped content that works as an ad, made without needing another day of Archie’s time.' },
-      { t: 'Winners become ads', b: 'Anything that performs organically goes into the same cold-audience testing as everything else.' },
-    ],
-    note: `Said plainly: reel:lab is in beta. 120 accounts live today, scaling towards
-      1,000 by Christmas. Some of it is working well and some of it is experimental,
-      and it is priced per scope rather than folded into the retainer &mdash; so it can
-      be tried on one EP without committing the campaign to it.`,
-  }),
-
-  /* 16 — Live, and ticketing. Three US shows are on sale and Joe Riccitelli
+  /* 15 — Live, and ticketing. Three US shows are on sale and Joe Riccitelli
      was on the call, so this is not hypothetical for them. */
   channel({
-    label: 'Pillar 04',
+    label: 'Pillar 03',
     name: 'Live &amp; ticketing',
     headline: 'Nashville, LA and New York, run as campaigns rather than blasts.',
     body: `Tour advertising usually goes out as a wall of spend at on-sale and another
@@ -440,10 +416,10 @@ export const SLIDES = [
     chips: ['Live Nation', 'AEG', 'Communion One'],
   }),
 
-  /* 17 */
+  /* 16 */
   act({ section: 'CRM', title: 'The audience you actually own' }),
 
-  /* 18 — why, before the mechanism. */
+  /* 17 — why, before the mechanism. */
   {
     section: 'CRM',
     grain: 'soft',
@@ -467,7 +443,7 @@ export const SLIDES = [
       </div>`,
   },
 
-  /* 19 — the flow, with the voice note landing under the node it belongs to.
+  /* 18 — the flow, with the voice note landing under the node it belongs to.
      The wording is PJ's own from the call, tightened. */
   {
     section: 'CRM',
@@ -507,7 +483,7 @@ export const SLIDES = [
       </div>`,
   },
 
-  /* 20 — reporting. Written for a group of four organisations, which is the
+  /* 19 — reporting. Written for a group of four organisations, which is the
      actual reporting problem here: Joe and Archie both flagged on 5 August that
      communication needed to be tighter. browser() rather than laptop() — see
      the header note. */
@@ -536,7 +512,7 @@ export const SLIDES = [
       </div>`,
   },
 
-  /* 21 — the skeleton timeline Joe asked for. Deliberately without dates: Tom
+  /* 20 — the skeleton timeline Joe asked for. Deliberately without dates: Tom
      said the EP timeline was going to their weekly the next day. Months rather
      than dates is the honest version, and the slide says why. */
   {
@@ -555,14 +531,14 @@ export const SLIDES = [
             <p class="body" style="font-size:19px;max-width:none">
               Handover of the Meta account and the pixel. Sound tests on single one and
               on every unreleased song we have audio for. Alaska read through discovery
-              mode. First reel:lab sub-brands live if that pillar is in.
+              mode. Fan flow built and ready to switch on.
             </p>
           </li>
           <li><span>02</span>
             <div style="font-family:var(--sans);font-weight:700;font-size:25px;letter-spacing:-0.03em;margin-bottom:12px">Month two &middot; single two</div>
             <p class="body" style="font-size:19px;max-width:none">
               Single two launches on a sound we have already tested rather than a guess.
-              Content scaled around the winners. Fan flow built and switched on. US show
+              Content scaled around the winners. Fan flow live and capturing. US show
               campaigns running against the on-sales.
             </p>
           </li>
@@ -586,7 +562,7 @@ export const SLIDES = [
       </div>`,
   },
 
-  /* 22 — expected results. Joe asked for them and said himself they are hard
+  /* 21 — expected results. Joe asked for them and said himself they are hard
      to generate, so this is the numbers we work to and the benchmarks we read,
      stated as that and not as a forecast. Anything else would be a promise we
      would have to walk back in month two. */
@@ -634,9 +610,10 @@ export const SLIDES = [
       </div>`,
   },
 
-  /* 23 — the fee. Two rates, both at half list, plus what sits on top. The ad
-     spend figures are the team's own from 5 August, so they should recognise
-     them rather than have to price them. */
+  /* 22 — the fee. Two tiers, per month, billed quarterly. No struck-through
+     list price: see the header note. The ad spend figures are the team's own
+     from 5 August, so they should recognise them rather than have to price
+     them. */
   {
     section: 'The fee',
     grain: 'soft',
@@ -644,47 +621,46 @@ export const SLIDES = [
       <div class="pad l-mid">
         <div class="label reveal" style="margin-bottom:30px">Fees &amp; costs</div>
         <h2 class="display reveal" style="--d:.06s;font-size:60px;line-height:1.12;margin-bottom:52px">
-          <span class="hl">Half our list price.</span>
+          <span class="hl">Half our standard rate.</span>
         </h2>
 
         <div style="display:grid;grid-template-columns:1fr 1fr;gap:110px;max-width:1560px">
           <div class="reveal" style="--d:.14s">
-            <div class="tier">Meta only</div>
-            <div style="display:flex;align-items:baseline;gap:20px;margin-bottom:16px">
+            <div class="tier">Meta</div>
+            <div style="display:flex;align-items:baseline;gap:14px;margin-bottom:16px">
               <p style="font-family:var(--sans);font-weight:800;font-size:76px;letter-spacing:-0.04em;line-height:1;margin:0">&pound;750</p>
-              <p style="font-family:var(--sans);font-size:26px;margin:0;opacity:.45;text-decoration:line-through">&pound;1,500</p>
+              <p style="font-family:var(--sans);font-size:24px;margin:0;opacity:.55">a month</p>
             </div>
             <p class="body" style="font-size:21px;max-width:none">
-              A month. The engine on its own &mdash; sound testing, creative testing,
-              the buying, and the Spotify read behind it. &pound;2,250 across the three
-              months.
+              Meta paid media on its own &mdash; sound testing, creative testing, the
+              buying, and the Spotify read behind it.
             </p>
           </div>
           <div class="reveal" style="--d:.22s">
-            <div class="tier">All platforms</div>
-            <div style="display:flex;align-items:baseline;gap:20px;margin-bottom:16px">
-              <p style="font-family:var(--sans);font-weight:800;font-size:76px;letter-spacing:-0.04em;line-height:1;margin:0">&pound;1,250</p>
-              <p style="font-family:var(--sans);font-size:26px;margin:0;opacity:.45;text-decoration:line-through">&pound;2,500</p>
+            <div class="tier">Cross-platform &amp; fan flows</div>
+            <div style="display:flex;align-items:baseline;gap:14px;margin-bottom:16px">
+              <p style="font-family:var(--sans);font-weight:800;font-size:76px;letter-spacing:-0.04em;line-height:1;margin:0">&pound;1,500</p>
+              <p style="font-family:var(--sans);font-size:24px;margin:0;opacity:.55">a month</p>
             </div>
             <p class="body" style="font-size:21px;max-width:none">
-              A month. Meta plus TikTok, YouTube, the live campaigns and the CRM fan
-              flow, run as one operation. &pound;3,750 across the three months.
+              Meta plus TikTok, YouTube and the live campaigns, with the CRM fan flow
+              built and running underneath all of it.
             </p>
           </div>
         </div>
 
-        <div class="rule reveal" style="--d:.3s;margin:64px 0 38px"></div>
+        <div class="rule reveal" style="--d:.3s;margin:60px 0 36px"></div>
 
         <div class="reveal" style="--d:.36s">
-          <div class="label" style="margin-bottom:22px">On top of the fee</div>
+          <div class="label" style="margin-bottom:22px">Terms</div>
           <ol class="steps" style="grid-template-columns:repeat(3,1fr)">
             <li><span>01</span>
-              <div style="font-family:var(--sans);font-weight:700;font-size:22px;letter-spacing:-0.03em;margin-bottom:10px">Ad spend</div>
-              <p class="body" style="font-size:19px;max-width:none">Billed at cost, never marked up. The testing plan we agreed runs about &pound;700 an EP &mdash; roughly &pound;10 an asset, &pound;50&ndash;150 a song.</p>
+              <div style="font-family:var(--sans);font-weight:700;font-size:22px;letter-spacing:-0.03em;margin-bottom:10px">Billed quarterly</div>
+              <p class="body" style="font-size:19px;max-width:none">Per month, paid a quarter at a time &mdash; &pound;2,250 or &pound;4,500 for the three months in this proposal.</p>
             </li>
             <li><span>02</span>
-              <div style="font-family:var(--sans);font-weight:700;font-size:22px;letter-spacing:-0.03em;margin-bottom:10px">reel:lab</div>
-              <p class="body" style="font-size:19px;max-width:none">Quoted per scope once you decide how many sub-brands and how much volume. Not folded into the retainer.</p>
+              <div style="font-family:var(--sans);font-weight:700;font-size:22px;letter-spacing:-0.03em;margin-bottom:10px">Ad spend on top</div>
+              <p class="body" style="font-size:19px;max-width:none">At cost, never marked up. The testing plan we agreed runs about &pound;700 an EP &mdash; roughly &pound;10 an asset, &pound;50&ndash;150 a song.</p>
             </li>
             <li><span>03</span>
               <div style="font-family:var(--sans);font-weight:700;font-size:22px;letter-spacing:-0.03em;margin-bottom:10px">Influencer seeding</div>
@@ -694,12 +670,12 @@ export const SLIDES = [
         </div>
 
         <p class="reveal" style="--d:.46s;font-size:21px;margin-top:44px;opacity:.72">
-          Three months, then a decision on the next two EPs. No longer tie-in than that.
+          One quarter, then a decision on the next two EPs. No longer tie-in than that.
         </p>
       </div>`,
   },
 
-  /* 24 — what we need from them. Naming their side of the work is what makes a
+  /* 23 — what we need from them. Naming their side of the work is what makes a
      first month start on time rather than three weeks late on access. */
   {
     section: 'What we need',
@@ -730,7 +706,7 @@ export const SLIDES = [
       </div>`,
   },
 
-  /* 25 — close. Tom's line back at him, and a date rather than "let's talk". */
+  /* 24 — close. Tom's line back at him, and a date rather than "let's talk". */
   {
     section: 'Next',
     grain: 'soft',
@@ -744,7 +720,7 @@ export const SLIDES = [
           pick a tier, send the dates, and we can be testing sound inside a week.
         </p>
         <ol class="steps reveal" style="--d:.2s;max-width:1620px">
-          <li><span>01</span>Pick a tier &mdash; Meta, or all platforms.</li>
+          <li><span>01</span>Pick a tier &mdash; Meta, or cross-platform with the fan flows.</li>
           <li><span>02</span>Access and audio over, dates confirmed off your weekly.</li>
           <li><span>03</span>Sound tests live within a week.</li>
           <li><span>04</span>Three months later, a decision on the next two EPs.</li>
