@@ -69,6 +69,11 @@
      him. PJ pulled it: this proposal is paid media and fan flows, and
      nothing else. If Tom raises it again it is a separate conversation
      and a separate quote, not a line in this document.
+   · It does not pitch live or ticketing. There was a pillar for the
+     three US shows, with david.tickets offered at no cost. PJ pulled
+     it: Tom's own company already covers live for St Lundi, and
+     proposing it back to him is both redundant and rude. Nothing in
+     here touches the shows.
    · It does not use laptop() on the reporting slide — that frame is an
      unlicensed stock comp, and this document goes to a distributor.
      browser() is drawn.
@@ -209,15 +214,15 @@ export const SLIDES = [
       <div class="pad l-mid">
         <div class="label reveal" style="margin-bottom:34px">Scope of services</div>
         <h2 class="display reveal" style="--d:.08s;font-size:74px;line-height:1.1;margin-bottom:58px;max-width:1400px">
-          Four pillars.
+          Three pillars.
         </h2>
         <ul class="channels reveal" style="--d:.18s">
-          <li>Meta</li><li>TikTok</li><li>Live &amp; ticketing</li><li>CRM &amp; fan flow</li>
+          <li>Meta</li><li>TikTok</li><li>CRM &amp; fan flow</li>
         </ul>
         <div class="rule reveal" style="--d:.3s;margin:60px 0 40px"></div>
         <p class="body reveal" style="--d:.36s;font-size:22px;max-width:1150px">
           Meta is the engine and the one with the longest record behind it, so the
-          method comes first, then the three that feed it.
+          method comes first, then the two that feed it.
         </p>
       </div>`,
   },
@@ -305,30 +310,10 @@ export const SLIDES = [
     ],
   }),
 
-  /* 12 — Live, and ticketing. Three US shows are on sale and Joe Riccitelli
-     was on the call, so this is not hypothetical for them. */
-  channel({
-    label: 'Pillar 03',
-    name: 'Live &amp; ticketing',
-    headline: 'Nashville, LA and New York, run as campaigns rather than blasts.',
-    body: `Tour advertising usually goes out as a wall of spend at on-sale and another
-      on pay-day weekend, against targeting nobody has questioned in years. It sells
-      the tickets that were going to sell anyway and tells you nothing about the rest
-      of the room. We test the creative first, spend steadily across the whole on-sale,
-      and read cold and warm funnels apart, every day.`,
-    points: [
-      { t: 'Tested content first', b: 'Creative tested the way we test a record, before any budget goes behind it.' },
-      { t: 'Steady, not spiked', b: 'Consistent pressure across the on-sale, ramped at the moments that actually move.' },
-      { t: 'Ticketing at no cost', b: 'Through david.tickets we can take the ticketing itself for nothing, and the team gets live access to its own ticket data.' },
-    ],
-    chipsLabel: "Shows we've worked on with",
-    chips: ['Live Nation', 'AEG', 'Communion One'],
-  }),
-
-  /* 13 */
+  /* 12 */
   act({ section: 'CRM', title: 'The audience you actually own' }),
 
-  /* 14 — why, before the mechanism. */
+  /* 13 — why, before the mechanism. */
   {
     section: 'CRM',
     grain: 'soft',
@@ -352,7 +337,7 @@ export const SLIDES = [
       </div>`,
   },
 
-  /* 15 — the flow, with the voice note landing under the node it belongs to.
+  /* 14 — the flow, with the voice note landing under the node it belongs to.
      The wording is PJ's own from the call, tightened. */
   {
     section: 'CRM',
@@ -392,7 +377,7 @@ export const SLIDES = [
       </div>`,
   },
 
-  /* 16 — reporting. Written for a group of four organisations, which is the
+  /* 15 — reporting. Written for a group of four organisations, which is the
      actual reporting problem here: Joe and Archie both flagged on 5 August that
      communication needed to be tighter. browser() rather than laptop() — see
      the header note. */
@@ -421,7 +406,7 @@ export const SLIDES = [
       </div>`,
   },
 
-  /* 17 — the skeleton timeline Joe asked for. Deliberately without dates: Tom
+  /* 16 — the skeleton timeline Joe asked for. Deliberately without dates: Tom
      said the EP timeline was going to their weekly the next day. Months rather
      than dates is the honest version, and the slide says why. */
   {
@@ -447,8 +432,8 @@ export const SLIDES = [
             <div style="font-family:var(--sans);font-weight:700;font-size:25px;letter-spacing:-0.03em;margin-bottom:12px">Month two &middot; single two</div>
             <p class="body" style="font-size:19px;max-width:none">
               Single two launches on a sound we have already tested rather than a guess.
-              Content scaled around the winners. Fan flow live and capturing. US show
-              campaigns running against the on-sales.
+              Content scaled around the winners. Fan flow live and capturing, with the
+              first read on what a captured fan is costing.
             </p>
           </li>
           <li><span>03</span>
@@ -471,7 +456,7 @@ export const SLIDES = [
       </div>`,
   },
 
-  /* 18 — expected results. Joe asked for them and said himself they are hard
+  /* 17 — expected results. Joe asked for them and said himself they are hard
      to generate, so this is the numbers we work to and the benchmarks we read,
      stated as that and not as a forecast. Anything else would be a promise we
      would have to walk back in month two. */
@@ -519,7 +504,7 @@ export const SLIDES = [
       </div>`,
   },
 
-  /* 19 — the fee. Two tiers, per month, billed quarterly. No struck-through
+  /* 18 — the fee. Two tiers, per month, billed quarterly. No struck-through
      list price: see the header note. The ad spend figures are the team's own
      from 5 August, so they should recognise them rather than have to price
      them. */
@@ -552,8 +537,8 @@ export const SLIDES = [
               <p style="font-family:var(--sans);font-size:24px;margin:0;opacity:.55">a month</p>
             </div>
             <p class="body" style="font-size:21px;max-width:none">
-              Meta plus TikTok, YouTube and the live campaigns, with the CRM fan flow
-              built and running underneath all of it.
+              Meta plus TikTok and YouTube, with the CRM fan flow built and running
+              underneath all of it.
             </p>
           </div>
         </div>
@@ -584,7 +569,7 @@ export const SLIDES = [
       </div>`,
   },
 
-  /* 20 — what we need from them. Naming their side of the work is what makes a
+  /* 19 — what we need from them. Naming their side of the work is what makes a
      first month start on time rather than three weeks late on access. */
   {
     section: 'What we need',
@@ -615,7 +600,7 @@ export const SLIDES = [
       </div>`,
   },
 
-  /* 21 — close. Tom's line back at him, and a date rather than "let's talk". */
+  /* 20 — close. Tom's line back at him, and a date rather than "let's talk". */
   {
     section: 'Next',
     grain: 'soft',
