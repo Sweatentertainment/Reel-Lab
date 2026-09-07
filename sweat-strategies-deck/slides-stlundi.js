@@ -37,11 +37,20 @@
    teams. It is his sentence, not ours.
 
    WHAT THE DECK DELIBERATELY DOES NOT DO
+   · It does not diagnose them. A first cut ran four slides here: Brooke's
+     "volume is the issue" set as a bracket, an inventory of everything
+     they already have with everyone named, and the organic-and-paid loop
+     as an operating model. PJ cut all of it as overkill — right call.
+     They were on the call; they know their own situation, and a
+     proposal that explains it back to them is three slides of throat-
+     clearing before the offer. It goes cover, hook, roster, scope, and
+     then straight into the method.
    · It does not criticise anyone currently running the work. Joe Kettle
      is the buyer AND the incumbent — ONErpm's in-house media team is
      placing the ads today, and Brooke is running the HQ page and the
-     Words of the Wild burner. The gap is framed as workload and method,
-     never as failure. Everything they have stays and is named.
+     Words of the Wild burner. Nothing in here frames any of that as a
+     failure, which is also why the inventory slide was safe to lose:
+     the deck never needed to name the gap to sell the method.
    · It does not print the CPR comparison. ONErpm's current cost per
      result is roughly double what our campaigns run at. That is a
      powerful thing for PJ to say on a call and a hostile thing to put
@@ -49,12 +58,11 @@
    · It does not put Archie at the front of the trend content. Tom asked
      for the opposite: keep his own channels to the high-quality work
      with Josefine, and "maybe we don't necessarily want Archie to be at
-     the forefront" of the viral material. Slide 15 exists because of
-     that sentence.
+     the forefront" of the viral material.
    · It does not promise numbers. Joe pre-empted it himself — "I know
-     they're hard to generate." So slide 21 gives the numbers we hold
-     ourselves to and the benchmarks we read, and says plainly that they
-     are not a guarantee.
+     they're hard to generate." So the "what good looks like" slide gives
+     the numbers we hold ourselves to and the benchmarks we read, and
+     says plainly that they are not a guarantee.
    · It does not mention reel:lab at all. It had a pillar of its own in
      the first cut, because Tom asked for it by name on the call — could
      AI content lip-syncing Archie's songs take the trend workload off
@@ -190,107 +198,10 @@ export const SLIDES = [
      or second time; this is who else does this for. */
   roster(),
 
-  /* 04 — the problem, in Brooke's words rather than ours. She said "volume is
-     the issue" on the call. Naming their own diagnosis back is the difference
-     between a proposal and a criticism. */
-  {
-    section: 'The problem',
-    grain: true,
-    html: `
-      <div class="pad l-centre">
-        <h2 class="display display--m reveal"><span class="bracket">Volume is the issue</span></h2>
-        <p class="reveal" style="--d:.34s;font-family:var(--mono);text-transform:uppercase;font-size:15px;letter-spacing:0.18em;opacity:.55;margin-top:64px">
-          Brooke Christopher, on the call
-        </p>
-      </div>`,
-  },
-
-  /* 05 — what is already in place. Everyone named, everyone staying. The gap
-     is the space between them, not anybody's work. */
-  {
-    section: 'The problem',
-    grain: 'soft',
-    html: `
-      <div class="pad l-mid">
-        <h2 class="display reveal" style="font-size:60px;line-height:1.14;margin-bottom:26px;max-width:1500px">
-          There is already a lot here.
-        </h2>
-        <p class="body reveal" style="--d:.1s;font-size:22px;max-width:1180px;margin-bottom:52px">
-          None of it needs replacing. Archie and Josefine are making the best content
-          he has ever had; ONErpm has a media team and an influencer team; Brooke has
-          two pages running; Grape and Gold&rsquo;n Retriever have the shows.
-        </p>
-
-        <ol class="steps reveal" style="--d:.2s;grid-template-columns:repeat(4,1fr)">
-          <li><span>01</span>
-            <div style="font-family:var(--sans);font-weight:700;font-size:23px;letter-spacing:-0.03em;margin-bottom:10px">The content</div>
-            <p class="body" style="font-size:19px;max-width:none">Archie and Josefine, plus the Infinity Cove shoot, the Dopamine video and the live session.</p>
-          </li>
-          <li><span>02</span>
-            <div style="font-family:var(--sans);font-weight:700;font-size:23px;letter-spacing:-0.03em;margin-bottom:10px">The media</div>
-            <p class="body" style="font-size:19px;max-width:none">ONErpm&rsquo;s in-house team on the official ads, and the influencer team that worked Alaska.</p>
-          </li>
-          <li><span>03</span>
-            <div style="font-family:var(--sans);font-weight:700;font-size:23px;letter-spacing:-0.03em;margin-bottom:10px">The pages</div>
-            <p class="body" style="font-size:19px;max-width:none">The HQ page and Words of the Wild, both live, both hungry for more than one person can cut.</p>
-          </li>
-          <li><span>04</span>
-            <div style="font-family:var(--sans);font-weight:700;font-size:23px;letter-spacing:-0.03em;margin-bottom:10px">The shows</div>
-            <p class="body" style="font-size:19px;max-width:none">Nashville, LA and New York on sale, with a team either side of the Atlantic behind them.</p>
-          </li>
-        </ol>
-
-        <div class="rule reveal" style="--d:.36s;margin:56px 0 38px"></div>
-
-        <p class="reveal" style="--d:.42s;font-size:26px;font-weight:600;line-height:1.5;max-width:1400px">
-          What is missing is the thing in the middle: a number that says which of it
-          worked, and therefore what to make next.
-        </p>
-      </div>`,
-  },
-
-  /* 06 — the operating model, as one loop. This is Tom's sentence turned into
-     a mechanism: what posts tells us what to test, what converts tells us what
-     to make. */
-  {
-    section: 'The difference',
-    grain: 'soft',
-    html: `
-      <div class="pad l-mid">
-        <h2 class="display reveal" style="font-size:62px;line-height:1.14;margin-bottom:70px;max-width:1480px">
-          <span class="hl">One loop, not two teams.</span> Organic tells us what to test. Paid tells us what to make.
-        </h2>
-        <ol class="steps reveal" style="--d:.18s">
-          <li><span>01</span>
-            <div>
-              <div style="font-family:var(--sans);font-weight:700;font-size:26px;letter-spacing:-0.03em;margin-bottom:10px">Post it, then prove it</div>
-              <p class="body" style="font-size:20px;max-width:620px">Whatever holds attention organically gets put behind cold spend to find out whether it converts, or just entertained.</p>
-            </div>
-          </li>
-          <li><span>02</span>
-            <div>
-              <div style="font-family:var(--sans);font-weight:700;font-size:26px;letter-spacing:-0.03em;margin-bottom:10px">Tested, not assumed</div>
-              <p class="body" style="font-size:20px;max-width:620px">Many variants against cold audiences at small money. The winner takes the budget; the rest get dropped without argument.</p>
-            </div>
-          </li>
-          <li><span>03</span>
-            <div>
-              <div style="font-family:var(--sans);font-weight:700;font-size:26px;letter-spacing:-0.03em;margin-bottom:10px">Archie stays out of the churn</div>
-              <p class="body" style="font-size:20px;max-width:620px">His channels keep the high-quality work with Josefine. The trend volume runs elsewhere, which is the whole point of it.</p>
-            </div>
-          </li>
-          <li><span>04</span>
-            <div>
-              <div style="font-family:var(--sans);font-weight:700;font-size:26px;letter-spacing:-0.03em;margin-bottom:10px">A single read</div>
-              <p class="body" style="font-size:20px;max-width:620px">One dashboard the whole group can see, so ONErpm, Grape and Gold&rsquo;n Retriever are looking at the same day&rsquo;s numbers.</p>
-            </div>
-          </li>
-        </ol>
-      </div>`,
-  },
-
-  /* 07 — the pillars, signposted. Joe's word, not ours: "it's kind of
-     different pillars that you have". */
+  /* 04 — the scope, in one slide. Joe asked for "the scope of services" and
+     used the word pillars himself, so this is his vocabulary. It is the only
+     thing standing between the roster and the method now, and it does not
+     need to be more than a list and a sentence. */
   {
     section: 'The pillars',
     grain: 'soft',
@@ -306,17 +217,15 @@ export const SLIDES = [
         <div class="rule reveal" style="--d:.3s;margin:60px 0 40px"></div>
         <p class="body reveal" style="--d:.36s;font-size:22px;max-width:1150px">
           Meta is the engine and the one with the longest record behind it, so the
-          method comes first, then the three that feed it. YouTube sits inside the Meta
-          pillar rather than beside it &mdash; engagement and reach campaigns on the
-          videos, not a separate operation.
+          method comes first, then the three that feed it.
         </p>
       </div>`,
   },
 
-  /* 08 */
+  /* 05 */
   act({ section: 'Meta', title: 'How we find the hit?', light: true }),
 
-  /* 09–12 — the method. Unchanged from the label and cross-platform decks
+  /* 06–09 — the method. Unchanged from the label and cross-platform decks
      because it is the one with the evidence behind it, with St Lundi in the
      first card since it is his deck and he is in the licensed library. */
   ...[
@@ -358,7 +267,7 @@ export const SLIDES = [
       </div>`,
   })),
 
-  /* 13 — Meta, as the pillar. The pre-release testing is the thing agreed on
+  /* 10 — Meta, as the pillar. The pre-release testing is the thing agreed on
      5 August; it is restated here because the EP is the reason the deck
      exists. */
   channel({
@@ -379,7 +288,7 @@ export const SLIDES = [
       both work, and it is a preference rather than a performance question.`,
   }),
 
-  /* 14 — TikTok. ONErpm already has an influencer team; this is written to sit
+  /* 11 — TikTok. ONErpm already has an influencer team; this is written to sit
      alongside it, not to replace it. */
   channel({
     label: 'Pillar 02',
@@ -396,7 +305,7 @@ export const SLIDES = [
     ],
   }),
 
-  /* 15 — Live, and ticketing. Three US shows are on sale and Joe Riccitelli
+  /* 12 — Live, and ticketing. Three US shows are on sale and Joe Riccitelli
      was on the call, so this is not hypothetical for them. */
   channel({
     label: 'Pillar 03',
@@ -416,10 +325,10 @@ export const SLIDES = [
     chips: ['Live Nation', 'AEG', 'Communion One'],
   }),
 
-  /* 16 */
+  /* 13 */
   act({ section: 'CRM', title: 'The audience you actually own' }),
 
-  /* 17 — why, before the mechanism. */
+  /* 14 — why, before the mechanism. */
   {
     section: 'CRM',
     grain: 'soft',
@@ -443,7 +352,7 @@ export const SLIDES = [
       </div>`,
   },
 
-  /* 18 — the flow, with the voice note landing under the node it belongs to.
+  /* 15 — the flow, with the voice note landing under the node it belongs to.
      The wording is PJ's own from the call, tightened. */
   {
     section: 'CRM',
@@ -483,7 +392,7 @@ export const SLIDES = [
       </div>`,
   },
 
-  /* 19 — reporting. Written for a group of four organisations, which is the
+  /* 16 — reporting. Written for a group of four organisations, which is the
      actual reporting problem here: Joe and Archie both flagged on 5 August that
      communication needed to be tighter. browser() rather than laptop() — see
      the header note. */
@@ -512,7 +421,7 @@ export const SLIDES = [
       </div>`,
   },
 
-  /* 20 — the skeleton timeline Joe asked for. Deliberately without dates: Tom
+  /* 17 — the skeleton timeline Joe asked for. Deliberately without dates: Tom
      said the EP timeline was going to their weekly the next day. Months rather
      than dates is the honest version, and the slide says why. */
   {
@@ -562,7 +471,7 @@ export const SLIDES = [
       </div>`,
   },
 
-  /* 21 — expected results. Joe asked for them and said himself they are hard
+  /* 18 — expected results. Joe asked for them and said himself they are hard
      to generate, so this is the numbers we work to and the benchmarks we read,
      stated as that and not as a forecast. Anything else would be a promise we
      would have to walk back in month two. */
@@ -610,7 +519,7 @@ export const SLIDES = [
       </div>`,
   },
 
-  /* 22 — the fee. Two tiers, per month, billed quarterly. No struck-through
+  /* 19 — the fee. Two tiers, per month, billed quarterly. No struck-through
      list price: see the header note. The ad spend figures are the team's own
      from 5 August, so they should recognise them rather than have to price
      them. */
@@ -675,7 +584,7 @@ export const SLIDES = [
       </div>`,
   },
 
-  /* 23 — what we need from them. Naming their side of the work is what makes a
+  /* 20 — what we need from them. Naming their side of the work is what makes a
      first month start on time rather than three weeks late on access. */
   {
     section: 'What we need',
@@ -706,7 +615,7 @@ export const SLIDES = [
       </div>`,
   },
 
-  /* 24 — close. Tom's line back at him, and a date rather than "let's talk". */
+  /* 21 — close. Tom's line back at him, and a date rather than "let's talk". */
   {
     section: 'Next',
     grain: 'soft',
