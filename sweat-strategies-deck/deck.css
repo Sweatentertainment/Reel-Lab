@@ -97,6 +97,14 @@ html, body {
 
 .grain--soft::after { opacity: 0.08; }
 
+/* In print the SVG noise above is rasterised by Chromium at the size of the
+   ::after box — which, at inset -50%, is twice the slide each way — and
+   re-embedded on every page: about 1.3MB a slide, most of a deck's PDF.
+   A pre-rendered tile of the same noise is embedded once and repeated, so
+   the grain looks the same and the file is a fraction of the size.
+   Regenerate the tile if the SVG above ever changes. */
+body.is-printing .grain::after { background-image: url("assets/img/grain-tile.png"); }
+
 /* ------------------------------------------------------------- slide chrome */
 
 .chrome {
