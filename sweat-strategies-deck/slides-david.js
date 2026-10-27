@@ -168,10 +168,7 @@ export const SLIDES = [
           The combined promoter, ticketing platform and marketing engine for the live music market.
         </p>
         <div class="rule reveal" style="--d:.3s;margin:56px 0 32px;max-width:1360px"></div>
-        <p class="body reveal" style="--d:.4s;font-size:21px;max-width:1240px;opacity:.95">
-          Founded by the marketing companies behind Bad Bunny, Raye, Thundercat, The Pixies and Swedish House Mafia.
-        </p>
-        <div class="reveal" style="--d:.48s;margin-top:34px">
+        <div class="reveal" style="--d:.36s">
           <span style="font-family:var(--mono);text-transform:uppercase;font-size:24px;letter-spacing:0.2em;color:#fff;opacity:.92">david.tickets</span>
         </div>
       </div>`,
