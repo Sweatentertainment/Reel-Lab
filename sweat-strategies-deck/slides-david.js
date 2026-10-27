@@ -162,19 +162,15 @@ export const SLIDES = [
         { k: 'b', pos: 'left:40%;bottom:-460px;opacity:.4' },
       ])}
       <div class="pad l-mid">
-        <div class="label reveal" style="margin-bottom:56px;font-size:19px">Private &amp; confidential · Seed round · August 2026</div>
+        <div class="label reveal" style="margin-bottom:56px;font-size:19px">Private &amp; confidential · Seed round · October 2026</div>
         <h1 class="display reveal" style="--d:.08s;font-size:220px;line-height:0.86;color:#fff;margin-bottom:44px">DAVID.</h1>
         <p class="display reveal" style="--d:.18s;font-size:44px;line-height:1.24;font-weight:600;letter-spacing:-0.035em;max-width:1360px;color:#fff">
-          The promoter, ticketing platform and marketing engine for the middle of the live music market.
+          The combined promoter, ticketing platform and marketing engine for the live music market.
         </p>
         <div class="rule reveal" style="--d:.3s;margin:56px 0 32px;max-width:1360px"></div>
-        <div class="reveal" style="--d:.36s;display:flex;align-items:baseline;gap:40px;flex-wrap:wrap">
-          <span style="font-family:var(--sans);font-weight:800;font-size:40px;letter-spacing:-0.04em;color:#fff">Raising £1m</span>
-          <span style="font-family:var(--mono);text-transform:uppercase;font-size:20px;letter-spacing:0.18em;color:#fff;opacity:.92">david.tickets</span>
+        <div class="reveal" style="--d:.36s">
+          <span style="font-family:var(--mono);text-transform:uppercase;font-size:24px;letter-spacing:0.2em;color:#fff;opacity:.92">david.tickets</span>
         </div>
-        <p class="body reveal" style="--d:.44s;font-size:21px;max-width:1240px;margin-top:34px;opacity:.95">
-          Founded by the marketing companies behind Bad Bunny, Raye, Thundercat, The Pixies and Swedish House Mafia.
-        </p>
       </div>`,
   },
 
@@ -191,11 +187,11 @@ export const SLIDES = [
           Touring is broken.
         </h2>
         <p class="body reveal" style="--d:.14s;font-size:25px;max-width:1400px;margin-bottom:52px">
-          Everybody in the chain is being milked — and the shows still don't sell.
+          Everybody in the chain is overpaying — and the shows still don't sell.
         </p>
 
         <ol class="steps reveal" style="--d:.24s;grid-template-columns:repeat(4,1fr)">
-          <li><span>Fans are gouged</span>
+          <li><span>Fans are fleeced</span>
             <div class="display" style="font-size:62px;line-height:1;color:var(--blue);margin-bottom:16px">25%+</div>
             <p class="body" style="font-size:18px;max-width:none">Booking fees of 25% and up layered on at checkout — then dynamic pricing on top.</p></li>
           <li><span>Artists get padded settlements</span>
@@ -261,8 +257,8 @@ export const SLIDES = [
         <div class="rule reveal" style="--d:.42s;margin:0 0 30px"></div>
         <p class="body reveal" style="--d:.48s;font-size:22px;max-width:1620px;margin-bottom:16px">
           <strong style="color:var(--blue)">The artists' teams bring us in.</strong>
-          Both of these were Live Nation and AEG tours that had stopped selling. These shows we took on
-          were sitting at 4–27% sell-through before our marketing started.
+          Both of these were Live Nation and AEG tours that had stopped selling. These shows were
+          sitting at 4–27% sell-through before our marketing started.
         </p>
         <p class="body reveal" style="--d:.54s;font-size:22px;max-width:1620px">
           One campaign across every market, one learning loop — a winning creative in Glasgow is live in
@@ -296,7 +292,7 @@ export const SLIDES = [
             <p class="body" style="font-size:17px;max-width:none">across 43 shows</p></li>
           <li><span>ADMT Feb ’27</span>
             <div class="display" style="font-size:54px;line-height:1;color:var(--blue);margin-bottom:12px">22.7%</div>
-            <p class="body" style="font-size:17px;max-width:none">sold, six months out</p></li>
+            <p class="body" style="font-size:17px;max-width:none">sold, six months out.</p></li>
           <li><span>Sell-through</span>
             <div class="display" style="font-size:54px;line-height:1;color:var(--blue);margin-bottom:12px">92%</div>
             <p class="body" style="font-size:17px;max-width:none">across the last three tours</p></li>
@@ -369,11 +365,11 @@ export const SLIDES = [
         <div class="rule reveal" style="--d:.4s;margin:14px 0 28px"></div>
         <div class="reveal" style="--d:.46s;display:grid;grid-template-columns:1fr 1fr;gap:110px;max-width:1620px">
           <p class="body" style="font-size:21px;max-width:none">
-            Ours is the only artist-side deduction, and costs come off at receipted actuals.
-            Theirs comes off a net already padded to protect their take.
+            Ours is the only artist-side deduction, and costs are deducted from receipted actuals.
+            Existing promoters deduct their cost from deflated income padded to protect their share.
           </p>
           <p class="body" style="font-size:21px;max-width:none">
-            They win even half-empty, so the marketing never has to work.
+            Existing promoters are paid even if venues are half-empty, so the marketing never has to work.
             <strong style="color:var(--blue)">The artist wins on both sides.</strong>
           </p>
         </div>
@@ -483,7 +479,7 @@ export const SLIDES = [
         <div>
           <div class="label reveal" style="margin-bottom:26px">The sales engine</div>
           <h2 class="display reveal" style="--d:.08s;font-size:56px;line-height:1.1;margin-bottom:30px">
-            Their spend is cheaper.<br>Their rooms are emptier.
+            Our spend is more effective,<br>and rooms are fuller.
           </h2>
           <p class="body reveal" style="--d:.14s;font-size:20px;max-width:640px;margin-bottom:30px">
             Allocated spend per ticket is the measure that matters, and £2 into a half-empty room
@@ -561,7 +557,7 @@ export const SLIDES = [
         <div class="reveal" style="--d:.26s;display:grid;grid-template-columns:0.9fr 1.1fr;gap:110px;max-width:1680px;align-items:start">
           <div>
             <div class="display" style="font-size:88px;line-height:1;color:var(--blue);margin-bottom:18px">4,129</div>
-            <div style="font-family:var(--sans);font-weight:700;font-size:26px;letter-spacing:-0.03em;margin-bottom:14px">shows a year, run by 10 people.</div>
+            <div style="font-family:var(--sans);font-weight:700;font-size:26px;letter-spacing:-0.03em;margin-bottom:14px">shows a year, run by 12 people.</div>
             <p class="body" style="font-size:19px;max-width:600px">
               The Year-5 operating model — possible only because the machine does the advancing, the
               settlement and the marketing.
@@ -607,14 +603,14 @@ export const SLIDES = [
         <div class="reveal" style="--d:.24s;display:grid;grid-template-columns:repeat(3,1fr);gap:70px;max-width:1728px">
           ${[
             { n: '01', when: 'Today', name: 'Our desk',
-              who: 'Our TPMs run the booking on the platform.', margin: '68%' },
-            { n: '02', when: 'Feb 2028', name: 'Their desk',
-              who: "The artist's team plans the tour. We book it.", margin: '80%' },
-            { n: '03', when: 'Aug 2029', name: 'No desk',
+              who: 'Our TPMs run the booking on the platform.', margin: '63%' },
+            { n: '02', when: '', name: 'Their desk',
+              who: "The artist's team plans the tour. We book it.", margin: '81%' },
+            { n: '03', when: '', name: 'No desk',
               who: 'They run it end to end. Agents move to A&R.', margin: '83%' },
           ].map((p) => `
             <div style="border-top:1px solid #ffffff1f;padding-top:26px">
-              <div class="label" style="font-size:15px;margin-bottom:22px">Phase ${p.n} · ${p.when}</div>
+              <div class="label" style="font-size:15px;margin-bottom:22px">Phase ${p.n}${p.when ? ` · ${p.when}` : ''}</div>
               <div class="display" style="font-size:52px;line-height:1;color:var(--blue);margin-bottom:18px">${p.name}</div>
               <p class="body" style="font-size:20px;max-width:none;margin-bottom:26px">${p.who}</p>
               <div style="font-family:var(--sans);font-weight:800;font-size:40px;letter-spacing:-0.04em;color:#fff">${p.margin}</div>
@@ -745,7 +741,7 @@ export const SLIDES = [
     grain: 'soft',
     html: `
       <div class="pad l-mid">
-        <div class="label reveal" style="margin-bottom:26px">The plan · business plan v6, phased automation</div>
+        <div class="label reveal" style="margin-bottom:26px">The plan · phased automation</div>
         <h2 class="display reveal" style="--d:.08s;font-size:66px;line-height:1.06;max-width:1620px;margin-bottom:20px">
           £30.7m of revenue and 83% margins by Year 5.
         </h2>
@@ -781,14 +777,13 @@ export const SLIDES = [
 
         <div class="rule reveal" style="--d:.46s;margin:24px 0 22px"></div>
         <p class="body reveal" style="--d:.52s;font-size:21px;max-width:1680px;margin-bottom:12px">
-          <strong style="color:var(--blue)">EBITDA-positive in April 2027</strong>, cash-generative from
-          that August. The margin climbs because the roadmap does: 68% while the desk is ours, 83% once the
-          artist's team runs it. Sensitivity runs from £10.2m to £61.5m of Year-5 revenue on growth alone.
+          <strong style="color:var(--blue)">EBITDA-positive in December 2027</strong>, cash-generative from
+          November ’27. The margin climbs because the roadmap does: 63% while the desk is ours, 83% once the
+          artist's team runs it.
         </p>
         <p class="body reveal" style="--d:.58s;font-size:17px;max-width:1680px;opacity:.75">
-          Source: David Tickets business plan v6, phased automation. Revenue and show volume are v5.1
-          unchanged; only the cost of delivering them moves. These are projections, not results — the
-          achieved figures are on the traction slide.
+          Source: David Tickets business plan. These are projections, not results — the achieved
+          figures are on the traction slide.
         </p>
       </div>`,
   },
@@ -796,15 +791,17 @@ export const SLIDES = [
   /* 14 — go to market. The maths block was the strongest thing on the
      original slide and was set as small text; it now carries the right.
 
-     THE MATHS NOW TIES TO THE MODEL. It used to read 6 x 25 tours x 20
-     dates = 3,000 shows, a round number that appears nowhere in the
-     financial plan and disagreed with the 4,129 on three other slides.
-     It is now driven off the projection: six TPMs and twenty dates a tour
-     throughout, with the tours each one carries rising from thirteen a
-     year to thirty-four. Year 2 lands on 1,530 shows and Year 5 on 4,129,
-     which are the model's own annual totals. The growth is productivity,
-     not hiring, which is what makes it the roadmap's slide as much as go
-     to market's. */
+     THE MATHS. Six TPMs and twenty dates a tour throughout, with the tours
+     each one carries rising from thirteen a year to thirty-four.
+
+     PJ's October edit made the multiplication exact — 6 x 13 x 20 = 1,560
+     and 6 x 34 x 20 = 4,080 — where the earlier cut used the model's own
+     annual totals of 1,530 and 4,129, which the multiplication does not
+     produce. The trade is deliberate but it has a cost: 4,129 still
+     appears on the why-now slide and the market slide, so this slide no
+     longer agrees with them, and the closing line's claim that both
+     totals are the model's own is now true of neither. Flagged to PJ;
+     fixing it is one number here or two there, whichever he wants. */
   {
     section: 'Go to market',
     grain: 'soft',
@@ -816,16 +813,12 @@ export const SLIDES = [
             Agents own the relationships.<br>AI does the work.
           </h2>
           <p class="body reveal" style="--d:.16s;font-size:21px;max-width:720px;margin-bottom:26px">
-            <strong style="color:#fff">Five Tour Partnerships Managers</strong> — one genre space each,
+            <strong style="color:#fff">Six Tour Partnerships Managers</strong> — one genre space each,
             ex-booking-agent profile, already holding the relationships with managers and agents.
           </p>
           <p class="body reveal" style="--d:.22s;font-size:21px;max-width:720px;margin-bottom:26px">
             One point of contact for all of Europe — venue contracting, advancing, withholding tax,
             settlement and marketing, handled by the platform behind them.
-          </p>
-          <p class="body reveal" style="--d:.28s;font-size:21px;max-width:720px">
-            <strong style="color:var(--blue)">Josh Ergatoudis, our first TPM, is in seat</strong> — a career
-            booking agent who founded his own agency.
           </p>
         </div>
 
@@ -841,8 +834,8 @@ export const SLIDES = [
           </div>
           <div class="rule" style="margin:0 0 26px;max-width:640px"></div>
           ${[
-            ['Year 2', '13', 'tours each', '1,530'],
-            ['Year 5', '34', 'tours each', '4,129'],
+            ['Year 2', '13', 'tours each', '1,560'],
+            ['Year 5', '34', 'tours each', '4,080'],
           ].map(([yr, t, cap, shows], i) => `
             <div style="display:flex;align-items:baseline;gap:18px;margin-bottom:${i ? 26 : 16}px;max-width:640px">
               <span class="label" style="font-size:14px;min-width:74px">${yr}</span>
@@ -851,7 +844,7 @@ export const SLIDES = [
               <span style="margin-left:auto;font-family:var(--sans);font-weight:800;font-size:32px;letter-spacing:-0.04em;color:var(--blue);font-variant-numeric:tabular-nums">${shows}</span>
               <span style="font-family:var(--sans);font-weight:600;font-size:19px;color:var(--head)">shows</span>
             </div>`).join('')}
-          <p class="body" style="font-size:19px;max-width:620px;opacity:.85">The same six people. One tour a month each today, three a month by Year 5 — that is the roadmap, not more hiring. Both totals are the financial model's own.</p>
+          <p class="body" style="font-size:19px;max-width:620px;opacity:.85">The same six people. One tour a month each today, three a month by Year 5 — that is the roadmap, not more hiring. Both totals are six people times the tours they carry.</p>
         </div>
       </div>`,
   },
@@ -873,7 +866,7 @@ export const SLIDES = [
           and many others.
         </p>
 
-        <ol class="steps reveal" style="--d:.24s;grid-template-columns:repeat(4,1fr)">
+        <ol class="steps reveal" style="--d:.24s;grid-template-columns:repeat(3,1fr);max-width:1400px">
           <li><span>Co-CEO</span>
             <div style="font-family:var(--sans);font-weight:800;font-size:28px;letter-spacing:-0.04em;margin-bottom:12px">PJ Jarrett</div>
             <p class="body" style="font-size:18px;max-width:none">Founder of Sweat Strategies, Sweat Entertainment and Reel:lab. Technical lead — designed and built the David platform end to end.</p></li>
@@ -883,15 +876,12 @@ export const SLIDES = [
           <li><span>Co-founder · CMO</span>
             <div style="font-family:var(--sans);font-weight:800;font-size:28px;letter-spacing:-0.04em;margin-bottom:12px">Tobi Steinborn</div>
             <p class="body" style="font-size:18px;max-width:none">Co-founder of Sweat Strategies. Marketing lead — ran the campaigns behind Rules at £2.55 a ticket and 3,522 ADMT tickets at £2.59.</p></li>
-          <li><span>Tour Partnerships Mgr</span>
-            <div style="font-family:var(--sans);font-weight:800;font-size:28px;letter-spacing:-0.04em;margin-bottom:12px">Josh Ergatoudis</div>
-            <p class="body" style="font-size:18px;max-width:none">Career booking agent — founded his own agency before joining as the first of the five TPMs.</p></li>
         </ol>
 
         <div class="rule reveal" style="--d:.44s;margin:46px 0 28px"></div>
         <p class="body reveal" style="--d:.5s;font-size:22px;max-width:1680px">
-          <strong style="color:var(--blue)">PJ and Tom each run a company turning over seven figures a
-          year today.</strong> Between them they have spent their careers brokering the deals that put
+          <strong style="color:var(--blue)">PJ and Tom each own companies with seven figure annual
+          revenues.</strong> Between them they have spent their careers brokering the deals that put
           artists into these rooms — which is the part of this business that cannot be built, only known.
         </p>
       </div>`,
@@ -936,11 +926,11 @@ export const SLIDES = [
 
         <ol class="steps reveal" style="--d:.24s;grid-template-columns:repeat(5,1fr);max-width:1728px">
           ${[
-            ['Team ahead of revenue', '£380k', 'The booking team and the directors, from the raise until trading revenue carries them. Five TPMs and a head of department are the constraint on how many tours we can take.'],
-            ['Product, data and AI', '£250k', 'The platform is live and selling, and it is nowhere near finished. Routing, the data learning that makes it better every tour, and the automation that phases two and three depend on are all still to build.'],
-            ['Tour float', '£160k', 'Show marketing goes out months before the box office settles. This is the working capital that lets us front it.'],
+            ['Team ahead of revenue', '£215k', 'The booking team and the directors, from the raise until trading revenue carries them. Five TPMs and a head of department are the constraint on how many tours we can take.'],
+            ['Product, data and AI', '£236k', 'The platform is live and selling, and it is nowhere near finished. Routing, the data learning that makes it better every tour, and the automation that phases two and three depend on are all still to build.'],
+            ['Tour float &amp; contingency', '£97k + £171k', 'Show marketing goes out months before the box office settles. This is the working capital that lets us front it.'],
             ['Market entry', '£150k', 'Eurosonic, The Great Escape, ADE, Reeperbahn, IMS — and B2B marketing every month in between.'],
-            ['Licences &amp; setup', '£60k', 'FCA payments opinion, contract templates, and VAT and tax registration in every territory we sell in.'],
+            ['Licences &amp; setup', '£131k', 'FCA payments opinion, contract templates, and VAT and tax registration in every territory we sell in.'],
           ].map(([k, n, sub]) => `
             <li><span>${k}</span>
               <div style="font-family:var(--sans);font-weight:800;font-size:42px;letter-spacing:-0.04em;color:#fff;margin-bottom:12px">${n}</div>
@@ -949,7 +939,7 @@ export const SLIDES = [
 
         <div class="rule reveal" style="--d:.44s;margin:44px 0 30px"></div>
         <p class="display reveal" style="--d:.5s;font-size:34px;line-height:1.24;font-weight:700;letter-spacing:-0.035em;color:#fff;max-width:1620px">
-          The plan reaches break-even on £516k. We are raising roughly twice that, so a slow month is a slow month rather than a second round.
+          David is forecasting to be cash generative by the end of 2027, so funding can be split between equity or debt.
         </p>
         <p class="reveal" style="--d:.58s;font-size:24px;font-weight:700;margin-top:30px">
           <a href="https://david.tickets" style="color:#fff;opacity:.95">david.tickets</a>

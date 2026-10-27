@@ -36,7 +36,7 @@
          take-home as two stacked bars, which is the whole thesis in one
          picture and was three paragraphs before
      06  the £20 ticket splitting, left to right, ending on the artist
-     09  the operating ratio — ten people against 4,129 shows
+     09  the operating ratio — twelve people against 4,080 shows
      12  the five-year revenue and EBITDA lines against one scale
      13  the go-to-market multiplication, drawn rather than written
 
@@ -106,7 +106,7 @@ export const SLIDES = [
       <div class="pad l-mid">
         <h1 class="display reveal" style="font-size:240px;line-height:0.86;color:#fff;margin-bottom:48px">DAVID.</h1>
         <p class="display reveal" style="--d:.12s;font-size:48px;line-height:1.2;font-weight:600;letter-spacing:-0.035em;max-width:1400px;color:#fff">
-          The promoter, ticketing platform and marketing engine for the middle of live music.
+          The combined promoter, ticketing platform and marketing engine for the live music market.
         </p>
         <div class="reveal" style="--d:.24s;margin-top:60px;font-family:var(--sans);font-weight:800;font-size:44px;letter-spacing:-0.04em;color:#fff">
           Raising £1m
@@ -172,7 +172,7 @@ export const SLIDES = [
         </div>
         <p class="body reveal" style="--d:.4s;font-size:24px;max-width:1560px;margin-top:56px">
           <strong style="color:var(--blue)">The artists' teams bring us in.</strong>
-          These shows we took on were sitting at 4–27% sell-through before our marketing started.
+          These shows were sitting at 4–27% sell-through before our marketing started.
         </p>
       </div>`,
   },
@@ -328,7 +328,7 @@ export const SLIDES = [
     html: `
       <div class="pad l-mid">
         <h2 class="display reveal" style="font-size:76px;line-height:1.06;margin-bottom:20px">
-          Their spend is cheaper.<br>Their rooms are emptier.
+          Our spend is more effective,<br>and rooms are fuller.
         </h2>
         <p class="body reveal" style="--d:.12s;font-size:22px;margin-bottom:52px;color:var(--head)">
           Allocated spend per ticket, on a £20 ticket.
@@ -379,12 +379,12 @@ export const SLIDES = [
 
         <div class="reveal" style="--d:.2s;display:flex;align-items:center;gap:70px;margin-bottom:52px;flex-wrap:wrap">
           <div>
-            <div class="display" style="font-size:150px;line-height:1;color:#fff">10</div>
+            <div class="display" style="font-size:150px;line-height:1;color:#fff">12</div>
             <div class="label" style="font-size:17px;margin-top:12px">People</div>
           </div>
           <div class="display" style="font-size:80px;line-height:1;color:var(--head);opacity:.5">→</div>
           <div>
-            <div class="display" style="font-size:150px;line-height:1;color:var(--blue)">4,129</div>
+            <div class="display" style="font-size:150px;line-height:1;color:var(--blue)">4,080</div>
             <div class="label" style="font-size:17px;margin-top:12px">Shows a year · the Year-5 model</div>
           </div>
         </div>
@@ -410,9 +410,9 @@ export const SLIDES = [
 
         <div class="reveal" style="--d:.2s;display:grid;grid-template-columns:repeat(3,1fr);gap:70px;max-width:1728px">
           ${[
-            { n: '01', when: 'Today', name: 'Our desk', who: 'Our TPMs book on the platform.', margin: '68%' },
-            { n: '02', when: 'Feb 2028', name: 'Their desk', who: "The artist's team plans. We book.", margin: '80%' },
-            { n: '03', when: 'Aug 2029', name: 'No desk', who: 'They run it. Agents move to A&R.', margin: '83%' },
+            { n: '01', when: 'Today', name: 'Our desk', who: 'Our TPMs book on the platform.', margin: '63%' },
+            { n: '02', when: '', name: 'Their desk', who: "The artist's team plans. We book.", margin: '81%' },
+            { n: '03', when: '', name: 'No desk', who: 'They run it. Agents move to A&R.', margin: '83%' },
           ].map((p) => `
             <div style="border-top:1px solid #ffffff1f;padding-top:26px">
               <div class="label" style="font-size:15px;margin-bottom:22px">Phase ${p.n} · ${p.when}</div>
@@ -529,7 +529,7 @@ export const SLIDES = [
     grain: 'soft',
     html: `
       <div class="pad l-mid">
-        <div class="label reveal" style="margin-bottom:24px">Base case · business plan v6</div>
+        <div class="label reveal" style="margin-bottom:24px">Base case</div>
         <h2 class="display reveal" style="--d:.06s;font-size:76px;line-height:1.06;margin-bottom:20px">
           £30.7m and 83% margins by Year 5.
         </h2>
@@ -566,8 +566,8 @@ export const SLIDES = [
 
         <div class="rule reveal" style="--d:.44s;margin:26px 0 22px"></div>
         <p class="body reveal" style="--d:.5s;font-size:22px;max-width:1680px">
-          <strong style="color:var(--blue)">EBITDA-positive in April 2027.</strong>
-          The margin climbs because the roadmap does — 68% today, 83% once the artist's team runs it.
+          <strong style="color:var(--blue)">EBITDA-positive in December 2027,</strong> cash-generative from
+          November ’27. The margin climbs because the roadmap does — 63% today, 83% once the artist's team runs it.
         </p>
       </div>`,
   },
@@ -592,14 +592,14 @@ export const SLIDES = [
               </div>`).join('')}
           <div class="display" style="font-size:64px;line-height:1;color:var(--head);opacity:.45">=</div>
           <div>
-            <div class="display" style="font-size:118px;line-height:1;color:var(--blue)">4,129</div>
+            <div class="display" style="font-size:118px;line-height:1;color:var(--blue)">4,080</div>
             <div class="label" style="font-size:15px;margin-top:12px;max-width:230px">Shows a year</div>
           </div>
         </div>
 
         <div class="rule reveal" style="--d:.42s;margin:0 0 26px"></div>
         <p class="body reveal" style="--d:.48s;font-size:23px;max-width:1680px">
-          Ex-booking agents who already hold the relationships. Our first is in seat.
+          Ex-booking agents who already hold the relationships.
           <span style="opacity:.8">The same six people. Thirteen tours each today, thirty-four by Year 5 — that is the roadmap, not more hiring.</span>
         </p>
       </div>`,
@@ -615,18 +615,17 @@ export const SLIDES = [
     html: `
       <div class="pad l-mid">
         <h2 class="display reveal" style="font-size:76px;line-height:1.06;margin-bottom:20px">
-          Four people who have already done it.
+          Three people who have already done it.
         </h2>
         <p class="body reveal" style="--d:.12s;font-size:22px;max-width:1560px;margin-bottom:56px;color:var(--head)">
           The campaigns on slide three are theirs. So is the platform.
         </p>
 
-        <ol class="steps reveal" style="--d:.24s;grid-template-columns:repeat(4,1fr);max-width:1728px">
+        <ol class="steps reveal" style="--d:.24s;grid-template-columns:repeat(3,1fr);max-width:1400px">
           ${[
             ['Co-CEO', 'PJ Jarrett', 'Built the platform end to end. Founder of Sweat Strategies and Reel:lab.'],
             ['Co-CEO', 'Tom Rose', 'CEO of Grape — artist services across the UK, Germany and Norway.'],
             ['Co-founder · CMO', 'Tobi Steinborn', 'Ran the campaigns behind Rules and ADMT. Co-founder of Sweat Strategies.'],
-            ['Tour partnerships', 'Josh Ergatoudis', 'Career booking agent who founded his own agency. First TPM, in seat.'],
           ].map(([role, name, line]) => `
             <li><span>${role}</span>
               <div style="font-family:var(--sans);font-weight:800;font-size:29px;letter-spacing:-0.04em;color:#fff;margin-bottom:14px">${name}</div>
@@ -635,8 +634,8 @@ export const SLIDES = [
 
         <div class="rule reveal" style="--d:.44s;margin:46px 0 26px"></div>
         <p class="body reveal" style="--d:.5s;font-size:23px;max-width:1680px">
-          <strong style="color:var(--blue)">PJ and Tom each run a company turning over seven figures
-          today.</strong> Brokering the deals that fill these rooms is what we have always done.
+          <strong style="color:var(--blue)">PJ and Tom each own companies with seven figure annual
+          revenues.</strong> Brokering the deals that fill these rooms is what we have always done.
         </p>
       </div>`,
   },
@@ -664,11 +663,11 @@ export const SLIDES = [
 
         <ol class="steps reveal" style="--d:.24s;grid-template-columns:repeat(5,1fr);max-width:1728px;margin-bottom:44px">
           ${[
-            ['Team ahead of revenue', '£380k', 'until trading carries it'],
-            ['Product, data and AI', '£250k', 'the build phases 2 and 3 need'],
-            ['Tour float', '£160k', 'we front the show marketing'],
+            ['Team ahead of revenue', '£215k', 'until trading carries it'],
+            ['Product, data and AI', '£236k', 'the build phases 2 and 3 need'],
+            ['Tour float &amp; contingency', '£97k + £171k', 'we front the show marketing'],
             ['Market entry', '£150k', 'the agent conferences, B2B'],
-            ['Licences & setup', '£60k', 'FCA opinion, contracts, VAT'],
+            ['Licences & setup', '£131k', 'FCA opinion, contracts, VAT'],
           ].map(([k, n, sub]) => `
             <li><span>${k}</span>
               <div class="display" style="font-size:50px;line-height:1;color:var(--blue);margin-bottom:12px">${n}</div>
@@ -677,7 +676,7 @@ export const SLIDES = [
 
         <div class="rule reveal" style="--d:.44s;margin:0 0 26px"></div>
         <p class="display reveal" style="--d:.5s;font-size:34px;line-height:1.26;font-weight:700;letter-spacing:-0.035em;color:#fff;max-width:1600px">
-          The plan needs £516k to break even. We are raising twice that, so a slow month is not a second round.
+          David is forecasting to be cash generative by the end of 2027, so funding can be split between equity or debt.
         </p>
       </div>`,
   },
