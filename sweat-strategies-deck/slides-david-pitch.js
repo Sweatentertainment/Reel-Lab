@@ -615,17 +615,18 @@ export const SLIDES = [
     html: `
       <div class="pad l-mid">
         <h2 class="display reveal" style="font-size:76px;line-height:1.06;margin-bottom:20px">
-          Four people who have already done it.
+          Five people who have already done it.
         </h2>
         <p class="body reveal" style="--d:.12s;font-size:22px;max-width:1560px;margin-bottom:56px;color:var(--head)">
           The campaigns on slide three are theirs. So is the platform.
         </p>
 
-        <ol class="steps reveal" style="--d:.24s;grid-template-columns:repeat(4,1fr);max-width:1728px">
+        <ol class="steps reveal" style="--d:.24s;grid-template-columns:repeat(5,1fr);max-width:1728px">
           ${[
-            ['Co-CEO', 'Peter Jarrett', 'Built the platform end to end. Founder of Sweat Strategies and Reel:lab.'],
+            ['Co-CEO', 'Peter Jarrett', 'Founder of Sweat Strategies, Sweat Entertainment and Reel:lab.'],
             ['Co-CEO', 'Tom Rose', 'CEO of Grape — artist services across the UK, Germany and Norway.'],
             ['Co-founder · CMO', 'Tobi Steinborn', 'Ran the campaigns behind Rules and ADMT. Co-founder of Sweat Strategies.'],
+            ['Technical lead', 'George Wiggin', 'Technical lead and software engineer — builds and runs the David platform.'],
             ['CFO', 'Ian Brundrett', 'Former SVP Finance at Hipgnosis. Finance Director at Virgin Music and Caroline.'],
           ].map(([role, name, line]) => `
             <li><span>${role}</span>

@@ -882,7 +882,14 @@ export const SLIDES = [
      in on his word rather than off the web — the only public trace was a
      contact-scraper profile, which is not something to put a credential on.
      The card leads with the history because that is what buys an investor's
-     confidence in the numbers, then says what he does here. */
+     confidence in the numbers, then says what he does here.
+
+     GEORGE WIGGIN is the technical lead, in PJ's words, and the card says
+     only that: LinkedIn does not resolve from this machine, and after the
+     Brundrett round nothing goes on a card unsourced. PJ also took the
+     build claim off his own card — he is the founder here, not the
+     engineer, and the two cards would otherwise contradict each other.
+     The same claim came off his card in the pitch and artist decks. */
   {
     section: 'Team',
     grain: 'soft',
@@ -897,16 +904,19 @@ export const SLIDES = [
           and many others.
         </p>
 
-        <ol class="steps reveal" style="--d:.24s;grid-template-columns:repeat(4,1fr)">
+        <ol class="steps reveal" style="--d:.24s;grid-template-columns:repeat(5,1fr)">
           <li><span>Co-CEO</span>
             <div style="font-family:var(--sans);font-weight:800;font-size:28px;letter-spacing:-0.04em;margin-bottom:12px">Peter Jarrett</div>
-            <p class="body" style="font-size:18px;max-width:none">Founder of Sweat Strategies, Sweat Entertainment and Reel:lab. Technical lead — designed and built the David platform end to end.</p></li>
+            <p class="body" style="font-size:18px;max-width:none">Founder of Sweat Strategies, Sweat Entertainment and Reel:lab.</p></li>
           <li><span>Co-CEO</span>
             <div style="font-family:var(--sans);font-weight:800;font-size:28px;letter-spacing:-0.04em;margin-bottom:12px">Tom Rose</div>
             <p class="body" style="font-size:18px;max-width:none">CEO of Grape (formerly Propeller) — artist services across the UK, Germany and Norway: radio &amp; PR, management, label services.</p></li>
           <li><span>Co-founder · CMO</span>
             <div style="font-family:var(--sans);font-weight:800;font-size:28px;letter-spacing:-0.04em;margin-bottom:12px">Tobi Steinborn</div>
             <p class="body" style="font-size:18px;max-width:none">Co-founder of Sweat Strategies. Marketing lead — ran the campaigns behind Rules at £2.55 a ticket and 3,522 ADMT tickets at £2.59.</p></li>
+          <li><span>Technical lead</span>
+            <div style="font-family:var(--sans);font-weight:800;font-size:28px;letter-spacing:-0.04em;margin-bottom:12px">George Wiggin</div>
+            <p class="body" style="font-size:18px;max-width:none">Technical lead and software engineer — builds and runs the David platform.</p></li>
           <li><span>CFO</span>
             <div style="font-family:var(--sans);font-weight:800;font-size:28px;letter-spacing:-0.04em;margin-bottom:12px">Ian Brundrett</div>
             <p class="body" style="font-size:18px;max-width:none">Former SVP Finance at Hipgnosis, and Finance Director at Virgin Music and Caroline. Runs David finance — settlement, VAT and OSS across the territories.</p></li>
