@@ -556,7 +556,7 @@ export const SLIDES = [
 
         <div class="reveal" style="--d:.26s;display:grid;grid-template-columns:0.9fr 1.1fr;gap:110px;max-width:1680px;align-items:start">
           <div>
-            <div class="display" style="font-size:88px;line-height:1;color:var(--blue);margin-bottom:18px">4,129</div>
+            <div class="display" style="font-size:88px;line-height:1;color:var(--blue);margin-bottom:18px">4,080</div>
             <div style="font-family:var(--sans);font-weight:700;font-size:26px;letter-spacing:-0.03em;margin-bottom:14px">shows a year, run by 12 people.</div>
             <p class="body" style="font-size:19px;max-width:600px">
               The Year-5 operating model — possible only because the machine does the advancing, the
@@ -713,7 +713,7 @@ export const SLIDES = [
 
         <div class="rule reveal" style="--d:.42s;margin:52px 0 30px"></div>
         <p class="body reveal" style="--d:.48s;font-size:21px;max-width:1680px">
-          David at Year 5 — £30.7m revenue from 4,129 shows — is roughly 3–5% of that pool, with no
+          David at Year 5 — £30.7m revenue from 4,080 shows — is roughly 3–5% of that pool, with no
           pan-European incumbent to displace. Nobody else can be the promoter, the ticketer and the
           marketing engine at once without cannibalising their own fees.
         </p>
@@ -747,7 +747,7 @@ export const SLIDES = [
         </h2>
         <p class="body reveal" style="--d:.14s;font-size:21px;max-width:1560px;margin-bottom:40px">
           We take 20% of gross box office — 13% from the fan as a booking fee, 7% from the artist.
-          The margin comes from the operating model: the same ten people run four thousand shows as
+          The margin comes from the operating model: the same twelve people run four thousand shows as
           run four hundred, because the AI does the routing, the advancing, the settlement, the tax
           and the campaign management.
         </p>
@@ -777,9 +777,9 @@ export const SLIDES = [
 
         <div class="rule reveal" style="--d:.46s;margin:24px 0 22px"></div>
         <p class="body reveal" style="--d:.52s;font-size:21px;max-width:1680px;margin-bottom:12px">
-          <strong style="color:var(--blue)">EBITDA-positive in December 2027</strong>, cash-generative from
-          November ’27. The margin climbs because the roadmap does: 63% while the desk is ours, 83% once the
-          artist's team runs it.
+          <strong style="color:var(--blue)">Cash-generative from November 2027, EBITDA-positive in
+          December.</strong> The margin climbs because the roadmap does: 63% while the desk is ours, 83%
+          once the artist's team runs it.
         </p>
         <p class="body reveal" style="--d:.58s;font-size:17px;max-width:1680px;opacity:.75">
           Source: David Tickets business plan. These are projections, not results — the achieved
@@ -795,13 +795,21 @@ export const SLIDES = [
      each one carries rising from thirteen a year to thirty-four.
 
      PJ's October edit made the multiplication exact — 6 x 13 x 20 = 1,560
-     and 6 x 34 x 20 = 4,080 — where the earlier cut used the model's own
-     annual totals of 1,530 and 4,129, which the multiplication does not
-     produce. The trade is deliberate but it has a cost: 4,129 still
-     appears on the why-now slide and the market slide, so this slide no
-     longer agrees with them, and the closing line's claim that both
-     totals are the model's own is now true of neither. Flagged to PJ;
-     fixing it is one number here or two there, whichever he wants. */
+     and 6 x 34 x 20 = 4,080 — where the earlier cut carried the financial
+     model's own annual totals of 1,530 and 4,129, which the multiplication
+     does not produce.
+
+     THE WHOLE DECK NOW USES 4,080. Given the choice between a deck whose
+     arithmetic works in the room and a deck that ties to a spreadsheet
+     nobody has opened yet, the arithmetic wins: an investor who multiplies
+     the three numbers on this slide gets the number printed beside them,
+     on this slide and on why-now and market too. The cost is a 1.2% gap to
+     the plan (4,080 against 4,129, and 1,560 against 1,530 in Year 2) —
+     small, in the conservative direction at Year 5, and nothing the per-
+     show economics turn on: £30.7m across 4,080 shows is £7.5k of revenue
+     a show, which is the same business as £7.4k. If diligence ever wants
+     the deck to match the model to the unit, this is the slide to start
+     from, and the other two follow. */
   {
     section: 'Go to market',
     grain: 'soft',

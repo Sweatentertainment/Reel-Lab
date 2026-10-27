@@ -566,8 +566,8 @@ export const SLIDES = [
 
         <div class="rule reveal" style="--d:.44s;margin:26px 0 22px"></div>
         <p class="body reveal" style="--d:.5s;font-size:22px;max-width:1680px">
-          <strong style="color:var(--blue)">EBITDA-positive in December 2027,</strong> cash-generative from
-          November ’27. The margin climbs because the roadmap does — 63% today, 83% once the artist's team runs it.
+          <strong style="color:var(--blue)">Cash-generative from November 2027, EBITDA-positive in December.</strong>
+          The margin climbs because the roadmap does — 63% today, 83% once the artist's team runs it.
         </p>
       </div>`,
   },
