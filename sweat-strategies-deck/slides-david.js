@@ -168,7 +168,10 @@ export const SLIDES = [
           The combined promoter, ticketing platform and marketing engine for the live music market.
         </p>
         <div class="rule reveal" style="--d:.3s;margin:56px 0 32px;max-width:1360px"></div>
-        <div class="reveal" style="--d:.36s">
+        <p class="body reveal" style="--d:.4s;font-size:21px;max-width:1240px;opacity:.95">
+          Founded by the marketing companies behind Bad Bunny, Raye, Thundercat, The Pixies and Swedish House Mafia.
+        </p>
+        <div class="reveal" style="--d:.48s;margin-top:34px">
           <span style="font-family:var(--mono);text-transform:uppercase;font-size:24px;letter-spacing:0.2em;color:#fff;opacity:.92">david.tickets</span>
         </div>
       </div>`,
@@ -907,7 +910,7 @@ export const SLIDES = [
         <ol class="steps reveal" style="--d:.24s;grid-template-columns:repeat(5,1fr)">
           <li><span>Co-CEO</span>
             <div style="font-family:var(--sans);font-weight:800;font-size:28px;letter-spacing:-0.04em;margin-bottom:12px">Peter Jarrett</div>
-            <p class="body" style="font-size:18px;max-width:none">Founder of Sweat Strategies, Sweat Entertainment and Reel:lab.</p></li>
+            <p class="body" style="font-size:18px;max-width:none">Founder of Sweat Strategies, Sweat Entertainment and Reel:lab. Sweat's label and live partners include Atlantic, BMG, Ninja Tune, Live Nation and CAA.</p></li>
           <li><span>Co-CEO</span>
             <div style="font-family:var(--sans);font-weight:800;font-size:28px;letter-spacing:-0.04em;margin-bottom:12px">Tom Rose</div>
             <p class="body" style="font-size:18px;max-width:none">CEO of Grape (formerly Propeller) — artist services across the UK, Germany and Norway: radio &amp; PR, management, label services.</p></li>

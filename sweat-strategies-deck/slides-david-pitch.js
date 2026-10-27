@@ -623,7 +623,7 @@ export const SLIDES = [
 
         <ol class="steps reveal" style="--d:.24s;grid-template-columns:repeat(5,1fr);max-width:1728px">
           ${[
-            ['Co-CEO', 'Peter Jarrett', 'Founder of Sweat Strategies, Sweat Entertainment and Reel:lab.'],
+            ['Co-CEO', 'Peter Jarrett', 'Founder of Sweat Strategies, Sweat Entertainment and Reel:lab — Atlantic, BMG, Ninja Tune, Live Nation, CAA.'],
             ['Co-CEO', 'Tom Rose', 'CEO of Grape — artist services across the UK, Germany and Norway.'],
             ['Co-founder · CMO', 'Tobi Steinborn', 'Ran the campaigns behind Rules and ADMT. Co-founder of Sweat Strategies.'],
             ['Technical lead', 'George Wiggin', 'Technical lead and software engineer — builds and runs the David platform.'],
