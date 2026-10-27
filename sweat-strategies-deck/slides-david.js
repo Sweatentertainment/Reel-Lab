@@ -910,7 +910,7 @@ export const SLIDES = [
         <ol class="steps reveal" style="--d:.24s;grid-template-columns:repeat(5,1fr)">
           <li><span>Co-CEO</span>
             <div style="font-family:var(--sans);font-weight:800;font-size:28px;letter-spacing:-0.04em;margin-bottom:12px">Peter Jarrett</div>
-            <p class="body" style="font-size:18px;max-width:none">Founder of Sweat Strategies, Sweat Entertainment and Reel:lab. Sweat's label and live partners include Atlantic, BMG, Ninja Tune, Live Nation and CAA.</p></li>
+            <p class="body" style="font-size:18px;max-width:none">Founder of Sweat Strategies, Sweat Entertainment and Reel:lab.</p></li>
           <li><span>Co-CEO</span>
             <div style="font-family:var(--sans);font-weight:800;font-size:28px;letter-spacing:-0.04em;margin-bottom:12px">Tom Rose</div>
             <p class="body" style="font-size:18px;max-width:none">CEO of Grape (formerly Propeller) — artist services across the UK, Germany and Norway: radio &amp; PR, management, label services.</p></li>
