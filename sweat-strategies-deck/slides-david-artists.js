@@ -4,7 +4,8 @@
    NOT THE SEED DECK. slides-david.js and slides-david-pitch.js argue
    that DAVID is worth investing in. This one argues that DAVID is worth
    touring with, to the two people who decide that: the artist and their
-   booking agent. Josh carries it into meetings.
+   booking agent. Whoever is running tour partnerships carries it into
+   meetings.
 
    Same engine, same palette, same treatments — and almost none of the
    same content, because almost none of the investor argument is a
@@ -20,11 +21,19 @@
    the investor deck's strongest slide and it is even stronger here,
    because here the reader is the person who keeps the difference.
 
-   THE AGENT IS AN ALLY, NEVER A TARGET. Josh is an ex-agent pitching
-   agents. Every criticism in this deck lands on the promoter and the
-   incumbent ticketer; the deal slide says out loud that the agent keeps
-   the client and keeps the commission, because that is the first
-   question in an agent's head and leaving it unanswered loses the room.
+   THE AGENT IS AN ALLY, NEVER A TARGET. Every criticism in this deck
+   lands on the promoter and the incumbent ticketer; the deal slide says
+   out loud that the agent keeps the client and keeps the commission,
+   because that is the first question in an agent's head and leaving it
+   unanswered loses the room.
+
+   NO NAMED SELLER. The deck was built around Josh Ergatoudis, who is no
+   longer with DAVID, so every credit is now the role rather than the
+   person — cover, the who-you-deal-with slide and the close. The promise
+   the slide exists to make is unchanged: one human holds the tour end to
+   end. Drop a name and a direct email into those three places the moment
+   there is one; the deck is weaker without them, because in a sales
+   meeting the relationship is the product.
 
    "YOU" IS THE ARTIST THROUGHOUT. An agent reading on a client's behalf
    still reads it naturally; the reverse — writing to the agent about
@@ -109,7 +118,7 @@ export const SLIDES = [
           The promoter, the ticketing and the marketing — and we only make money when your show sells.
         </p>
         <div class="reveal" style="--d:.24s;margin-top:56px;font-family:var(--sans);font-weight:700;font-size:26px;letter-spacing:-0.03em;color:#fff">
-          Josh Ergatoudis · Tour Partnerships
+          Tour Partnerships · david.tickets
         </div>
       </div>`,
   },
@@ -444,9 +453,11 @@ export const SLIDES = [
       </div>`,
   },
 
-  /* 12 — who they actually deal with. Josh first and biggest: he is the
-     person in the room, and in a sales meeting the relationship is the
-     product. The other three are one line each. */
+  /* 12 — who they actually deal with. The contact column is first and
+     biggest, because in a sales meeting the relationship is the product.
+     It named Josh until he left; it now describes the role, which keeps
+     the promise the headline makes without putting a name on the slide
+     that nobody can introduce. The other three are one line each. */
   {
     section: 'Who you deal with',
     grain: 'soft',
@@ -460,10 +471,11 @@ export const SLIDES = [
         <div class="reveal" style="--d:.2s;display:grid;grid-template-columns:1fr 1.25fr;gap:100px;max-width:1728px;align-items:start">
           <div>
             <div class="label" style="font-size:16px;margin-bottom:20px">Your contact</div>
-            <div class="display" style="font-size:60px;line-height:1;color:var(--blue);margin-bottom:18px">Josh Ergatoudis</div>
+            <div class="display" style="font-size:60px;line-height:1.04;color:var(--blue);margin-bottom:18px">One<br>person.</div>
             <p class="body" style="font-size:21px;max-width:640px">
-              A career booking agent who founded his own agency before joining DAVID. He holds the tour end to
-              end — routing, offers, advancing, settlement — and the platform sits behind him.
+              Your tour partnerships manager holds the tour end to end — routing, offers, advancing,
+              settlement — and the platform sits behind them. Not a ticket queue, and not a different
+              name every time you call.
             </p>
           </div>
           <ol class="steps" style="grid-template-columns:1fr 1fr;row-gap:34px">
@@ -512,11 +524,11 @@ export const SLIDES = [
         </ol>
 
         <div class="rule reveal" style="--d:.44s;margin:48px 0 30px"></div>
+        ${/* A name and a direct email belong here — this is the one place in a
+              sales deck where a person should sign it. Left as the address until
+              there is a tour partnerships name to put on it. */ ''}
         <p class="display reveal" style="--d:.5s;font-size:34px;line-height:1.26;font-weight:700;letter-spacing:-0.035em;color:#fff;max-width:1620px">
-          Josh Ergatoudis · Tour Partnerships
-        </p>
-        <p class="reveal" style="--d:.58s;font-size:24px;font-weight:700;margin-top:22px">
-          <a href="https://david.tickets" style="color:#fff;opacity:.95">david.tickets</a>
+          <a href="https://david.tickets" style="color:#fff">david.tickets</a>
         </p>
       </div>`,
   },

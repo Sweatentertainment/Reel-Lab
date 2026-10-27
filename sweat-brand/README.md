@@ -32,7 +32,7 @@ scripts/    build the tokens, treat a new photo, export the ads
 | `Sweat-Investor-Deck.pdf` | 22 | **Investor** — Sweat Strategies fundraise. Financials are marked [TBC] |
 | `DAVID-Seed-Deck.pdf` | 18 | **Investor** — DAVID seed round, the document cut. Emailed and read alone |
 | `DAVID-Pitch-Deck.pdf` | 16 | **Investor** — DAVID seed round, the pitch cut. 757 words, diagram-led, for presenting |
-| `DAVID-Artists-Agents.pdf` | 13 | **Sales** — DAVID for artists and their agents. Josh's deck: take-home, sell-through and fan ownership, no financials |
+| `DAVID-Artists-Agents.pdf` | 13 | **Sales** — DAVID for artists and their agents: take-home, sell-through and fan ownership, no financials. Credits are the role, not a name — a seller's name and email drop into the cover, the who-you-deal-with slide and the close |
 | `Sweat-Clouted-Paid-Media.pdf` | 22 | **Partner** — Clouted × Sweat, co-branded and written in one voice. Clouted forwards it to their own clients: $850 test campaign, 20% of further ad spend, anonymised case studies |
 
 Authored in [`../sweat-strategies-deck/`](../sweat-strategies-deck/). Edit copy
