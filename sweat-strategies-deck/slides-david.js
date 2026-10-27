@@ -271,8 +271,15 @@ export const SLIDES = [
   /* 04 — traction. The table is kept because it is genuinely a table — three
      rows against two measures — but set in the deck's own type with the
      figures right-aligned and tabular so the columns actually line up. The
-     five live stats sit above it, because "last 7 days" is the number an
-     investor looks for first. */
+     four live stats sit above it, because "last 7 days" is the number an
+     investor looks for first.
+
+     THE FIGURES ARE THE 19 AUGUST SET and the label says so. PJ's October
+     PowerPoint round took that label off; it has deliberately not been
+     applied, because undated ten-week-old numbers read as today's. The
+     label comes off the moment the figures are refreshed, not before.
+     What a refresh needs: the four live stats, all three rows of the
+     table, and the weeks-since-on-sale in the first row. */
   {
     section: 'Traction',
     grain: 'soft',
@@ -283,16 +290,13 @@ export const SLIDES = [
           Live, selling, accelerating.
         </h2>
 
-        <ol class="steps reveal" style="--d:.2s;grid-template-columns:repeat(5,1fr);max-width:1728px;margin-bottom:44px">
+        <ol class="steps reveal" style="--d:.2s;grid-template-columns:repeat(4,1fr);max-width:1440px;margin-bottom:44px">
           <li><span>Last 7 days</span>
             <div class="display" style="font-size:54px;line-height:1;color:var(--blue);margin-bottom:12px">266</div>
             <p class="body" style="font-size:17px;max-width:none">tickets · £7,678 gross · 138 buyers</p></li>
           <li><span>On sale now</span>
             <div class="display" style="font-size:54px;line-height:1;color:var(--blue);margin-bottom:12px">£330k</div>
             <p class="body" style="font-size:17px;max-width:none">across 43 shows</p></li>
-          <li><span>ADMT Feb ’27</span>
-            <div class="display" style="font-size:54px;line-height:1;color:var(--blue);margin-bottom:12px">22.7%</div>
-            <p class="body" style="font-size:17px;max-width:none">sold, six months out.</p></li>
           <li><span>Sell-through</span>
             <div class="display" style="font-size:54px;line-height:1;color:var(--blue);margin-bottom:12px">92%</div>
             <p class="body" style="font-size:17px;max-width:none">across the last three tours</p></li>
