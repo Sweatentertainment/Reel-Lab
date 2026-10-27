@@ -877,16 +877,12 @@ export const SLIDES = [
      people, the use of funds and the closing line together. Four biographies
      at a readable size is a slide on its own.
 
-     IAN BRUNDRETT'S LINE IS NOT CONFIRMED. He is plainly running David
-     finance — the OSS tax, the artist and David settlement, the accounting
-     intro — and that is what the card says, because it is what the record
-     shows. What it does not say is where he was before: the only public
-     trace is a contact-scraper profile putting an Ian Brundrett at SVP
-     Finance, Hipgnosis Song Management (since rebranded Recognition Music
-     Group), and a separate LinkedIn for a fractional-FD practice called
-     Easttree Media. Neither is tied to ianbrundrett@west-village.uk, and an
-     unverified credential in an investor deck is the kind of thing that only
-     surfaces in diligence. PJ confirms the line, or it stays as it is. */
+     IAN BRUNDRETT'S HISTORY IS PJ'S, CONFIRMED 27 OCT: former SVP Finance
+     at Hipgnosis, Finance Director at Virgin Music and at Caroline. It went
+     in on his word rather than off the web — the only public trace was a
+     contact-scraper profile, which is not something to put a credential on.
+     The card leads with the history because that is what buys an investor's
+     confidence in the numbers, then says what he does here. */
   {
     section: 'Team',
     grain: 'soft',
@@ -913,7 +909,7 @@ export const SLIDES = [
             <p class="body" style="font-size:18px;max-width:none">Co-founder of Sweat Strategies. Marketing lead — ran the campaigns behind Rules at £2.55 a ticket and 3,522 ADMT tickets at £2.59.</p></li>
           <li><span>CFO</span>
             <div style="font-family:var(--sans);font-weight:800;font-size:28px;letter-spacing:-0.04em;margin-bottom:12px">Ian Brundrett</div>
-            <p class="body" style="font-size:18px;max-width:none">Finance lead on David — the settlement model, and the VAT and OSS registration across every territory we sell in.</p></li>
+            <p class="body" style="font-size:18px;max-width:none">Former SVP Finance at Hipgnosis, and Finance Director at Virgin Music and Caroline. Runs David finance — settlement, VAT and OSS across the territories.</p></li>
         </ol>
 
         <div class="rule reveal" style="--d:.44s;margin:46px 0 28px"></div>

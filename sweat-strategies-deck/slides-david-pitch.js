@@ -626,7 +626,7 @@ export const SLIDES = [
             ['Co-CEO', 'Peter Jarrett', 'Built the platform end to end. Founder of Sweat Strategies and Reel:lab.'],
             ['Co-CEO', 'Tom Rose', 'CEO of Grape — artist services across the UK, Germany and Norway.'],
             ['Co-founder · CMO', 'Tobi Steinborn', 'Ran the campaigns behind Rules and ADMT. Co-founder of Sweat Strategies.'],
-            ['CFO', 'Ian Brundrett', 'Runs David finance — settlement, VAT and OSS across the territories.'],
+            ['CFO', 'Ian Brundrett', 'Former SVP Finance at Hipgnosis. Finance Director at Virgin Music and Caroline.'],
           ].map(([role, name, line]) => `
             <li><span>${role}</span>
               <div style="font-family:var(--sans);font-weight:800;font-size:29px;letter-spacing:-0.04em;color:#fff;margin-bottom:14px">${name}</div>
