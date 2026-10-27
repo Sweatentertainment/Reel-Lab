@@ -875,7 +875,18 @@ export const SLIDES = [
 
   /* 15 — the team. Split out from the original slide 12, which carried four
      people, the use of funds and the closing line together. Four biographies
-     at a readable size is a slide on its own. */
+     at a readable size is a slide on its own.
+
+     IAN BRUNDRETT'S LINE IS NOT CONFIRMED. He is plainly running David
+     finance — the OSS tax, the artist and David settlement, the accounting
+     intro — and that is what the card says, because it is what the record
+     shows. What it does not say is where he was before: the only public
+     trace is a contact-scraper profile putting an Ian Brundrett at SVP
+     Finance, Hipgnosis Song Management (since rebranded Recognition Music
+     Group), and a separate LinkedIn for a fractional-FD practice called
+     Easttree Media. Neither is tied to ianbrundrett@west-village.uk, and an
+     unverified credential in an investor deck is the kind of thing that only
+     surfaces in diligence. PJ confirms the line, or it stays as it is. */
   {
     section: 'Team',
     grain: 'soft',
@@ -890,9 +901,9 @@ export const SLIDES = [
           and many others.
         </p>
 
-        <ol class="steps reveal" style="--d:.24s;grid-template-columns:repeat(3,1fr);max-width:1400px">
+        <ol class="steps reveal" style="--d:.24s;grid-template-columns:repeat(4,1fr)">
           <li><span>Co-CEO</span>
-            <div style="font-family:var(--sans);font-weight:800;font-size:28px;letter-spacing:-0.04em;margin-bottom:12px">PJ Jarrett</div>
+            <div style="font-family:var(--sans);font-weight:800;font-size:28px;letter-spacing:-0.04em;margin-bottom:12px">Peter Jarrett</div>
             <p class="body" style="font-size:18px;max-width:none">Founder of Sweat Strategies, Sweat Entertainment and Reel:lab. Technical lead — designed and built the David platform end to end.</p></li>
           <li><span>Co-CEO</span>
             <div style="font-family:var(--sans);font-weight:800;font-size:28px;letter-spacing:-0.04em;margin-bottom:12px">Tom Rose</div>
@@ -900,11 +911,14 @@ export const SLIDES = [
           <li><span>Co-founder · CMO</span>
             <div style="font-family:var(--sans);font-weight:800;font-size:28px;letter-spacing:-0.04em;margin-bottom:12px">Tobi Steinborn</div>
             <p class="body" style="font-size:18px;max-width:none">Co-founder of Sweat Strategies. Marketing lead — ran the campaigns behind Rules at £2.55 a ticket and 3,522 ADMT tickets at £2.59.</p></li>
+          <li><span>CFO</span>
+            <div style="font-family:var(--sans);font-weight:800;font-size:28px;letter-spacing:-0.04em;margin-bottom:12px">Ian Brundrett</div>
+            <p class="body" style="font-size:18px;max-width:none">Finance lead on David — the settlement model, and the VAT and OSS registration across every territory we sell in.</p></li>
         </ol>
 
         <div class="rule reveal" style="--d:.44s;margin:46px 0 28px"></div>
         <p class="body reveal" style="--d:.5s;font-size:22px;max-width:1680px">
-          <strong style="color:var(--blue)">PJ and Tom each own companies with seven figure annual
+          <strong style="color:var(--blue)">Peter and Tom each own companies with seven figure annual
           revenues.</strong> Between them they have spent their careers brokering the deals that put
           artists into these rooms — which is the part of this business that cannot be built, only known.
         </p>

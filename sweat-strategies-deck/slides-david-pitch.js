@@ -615,17 +615,18 @@ export const SLIDES = [
     html: `
       <div class="pad l-mid">
         <h2 class="display reveal" style="font-size:76px;line-height:1.06;margin-bottom:20px">
-          Three people who have already done it.
+          Four people who have already done it.
         </h2>
         <p class="body reveal" style="--d:.12s;font-size:22px;max-width:1560px;margin-bottom:56px;color:var(--head)">
           The campaigns on slide three are theirs. So is the platform.
         </p>
 
-        <ol class="steps reveal" style="--d:.24s;grid-template-columns:repeat(3,1fr);max-width:1400px">
+        <ol class="steps reveal" style="--d:.24s;grid-template-columns:repeat(4,1fr);max-width:1728px">
           ${[
-            ['Co-CEO', 'PJ Jarrett', 'Built the platform end to end. Founder of Sweat Strategies and Reel:lab.'],
+            ['Co-CEO', 'Peter Jarrett', 'Built the platform end to end. Founder of Sweat Strategies and Reel:lab.'],
             ['Co-CEO', 'Tom Rose', 'CEO of Grape — artist services across the UK, Germany and Norway.'],
             ['Co-founder · CMO', 'Tobi Steinborn', 'Ran the campaigns behind Rules and ADMT. Co-founder of Sweat Strategies.'],
+            ['CFO', 'Ian Brundrett', 'Runs David finance — settlement, VAT and OSS across the territories.'],
           ].map(([role, name, line]) => `
             <li><span>${role}</span>
               <div style="font-family:var(--sans);font-weight:800;font-size:29px;letter-spacing:-0.04em;color:#fff;margin-bottom:14px">${name}</div>
@@ -634,7 +635,7 @@ export const SLIDES = [
 
         <div class="rule reveal" style="--d:.44s;margin:46px 0 26px"></div>
         <p class="body reveal" style="--d:.5s;font-size:23px;max-width:1680px">
-          <strong style="color:var(--blue)">PJ and Tom each own companies with seven figure annual
+          <strong style="color:var(--blue)">Peter and Tom each own companies with seven figure annual
           revenues.</strong> Brokering the deals that fill these rooms is what we have always done.
         </p>
       </div>`,

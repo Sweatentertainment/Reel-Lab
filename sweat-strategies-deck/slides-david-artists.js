@@ -480,7 +480,7 @@ export const SLIDES = [
           </div>
           <ol class="steps" style="grid-template-columns:1fr 1fr;row-gap:34px">
             ${[
-              ['Co-CEO', 'PJ Jarrett', 'Built the platform end to end. Founder of Sweat Strategies and Reel:lab.'],
+              ['Co-CEO', 'Peter Jarrett', 'Built the platform end to end. Founder of Sweat Strategies and Reel:lab.'],
               ['Co-CEO', 'Tom Rose', 'CEO of Grape — artist services across the UK, Germany and Norway.'],
               ['Co-founder · CMO', 'Tobi Steinborn', 'Ran the campaigns behind Rules and ADMT.'],
               ['Behind them', 'The engine', 'Advancing, settlement, tax and campaign management, handled by the platform.'],
