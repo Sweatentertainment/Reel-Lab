@@ -403,10 +403,10 @@ export const SLIDES = [
           </p>
         </div>
         <div class="reveal" style="--d:.3s">
-          <div class="display" style="font-size:150px;line-height:1;color:var(--blue);margin-bottom:22px">1,939</div>
+          <div class="display" style="font-size:150px;line-height:1;color:var(--blue);margin-bottom:22px">~2,400</div>
           <div style="font-family:var(--sans);font-weight:700;font-size:28px;letter-spacing:-0.03em;margin-bottom:16px">fans captured and handed back</div>
           <p class="body" style="font-size:20px;max-width:620px">
-            In fourteen weeks, across the tours running on the platform now. Every one of them belongs to the
+            Across the tours running on the platform now. Every one of them belongs to the
             artist who earned them.
           </p>
         </div>
@@ -425,17 +425,17 @@ export const SLIDES = [
     grain: 'soft',
     html: `
       <div class="pad l-mid">
-        <div class="label reveal" style="margin-bottom:26px">Live today · verified 19 Aug 2026</div>
+        <div class="label reveal" style="margin-bottom:26px">Live today · verified 27 Oct 2026</div>
         <h2 class="display reveal" style="--d:.08s;font-size:76px;line-height:1.04;margin-bottom:56px">
           Already selling, every day.
         </h2>
 
         <ol class="steps reveal" style="--d:.2s;grid-template-columns:repeat(4,1fr);max-width:1728px;margin-bottom:52px">
           <li><span>On sale now</span>
-            <div class="display" style="font-size:66px;line-height:1;color:var(--blue);margin-bottom:14px">43</div>
+            <div class="display" style="font-size:66px;line-height:1;color:var(--blue);margin-bottom:14px">55</div>
             <p class="body" style="font-size:19px;max-width:none">shows across Europe and the UK</p></li>
           <li><span>Sold by the machine</span>
-            <div class="display" style="font-size:66px;line-height:1;color:var(--blue);margin-bottom:14px">~7,600</div>
+            <div class="display" style="font-size:66px;line-height:1;color:var(--blue);margin-bottom:14px">~10,150</div>
             <p class="body" style="font-size:19px;max-width:none">tickets, and counting</p></li>
           <li><span>Sell-through</span>
             <div class="display" style="font-size:66px;line-height:1;color:var(--blue);margin-bottom:14px">92%</div>

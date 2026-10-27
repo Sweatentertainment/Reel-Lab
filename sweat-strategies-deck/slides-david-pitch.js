@@ -183,21 +183,21 @@ export const SLIDES = [
     grain: 'soft',
     html: `
       <div class="pad l-mid">
-        <div class="label reveal" style="margin-bottom:26px">Verified 19 Aug 2026</div>
+        <div class="label reveal" style="margin-bottom:26px">Verified 27 Oct 2026</div>
         <h2 class="display reveal" style="--d:.06s;font-size:82px;line-height:1.04;margin-bottom:60px">
           Live, selling, accelerating.
         </h2>
 
         <ol class="steps reveal" style="--d:.2s;grid-template-columns:repeat(4,1fr);max-width:1728px;margin-bottom:52px">
-          <li><span>Sold by the machine</span>${stat({ n: '~7,600', cap: 'tickets', sub: '~£179k gross' })}</li>
-          <li><span>On sale now</span>${stat({ n: '£330k', cap: 'across 43 shows' })}</li>
-          <li><span>Last 7 days</span>${stat({ n: '266', cap: 'tickets · 138 buyers' })}</li>
-          <li><span>Fans captured</span>${stat({ n: '1,939', cap: 'artist-owned' })}</li>
+          <li><span>Sold by the machine</span>${stat({ n: '~10,150', cap: 'tickets', sub: '~£250k gross' })}</li>
+          <li><span>On sale now</span>${stat({ n: '~£450k', cap: 'across 55 shows' })}</li>
+          <li><span>Last 7 days</span>${stat({ n: '411', cap: 'tickets · 223 buyers' })}</li>
+          <li><span>Fans captured</span>${stat({ n: '~2,400', cap: 'artist-owned' })}</li>
         </ol>
 
         <div class="rule reveal" style="--d:.42s;margin:0 0 26px"></div>
         <p class="body reveal" style="--d:.48s;font-size:23px;max-width:1680px">
-          92% average sell-through across the last three tours. The platform has been live fourteen weeks.
+          92% average sell-through across the last three tours. The platform has been live twenty-five weeks.
         </p>
       </div>`,
   },

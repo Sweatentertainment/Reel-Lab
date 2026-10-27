@@ -274,34 +274,45 @@ export const SLIDES = [
      four live stats sit above it, because "last 7 days" is the number an
      investor looks for first.
 
-     THE FIGURES ARE THE 19 AUGUST SET and the label says so. PJ's October
-     PowerPoint round took that label off; it has deliberately not been
-     applied, because undated ten-week-old numbers read as today's. The
-     label comes off the moment the figures are refreshed, not before.
-     What a refresh needs: the four live stats, all three rows of the
-     table, and the weeks-since-on-sale in the first row. */
+     FIGURES REFRESHED 27 OCT 2026, straight off the David Ticketing
+     database. Rounded on purpose — PJ: "these numbers can be rough ...
+     in the zone" — so nothing here is to the ticket. Multi-currency now
+     (GBP, EUR, CHF), converted at roughly current rates, which is the
+     other reason to round rather than print a false precision.
+
+     Actuals behind the rounding: 4,504 platform tickets; £105,871 +
+     €24,188 + CHF 1,740 taken; 411 tickets and 223 buyers in the last
+     seven days; 55 shows on sale; 2,399 distinct fan emails. Value on
+     sale is show capacity x show price, which is the reading that
+     matches how the £330k was struck in August (~£8k a show then and
+     now); the ticket-type reading gives half as much again and is the
+     wrong one.
+
+     The verified date stays. PJ's PowerPoint round removed it when it
+     read 19 August and looked old; with a current date on it, it is the
+     line that stops a reader assuming these are stale. */
   {
     section: 'Traction',
     grain: 'soft',
     html: `
       <div class="pad l-mid">
-        <div class="label reveal" style="margin-bottom:26px">Traction · verified 19 Aug 2026</div>
+        <div class="label reveal" style="margin-bottom:26px">Traction · verified 27 Oct 2026</div>
         <h2 class="display reveal" style="--d:.08s;font-size:72px;line-height:1.04;max-width:1500px;margin-bottom:44px">
           Live, selling, accelerating.
         </h2>
 
         <ol class="steps reveal" style="--d:.2s;grid-template-columns:repeat(4,1fr);max-width:1440px;margin-bottom:44px">
           <li><span>Last 7 days</span>
-            <div class="display" style="font-size:54px;line-height:1;color:var(--blue);margin-bottom:12px">266</div>
-            <p class="body" style="font-size:17px;max-width:none">tickets · £7,678 gross · 138 buyers</p></li>
+            <div class="display" style="font-size:54px;line-height:1;color:var(--blue);margin-bottom:12px">411</div>
+            <p class="body" style="font-size:17px;max-width:none">tickets · ~£12k gross · 223 buyers</p></li>
           <li><span>On sale now</span>
-            <div class="display" style="font-size:54px;line-height:1;color:var(--blue);margin-bottom:12px">£330k</div>
-            <p class="body" style="font-size:17px;max-width:none">across 43 shows</p></li>
+            <div class="display" style="font-size:54px;line-height:1;color:var(--blue);margin-bottom:12px">~£450k</div>
+            <p class="body" style="font-size:17px;max-width:none">across 55 shows</p></li>
           <li><span>Sell-through</span>
             <div class="display" style="font-size:54px;line-height:1;color:var(--blue);margin-bottom:12px">92%</div>
             <p class="body" style="font-size:17px;max-width:none">across the last three tours</p></li>
           <li><span>Fans captured</span>
-            <div class="display" style="font-size:54px;line-height:1;color:var(--blue);margin-bottom:12px">1,939</div>
+            <div class="display" style="font-size:54px;line-height:1;color:var(--blue);margin-bottom:12px">~2,400</div>
             <p class="body" style="font-size:17px;max-width:none">artist-owned</p></li>
         </ol>
 
@@ -314,9 +325,9 @@ export const SLIDES = [
             <span class="label" style="font-size:14px;text-align:right">Gross</span>
           </div>
           ${[
-            ['David platform — since first tour on-sale, 8 May 2026 (14 weeks)', '1,982', '£54k', true],
+            ['David platform — since first tour on-sale, 8 May 2026 (25 weeks)', '~4,500', '~£130k', true],
             ['The engine that became David — pre-platform tours (ADMT, St Lundi, Scout)', '~5,650', '~£124k', false],
-            ['Total sold by the machine', '~7,600', '~£179k', true],
+            ['Total sold by the machine', '~10,150', '~£250k', true],
           ].map(([label, tickets, gross, strong]) => `
             <div style="display:grid;grid-template-columns:1fr 200px 220px;gap:40px;padding:16px 0;border-bottom:1px solid var(--rule)">
               <span style="font-family:var(--sans);font-weight:${strong ? 700 : 500};font-size:20px;letter-spacing:-0.02em;color:${strong ? '#fff' : 'var(--head)'}">${label}</span>
@@ -326,8 +337,9 @@ export const SLIDES = [
         </div>
 
         <p class="body reveal" style="--d:.5s;font-size:17px;max-width:1728px;margin-top:26px;opacity:.92">
-          Gross calculated at a £22 average ticket. All figures are tickets sold, not listed. Platform
-          figure excludes £395 of pre-tour one-off sales (Mar–Apr).
+          Platform figures are actual sales to 27 October, taken across GBP, EUR and CHF and shown in
+          sterling at current rates, rounded. Pre-platform gross is estimated at a £22 average ticket. All
+          figures are tickets sold, not listed. Platform excludes £405 of pre-launch sales (Mar–Apr).
         </p>
       </div>`,
   },
