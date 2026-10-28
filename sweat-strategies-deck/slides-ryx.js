@@ -347,7 +347,7 @@ export const SLIDES = [
         </p>
 
         <ol class="steps reveal" style="--d:.26s;grid-template-columns:repeat(2,1fr);max-width:1500px">
-          ${card('Founder', 'Peter Jarrett', 'Runs Sweat Group and 72andSunny. Twenty years in the music business, from A&amp;R at Universal Publishing and Mercury to his own label through The Orchard. Leads this campaign and is on every call.')}
+          ${card('Founder', 'Peter Jarrett', 'Runs Sweat Group and 72andSunny. Twenty years in music marketing, with campaigns for Swedish House Mafia, Disclosure, Bonobo and Elderbrook, and for Atlantic, BMG and Ninja Tune. Leads this campaign and is on every call.')}
           ${card('Co-founder &middot; Paid media', 'Tobi Steinborn', 'Runs the media. The campaigns behind Elderbrook, Ninja Tune and Better Noise, and the Red Light work already live.')}
         </ol>
 
