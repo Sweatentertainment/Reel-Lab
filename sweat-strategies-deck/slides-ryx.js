@@ -233,7 +233,7 @@ export const SLIDES = [
     points: [
       { t: 'Our channels', b: 'Lay goes out on our third-party pages, to audiences that already follow this kind of music.' },
       { t: 'A small budget', b: 'Enough to see what a listener costs in the US, Germany, the UK and Belgium.' },
-      { t: 'Straight away', b: 'The ads go live the day this is approved. No waiting for November.' },
+      { t: 'Straight away', b: 'The ads go live the day this is approved.' },
     ],
   }),
 
@@ -448,7 +448,7 @@ export const SLIDES = [
           </p>
           <p class="body" style="font-size:20px;max-width:none;margin-top:0">
             <strong style="color:#fff">On top, at cost:</strong> the ad spend itself, from
-            Orchard&rsquo;s budget; event hard costs; any software.
+            Orchard&rsquo;s budget, and event hard costs.
           </p>
         </div>
       </div>`,
