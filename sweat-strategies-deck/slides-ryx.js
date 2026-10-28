@@ -22,7 +22,8 @@
 
    FEE, as said on the 27 Oct call: £5,000 a month Nov–Mar, media
    inclusive, no 20% on spend; or £20,000 up front, the Øneheart deal.
-   Lay quick start from the email: £250 + 20% on spend, credited.
+   The Lay quick start is in the deck without a price, at PJ's request
+   (28 Oct): it starts straight away once approved.
 
    OPEN: day-to-day lead and Pierre's exact title; "Steve" has no surname
    in the record; the 19 Nov single is untitled in the transcripts.
@@ -202,7 +203,7 @@ export const SLIDES = [
 
         <ol class="flow reveal" style="--d:.18s;grid-template-columns:repeat(5,1fr);max-width:1728px">
           ${[
-            { n: '29 October', t: 'Lay', b: 'Out this week. We start running ads on it tomorrow.' },
+            { n: '29 October', t: 'Lay', b: 'Out this week. Ads start as soon as this is approved.' },
             { n: '19 November', t: 'The November single', b: 'Album pre-save and vinyl pre-order open.' },
             { n: 'January', t: 'The third single', b: 'Scale up on what worked in November.' },
             { n: 'February', t: 'The album', b: '12th, 19th or 25th, depending on vinyl delivery.' },
@@ -227,12 +228,12 @@ export const SLIDES = [
     n: 'Release 01 of 04',
     date: '29 October',
     title: 'Lay',
-    sub: 'Already moving',
-    headline: 'A quick campaign on Lay, starting tomorrow.',
+    sub: 'Out this week',
+    headline: 'A quick campaign on Lay, starting as soon as this is approved.',
     points: [
       { t: 'Our channels', b: 'Lay goes out on our third-party pages, to audiences that already follow this kind of music.' },
       { t: 'A small budget', b: 'Enough to see what a listener costs in the US, Germany, the UK and Belgium.' },
-      { t: 'Credited', b: '£250 plus 20% on spend, taken off the first month if the campaign goes ahead.' },
+      { t: 'Straight away', b: 'The ads go live the day this is approved. No waiting for November.' },
     ],
   }),
 
@@ -400,7 +401,7 @@ export const SLIDES = [
           ${pts([
             ['The vinyl date', 'It sets the album date and the February week.'],
             ['The money route', 'The ad budget sits with Orchard. We invoice them for spend.'],
-            ['Access', 'Meta, Spotify for Artists, the videos, the newsletter. So Lay can start tomorrow.'],
+            ['Access', 'Meta, Spotify for Artists, the videos, the newsletter. So Lay can start straight away.'],
             ['An intro to each partner', 'Orchard US and Germany, Shore Fire, Circa, Firebird. After that we do the chasing.'],
             ['An hour with Ry', 'Before we build anything.'],
           ])}
@@ -447,8 +448,7 @@ export const SLIDES = [
           </p>
           <p class="body" style="font-size:20px;max-width:none;margin-top:0">
             <strong style="color:#fff">On top, at cost:</strong> the ad spend itself, from
-            Orchard&rsquo;s budget; event hard costs; any software. Lay starts tomorrow at
-            £250 plus 20% on its spend, credited against month one.
+            Orchard&rsquo;s budget; event hard costs; any software.
           </p>
         </div>
       </div>`,
@@ -464,11 +464,11 @@ export const SLIDES = [
           Lay is out tomorrow.<br>The launch is three weeks away.
         </h2>
         <p class="body reveal" style="--d:.12s;font-size:23px;max-width:1300px;margin-bottom:48px">
-          The quick campaign on Lay runs either way. If this looks right, it goes to Steve,
-          then an hour with Ry, and we start on 1 November.
+          If this looks right, it goes to Steve, then an hour with Ry. Lay starts the day
+          it is approved and the rest from 1 November.
         </p>
         <ol class="steps reveal" style="--d:.2s;max-width:1620px">
-          <li><span>01</span>Ads on Lay through our channels, from tomorrow.</li>
+          <li><span>01</span>Ads on Lay through our channels, as soon as this is approved.</li>
           <li><span>02</span>This goes to Steve, then to Ry.</li>
           <li><span>03</span>An hour with Ry, and the vinyl date.</li>
           <li><span>04</span>1 November: testing starts on the November single and the February asks go out.</li>
