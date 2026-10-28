@@ -92,7 +92,7 @@ export const ARTISTS = [
   'Mark Tuan', 'Leon Thomas', 'Omar+', 'St Lundi', 'ADMT', 'Harry T',
   'Cristoph', 'Sam Alfred', 'Gaskin', 'The Listros', 'KOGIS', 'Ruthanne',
   'Ethan Walsh', 'Kid Apollo', 'Boy Loco', 'Dolores Forever', 'The Knocks',
-  'Rules', 'Morly', 'Scout', 'Ormella',
+  'Rules',
 ];
 
 export const PARTNERS = [

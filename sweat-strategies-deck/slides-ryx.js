@@ -184,10 +184,6 @@ export const SLIDES = [
           ])}
         </ol>
 
-        <div class="rule reveal" style="--d:.4s;margin:56px 0 30px"></div>
-        <p class="body reveal" style="--d:.46s;font-size:22px;max-width:1400px">
-          It is what we do on Elderbrook for Red Light now, and what we did for &Oslash;neheart.
-        </p>
       </div>`,
   },
 
@@ -440,7 +436,6 @@ export const SLIDES = [
             <div class="display" style="font-size:92px;line-height:1;margin-bottom:18px">£20,000</div>
             <p class="body" style="font-size:21px;max-width:600px">
               The same five months, <strong style="color:#fff">the fifth on us</strong>.
-              The deal &Oslash;neheart took.
             </p>
           </div>
         </div>
