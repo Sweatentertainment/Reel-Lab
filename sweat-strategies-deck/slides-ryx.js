@@ -176,7 +176,7 @@ export const SLIDES = [
       <div class="pad l-mid">
         <div class="label reveal" style="margin-bottom:26px">Product management</div>
         <h2 class="display reveal" style="--d:.08s;font-size:66px;line-height:1.06;max-width:1500px;margin-bottom:22px">
-          What the product manager does.
+          What we do.
         </h2>
         <p class="body reveal" style="--d:.14s;font-size:22px;max-width:1340px;margin-bottom:44px">
           The events and the ads are the visible part. The product management role is to own
