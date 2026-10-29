@@ -25,7 +25,7 @@
    The Lay quick start is in the deck without a price, at PJ's request
    (28 Oct): it starts straight away once approved.
 
-   OPEN: day-to-day lead and Pierre's exact title; "Steve" has no surname
+   OPEN: who runs it day to day; "Steve" has no surname
    in the record; the 19 Nov single is untitled in the transcripts.
 
    Cut hard on 28 Oct at PJ's request: too verbose, then "the wording
@@ -185,6 +185,39 @@ export const SLIDES = [
           ])}
         </ol>
 
+      </div>`,
+  },
+
+  /* 06 — product management, day to day. SuzAnn's one note on the deck
+     (29 Oct): "beyond the pop ups and the ads what will you be doing as
+     the product manager?" PJ answered by email; she asked for it in the
+     deck as written, with the last point changed to "keeping management
+     and Ry up to date". His wording, lightly trimmed to fit. */
+  {
+    section: 'The job',
+    grain: 'soft',
+    html: `
+      <div class="pad l-mid">
+        <div class="label reveal" style="margin-bottom:26px">Product management</div>
+        <h2 class="display reveal" style="--d:.08s;font-size:66px;line-height:1.06;max-width:1500px;margin-bottom:22px">
+          What that means day to day.
+        </h2>
+        <p class="body reveal" style="--d:.14s;font-size:22px;max-width:1340px;margin-bottom:44px">
+          The events and the ads are the visible part. The product management role is to own
+          the European campaign day to day and make sure all the different parts connect.
+        </p>
+
+        <ol class="steps reveal" style="--d:.22s;grid-template-columns:repeat(4,1fr);row-gap:40px">
+          ${pts([
+            ['The roadmap', 'Building and managing the release roadmap across the singles, the album and the tour.'],
+            ['Priorities and timelines', 'Setting the priorities, timelines and deliverables across the US, Germany, the UK and Belgium.'],
+            ['Coordination', 'Coordinating the teams and chasing everything through to completion.'],
+            ['Pitching and opportunities', 'Supporting DSP and editorial pitching, and finding wider playlist, radio, press, creator and partnership opportunities.'],
+            ['The data', 'Reviewing the numbers weekly and making recommendations on markets, creative, spend and next actions.'],
+            ['Release week and events', 'Managing release week planning, the events and the other campaign moments.'],
+            ['Keeping you up to date', 'Keeping management and Ry up to date on how it is going, and flagging any decisions or approvals needed.'],
+          ])}
+        </ol>
       </div>`,
   },
 
