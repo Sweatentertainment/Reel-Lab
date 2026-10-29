@@ -28,7 +28,7 @@
    OPEN: who runs it day to day; "Steve" has no surname
    in the record; the 19 Nov single is untitled in the transcripts.
 
-   Cut hard on 28 Oct at PJ's request: too verbose, then "the wording
+   Cut hard on 28–29 Oct at PJ's request: too verbose, then repetitive, then "the wording
    just feels AI". January and the pitching slide went, every tidy
    aphorism went, Pierre came out of the team slide, "Accountable" went,
    and the roster slide came in. Plain sentences only.
@@ -129,8 +129,7 @@ export const SLIDES = [
           Someone in Europe<br>on Ry&rsquo;s side of<br>the table, pushing.
         </h1>
         <p class="body reveal" style="--d:.26s;font-size:25px;max-width:1100px;margin-top:52px">
-          Someone who works only for Ry on this record. Who holds the plan across every
-          market, runs the ads, builds the events and reports every week.
+          Someone who works only for Ry on this record, and holds the whole plan.
         </p>
       </div>`,
   },
@@ -165,29 +164,6 @@ export const SLIDES = [
 
   act({ label: 'The job', line: 'Your product manager, in Europe' }),
 
-  /* 05 — the job, in PJ's four parts from the call. */
-  {
-    section: 'The job',
-    grain: 'soft',
-    html: `
-      <div class="pad l-mid">
-        <div class="label reveal" style="margin-bottom:26px">What we take on</div>
-        <h2 class="display reveal" style="--d:.08s;font-size:70px;line-height:1.06;max-width:1500px;margin-bottom:52px">
-          Four things,<br>November to March.
-        </h2>
-
-        <ol class="steps reveal" style="--d:.2s;grid-template-columns:repeat(4,1fr)">
-          ${pts([
-            ['The plan', 'A plan for the US, Germany, the UK and Belgium, held in one place. We sit between Red Light, Orchard and the partners, and we do the chasing.'],
-            ['The ads', 'Tested before the budget goes on, scaled when they work, and reported on what a listener costs.'],
-            ['Events', 'In-stores, radio sessions and the smaller shows. We find the rooms and the sponsor.'],
-            ['Pitching', 'DSP and editorial through our network, when there is a reason to go.'],
-          ])}
-        </ol>
-
-      </div>`,
-  },
-
   /* 06 — product management, day to day. SuzAnn's one note on the deck
      (29 Oct): "beyond the pop ups and the ads what will you be doing as
      the product manager?" PJ answered by email; she asked for it in the
@@ -200,7 +176,7 @@ export const SLIDES = [
       <div class="pad l-mid">
         <div class="label reveal" style="margin-bottom:26px">Product management</div>
         <h2 class="display reveal" style="--d:.08s;font-size:66px;line-height:1.06;max-width:1500px;margin-bottom:22px">
-          What that means day to day.
+          What the product manager does.
         </h2>
         <p class="body reveal" style="--d:.14s;font-size:22px;max-width:1340px;margin-bottom:44px">
           The events and the ads are the visible part. The product management role is to own
@@ -279,9 +255,8 @@ export const SLIDES = [
     body: `Holy Water was performing well and the ads stopped before anyone noticed.
       This time someone is watching every day.`,
     points: [
-      { t: 'Test the song', b: 'Each section against the same visual, then a range of cuts on the one that works.' },
-      { t: 'Scale', b: 'Cost per listener checked daily, by market. Budget moves to what is working.' },
-      { t: 'Drive the pre-save', b: 'The single leads to the album pre-save. That is the number we track.' },
+      { t: 'The ads', b: 'Tested first, then scaled on what is working, market by market.' },
+      { t: 'The pre-save', b: 'The single leads to the album pre-save. That is the number we track.' },
       { t: 'Book February', b: 'Rough Trade, Amoeba, a German store, the radio sessions. They book months out, so we ask now.' },
     ],
   }),
@@ -298,7 +273,6 @@ export const SLIDES = [
       { t: 'In-stores', b: 'Rough Trade in London and a German store through Orchard Germany.' },
       { t: 'Radio sessions', b: 'KCRW and KEXP in the US. We go after the European equivalents early.' },
       { t: 'Ads', b: 'Budget weighted around release week in every market, then kept running for the two weeks after.' },
-      { t: 'Capture', b: 'Every event and session feeds the newsletter.' },
     ],
   }),
 
@@ -319,12 +293,11 @@ export const SLIDES = [
           weekly, per cut and per market.
         </p>
 
-        <ol class="steps reveal" style="--d:.24s;grid-template-columns:repeat(4,1fr)">
+        <ol class="steps reveal" style="--d:.24s;grid-template-columns:repeat(3,1fr)">
           ${pts([
             ['Find the sound', 'Each section of the song against the same visual, to find the part people stop for.'],
             ['Build the cuts', 'Up to twenty-five visuals on that section: film, the videos, Ry&rsquo;s own footage. Each market tested separately.'],
             ['Two kinds of page', 'Ry&rsquo;s content on his own pages. Our content on third-party pages with an audience already there.'],
-            ['Weekly call', 'Push harder or hold back, decided with you from the numbers.'],
           ])}
         </ol>
       </div>`,
